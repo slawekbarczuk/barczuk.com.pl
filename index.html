@@ -3,10 +3,666 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Barczuk – Biuro Rachunkowe</title>
+  <meta name="theme-color" content="#0f172a" />
+
+  <title>Biuro Rachunkowe Barczuk – księgowość i kadry | Tarnobrzeg</title>
+  <meta name="description" content="Kompleksowa księgowość, kadry i płace, rozliczenia podatkowe oraz sprawozdawczość. Terminowość, przejrzyste zasady i realne wsparcie. Tarnobrzeg oraz obsługa zdalna." />
+  <link rel="canonical" href="https://www.barczuk.com.pl/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Biuro Rachunkowe Barczuk – Tarnobrzeg" />
+  <meta property="og:description" content="Księgowość i kadry bez stresu. Terminowość, przejrzyste zasady współpracy i realne wsparcie w decyzjach." />
+  <meta property="og:url" content="https://www.barczuk.com.pl/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Icons (dodaj pliki do repo, jeśli chcesz) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Basic styling (no framework) -->
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a2f;
+      --muted:#9aa7bd;
+      --text:#e7eefc;
+      --accent:#60a5fa;
+      --accent2:#22c55e;
+      --border:rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(96,165,250,.25), transparent 55%),
+                  radial-gradient(900px 600px at 90% 15%, rgba(34,197,94,.18), transparent 50%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+    .skip{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip:focus{
+      left:20px; top:20px; width:auto; height:auto; padding:10px 14px;
+      background:#111c33; border:1px solid var(--border); border-radius:10px; z-index:9999;
+    }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:1000;
+      background: rgba(11,18,32,.7);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+      min-width: 220px;
+    }
+    .logo{
+      width:42px; height:42px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(96,165,250,.9), rgba(34,197,94,.8));
+      box-shadow: var(--shadow);
+      display:grid; place-items:center;
+      font-weight:800; color:#061022;
+      letter-spacing:.5px;
+    }
+    .brand strong{display:block; font-size:14px; line-height:1.15}
+    .brand span{display:block; font-size:12px; color:var(--muted)}
+    nav ul{
+      list-style:none; display:flex; gap:14px; margin:0; padding:0;
+      align-items:center; flex-wrap:wrap; justify-content:flex-end;
+    }
+    nav a{
+      text-decoration:none;
+      color:rgba(231,238,252,.92);
+      font-size:14px;
+      padding:10px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    nav a:hover, nav a:focus{
+      border-color: var(--border);
+      background: rgba(255,255,255,.04);
+      outline:none;
+    }
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius: 14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      white-space:nowrap;
+    }
+    .btn:hover{background: rgba(255,255,255,.07)}
+    .btn.primary{
+      border-color: rgba(96,165,250,.35);
+      background: linear-gradient(135deg, rgba(96,165,250,.25), rgba(96,165,250,.10));
+    }
+    .btn.primary:hover{background: linear-gradient(135deg, rgba(96,165,250,.32), rgba(96,165,250,.14))}
+    .btn.success{
+      border-color: rgba(34,197,94,.35);
+      background: linear-gradient(135deg, rgba(34,197,94,.22), rgba(34,197,94,.10));
+    }
+
+    /* Sections */
+    section{padding:72px 0}
+    .grid{
+      display:grid; gap:18px;
+    }
+    .hero{
+      padding-top:64px;
+      padding-bottom:54px;
+    }
+    .hero .wrap{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:26px;
+      align-items:stretch;
+    }
+    h1{
+      font-size: clamp(30px, 4.2vw, 52px);
+      line-height:1.06;
+      margin:0 0 14px 0;
+      letter-spacing:-.02em;
+    }
+    h2{
+      font-size: clamp(22px, 2.2vw, 34px);
+      line-height:1.2;
+      margin:0 0 14px 0;
+      letter-spacing:-.01em;
+    }
+    .lead{
+      font-size: 16px;
+      color: rgba(231,238,252,.88);
+      margin:0 0 18px 0;
+      max-width: 60ch;
+    }
+    .muted{color:var(--muted)}
+    .card{
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card.pad{padding:18px}
+    .heroCard{
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      justify-content:space-between;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    .badges{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin:14px 0 0;
+      padding:0;
+      list-style:none;
+    }
+    .badge{
+      padding:8px 10px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: rgba(231,238,252,.9);
+      font-size:13px;
+    }
+    .kpis{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top: 10px;
+    }
+    .kpi{
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      padding:12px;
+    }
+    .kpi strong{display:block; font-size:14px}
+    .kpi span{display:block; font-size:12px; color:var(--muted)}
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:16px;
+      margin-bottom: 18px;
+    }
+    .sectionHead p{margin:0; max-width:70ch}
+    .cards3{
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .cards2{
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .cards6{
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .item h3{
+      margin:0 0 8px 0;
+      font-size:16px;
+      letter-spacing:-.01em;
+    }
+    .item p{margin:0; color:rgba(231,238,252,.84); font-size:14px}
+    .pill{
+      display:inline-block;
+      font-size:12px;
+      color:rgba(231,238,252,.88);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      margin-bottom: 10px;
+    }
+
+    /* Steps */
+    .steps{counter-reset:step}
+    .step{
+      position:relative;
+      padding:18px 18px 18px 18px;
+    }
+    .step:before{
+      counter-increment:step;
+      content: counter(step);
+      position:absolute;
+      top:14px; right:14px;
+      width:34px; height:34px;
+      border-radius:12px;
+      display:grid; place-items:center;
+      font-weight:800;
+      color:#061022;
+      background: linear-gradient(135deg, rgba(96,165,250,.95), rgba(34,197,94,.85));
+      box-shadow: var(--shadow);
+    }
+
+    /* FAQ */
+    details{
+      border:1px solid var(--border);
+      border-radius:14px;
+      background: rgba(255,255,255,.03);
+      padding:14px 14px;
+    }
+    details + details{margin-top:10px}
+    summary{
+      cursor:pointer;
+      font-weight:700;
+      outline:none;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0; color:rgba(231,238,252,.84); font-size:14px}
+
+    /* Contact */
+    .contactGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .contactList{
+      margin:0; padding:0; list-style:none;
+      display:grid; gap:10px;
+    }
+    .contactList a{color:rgba(231,238,252,.95); text-decoration:none}
+    .contactList a:hover{text-decoration:underline}
+    .mini{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    footer{
+      padding:26px 0 40px;
+      border-top: 1px solid var(--border);
+      background: rgba(11,18,32,.6);
+    }
+    .footerRow{
+      display:flex; flex-wrap:wrap; gap:10px 18px;
+      align-items:center; justify-content:space-between;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footerRow a{color:rgba(231,238,252,.9); text-decoration:none}
+    .footerRow a:hover{text-decoration:underline}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero .wrap{grid-template-columns: 1fr}
+      .cards6{grid-template-columns: 1fr}
+      .cards3{grid-template-columns: 1fr}
+      .cards2{grid-template-columns: 1fr}
+      .contactGrid{grid-template-columns: 1fr}
+      .brand{min-width:unset}
+      .cta{display:none} /* na mobile zostaje menu + CTA w hero */
+    }
+  </style>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"AccountingService",
+    "name":"Biuro Rachunkowe Barczuk",
+    "url":"https://www.barczuk.com.pl/",
+    "telephone":"+48 15 823 31 32",
+    "email":"biuro@barczuk.com.pl",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"ul. Wyspiańskiego 12",
+      "postalCode":"39-400",
+      "addressLocality":"Tarnobrzeg",
+      "addressCountry":"PL"
+    },
+    "areaServed":["Tarnobrzeg","Polska"],
+    "sameAs":[]
+  }
+  </script>
 </head>
+
 <body>
-  <h1>Barczuk – Biuro Rachunkowe</h1>
-  <p>Strona w przygotowaniu.</p>
+  <a class="skip" href="#main">Przejdź do treści</a>
+
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Przejdź na górę strony">
+          <div class="logo" aria-hidden="true">BR</div>
+          <div>
+            <strong>Biuro Rachunkowe Barczuk</strong>
+            <span>Tarnobrzeg • księgowość i kadry</span>
+          </div>
+        </a>
+
+        <nav aria-label="Menu">
+          <ul>
+            <li><a href="#oferta">Oferta</a></li>
+            <li><a href="#dla-kogo">Dla kogo</a></li>
+            <li><a href="#jak-pracujemy">Jak pracujemy</a></li>
+            <li><a href="#dlaczego-my">Dlaczego my</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="cta">
+          <a class="btn primary" href="#kontakt">Umów rozmowę</a>
+          <a class="btn success" href="tel:+48158233132">Zadzwoń</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="wrap">
+          <div>
+            <p class="pill">Kompleksowe usługi księgowe • Tarnobrzeg</p>
+            <h1>Księgowość i kadry, które dają spokój.</h1>
+            <p class="lead">
+              Prowadzimy księgowość firm i osób prowadzących działalność.
+              Rozliczenia na czas, czytelne podsumowania i realne wsparcie w decyzjach.
+            </p>
+
+            <div class="cta" style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px">
+              <a class="btn primary" href="#kontakt">Umów rozmowę</a>
+              <a class="btn" href="#oferta">Sprawdź ofertę</a>
+              <a class="btn success" href="mailto:biuro@barczuk.com.pl">Napisz e-mail</a>
+            </div>
+
+            <ul class="badges" aria-label="Najważniejsze korzyści">
+              <li class="badge">Terminowość i zgodność z przepisami</li>
+              <li class="badge">Jasne zasady współpracy</li>
+              <li class="badge">Wsparcie stacjonarnie i zdalnie</li>
+            </ul>
+          </div>
+
+          <aside class="card heroCard" aria-label="Szybki kontakt">
+            <div>
+              <h2 style="margin:0 0 10px 0">Szybki kontakt</h2>
+              <p class="muted" style="margin:0 0 12px 0">
+                Napisz lub zadzwoń — odpowiemy i powiemy, jak możemy pomóc.
+              </p>
+              <div class="kpis">
+                <div class="kpi">
+                  <strong>Telefon</strong>
+                  <span><a href="tel:+48158233132" style="text-decoration:none">+48 15 823 31 32</a></span>
+                </div>
+                <div class="kpi">
+                  <strong>E-mail</strong>
+                  <span><a href="mailto:biuro@barczuk.com.pl" style="text-decoration:none">biuro@barczuk.com.pl</a></span>
+                </div>
+                <div class="kpi">
+                  <strong>Adres</strong>
+                  <span>ul. Wyspiańskiego 12</span>
+                </div>
+                <div class="kpi">
+                  <strong>Miasto</strong>
+                  <span>39-400 Tarnobrzeg</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mini">
+              NIP: 8671193266 • REGON: 830391512
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFERTA -->
+    <section id="oferta">
+      <div class="container">
+        <div class="sectionHead">
+          <div>
+            <h2>Oferta</h2>
+            <p class="muted">Wybierz zakres współpracy — dopasujemy rozwiązanie do Twojej firmy i liczby dokumentów.</p>
+          </div>
+        </div>
+
+        <div class="grid cards6">
+          <div class="card pad item">
+            <h3>Księgowość dla JDG</h3>
+            <p>KPiR, ryczałt, ewidencje, rozliczenia miesięczne lub kwartalne.</p>
+          </div>
+          <div class="card pad item">
+            <h3>Księgowość dla spółek</h3>
+            <p>Pełna księgowość, księgi handlowe, zamknięcia miesiąca i roku.</p>
+          </div>
+          <div class="card pad item">
+            <h3>Kadry i płace</h3>
+            <p>Umowy, listy płac, ZUS, deklaracje oraz bieżące wsparcie pracownicze.</p>
+          </div>
+          <div class="card pad item">
+            <h3>Rozliczenia podatkowe</h3>
+            <p>VAT, PIT, CIT, JPK — rozliczenia na czas i porządek w dokumentacji.</p>
+          </div>
+          <div class="card pad item">
+            <h3>Sprawozdania finansowe</h3>
+            <p>Sprawozdawczość, e-sprawozdania (XML) oraz wsparcie w formalnościach.</p>
+          </div>
+          <div class="card pad item">
+            <h3>Wsparcie i konsultacje</h3>
+            <p>Podpowiadamy rozwiązania, zanim problem się pojawi — prosto i zrozumiale.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DLA KOGO -->
+    <section id="dla-kogo">
+      <div class="container">
+        <div class="sectionHead">
+          <div>
+            <h2>Dla kogo pracujemy</h2>
+            <p class="muted">Obsługujemy firmy w różnych modelach — stacjonarnie w Tarnobrzegu i zdalnie.</p>
+          </div>
+        </div>
+
+        <div class="grid cards2">
+          <div class="card pad item">
+            <h3>Klienci</h3>
+            <p>
+              Jednoosobowe działalności (JDG), spółki oraz firmy usługowe i handlowe.
+              Jeśli potrzebujesz konkretnego zakresu — dopasujemy go do Twojej sytuacji.
+            </p>
+          </div>
+          <div class="card pad item">
+            <h3>Współpraca</h3>
+            <p>
+              Dokumenty możemy przekazywać elektronicznie, a kontakt prowadzimy telefonicznie i mailowo.
+              Ustalamy jasne terminy i sposób komunikacji.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAK PRACUJEMY -->
+    <section id="jak-pracujemy">
+      <div class="container">
+        <div class="sectionHead">
+          <div>
+            <h2>Jak pracujemy</h2>
+            <p class="muted">Prosty proces startu i spokojna, przewidywalna obsługa w trakcie współpracy.</p>
+          </div>
+        </div>
+
+        <div class="grid cards3 steps">
+          <div class="card step item">
+            <h3>Rozmowa i dopasowanie zakresu</h3>
+            <p>Ustalamy formę rozliczeń, obowiązki, terminy oraz oczekiwania. Bez niejasności.</p>
+          </div>
+          <div class="card step item">
+            <h3>Wdrożenie i przekazanie dokumentów</h3>
+            <p>Otrzymujesz listę potrzebnych informacji i prostą ścieżkę startu. Pomagamy w formalnościach.</p>
+          </div>
+          <div class="card step item">
+            <h3>Stała obsługa i podsumowania</h3>
+            <p>Rozliczamy na czas i dajemy czytelne informacje o podatkach i zobowiązaniach.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DLACZEGO MY -->
+    <section id="dlaczego-my">
+      <div class="container">
+        <div class="sectionHead">
+          <div>
+            <h2>Dlaczego my</h2>
+            <p class="muted">Łączymy rzetelną rachunkowość z praktycznym podejściem do biznesu: bezpieczeństwo, porządek i przejrzystość.</p>
+          </div>
+        </div>
+
+        <div class="grid cards2">
+          <div class="card pad item">
+            <h3>Zaufany partner w księgowości</h3>
+            <p>
+              Dbamy o terminowość i zgodność z przepisami, a jednocześnie pomagamy podejmować decyzje na podstawie klarownych danych.
+              Współpraca ma być prosta i przewidywalna.
+            </p>
+          </div>
+          <div class="card pad item">
+            <h3>Nasze standardy</h3>
+            <p>• Terminowość i kontrola zobowiązań</p>
+            <p>• Przejrzyste zasady współpracy</p>
+            <p>• Poufność i bezpieczeństwo danych</p>
+            <p>• Wsparcie stacjonarnie i zdalnie</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="sectionHead">
+          <div>
+            <h2>FAQ</h2>
+            <p class="muted">Najczęstsze pytania — jeśli potrzebujesz czegoś dodatkowego, napisz lub zadzwoń.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <details>
+            <summary>Ile kosztuje obsługa księgowa?</summary>
+            <p>Wycena zależy od formy rozliczeń i liczby dokumentów. Po krótkiej rozmowie przedstawimy jasną propozycję zakresu i ceny.</p>
+          </details>
+
+          <details>
+            <summary>Jak szybko mogę rozpocząć współpracę?</summary>
+            <p>Zwykle w kilka dni roboczych. Prowadzimy przez formalności i przekazanie dokumentów.</p>
+          </details>
+
+          <details>
+            <summary>Czy mogę współpracować zdalnie?</summary>
+            <p>Tak. Dokumenty mogą być przekazywane elektronicznie, a kontakt prowadzimy telefonicznie i mailowo.</p>
+          </details>
+
+          <details>
+            <summary>Czy zajmujecie się kadrami i płacami?</summary>
+            <p>Tak — od umów, przez listy płac, po ZUS i deklaracje, wraz z bieżącym wsparciem.</p>
+          </details>
+
+          <details>
+            <summary>Czy przypominacie o terminach i podatkach?</summary>
+            <p>Tak. Informujemy o zobowiązaniach i terminach, żeby uniknąć niespodzianek.</p>
+          </details>
+
+          <details>
+            <summary>Czy pomagacie przy założeniu firmy?</summary>
+            <p>Możemy podpowiedzieć bezpieczne rozwiązania na start i przygotować Cię do sprawnej obsługi księgowej.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt">
+      <div class="container">
+        <div class="sectionHead">
+          <div>
+            <h2>Kontakt</h2>
+            <p class="muted">Napisz lub zadzwoń — odpowiemy i powiemy, jak możemy pomóc.</p>
+          </div>
+        </div>
+
+        <div class="contactGrid">
+          <div class="card pad">
+            <h3 style="margin-top:0">Biuro Rachunkowe Barczuk</h3>
+            <ul class="contactList">
+              <li><strong>Adres:</strong> ul. Wyspiańskiego 12, 39-400 Tarnobrzeg</li>
+              <li><strong>Telefon:</strong> <a href="tel:+48158233132">+48 15 823 31 32</a></li>
+              <li><strong>E-mail:</strong> <a href="mailto:biuro@barczuk.com.pl">biuro@barczuk.com.pl</a></li>
+              <li class="mini">NIP: 8671193266 • REGON: 830391512</li>
+            </ul>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px">
+              <a class="btn primary" href="tel:+48158233132">Zadzwoń</a>
+              <a class="btn success" href="mailto:biuro@barczuk.com.pl?subject=Zapytanie%20-%20Biuro%20Rachunkowe%20Barczuk">Napisz e-mail</a>
+            </div>
+
+            <p class="mini" style="margin-top:14px">
+              *Jeśli chcesz formularz kontaktowy na stronie, zrobimy go jako Azure Function (bezpiecznie i bez WordPressa).
+            </p>
+          </div>
+
+          <div class="card pad" aria-label="Mapa">
+            <h3 style="margin-top:0">Jak dojechać</h3>
+            <p class="muted" style="margin-top:0">Możesz wkleić mapę Google jako iframe (opcjonalnie).</p>
+
+            <!-- Wstaw tu iframe mapy, jeśli chcesz (opcjonalnie)
+            <iframe
+              title="Mapa - Biuro Rachunkowe Barczuk"
+              src="TU_WKLEJ_LINK_DO_MAPY"
+              width="100%" height="320"
+              style="border:0; border-radius:14px"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            -->
+
+            <div class="mini" style="margin-top:10px">
+              Jeśli nie dodajesz analityki ani zewnętrznych osadzeń, strona jest lżejsza i prostsza pod RODO/cookies.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footerRow">
+        <div>© <span id="y"></span> Biuro Rachunkowe Barczuk • Tarnobrzeg</div>
+        <div>
+          <a href="/polityka-prywatnosci/" rel="nofollow">Polityka prywatności</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Rok w stopce
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
