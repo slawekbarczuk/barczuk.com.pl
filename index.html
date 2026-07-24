@@ -181,19 +181,41 @@
       padding: clamp(44px, 5vw, 68px) 0 clamp(38px, 4vw, 54px);
     }
 
+    .hero::before,
     .hero::after {
       position: absolute;
-      top: 38px;
-      right: max(-160px, calc((100vw - var(--max)) / 2 - 210px));
-      width: 520px;
-      height: 520px;
-      border: 1px solid rgba(28, 92, 255, 0.11);
       border-radius: 50%;
-      box-shadow:
-        0 0 0 72px rgba(28, 92, 255, 0.026),
-        0 0 0 144px rgba(28, 92, 255, 0.018);
       content: "";
       pointer-events: none;
+    }
+
+    .hero::before {
+      top: 166px;
+      right: max(10px, calc((100vw - var(--max)) / 2 - 44px));
+      width: 250px;
+      height: 250px;
+      border: 1px solid rgba(28, 92, 255, 0.2);
+      background:
+        radial-gradient(
+          circle at 35% 32%,
+          rgba(28, 92, 255, 0.13) 0,
+          rgba(76, 126, 255, 0.075) 34%,
+          rgba(150, 177, 255, 0.025) 64%,
+          transparent 72%
+        );
+    }
+
+    .hero::after {
+      top: 38px;
+      right: max(-160px, calc((100vw - var(--max)) / 2 - 210px));
+      width: 540px;
+      height: 540px;
+      border: 1px solid rgba(28, 92, 255, 0.16);
+      box-shadow:
+        0 0 0 52px rgba(38, 103, 255, 0.06),
+        0 0 0 104px rgba(75, 126, 255, 0.042),
+        0 0 0 156px rgba(119, 155, 255, 0.028),
+        0 0 0 208px rgba(174, 194, 255, 0.018);
     }
 
     .hero-content {
@@ -589,6 +611,11 @@
       .hero::after {
         top: 80px;
         right: -300px;
+      }
+
+      .hero::before {
+        top: 184px;
+        right: -112px;
       }
 
       .service,
