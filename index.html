@@ -190,32 +190,38 @@
     }
 
     .hero::before {
-      top: 166px;
-      right: max(10px, calc((100vw - var(--max)) / 2 - 44px));
-      width: 250px;
-      height: 250px;
-      border: 1px solid rgba(28, 92, 255, 0.2);
-      background:
-        radial-gradient(
-          circle at 35% 32%,
-          rgba(28, 92, 255, 0.13) 0,
-          rgba(76, 126, 255, 0.075) 34%,
-          rgba(150, 177, 255, 0.025) 64%,
-          transparent 72%
-        );
+      top: 108px;
+      right: max(-60px, calc((100vw - var(--max)) / 2 - 112px));
+      width: 430px;
+      height: 430px;
+      background: rgba(28, 92, 255, 0.16);
+      filter: blur(58px);
+      opacity: 0.72;
+      transform: scaleY(0.78) rotate(-12deg);
     }
 
     .hero::after {
-      top: 38px;
-      right: max(-160px, calc((100vw - var(--max)) / 2 - 210px));
-      width: 540px;
-      height: 540px;
-      border: 1px solid rgba(28, 92, 255, 0.16);
+      top: 18px;
+      right: max(-170px, calc((100vw - var(--max)) / 2 - 226px));
+      width: 590px;
+      height: 590px;
+      border: 1px solid rgba(255, 255, 255, 0.88);
+      background:
+        radial-gradient(
+          circle at 35% 31%,
+          rgba(255, 255, 255, 0.98) 0 13%,
+          rgba(232, 239, 255, 0.94) 14% 26%,
+          rgba(183, 204, 255, 0.76) 27% 40%,
+          rgba(118, 157, 255, 0.52) 41% 54%,
+          rgba(61, 113, 248, 0.28) 55% 68%,
+          rgba(28, 92, 255, 0.10) 69% 80%,
+          rgba(255, 255, 255, 0) 81%
+        );
       box-shadow:
-        0 0 0 52px rgba(38, 103, 255, 0.06),
-        0 0 0 104px rgba(75, 126, 255, 0.042),
-        0 0 0 156px rgba(119, 155, 255, 0.028),
-        0 0 0 208px rgba(174, 194, 255, 0.018);
+        26px 38px 82px rgba(18, 68, 201, 0.18),
+        -20px -18px 60px rgba(255, 255, 255, 0.92),
+        inset -26px -22px 54px rgba(18, 68, 201, 0.12),
+        inset 20px 18px 46px rgba(255, 255, 255, 0.72);
     }
 
     .hero-content {
@@ -623,13 +629,13 @@
       }
 
       .hero::after {
-        top: 80px;
-        right: -300px;
+        top: 72px;
+        right: -330px;
       }
 
       .hero::before {
-        top: 184px;
-        right: -112px;
+        top: 150px;
+        right: -198px;
       }
 
       .service,
