@@ -390,17 +390,31 @@
 
     .about-copy {
       display: grid;
-      grid-template-columns: 0.72fr 1fr 1fr;
-      gap: clamp(32px, 5vw, 72px);
+      grid-template-columns: 0.72fr 1.08fr 1.08fr;
+      gap: clamp(28px, 3.5vw, 48px);
       max-width: none;
       align-items: start;
+    }
+
+    .person-name {
+      width: max-content;
+    }
+
+    .name-line {
+      display: block;
+    }
+
+    .name-last {
+      width: 81.5%;
+      transform: scaleX(1.227);
+      transform-origin: left center;
     }
 
     .about-copy p {
       margin: 0;
       color: var(--muted);
-      font-size: clamp(17px, 1.8vw, 21px);
-      line-height: 1.65;
+      font-size: clamp(16px, 1.35vw, 18px);
+      line-height: 1.7;
       text-align: justify;
       text-justify: inter-word;
       hyphens: auto;
@@ -760,8 +774,11 @@
           <div>
             <h2>Od rozpoznania problemu do działającego rozwiązania.</h2>
             <p class="section-intro">
-              Bez zbędnej teorii. Najpierw poznaję sytuację, następnie porządkuję
-              możliwości i pomagam przeprowadzić zmianę.
+              Bez zbędnej teorii. Najpierw poznaję sytuację, cele i ograniczenia,
+              następnie porządkuję dostępne możliwości oraz wskazuję rozwiązania
+              o największej wartości dla firmy. Każdy etap opiera się na konkretnych
+              danych, jasno określonych priorytetach i bieżącej współpracy, dzięki
+              czemu wypracowane zmiany można sprawnie wdrożyć i ocenić ich efekty.
             </p>
           </div>
         </div>
@@ -790,18 +807,26 @@
       <div class="shell about-grid">
         <p class="section-label">O mnie</p>
         <div class="about-copy">
-          <h2>Sławomir Barczuk</h2>
+          <h2 class="person-name">
+            <span class="name-line">Sławomir</span>
+            <span class="name-line name-last">Barczuk</span>
+          </h2>
           <p>
             Łączę wieloletnie doświadczenie w bankowości korporacyjnej, finansach,
             zarządzaniu operacyjnym i technologii. Dzięki pracy z przedsiębiorstwami
             o różnej skali rozumiem zarówno perspektywę finansującego, jak i codzienne
             wyzwania osób zarządzających firmą. Patrzę na organizację całościowo —
-            od liczb i procesów po narzędzia wspierające codzienną pracę.
+            od liczb i procesów po narzędzia wspierające codzienną pracę. Pozwala mi
+            to oceniać rozwiązania nie tylko przez pryzmat kosztów, lecz także ich
+            użyteczności, bezpieczeństwa i wpływu na rozwój przedsiębiorstwa.
           </p>
           <p>
             Współpracuję bezpośrednio z właścicielami i osobami odpowiedzialnymi
             za rozwój przedsiębiorstw, przekładając złożone problemy na konkretne,
-            możliwe do wdrożenia działania.
+            możliwe do wdrożenia działania. Wspieram przygotowanie analiz, ocenę
+            inwestycji, organizację finansowania oraz dobór rozwiązań IT
+            i automatyzacji. Zależy mi na jasnych rekomendacjach, które można
+            przełożyć na mierzalne efekty i sprawniejsze codzienne zarządzanie.
           </p>
         </div>
       </div>
@@ -833,21 +858,15 @@
             ul. Wyspiańskiego 12 lok. 16, 39-400 Tarnobrzeg, NIP 8671417151,
             REGON 523942958. Kontakt:
             <a href="mailto:kontakt@barczuk.com.pl">kontakt@barczuk.com.pl</a>.
-          </p>
-          <p>
             Dane przekazane w wiadomości e-mail są przetwarzane w celu obsługi
             zapytania, podjęcia działań przed zawarciem umowy lub prowadzenia
             korespondencji, a następnie przez okres niezbędny do zakończenia sprawy
             i zabezpieczenia ewentualnych roszczeń.
-          </p>
-          <p>
             Strona korzysta z Cloudflare Web Analytics do zbiorczego pomiaru ruchu.
             Usługa nie wykorzystuje plików cookie ani pamięci lokalnej przeglądarki
             i nie służy do identyfikowania poszczególnych odwiedzających. Dane mogą
             być przetwarzane przez dostawców hostingu, poczty i analityki w zakresie
             koniecznym do świadczenia tych usług.
-          </p>
-          <p>
             Osobie, której dane dotyczą, przysługuje prawo dostępu do danych,
             ich sprostowania, usunięcia lub ograniczenia przetwarzania, wniesienia
             sprzeciwu oraz skargi do Prezesa Urzędu Ochrony Danych Osobowych.
@@ -893,6 +912,19 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll("p, h1, h2, h3, a, span").forEach((element) => {
+      element.childNodes.forEach((node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          node.textContent = node.textContent.replace(
+            /(^|\s)([aiouwz])\s+/gi,
+            "$1$2\u00a0"
+          );
+        }
+      });
+    });
+  </script>
 
   <!-- Cloudflare Web Analytics -->
   <script
