@@ -3,109 +3,686 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="theme-color" content="#ffffff">
-  <title>BARCZUK</title>
+  <meta name="description" content="Sławomir Barczuk — finanse, doradztwo biznesowe, zarządzanie oraz technologie i automatyzacja dla firm.">
+  <link rel="canonical" href="https://www.barczuk.com.pl/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="BARCZUK | Finanse i Technologie">
+  <meta property="og:description" content="Finanse, zarządzanie i technologia połączone w praktyczne rozwiązania dla biznesu.">
+  <meta property="og:url" content="https://www.barczuk.com.pl/">
+
+  <title>BARCZUK | Finanse i Technologie</title>
+
   <style>
     :root {
       color-scheme: light;
-      --background: #ffffff;
-      --text: #172033;
-      --muted: #667085;
-      --accent: #2563eb;
+      --ink: #15171a;
+      --muted: #626872;
+      --line: #e7e9ed;
+      --soft: #f7f8fa;
+      --accent: #1c5cff;
+      --accent-dark: #1244c9;
+      --max: 1180px;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html,
-    body {
-      min-height: 100%;
-      margin: 0;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      display: grid;
-      min-height: 100svh;
-      place-items: center;
-      background: var(--background);
-      color: var(--text);
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
       font-family:
         Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    main {
-      position: relative;
-      width: min(680px, calc(100% - 32px));
-      padding: clamp(48px, 8vw, 76px) clamp(28px, 7vw, 68px);
-      text-align: center;
+    a {
+      color: inherit;
     }
 
-    .mark {
-      display: inline-grid;
-      width: 52px;
-      height: 52px;
-      margin-bottom: 28px;
+    .shell {
+      width: min(var(--max), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--ink);
+      color: #fff;
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(231, 233, 237, 0.82);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      display: grid;
+      width: 36px;
+      height: 36px;
       place-items: center;
-      border: 1px solid rgba(37, 99, 235, 0.22);
-      border-radius: 16px;
-      background: rgba(37, 99, 235, 0.06);
+      border: 1px solid rgba(28, 92, 255, 0.2);
+      border-radius: 10px;
+      background: rgba(28, 92, 255, 0.055);
       color: var(--accent);
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.04em;
+      font-size: 16px;
+      font-weight: 750;
     }
 
-    .brand {
-      margin: 0 0 24px;
-      font-size: clamp(14px, 2vw, 16px);
+    .logo-text {
+      font-size: 14px;
+      font-weight: 720;
+      letter-spacing: 0.2em;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #454a52;
+      font-size: 14px;
+      font-weight: 520;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--accent);
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+      border: 1px solid var(--ink);
+      border-radius: 12px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 14px;
       font-weight: 650;
-      letter-spacing: 0.36em;
-      text-indent: 0.36em;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      background: #30343a;
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      border-color: var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .button.secondary:hover {
+      border-color: #cdd1d8;
+      background: var(--soft);
+    }
+
+    .eyebrow {
+      margin: 0 0 24px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 720;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(96px, 13vw, 168px) 0 clamp(88px, 11vw, 136px);
+    }
+
+    .hero::after {
+      position: absolute;
+      top: 38px;
+      right: max(-160px, calc((100vw - var(--max)) / 2 - 210px));
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(28, 92, 255, 0.11);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 72px rgba(28, 92, 255, 0.026),
+        0 0 0 144px rgba(28, 92, 255, 0.018);
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 890px;
     }
 
     h1 {
-      max-width: 520px;
-      margin: 0 auto;
-      font-size: clamp(34px, 6vw, 58px);
-      font-weight: 580;
-      letter-spacing: -0.045em;
-      line-height: 1.04;
+      max-width: 860px;
+      margin: 0;
+      font-size: clamp(48px, 7.5vw, 94px);
+      font-weight: 610;
+      letter-spacing: -0.06em;
+      line-height: 0.98;
       text-wrap: balance;
     }
 
-    p {
-      max-width: 460px;
-      margin: 24px auto 0;
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin: 32px 0 0;
       color: var(--muted);
-      font-size: clamp(16px, 2.3vw, 19px);
-      line-height: 1.65;
+      font-size: clamp(18px, 2.2vw, 23px);
+      line-height: 1.55;
       text-wrap: balance;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    section {
+      padding: clamp(76px, 10vw, 128px) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(340px, 1fr);
+      gap: 70px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+
+    .section-label {
+      margin: 0;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 720;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(34px, 4.5vw, 58px);
+      font-weight: 590;
+      letter-spacing: -0.045em;
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service {
+      min-height: 380px;
+      padding: 38px 34px 40px;
+    }
+
+    .service + .service {
+      border-left: 1px solid var(--line);
+    }
+
+    .service-number {
+      display: block;
+      margin-bottom: 76px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 720;
+    }
+
+    .service h3 {
+      margin: 0 0 18px;
+      font-size: 26px;
+      font-weight: 620;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+    }
+
+    .service p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .process {
+      background: var(--soft);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      min-height: 240px;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .step strong {
+      display: inline-grid;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 48px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .step h3 {
+      margin: 0 0 12px;
+      font-size: 21px;
+      font-weight: 620;
+      letter-spacing: -0.02em;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.72fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-copy {
+      max-width: 700px;
+    }
+
+    .about-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(19px, 2.3vw, 24px);
+      line-height: 1.65;
+    }
+
+    .about-copy p + p {
+      margin-top: 22px;
+    }
+
+    .contact {
+      padding-bottom: 90px;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .contact .section-label {
+      color: #8fb0ff;
+    }
+
+    .contact h2 {
+      max-width: 820px;
+      font-size: clamp(40px, 6vw, 76px);
+    }
+
+    .contact-copy {
+      max-width: 610px;
+      margin: 26px 0 38px;
+      color: #b9bec8;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .mail {
+      display: inline-block;
+      color: #fff;
+      font-size: clamp(21px, 3vw, 34px);
+      font-weight: 560;
+      letter-spacing: -0.025em;
+      text-decoration-color: #8fb0ff;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 8px;
+    }
+
+    footer {
+      background: var(--ink);
+      color: #8f96a1;
+    }
+
+    .footer-row {
+      display: flex;
+      min-height: 96px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-top: 1px solid #32363d;
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      color: #fff;
+      font-weight: 650;
+      letter-spacing: 0.14em;
+    }
+
+    @media (max-width: 850px) {
+      nav > a:not(.button) {
+        display: none;
+      }
+
+      .section-head,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .services,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .service {
+        min-height: auto;
+      }
+
+      .service + .service {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .service-number {
+        margin-bottom: 44px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .shell {
+        width: min(100% - 32px, var(--max));
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      nav .button {
+        min-height: 42px;
+        padding-inline: 14px;
+      }
+
+      .logo-text {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding-top: 88px;
+      }
+
+      .hero::after {
+        top: 80px;
+        right: -300px;
+      }
+
+      .service,
+      .step {
+        padding-inline: 24px;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+      }
     }
 
     @media (prefers-reduced-motion: no-preference) {
-      main {
-        animation: appear 700ms cubic-bezier(.2, .8, .2, 1) both;
+      .hero-content {
+        animation: rise 650ms cubic-bezier(.2, .8, .2, 1) both;
       }
 
-      @keyframes appear {
+      @keyframes rise {
         from {
           opacity: 0;
-          transform: translateY(12px) scale(0.985);
+          transform: translateY(16px);
         }
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "BARCZUK | Finanse i Technologie",
+    "url": "https://www.barczuk.com.pl/",
+    "email": "kontakt@barczuk.com.pl",
+    "founder": {
+      "@type": "Person",
+      "name": "Sławomir Barczuk"
+    },
+    "areaServed": "Polska"
+  }
+  </script>
 </head>
 <body>
-  <main>
-    <div class="mark" aria-hidden="true">B</div>
-    <div class="brand">BARCZUK</div>
-    <h1>Strona jest obecnie niedostępna</h1>
-    <p>Pracujemy nad nową wersją serwisu.</p>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <header>
+    <div class="shell nav">
+      <a class="logo" href="#top" aria-label="BARCZUK — strona główna">
+        <span class="logo-mark" aria-hidden="true">B</span>
+        <span class="logo-text">BARCZUK</span>
+      </a>
+
+      <nav aria-label="Główna nawigacja">
+        <a href="#specjalizacje">Specjalizacje</a>
+        <a href="#wspolpraca">Współpraca</a>
+        <a href="#o-mnie">O mnie</a>
+        <a class="button" href="mailto:kontakt@barczuk.com.pl">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell">
+        <div class="hero-content">
+          <p class="eyebrow">Finanse i technologie dla biznesu</p>
+          <h1>Lepsze decyzje. Sprawniejsze procesy. <span>Mądrzejsza technologia.</span></h1>
+          <p class="hero-copy">
+            Łączę analizę finansową, zarządzanie i rozwiązania IT, aby firmy
+            działały efektywniej, bezpieczniej i z większą kontrolą.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="mailto:kontakt@barczuk.com.pl">Porozmawiajmy</a>
+            <a class="button secondary" href="#specjalizacje">Poznaj zakres współpracy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="specjalizacje">
+      <div class="shell">
+        <div class="section-head">
+          <p class="section-label">Specjalizacje</p>
+          <div>
+            <h2>Trzy perspektywy. Jeden cel biznesowy.</h2>
+            <p class="section-intro">
+              Praktyczne wsparcie łączące liczby, organizację i technologię —
+              dopasowane do rzeczywistych potrzeb przedsiębiorstwa.
+            </p>
+          </div>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <span class="service-number">01</span>
+            <h3>Finanse i analiza biznesowa</h3>
+            <p>
+              Analiza wyników, planowanie finansowe, budżetowanie i porządkowanie
+              informacji zarządczej potrzebnej do podejmowania decyzji.
+            </p>
+          </article>
+
+          <article class="service">
+            <span class="service-number">02</span>
+            <h3>Doradztwo i zarządzanie</h3>
+            <p>
+              Usprawnianie procesów, wsparcie projektów, przygotowanie rozwiązań
+              organizacyjnych oraz wdrażanie zmian w codziennym działaniu firmy.
+            </p>
+          </article>
+
+          <article class="service">
+            <span class="service-number">03</span>
+            <h3>IT i automatyzacja</h3>
+            <p>
+              Dobór i integracja narzędzi, automatyzacja pracy, środowisko
+              Microsoft 365 oraz rozwiązania zwiększające bezpieczeństwo danych.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="wspolpraca">
+      <div class="shell">
+        <div class="section-head">
+          <p class="section-label">Współpraca</p>
+          <div>
+            <h2>Od rozpoznania problemu do działającego rozwiązania.</h2>
+            <p class="section-intro">
+              Bez zbędnej teorii. Najpierw poznaję sytuację, następnie porządkuję
+              możliwości i pomagam przeprowadzić zmianę.
+            </p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <strong>1</strong>
+            <h3>Analiza</h3>
+            <p>Rozpoznanie potrzeb, ograniczeń oraz danych istotnych dla decyzji.</p>
+          </article>
+          <article class="step">
+            <strong>2</strong>
+            <h3>Plan</h3>
+            <p>Przejrzysty zakres działań, priorytety i rozwiązanie dopasowane do firmy.</p>
+          </article>
+          <article class="step">
+            <strong>3</strong>
+            <h3>Wdrożenie</h3>
+            <p>Praktyczna realizacja, koordynacja i wsparcie w osiągnięciu rezultatu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="o-mnie">
+      <div class="shell about-grid">
+        <p class="section-label">O mnie</p>
+        <div class="about-copy">
+          <h2>Sławomir Barczuk</h2>
+          <p>
+            Łączę doświadczenie w finansach, zarządzaniu operacyjnym i technologii.
+            Patrzę na firmę całościowo — od liczb i procesów po narzędzia, które
+            wspierają codzienną pracę.
+          </p>
+          <p>
+            Współpracuję bezpośrednio z właścicielami i osobami odpowiedzialnymi
+            za rozwój przedsiębiorstw, przekładając złożone problemy na konkretne,
+            możliwe do wdrożenia działania.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt">
+      <div class="shell">
+        <p class="section-label">Kontakt</p>
+        <h2>Porozmawiajmy o tym, co można usprawnić.</h2>
+        <p class="contact-copy">
+          Jeśli szukasz wsparcia łączącego perspektywę finansową, organizacyjną
+          i technologiczną, napisz do mnie.
+        </p>
+        <a class="mail" href="mailto:kontakt@barczuk.com.pl">kontakt@barczuk.com.pl</a>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="shell footer-row">
+      <span class="footer-brand">BARCZUK</span>
+      <span>Sławomir Barczuk</span>
+      <span>© <span id="year"></span></span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
   <!-- Cloudflare Web Analytics -->
   <script
