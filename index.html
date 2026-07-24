@@ -444,35 +444,74 @@
 
     footer {
       background: var(--ink);
-      color: #8f96a1;
+      color: #fff;
     }
 
-    .footer-row {
+    .footer-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(170px, 0.65fr) minmax(190px, 0.75fr);
+      gap: clamp(36px, 6vw, 84px);
+      padding: 52px 0 46px;
+    }
+
+    .footer-data {
+      padding-left: clamp(24px, 4vw, 56px);
+      border-left: 1px solid #4a4e55;
+    }
+
+    .footer-brand {
+      margin: 0 0 22px;
+      color: #fff;
+      font-size: clamp(30px, 3.6vw, 48px);
+      font-weight: 720;
+      letter-spacing: -0.045em;
+    }
+
+    .footer-description {
+      max-width: 500px;
+      margin: 0;
+      color: #c4c8cf;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .footer-title {
+      margin: 0 0 18px;
+      color: #8fb0ff;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links a,
+    .footer-links span {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 590;
+      line-height: 1.45;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: #8fb0ff;
+    }
+
+    .footer-bottom {
       display: flex;
-      min-height: 60px;
+      min-height: 58px;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
       border-top: 1px solid #32363d;
-      font-size: 13px;
-    }
-
-    .footer-data {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 8px 20px;
-      text-align: right;
-    }
-
-    .footer-data a {
-      color: #c7cbd2;
-      text-decoration: none;
-    }
-
-    .footer-data a:hover,
-    .footer-data a:focus-visible {
-      color: #fff;
+      color: #989ea8;
+      font-size: 12px;
     }
 
     .footer-brand {
@@ -488,9 +527,17 @@
 
       .section-head,
       .about-grid,
-      .legal-grid {
+      .legal-grid,
+      .footer-main {
         grid-template-columns: 1fr;
         gap: 28px;
+      }
+
+      .footer-data {
+        padding-top: 26px;
+        padding-left: 0;
+        border-top: 1px solid #4a4e55;
+        border-left: 0;
       }
 
       .about-copy {
@@ -549,16 +596,15 @@
         padding-inline: 24px;
       }
 
-      .footer-row {
+      .footer-main {
+        padding-block: 38px 32px;
+      }
+
+      .footer-bottom {
         align-items: flex-start;
         flex-direction: column;
         justify-content: center;
-        padding-block: 26px;
-      }
-
-      .footer-data {
-        justify-content: flex-start;
-        text-align: left;
+        padding-block: 18px;
       }
     }
 
@@ -781,14 +827,38 @@
   </main>
 
   <footer>
-    <div class="shell footer-row">
-      <span class="footer-brand">BARCZUK.COM.PL © 2026</span>
-      <div class="footer-data">
+    <div class="shell">
+      <div class="footer-main">
+        <div>
+          <p class="footer-brand">BARCZUK</p>
+          <p class="footer-description">
+            Finanse, zarządzanie i technologia połączone w praktyczne rozwiązania,
+            które pomagają firmom podejmować lepsze decyzje i sprawniej działać.
+          </p>
+        </div>
+
+        <div class="footer-data">
+          <p class="footer-title">Kontakt</p>
+          <div class="footer-links">
+            <a href="mailto:kontakt@barczuk.com.pl">kontakt@barczuk.com.pl</a>
+            <span>ul. Wyspiańskiego 12 lok. 16</span>
+            <span>39-400 Tarnobrzeg</span>
+          </div>
+        </div>
+
+        <div class="footer-data">
+          <p class="footer-title">Informacje</p>
+          <div class="footer-links">
+            <a href="#prywatnosc">Prywatność</a>
+            <span>NIP 8671417151</span>
+            <span>REGON 523942958</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 barczuk.com.pl</span>
         <span>Sławomir Barczuk</span>
-        <span>NIP 8671417151</span>
-        <span>REGON 523942958</span>
-        <span>ul. Wyspiańskiego 12 lok. 16, 39-400 Tarnobrzeg</span>
-        <a href="#prywatnosc">Prywatność</a>
       </div>
     </div>
   </footer>
