@@ -190,14 +190,14 @@
     }
 
     .hero::before {
-      top: 108px;
-      right: max(-60px, calc((100vw - var(--max)) / 2 - 112px));
-      width: 430px;
-      height: 430px;
-      background: rgba(28, 92, 255, 0.16);
-      filter: blur(58px);
-      opacity: 0.72;
-      transform: scaleY(0.78) rotate(-12deg);
+      top: 472px;
+      right: max(-86px, calc((100vw - var(--max)) / 2 - 126px));
+      width: 460px;
+      height: 96px;
+      background: rgba(18, 68, 201, 0.22);
+      filter: blur(42px);
+      opacity: 0.58;
+      transform: rotate(-7deg);
     }
 
     .hero::after {
@@ -205,8 +205,20 @@
       right: max(-170px, calc((100vw - var(--max)) / 2 - 226px));
       width: 590px;
       height: 590px;
-      border: 1px solid rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(28, 92, 255, 0.11);
       background:
+        radial-gradient(
+          circle at 28% 23%,
+          rgba(255, 255, 255, 0.98) 0 4%,
+          rgba(255, 255, 255, 0.72) 5% 12%,
+          rgba(255, 255, 255, 0) 30%
+        ),
+        radial-gradient(
+          circle at 71% 76%,
+          rgba(18, 68, 201, 0.30) 0,
+          rgba(28, 92, 255, 0.13) 24%,
+          rgba(28, 92, 255, 0) 56%
+        ),
         radial-gradient(
           circle at 35% 31%,
           rgba(255, 255, 255, 0.98) 0 13%,
@@ -214,14 +226,15 @@
           rgba(183, 204, 255, 0.76) 27% 40%,
           rgba(118, 157, 255, 0.52) 41% 54%,
           rgba(61, 113, 248, 0.28) 55% 68%,
-          rgba(28, 92, 255, 0.10) 69% 80%,
-          rgba(255, 255, 255, 0) 81%
+          rgba(28, 92, 255, 0.13) 69% 82%,
+          rgba(115, 153, 255, 0.10) 83% 94%,
+          rgba(28, 92, 255, 0.16) 95% 100%
         );
       box-shadow:
-        26px 38px 82px rgba(18, 68, 201, 0.18),
+        30px 44px 86px rgba(18, 68, 201, 0.22),
         -20px -18px 60px rgba(255, 255, 255, 0.92),
-        inset -26px -22px 54px rgba(18, 68, 201, 0.12),
-        inset 20px 18px 46px rgba(255, 255, 255, 0.72);
+        inset -46px -42px 76px rgba(18, 68, 201, 0.20),
+        inset 30px 26px 58px rgba(255, 255, 255, 0.82);
     }
 
     .hero-content {
@@ -634,8 +647,8 @@
       }
 
       .hero::before {
-        top: 150px;
-        right: -198px;
+        top: 486px;
+        right: -252px;
       }
 
       .service,
