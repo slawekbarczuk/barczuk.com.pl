@@ -808,6 +808,7 @@
       </a>
 
       <nav aria-label="Główna nawigacja">
+        <a href="#o-mnie">O mnie</a>
         <details class="nav-dropdown">
           <summary>Usługi</summary>
           <div class="nav-dropdown-menu">
@@ -825,8 +826,20 @@
             </a>
           </div>
         </details>
-        <a href="#wspolpraca">Współpraca</a>
-        <a href="#o-mnie">O mnie</a>
+        <details class="nav-dropdown">
+          <summary>Informacje</summary>
+          <div class="nav-dropdown-menu">
+            <a href="/informacje/informacje-prawne/">
+              <strong>Informacje prawne</strong>
+            </a>
+            <a href="/informacje/prywatnosc/">
+              <strong>Prywatność</strong>
+            </a>
+            <a href="/informacje/cookies/">
+              <strong>Pliki cookie</strong>
+            </a>
+          </div>
+        </details>
         <a class="button" href="mailto:kontakt@barczuk.com.pl">Kontakt</a>
       </nav>
     </div>
@@ -1026,26 +1039,37 @@
   </footer>
 
   <script>
-    const servicesMenu = document.querySelector(".nav-dropdown");
+    const dropdownMenus = document.querySelectorAll(".nav-dropdown");
     const supportsHover = window.matchMedia("(hover: hover) and (pointer: fine)");
 
-    if (servicesMenu) {
-      servicesMenu.addEventListener("pointerenter", () => {
-        if (supportsHover.matches) servicesMenu.open = true;
+    dropdownMenus.forEach((menu) => {
+      menu.addEventListener("pointerenter", () => {
+        if (supportsHover.matches) {
+          dropdownMenus.forEach((otherMenu) => {
+            if (otherMenu !== menu) otherMenu.open = false;
+          });
+          menu.open = true;
+        }
       });
 
-      servicesMenu.addEventListener("pointerleave", () => {
-        if (supportsHover.matches) servicesMenu.open = false;
+      menu.addEventListener("pointerleave", () => {
+        if (supportsHover.matches) menu.open = false;
       });
 
-      servicesMenu.addEventListener("focusout", () => {
+      menu.addEventListener("focusin", () => {
+        dropdownMenus.forEach((otherMenu) => {
+          if (otherMenu !== menu) otherMenu.open = false;
+        });
+      });
+
+      menu.addEventListener("focusout", () => {
         requestAnimationFrame(() => {
-          if (!servicesMenu.contains(document.activeElement)) {
-            servicesMenu.open = false;
+          if (!menu.contains(document.activeElement)) {
+            menu.open = false;
           }
         });
       });
-    }
+    });
 
     document.querySelectorAll("p, h1, h2, h3, a, span").forEach((element) => {
       element.childNodes.forEach((node) => {
