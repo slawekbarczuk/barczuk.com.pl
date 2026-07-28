@@ -133,6 +133,95 @@
       color: var(--accent);
     }
 
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown summary {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #454a52;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 520;
+      list-style: none;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-dropdown summary::after {
+      width: 7px;
+      height: 7px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      content: "";
+      transform: translateY(-2px) rotate(45deg);
+      transition: transform 160ms ease;
+    }
+
+    .nav-dropdown[open] summary,
+    .nav-dropdown summary:hover,
+    .nav-dropdown summary:focus-visible {
+      color: var(--accent);
+    }
+
+    .nav-dropdown[open] summary::after {
+      transform: translateY(2px) rotate(225deg);
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 22px);
+      right: -28px;
+      display: grid;
+      width: min(380px, calc(100vw - 32px));
+      padding: 10px;
+      border: 1px solid #2e3238;
+      border-radius: 16px;
+      background: var(--ink);
+      box-shadow: 0 22px 60px rgba(21, 23, 26, 0.2);
+    }
+
+    .nav-dropdown-menu::before {
+      position: absolute;
+      right: 24px;
+      bottom: 100%;
+      width: 100px;
+      height: 24px;
+      content: "";
+    }
+
+    .nav-dropdown-menu a {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 10px;
+      color: #fff;
+      line-height: 1.35;
+    }
+
+    .nav-dropdown-menu a:hover,
+    .nav-dropdown-menu a:focus-visible {
+      background: #24272c;
+      color: #fff;
+    }
+
+    .nav-dropdown-menu span {
+      color: #8fb0ff;
+      font-size: 12px;
+      font-weight: 720;
+    }
+
+    .nav-dropdown-menu strong {
+      font-size: 14px;
+      font-weight: 620;
+    }
+
     .button {
       display: inline-flex;
       min-height: 48px;
@@ -267,12 +356,22 @@
     }
 
     .service {
+      display: block;
       min-height: 235px;
       padding: 24px 26px 26px;
+      color: inherit;
+      text-decoration: none;
+      transition: background 180ms ease;
     }
 
     .service + .service {
       border-left: 1px solid var(--line);
+    }
+
+    .service:hover,
+    .service:focus-visible {
+      background: var(--soft);
+      outline: none;
     }
 
     .service-number {
@@ -308,11 +407,13 @@
       font-size: 14px;
       font-weight: 650;
       text-decoration: none;
+      transition: color 160ms ease, transform 160ms ease;
     }
 
-    .service-link:hover,
-    .service-link:focus-visible {
+    .service:hover .service-link,
+    .service:focus-visible .service-link {
       color: var(--accent-dark);
+      transform: translateX(4px);
     }
 
     .process {
@@ -462,8 +563,12 @@
 
     .footer-main {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 1fr) minmax(190px, 0.75fr);
-      gap: clamp(30px, 4vw, 56px);
+      grid-template-columns:
+        minmax(250px, 1.25fr)
+        minmax(205px, 0.95fr)
+        minmax(210px, 0.9fr)
+        minmax(160px, 0.72fr);
+      gap: clamp(24px, 3vw, 42px);
       padding: 52px 0 46px;
     }
 
@@ -511,6 +616,7 @@
       font-weight: 590;
       line-height: 1.45;
       text-decoration: none;
+      overflow-wrap: anywhere;
     }
 
     .footer-links a:hover,
@@ -532,6 +638,10 @@
     @media (max-width: 850px) {
       nav > a:not(.button) {
         display: none;
+      }
+
+      .nav-dropdown-menu {
+        right: -112px;
       }
 
       .section-head,
@@ -588,7 +698,19 @@
       }
 
       .logo-text {
-        font-size: 12px;
+        display: none;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      .nav-dropdown-menu {
+        position: fixed;
+        top: 62px;
+        right: 16px;
+        left: 16px;
+        width: auto;
       }
 
       .hero {
@@ -676,7 +798,23 @@
       </a>
 
       <nav aria-label="Główna nawigacja">
-        <a href="#specjalizacje">Specjalizacje</a>
+        <details class="nav-dropdown">
+          <summary>Usługi</summary>
+          <div class="nav-dropdown-menu">
+            <a href="/uslugi/finanse-i-analiza-biznesowa/">
+              <span>01</span>
+              <strong>Finanse i analiza biznesowa</strong>
+            </a>
+            <a href="/uslugi/doradztwo-i-zarzadzanie/">
+              <span>02</span>
+              <strong>Doradztwo i zarządzanie</strong>
+            </a>
+            <a href="/uslugi/it-i-automatyzacja/">
+              <span>03</span>
+              <strong>IT i automatyzacja</strong>
+            </a>
+          </div>
+        </details>
         <a href="#wspolpraca">Współpraca</a>
         <a href="#o-mnie">O mnie</a>
         <a class="button" href="mailto:kontakt@barczuk.com.pl">Kontakt</a>
@@ -716,41 +854,35 @@
         </div>
 
         <div class="services">
-          <article class="service">
+          <a class="service" href="/uslugi/finanse-i-analiza-biznesowa/">
             <span class="service-number">01</span>
             <h3>Finanse i analiza biznesowa</h3>
             <p>
               Analiza wyników, planowanie finansowe, budżetowanie i porządkowanie
               informacji zarządczej potrzebnej do podejmowania decyzji.
             </p>
-            <a class="service-link" href="/uslugi/finanse-i-analiza-biznesowa/">
-              Poznaj zakres wsparcia →
-            </a>
-          </article>
+            <span class="service-link">Poznaj zakres wsparcia →</span>
+          </a>
 
-          <article class="service">
+          <a class="service" href="/uslugi/doradztwo-i-zarzadzanie/">
             <span class="service-number">02</span>
             <h3>Doradztwo i zarządzanie</h3>
             <p>
               Usprawnianie procesów, wsparcie projektów, przygotowanie rozwiązań
               organizacyjnych oraz wdrażanie zmian w codziennym działaniu firmy.
             </p>
-            <a class="service-link" href="/uslugi/doradztwo-i-zarzadzanie/">
-              Poznaj zakres wsparcia →
-            </a>
-          </article>
+            <span class="service-link">Poznaj zakres wsparcia →</span>
+          </a>
 
-          <article class="service">
+          <a class="service" href="/uslugi/it-i-automatyzacja/">
             <span class="service-number">03</span>
             <h3>IT i automatyzacja</h3>
             <p>
               Dobór i integracja narzędzi, automatyzacja pracy, środowisko
               Microsoft 365 oraz rozwiązania zwiększające bezpieczeństwo danych.
             </p>
-            <a class="service-link" href="/uslugi/it-i-automatyzacja/">
-              Poznaj zakres wsparcia →
-            </a>
-          </article>
+            <span class="service-link">Poznaj zakres wsparcia →</span>
+          </a>
         </div>
       </div>
     </section>
@@ -874,6 +1006,15 @@
             Finanse, zarządzanie i technologia połączone w praktyczne rozwiązania,
             które pomagają firmom podejmować lepsze decyzje i sprawniej działać.
           </p>
+        </div>
+
+        <div class="footer-data">
+          <p class="footer-title">Usługi</p>
+          <div class="footer-links">
+            <a href="/uslugi/finanse-i-analiza-biznesowa/">Finanse i analiza biznesowa</a>
+            <a href="/uslugi/doradztwo-i-zarzadzanie/">Doradztwo i zarządzanie</a>
+            <a href="/uslugi/it-i-automatyzacja/">IT i automatyzacja</a>
+          </div>
         </div>
 
         <div class="footer-data">
