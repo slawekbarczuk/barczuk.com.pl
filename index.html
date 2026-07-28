@@ -369,7 +369,8 @@
     }
 
     .service {
-      display: block;
+      display: flex;
+      flex-direction: column;
       min-height: 235px;
       padding: 24px 26px 26px;
       color: inherit;
@@ -415,7 +416,8 @@
 
     .service-link {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: auto;
+      padding-top: 20px;
       color: var(--accent);
       font-size: 14px;
       font-weight: 650;
@@ -453,9 +455,10 @@
       height: 38px;
       margin-bottom: 16px;
       place-items: center;
-      border-radius: 50%;
-      background: var(--accent);
-      color: #fff;
+      border: 1px solid rgba(28, 92, 255, 0.2);
+      border-radius: 11px;
+      background: rgba(28, 92, 255, 0.055);
+      color: var(--accent);
       font-size: 13px;
     }
 
@@ -481,14 +484,16 @@
 
     .about-copy {
       display: grid;
-      grid-template-columns: 0.72fr 1.08fr 1.08fr;
-      gap: clamp(28px, 3.5vw, 48px);
+      grid-template-columns: minmax(280px, 0.95fr) 1.08fr 1.08fr;
+      gap: clamp(24px, 2.8vw, 38px);
       max-width: none;
       align-items: start;
     }
 
     .person-name {
-      width: max-content;
+      width: auto;
+      font-size: clamp(32px, 3.25vw, 44px);
+      white-space: nowrap;
     }
 
     .name-line {
@@ -504,7 +509,7 @@
     .about-copy p {
       margin: 0;
       color: var(--muted);
-      font-size: clamp(16px, 1.35vw, 18px);
+      font-size: clamp(15px, 1.2vw, 16.5px);
       line-height: 1.7;
       text-align: justify;
       text-justify: inter-word;
@@ -945,8 +950,7 @@
         <p class="section-label">O mnie</p>
         <div class="about-copy">
           <h2 class="person-name">
-            <span class="name-line">Sławomir</span>
-            <span class="name-line name-last">Barczuk</span>
+            <span class="name-line">Sławomir Barczuk</span>
           </h2>
           <p>
             Łączę wieloletnie doświadczenie w bankowości korporacyjnej, finansach,
