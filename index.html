@@ -150,6 +150,8 @@
       display: flex;
       align-items: center;
       gap: 7px;
+      min-height: 76px;
+      padding-inline: 16px;
       color: #454a52;
       cursor: pointer;
       font-size: 14px;
@@ -172,8 +174,10 @@
     }
 
     .nav-dropdown[open] summary,
+    .nav-dropdown:hover summary,
     .nav-dropdown summary:hover,
     .nav-dropdown summary:focus-visible {
+      background: rgba(28, 92, 255, 0.085);
       color: var(--accent);
     }
 
@@ -187,11 +191,11 @@
       right: -28px;
       display: grid;
       width: min(380px, calc(100vw - 32px));
-      padding: 10px;
-      border: 1px solid #2e3238;
-      border-radius: 16px;
-      background: var(--ink);
-      box-shadow: 0 22px 60px rgba(21, 23, 26, 0.2);
+      padding: 12px;
+      border: 1px solid #b9cdff;
+      border-radius: 0 0 16px 16px;
+      background: #edf3ff;
+      box-shadow: 0 22px 60px rgba(28, 92, 255, 0.16);
     }
 
     .nav-dropdown-menu::before {
@@ -210,13 +214,14 @@
       align-items: start;
       padding: 14px;
       border-radius: 10px;
-      color: #fff;
+      color: var(--ink);
       line-height: 1.35;
+      transition: background 150ms ease, color 150ms ease;
     }
 
     .nav-dropdown-menu a:hover,
     .nav-dropdown-menu a:focus-visible {
-      background: #24272c;
+      background: var(--accent);
       color: #fff;
     }
 
@@ -227,12 +232,17 @@
       height: 3px;
       margin-top: 8px;
       border-radius: 999px;
-      background: #8fb0ff;
+      background: var(--accent);
     }
 
     .nav-dropdown-menu strong {
       font-size: 14px;
       font-weight: 620;
+    }
+
+    .nav-dropdown-menu a:hover .nav-service-marker,
+    .nav-dropdown-menu a:focus-visible .nav-service-marker {
+      background: #dce7ff;
     }
 
     .button {
@@ -1038,6 +1048,27 @@
   </footer>
 
   <script>
+    const servicesMenu = document.querySelector(".nav-dropdown");
+    const supportsHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+    if (servicesMenu) {
+      servicesMenu.addEventListener("pointerenter", () => {
+        if (supportsHover.matches) servicesMenu.open = true;
+      });
+
+      servicesMenu.addEventListener("pointerleave", () => {
+        if (supportsHover.matches) servicesMenu.open = false;
+      });
+
+      servicesMenu.addEventListener("focusout", () => {
+        requestAnimationFrame(() => {
+          if (!servicesMenu.contains(document.activeElement)) {
+            servicesMenu.open = false;
+          }
+        });
+      });
+    }
+
     document.querySelectorAll("p, h1, h2, h3, a, span").forEach((element) => {
       element.childNodes.forEach((node) => {
         if (node.nodeType === Node.TEXT_NODE) {
