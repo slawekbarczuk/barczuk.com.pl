@@ -178,7 +178,7 @@
       display: grid;
       width: min(380px, calc(100vw - 32px));
       padding: 12px;
-      border: 1px solid #b9cdff;
+      border: 1px solid var(--line);
       border-radius: 0;
       background: #fff;
       box-shadow: 0 22px 60px rgba(28, 92, 255, 0.16);
@@ -206,8 +206,16 @@
 
     .nav-dropdown-menu a:hover,
     .nav-dropdown-menu a:focus-visible {
-      background: var(--accent);
-      color: #fff;
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .nav-dropdown-menu a:hover strong,
+    .nav-dropdown-menu a:focus-visible strong {
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 5px;
     }
 
     .nav-service-marker,
