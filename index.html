@@ -196,7 +196,7 @@
 
     .nav-dropdown-menu a {
       display: grid;
-      grid-template-columns: 34px 1fr;
+      grid-template-columns: 30px 1fr;
       gap: 12px;
       align-items: start;
       padding: 14px;
@@ -211,10 +211,14 @@
       color: #fff;
     }
 
-    .nav-dropdown-menu span {
-      color: #8fb0ff;
-      font-size: 12px;
-      font-weight: 720;
+    .nav-service-marker,
+    .service-marker {
+      display: block;
+      width: 22px;
+      height: 3px;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: #8fb0ff;
     }
 
     .nav-dropdown-menu strong {
@@ -374,12 +378,12 @@
       outline: none;
     }
 
-    .service-number {
+    .service-marker {
       display: block;
-      margin-bottom: 24px;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 720;
+      width: 28px;
+      margin-top: 0;
+      margin-bottom: 45px;
+      background: var(--accent);
     }
 
     .service h3 {
@@ -578,6 +582,7 @@
     }
 
     .footer-brand {
+      width: max-content;
       margin: 0 0 22px;
       color: #fff;
       font-size: clamp(34px, 4.5vw, 58px);
@@ -585,6 +590,16 @@
       letter-spacing: -0.045em;
       line-height: 1.08;
       text-wrap: balance;
+    }
+
+    .footer-brand-line {
+      display: block;
+    }
+
+    .footer-brand-last {
+      width: 81.5%;
+      transform: scaleX(1.227);
+      transform-origin: left center;
     }
 
     .footer-description {
@@ -793,7 +808,7 @@
   <header>
     <div class="shell nav">
       <a class="logo" href="#top" aria-label="BARCZUK — strona główna">
-        <span class="logo-mark" aria-hidden="true">FT</span>
+        <span class="logo-mark" aria-hidden="true">SB</span>
         <span class="logo-text">FINANSE I TECHNOLOGIE</span>
       </a>
 
@@ -802,15 +817,15 @@
           <summary>Usługi</summary>
           <div class="nav-dropdown-menu">
             <a href="/uslugi/finanse-i-analiza-biznesowa/">
-              <span>01</span>
+              <span class="nav-service-marker" aria-hidden="true"></span>
               <strong>Finanse i analiza biznesowa</strong>
             </a>
             <a href="/uslugi/doradztwo-i-zarzadzanie/">
-              <span>02</span>
+              <span class="nav-service-marker" aria-hidden="true"></span>
               <strong>Doradztwo i zarządzanie</strong>
             </a>
             <a href="/uslugi/it-i-automatyzacja/">
-              <span>03</span>
+              <span class="nav-service-marker" aria-hidden="true"></span>
               <strong>IT i automatyzacja</strong>
             </a>
           </div>
@@ -855,7 +870,7 @@
 
         <div class="services">
           <a class="service" href="/uslugi/finanse-i-analiza-biznesowa/">
-            <span class="service-number">01</span>
+            <span class="service-marker" aria-hidden="true"></span>
             <h3>Finanse i analiza biznesowa</h3>
             <p>
               Analiza wyników, planowanie finansowe, budżetowanie i porządkowanie
@@ -865,7 +880,7 @@
           </a>
 
           <a class="service" href="/uslugi/doradztwo-i-zarzadzanie/">
-            <span class="service-number">02</span>
+            <span class="service-marker" aria-hidden="true"></span>
             <h3>Doradztwo i zarządzanie</h3>
             <p>
               Usprawnianie procesów, wsparcie projektów, przygotowanie rozwiązań
@@ -875,7 +890,7 @@
           </a>
 
           <a class="service" href="/uslugi/it-i-automatyzacja/">
-            <span class="service-number">03</span>
+            <span class="service-marker" aria-hidden="true"></span>
             <h3>IT i automatyzacja</h3>
             <p>
               Dobór i integracja narzędzi, automatyzacja pracy, środowisko
@@ -967,41 +982,16 @@
       </div>
     </section>
 
-    <section class="legal" id="prywatnosc">
-      <div class="shell legal-grid">
-        <div>
-          <p class="section-label">Informacje prawne</p>
-          <h2>Prywatność</h2>
-        </div>
-        <div class="legal-copy">
-          <p>
-            Administratorem danych osobowych jest Sławomir Barczuk. Adres rejestrowy:
-            ul. Wyspiańskiego 12 lok. 16, 39-400 Tarnobrzeg. NIP 8671417151,
-            REGON 523942958. Kontakt:
-            <a href="mailto:kontakt@barczuk.com.pl">kontakt@barczuk.com.pl</a>.
-            Dane przekazane w wiadomości e-mail są przetwarzane w celu obsługi
-            zapytania, podjęcia działań przed zawarciem umowy lub prowadzenia
-            korespondencji, a następnie przez okres niezbędny do zakończenia sprawy
-            i zabezpieczenia ewentualnych roszczeń.
-            Strona korzysta z Cloudflare Web Analytics do zbiorczego pomiaru ruchu.
-            Usługa nie wykorzystuje plików cookie ani pamięci lokalnej przeglądarki
-            i nie służy do identyfikowania poszczególnych odwiedzających. Dane mogą
-            być przetwarzane przez dostawców hostingu, poczty i analityki w zakresie
-            koniecznym do świadczenia tych usług.
-            Osobie, której dane dotyczą, przysługuje prawo dostępu do danych,
-            ich sprostowania, usunięcia lub ograniczenia przetwarzania, wniesienia
-            sprzeciwu oraz skargi do Prezesa Urzędu Ochrony Danych Osobowych.
-          </p>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer>
     <div class="shell">
       <div class="footer-main">
         <div>
-          <p class="footer-brand">Barczuk</p>
+          <p class="footer-brand">
+            <span class="footer-brand-line">Sławomir</span>
+            <span class="footer-brand-line footer-brand-last">Barczuk</span>
+          </p>
           <p class="footer-description">
             Finanse, zarządzanie i technologia połączone w praktyczne rozwiązania,
             które pomagają firmom podejmować lepsze decyzje i sprawniej działać.
@@ -1029,9 +1019,9 @@
         <div class="footer-data">
           <p class="footer-title">Informacje</p>
           <div class="footer-links">
-            <a href="#prywatnosc">Prywatność</a>
-            <span>NIP 8671417151</span>
-            <span>REGON 523942958</span>
+            <a href="/informacje/prywatnosc/">Prywatność</a>
+            <a href="/informacje/cookies/">Pliki cookie</a>
+            <a href="/informacje/informacje-prawne/">Informacje prawne</a>
           </div>
         </div>
       </div>
