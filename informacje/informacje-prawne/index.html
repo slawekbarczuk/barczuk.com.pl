@@ -4,11 +4,140 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Dane rejestrowe, kontaktowe i informacje prawne dotyczące działalności Sławomira Barczuka.">
+  <meta name="description" content="Dane przedsiębiorcy, informacje o ochronie danych osobowych oraz poufności korespondencji prowadzonej przez Sławomira Barczuka.">
   <link rel="canonical" href="https://www.barczuk.com.pl/informacje/informacje-prawne/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/informacje/style.css">
-  <title>Informacje prawne | Barczuk</title>
+  <title>Informacje prawne i ochrona danych | Barczuk</title>
+  <style>
+    .business-subtitle {
+      margin: -4px 0 24px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .legal-summary {
+      margin-top: 28px;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--soft);
+    }
+
+    .legal-summary p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .accordion-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .accordion {
+      overflow: hidden;
+      scroll-margin-top: 100px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .accordion summary {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: 24px 26px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .accordion summary::after {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid rgba(28, 92, 255, 0.22);
+      border-radius: 50%;
+      color: var(--accent);
+      content: "+";
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .accordion[open] summary {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .accordion[open] summary::after {
+      content: "−";
+    }
+
+    .accordion-title {
+      display: block;
+      color: var(--ink);
+      font-size: clamp(22px, 2.8vw, 30px);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.18;
+    }
+
+    .accordion-intro {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .accordion-body {
+      padding: 28px 26px 30px;
+    }
+
+    .policy-block + .policy-block {
+      margin-top: 26px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .policy-block h3 {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 19px;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+
+    .policy-block p,
+    .policy-block li {
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .policy-block a {
+      color: var(--accent);
+    }
+
+    .updated {
+      margin-top: 24px;
+      color: #8a9099;
+      font-size: 12px;
+    }
+
+    @media (max-width: 560px) {
+      .accordion summary,
+      .accordion-body {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -21,36 +150,107 @@
     <section class="hero">
       <div class="shell">
         <p class="eyebrow">Informacje</p>
-        <h1>Informacje prawne</h1>
-        <p class="lead">Dane identyfikujące przedsiębiorcę prowadzącego stronę oraz podstawowe zasady korzystania z publikowanych treści.</p>
+        <h1>Informacje prawne i ochrona danych</h1>
+        <p class="lead">Dane przedsiębiorcy, zasady przetwarzania danych związanych z kontaktem i korespondencją oraz informacje o poufności wiadomości.</p>
       </div>
     </section>
     <section class="content">
       <div class="shell content-grid">
         <p class="section-label">Dane przedsiębiorcy</p>
         <div class="article">
-          <section>
+          <section id="dane-przedsiebiorcy">
             <h2>Sławomir Barczuk</h2>
+            <p class="business-subtitle">Doradztwo biznesowe i rozwiązania IT</p>
             <dl class="details">
-              <div><dt>Adres rejestrowy</dt><dd>ul. Wyspiańskiego 12 lok. 16, 39-400 Tarnobrzeg</dd></div>
+              <div><dt>Firma</dt><dd>Sławomir Barczuk</dd></div>
               <div><dt>NIP</dt><dd>8671417151</dd></div>
               <div><dt>REGON</dt><dd>523942958</dd></div>
               <div><dt>E-mail</dt><dd><a href="mailto:kontakt@barczuk.com.pl">kontakt@barczuk.com.pl</a></dd></div>
               <div><dt>Telefon</dt><dd><a href="tel:+48422031057">+48&nbsp;42&nbsp;203&nbsp;10&nbsp;57</a></dd></div>
+              <div><dt>Rejestr</dt><dd>Działalność wpisana do Centralnej Ewidencji i Informacji o Działalności Gospodarczej</dd></div>
             </dl>
+            <div class="legal-summary">
+              <p>Strona ma charakter informacyjny i przedstawia obszary możliwej współpracy. Opisy usług nie stanowią oferty w rozumieniu przepisów Kodeksu cywilnego. Zakres, warunki i wynagrodzenie są każdorazowo ustalane indywidualnie.</p>
+              <p>Publikowane materiały mają charakter ogólny i nie stanowią porady prawnej, podatkowej ani inwestycyjnej odnoszącej się do konkretnej sytuacji. Treści, układ i elementy identyfikacji strony są chronione prawem.</p>
+            </div>
           </section>
-          <section>
-            <h2>Charakter strony</h2>
-            <p>Strona ma charakter informacyjny i przedstawia obszary możliwej współpracy. Opisy usług nie stanowią oferty w rozumieniu przepisów Kodeksu cywilnego. Zakres, warunki i wynagrodzenie są każdorazowo ustalane indywidualnie.</p>
-          </section>
-          <section>
-            <h2>Odpowiedzialność za treści</h2>
-            <p>Informacje publikowane na stronie mają charakter ogólny i nie stanowią porady prawnej, podatkowej ani inwestycyjnej odnoszącej się do konkretnej sytuacji. Decyzje biznesowe powinny uwzględniać pełne okoliczności danej sprawy oraz aktualny stan prawny.</p>
-          </section>
-          <section>
-            <h2>Prawa do materiałów</h2>
-            <p>Treści, układ i elementy identyfikacji strony są chronione prawem. Ich wykorzystanie wykraczające poza dozwolony użytek wymaga wcześniejszej zgody, z wyjątkiem materiałów należących do wskazanych dostawców zewnętrznych.</p>
-          </section>
+
+          <div class="accordion-list">
+            <details class="accordion" id="ochrona-danych">
+              <summary>
+                <span>
+                  <span class="accordion-title">Ochrona danych osobowych</span>
+                  <span class="accordion-intro">Informacje dotyczące danych przetwarzanych podczas kontaktu, korespondencji i współpracy.</span>
+                </span>
+              </summary>
+              <div class="accordion-body">
+                <div class="policy-block">
+                  <h3>Administrator danych</h3>
+                  <p>Administratorem danych osobowych jest Sławomir Barczuk, prowadzący działalność gospodarczą pod firmą Sławomir Barczuk, ul. Wyspiańskiego 12 lok. 16, 39-400 Tarnobrzeg, NIP 8671417151, REGON 523942958.</p>
+                  <p>W sprawach dotyczących przetwarzania danych można kontaktować się pod adresem <a href="mailto:kontakt@barczuk.com.pl">kontakt@barczuk.com.pl</a> lub telefonicznie pod numerem <a href="tel:+48422031057">+48&nbsp;42&nbsp;203&nbsp;10&nbsp;57</a>.</p>
+                </div>
+
+                <div class="policy-block">
+                  <h3>Zakres przetwarzanych danych</h3>
+                  <p>W związku z prowadzoną korespondencją i współpracą mogą być przetwarzane w szczególności: imię i nazwisko, stanowisko, nazwa reprezentowanej organizacji, adres poczty elektronicznej, numer telefonu, treść korespondencji, dane zawarte w przekazywanych dokumentach oraz inne informacje podane dobrowolnie w związku z prowadzoną sprawą.</p>
+                </div>
+
+                <div class="policy-block">
+                  <h3>Cele i podstawy przetwarzania</h3>
+                  <p>Dane mogą być przetwarzane w celu prowadzenia korespondencji, udzielania odpowiedzi i obsługi zgłoszeń, podjęcia działań przed zawarciem umowy, zawarcia i wykonania umowy, realizacji obowiązków wynikających z przepisów prawa oraz ustalenia, dochodzenia lub obrony przed roszczeniami.</p>
+                  <p>Podstawą przetwarzania jest odpowiednio: podjęcie działań na żądanie osoby przed zawarciem umowy lub wykonanie umowy, obowiązek prawny administratora albo prawnie uzasadniony interes polegający na prowadzeniu komunikacji, obsłudze spraw i ochronie przed roszczeniami.</p>
+                </div>
+
+                <div class="policy-block">
+                  <h3>Odbiorcy danych</h3>
+                  <p>Dane mogą być powierzane podmiotom wspierającym administratora w prowadzeniu działalności, w szczególności dostawcom usług poczty elektronicznej, Microsoft 365, hostingu, rozwiązań chmurowych, obsługi informatycznej, księgowej, prawnej i doradczej — wyłącznie w zakresie niezbędnym do realizacji tych usług. Dane mogą być również udostępniane podmiotom uprawnionym na podstawie przepisów prawa.</p>
+                </div>
+
+                <div class="policy-block">
+                  <h3>Przekazywanie danych poza Europejski Obszar Gospodarczy</h3>
+                  <p>Niektórzy dostawcy usług informatycznych mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym. W takim przypadku przekazanie następuje na podstawie mechanizmów dopuszczonych przez przepisy o ochronie danych oraz z zastosowaniem wymaganych zabezpieczeń.</p>
+                </div>
+
+                <div class="policy-block">
+                  <h3>Okres przechowywania</h3>
+                  <p>Dane są przechowywane przez okres potrzebny do prowadzenia i zakończenia korespondencji lub współpracy, a następnie przez czas wynikający z obowiązujących przepisów oraz okres niezbędny do ustalenia, dochodzenia lub obrony przed ewentualnymi roszczeniami.</p>
+                </div>
+
+                <div class="policy-block">
+                  <h3>Prawa osób, których dane dotyczą</h3>
+                  <p>W zakresie przewidzianym przez przepisy przysługuje prawo dostępu do danych i uzyskania ich kopii, sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych oraz wniesienia sprzeciwu. Przysługuje również prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</p>
+                </div>
+
+                <div class="policy-block">
+                  <h3>Źródło danych i dobrowolność ich podania</h3>
+                  <p>Dane są najczęściej pozyskiwane bezpośrednio od osoby, której dotyczą. Mogą również pochodzić od organizacji, którą dana osoba reprezentuje, od innych uczestników korespondencji, kontrahentów, partnerów biznesowych albo z publicznie dostępnych rejestrów i źródeł.</p>
+                  <p>Podanie danych jest dobrowolne, jednak może być niezbędne do udzielenia odpowiedzi, prowadzenia korespondencji, przygotowania oferty albo zawarcia i realizacji umowy.</p>
+                </div>
+
+                <div class="policy-block">
+                  <h3>Zautomatyzowane podejmowanie decyzji</h3>
+                  <p>Dane przetwarzane w związku z kontaktem i korespondencją nie są wykorzystywane do podejmowania decyzji w sposób wyłącznie zautomatyzowany ani do profilowania.</p>
+                </div>
+
+                <p class="updated">Ostatnia aktualizacja: 29 lipca 2026 r.</p>
+              </div>
+            </details>
+
+            <details class="accordion" id="poufnosc-korespondencji">
+              <summary>
+                <span>
+                  <span class="accordion-title">Poufność korespondencji</span>
+                  <span class="accordion-intro">Zasady postępowania z wiadomością otrzymaną przez niezamierzonego adresata.</span>
+                </span>
+              </summary>
+              <div class="accordion-body">
+                <div class="policy-block">
+                  <p>Wiadomości przesyłane przez Sławomira Barczuka oraz ich załączniki mogą zawierać informacje poufne, prawnie chronione lub stanowiące tajemnicę przedsiębiorstwa.</p>
+                  <p>Jeżeli wiadomość została otrzymana przez osobę niebędącą jej zamierzonym adresatem, proszę o niezwłoczne poinformowanie nadawcy oraz trwałe usunięcie wiadomości i załączników. Kopiowanie, rozpowszechnianie lub wykorzystywanie takiej korespondencji bez zgody nadawcy jest niedozwolone.</p>
+                </div>
+              </div>
+            </details>
+          </div>
         </div>
       </div>
     </section>
@@ -61,11 +261,17 @@
         <p class="footer-brand"><span>Sławomir</span><span>Barczuk</span></p>
         <div><p class="footer-title">Usługi</p><div class="footer-links"><a href="/uslugi/finanse-i-analiza-biznesowa/">Finanse i analiza</a><a href="/uslugi/doradztwo-i-zarzadzanie/">Doradztwo i zarządzanie</a><a href="/uslugi/it-i-automatyzacja/">IT i automatyzacja</a></div></div>
         <div><p class="footer-title">Kontakt</p><div class="footer-links"><a href="mailto:kontakt@barczuk.com.pl">kontakt@barczuk.com.pl</a><a href="tel:+48422031057">+48&nbsp;42&nbsp;203&nbsp;10&nbsp;57</a></div></div>
-        <div><p class="footer-title">Informacje</p><div class="footer-links"><a href="/informacje/prywatnosc/">Prywatność</a><a href="/informacje/cookies/">Pliki cookie</a><a href="/informacje/informacje-prawne/">Informacje prawne</a></div></div>
+        <div><p class="footer-title">Informacje</p><div class="footer-links"><a href="/informacje/informacje-prawne/#ochrona-danych">Ochrona danych</a><a href="/informacje/cookies/">Pliki cookie</a><a href="/informacje/informacje-prawne/">Informacje prawne</a></div></div>
       </div>
       <div class="footer-bottom"><span>© 2026 barczuk.com.pl</span><span>Sławomir Barczuk</span></div>
     </div>
   </footer>
+  <script>
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target && target.tagName === "DETAILS") target.open = true;
+    }
+  </script>
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"21e58149fb274d91ae50afc5ee2db83c"}'></script>
 </body>
 </html>
