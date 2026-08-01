@@ -63,15 +63,11 @@ header {
   height: 42px;
   flex: 0 0 42px;
   place-items: center;
-  border: 1px solid rgba(28, 92, 255, 0.2);
-  border-radius: 12px;
-  background: rgba(28, 92, 255, 0.055);
   color: var(--accent);
-  font-size: 35px;
+  font-size: 40px;
   font-weight: 780;
   letter-spacing: -0.045em;
   line-height: 1;
-  padding-bottom: 3px;
 }
 
 .logo-text {
