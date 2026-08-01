@@ -265,6 +265,11 @@ footer {
   font-size: 12px;
 }
 
+.site-version {
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
 @media (max-width: 820px) {
   .content-grid,
   .footer-main {
