@@ -1,11 +1,12 @@
 "use strict";
 const { app } = require("@azure/functions");
 const crypto = require("node:crypto");
+const { allowSubmission } = require("./rate-limit");
 
 // Operational controls (real Azure/Cloudflare configuration must be verified independently).
 
 const env = (name) => String(process.env[name] || "").trim();
-const required = ["CONTACT_FORM_ENABLED", "CONTACT_PRIVACY_READY", "CONTACT_RATE_LIMIT_READY", "TURNSTILE_SITE_KEY", "TURNSTILE_SECRET", "MAIL_TENANT_ID", "MAIL_CLIENT_ID", "MAIL_CLIENT_SECRET", "MAILBOX_USER", "MAIL_TO"];
+const required = ["CONTACT_FORM_ENABLED", "CONTACT_PRIVACY_READY", "CONTACT_RATE_LIMIT_READY", "TURNSTILE_SITE_KEY", "TURNSTILE_SECRET", "MAIL_TENANT_ID", "MAIL_CLIENT_ID", "MAIL_CLIENT_SECRET", "MAILBOX_USER", "MAIL_TO", "RATE_LIMIT_TABLE_CONNECTION_STRING"];
 const configured = () => required.every(name => !!env(name)) &&
   ["CONTACT_FORM_ENABLED", "CONTACT_PRIVACY_READY", "CONTACT_RATE_LIMIT_READY"].every(name => env(name) === "true");
 
@@ -119,6 +120,15 @@ app.http("contact", {
       const proof = normal(data.turnstileToken,2048);
       if (!proof || proof.length > 2048 || !(await turnstileVerified(proof))) {
         return json(400,{ok:false,error:"verification_failed"});
+      }
+      // Enforced in shared Azure Table Storage after a genuine Turnstile proof.
+      // A storage outage fails closed: no e-mail is sent.
+      try {
+        const allowed = await allowSubmission(fields.email);
+        if (!allowed) return json(429,{ok:false,error:"rate_limited"});
+      } catch (_error) {
+        context.error("Contact quota storage unavailable");
+        return json(503,{ok:false,error:"quota_unavailable"});
       }
       const id = await sendMail(fields);
       return json(202,{ok:true, id});
