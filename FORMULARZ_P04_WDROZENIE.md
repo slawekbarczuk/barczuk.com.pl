@@ -20,7 +20,7 @@
 ## Co musi zostać skonfigurowane w Azure Static Web Apps — Application settings
 - CONTACT_FORM_ENABLED = true (dopiero po testach i polityce).
 - CONTACT_PRIVACY_READY = true (dopiero po publikacji prawidłowej klauzuli).
-- CONTACT_RATE_LIMIT_READY = true (dopiero po rzeczywistym wdrożeniu limitowania ruchu do endpointu).
+- CONTACT_RATE_LIMIT_READY = true (dopiero po rzeczywistym wdrożeniu i teście licznika w Azure Table Storage).
 - TURNSTILE_SITE_KEY = publiczny klucz witryny z Cloudflare Turnstile.
 - TURNSTILE_SECRET = sekret; tylko po stronie serwera.
 - CONTACT_ALLOWED_HOSTNAMES = www.barczuk.com.pl,barczuk.com.pl (lub uzupełnione o nazwę środowiska testowego).
@@ -29,13 +29,18 @@
 - MAIL_CLIENT_SECRET = sekret OAuth aplikacji; tylko serwer.
 - MAILBOX_USER = adres uprawnionej skrzynki nadawczej.
 - MAIL_TO = kontakt@barczuk.com.pl.
+- RATE_LIMIT_TABLE_CONNECTION_STRING = poufny connection string do osobnego Azure Table Storage (tabela ContactLimitP04); tylko API. Tabela nie zawiera adresów e-mail, IP ani treści zgłoszeń: używa ograniczonych kluczy liczników modulo, dzięki czemu nie przybywają rekordy w nieskończoność.
 
-Microsoft Graph wymaga uprawnienia aplikacyjnego Mail.Send (zgoda administratora), możliwie ograniczonego do konkretnej skrzynki przez Exchange Online Application RBAC. Nie umieszczać haseł i kluczy w GitHub. Obecnie **nie skonfigurowano** żadnych takich sekretów.
+WAŻNE: Przełącznik RATE_LIMIT_READY bez działającej tabeli nie jest dowodem bezpieczeństwa. Połączenie do storage jest dodatkowym wymaganiem bramki konfiguracyjnej i kod wywołuje realny licznik przed wysyłką poczty.
+
+Aktualny stan: licznik zakodowany w gałęzi roboczej; zasób Storage musi jeszcze zostać utworzony i przetestowany. Nie scalać z main.
+
+Microsoft Graph wymaga uprawnienia aplikacyjnego Mail.Send (zgoda administratora), możliwie ograniczonego do konkretnej skrzynki przez Exchange Online Application RBAC. Nie umieszczać haseł i kluczy w GitHub. Stan 13.11.2026: aplikacja Entra, ograniczenie Exchange Application RBAC, sekret w środowisku testowym 1 oraz Cloudflare Turnstile zostały skonfigurowane; test Graph HTTP 202 potwierdzono doręczeniem do skrzynki. Produkcja nadal wyłączona.
 
 ## Wymagane testy przed scaleniem
 1. Sprawdzić, że brak konfiguracji = API 503, a formularz ma nieaktywny przycisk.
 2. Sprawdzić hosty Turnstile, action=contact, tokeny wygasłe i boty.
-3. Ustawić skuteczne limity zgłoszeń / ochronę przed automatyzacją po stronie serwera lub usługi brzegowej.
+3. Wdrożyć na Azure Table Storage ograniczenia zgłoszeń: maks. 4 na godzinę na kubełek nadawcy (hash 12-bitowy, bez zapisu adresu), 12 na 10 minut globalnie, 80 dziennie globalnie. Zgodność liczników przy współbieżności przez ETag; awaria storage blokuje wysyłkę. Ustawić RATE_LIMIT_TABLE_CONNECTION_STRING jedynie w środowisku 1, utworzyć tabelę ContactLimitP04 i sprawdzić limit w integracji.
 4. Zweryfikować ograniczenie uprawnień konta wysyłkowego, tożsamość nadawcy, dostarczenie do kontakt@barczuk.com.pl i Reply-To.
 5. Test tylko e-maila; test pełnego formularza; błąd wysyłki; duplikat; telefon i międzynarodowy numer.
 6. Uzupełnić i opublikować politykę prywatności po ustaleniu retencji zakończonych zapytań i logów, dostawców i ewentualnych transferów.
