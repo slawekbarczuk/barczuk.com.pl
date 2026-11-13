@@ -1,0 +1,8 @@
+{
+  "name": "barczuk-contact-api",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/functions.js",
+  "engines": {"node": ">=20"},
+  "dependencies": {"@azure/functions": "^4.7.0"}
+}
