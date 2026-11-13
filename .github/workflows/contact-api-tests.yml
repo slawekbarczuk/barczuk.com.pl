@@ -14,4 +14,4 @@ jobs:
         with:
           node-version: '22'
       - name: Test kontaktowego API
-        run: node --test tests/contact.test.cjs
+        run: node --test tests/*.test.cjs
