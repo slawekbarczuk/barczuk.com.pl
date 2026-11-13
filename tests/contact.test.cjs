@@ -10,12 +10,15 @@ const validEnv={
  TURNSTILE_SITE_KEY:"test-site", TURNSTILE_SECRET:"test-secret",
  MAIL_TENANT_ID:"12345678-1234-1234-1234-123456789abc",
  MAIL_CLIENT_ID:"test-client",MAIL_CLIENT_SECRET:"test-client-secret",
- MAILBOX_USER:"mailbox@example.test",MAIL_TO:"destination@example.test"
+ MAILBOX_USER:"mailbox@example.test",MAIL_TO:"destination@example.test",
+ RATE_LIMIT_TABLE_CONNECTION_STRING:"test-table-connection"
 };
 function harness(custom={}, fetchImpl=async()=>{throw Error("Unexpected fetch");}){
  const routes={}; const logs=[];
  const ctx={
-  require:(name)=>name==="@azure/functions"?{app:{http:(name,config)=>{routes[name]=config.handler;}}}:require(name),
+  require:(name)=>name==="@azure/functions"
+    ? {app:{http:(name,config)=>{routes[name]=config.handler;}}}
+    : name==="./rate-limit" ? {allowSubmission:async()=>true} : require(name),
   process:{env:{...custom}},fetch:fetchImpl,
   Response,Request,URLSearchParams,AbortSignal,Date,JSON,String,Array,Number,RegExp,Error,console,
  };
