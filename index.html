@@ -133,6 +133,7 @@ dialog{border:0;padding:42px;width:min(760px,calc(100% - 32px));max-height:85vh;
     msg("Przekazuję prośbę o kontakt…");
     try{
       const res=await fetch(form.action,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:String(data.get("email")||"").trim(),phone:String(data.get("phone")||"").trim(),company:String(data.get("company")||"").trim(),message:String(data.get("message")||"").trim(),website:String(data.get("website")||""),turnstileToken})});
+      if(res.status===429){msg("Zbyt wiele zgłoszeń w krótkim czasie. Spróbuj później albo napisz na kontakt@barczuk.com.pl.");return;}
       if(!res.ok){throw new Error("Server rejected request");}
       form.reset();msg("Prośba została przyjęta do wysyłki. Dziękuję za kontakt.");
     }catch(_e){msg("Nie udało się wysłać formularza. Wpisane dane pozostały w formularzu. Możesz też napisać na kontakt@barczuk.com.pl.");}
