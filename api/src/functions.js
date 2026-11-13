@@ -2,6 +2,8 @@
 const { app } = require("@azure/functions");
 const crypto = require("node:crypto");
 
+// Operational controls (real Azure/Cloudflare configuration must be verified independently).
+
 const env = (name) => String(process.env[name] || "").trim();
 const required = ["CONTACT_FORM_ENABLED", "CONTACT_PRIVACY_READY", "CONTACT_RATE_LIMIT_READY", "TURNSTILE_SITE_KEY", "TURNSTILE_SECRET", "MAIL_TENANT_ID", "MAIL_CLIENT_ID", "MAIL_CLIENT_SECRET", "MAILBOX_USER", "MAIL_TO"];
 const configured = () => required.every(name => !!env(name)) &&
@@ -88,15 +90,24 @@ app.http("contact", {
   methods: ["POST"], authLevel: "anonymous", route: "contact",
   handler: async (request, context) => {
     if (!configured()) return json(503, {ok:false, error:"unavailable"});
+    // Cross-site requests are not part of the intended contact workflow.
+    const origin = String(request.headers.get("origin") || "");
+    const allowedOrigins = (env("CONTACT_ALLOWED_ORIGINS") || "https://www.barczuk.com.pl,https://barczuk.com.pl")
+      .split(",").map(x => x.trim().toLowerCase()).filter(Boolean);
+    if (origin && !allowedOrigins.includes(origin.toLowerCase())) {
+      return json(403, {ok:false, error:"invalid_origin"});
+    }
     const ct = request.headers.get("content-type") || "";
     const len = Number(request.headers.get("content-length") || "0");
-    if (!ct.toLowerCase().startsWith("application/json") || len > 20000) return json(415,{ok:false,error:"invalid_request"});
+    if (!ct.toLowerCase().startsWith("application/json")) return json(415,{ok:false,error:"invalid_request"});
+    if (len > 20000) return json(413,{ok:false,error:"too_large"});
     try {
       const raw = await request.text();
       if (raw.length > 20000) return json(413,{ok:false,error:"too_large"});
-      const data = JSON.parse(raw);
+      let data;
+      try { data = JSON.parse(raw); } catch { return json(400, {ok:false,error:"invalid_json"}); }
       if (!data || typeof data !== "object" || Array.isArray(data)) return json(400,{ok:false,error:"invalid_request"});
-      if (typeof data.website === "string" && data.website.trim()) return json(202,{ok:true}); // Honeypot; no email sent
+      if (typeof data.website === "string" && data.website.trim()) return json(202,{ok:true}); // Honeypot, intentionally no mail.
       const fields = {
         email: normal(data.email,254), phone:normal(data.phone,40),
         company:normal(data.company,160), message:normal(data.message,3000)
@@ -106,7 +117,9 @@ app.http("contact", {
         return json(400,{ok:false,error:"invalid_fields"});
       }
       const proof = normal(data.turnstileToken,2048);
-      if (!proof || !(await turnstileVerified(proof))) return json(400,{ok:false,error:"verification_failed"});
+      if (!proof || proof.length > 2048 || !(await turnstileVerified(proof))) {
+        return json(400,{ok:false,error:"verification_failed"});
+      }
       const id = await sendMail(fields);
       return json(202,{ok:true, id});
     } catch (error) {
