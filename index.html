@@ -121,7 +121,9 @@ dialog{border:0;padding:42px;width:min(760px,calc(100% - 32px));max-height:85vh;
         widgetId=window.turnstile.render(captcha,{sitekey:config.siteKey,action:"contact",callback:function(token){turnstileToken=token;active=true;submit.disabled=false;msg("");}, "expired-callback":function(){turnstileToken="";submit.disabled=true;msg("Weryfikacja wygasła. Powtórz weryfikację antyspamową.");}, "error-callback":function(){turnstileToken="";submit.disabled=true;msg("Nie udało się przeprowadzić weryfikacji. Możesz napisać bezpośrednio na kontakt@barczuk.com.pl.");}});
       };
       document.head.append(js);
-      msg("Przed wysłaniem przejdź krótką weryfikację antyspamową.");
+      msg(config.previewOnly
+        ? "Wersja testowa P04. Wpisz wyłącznie własne dane testowe, nie dane klientów. Przed wysłaniem przejdź weryfikację antyspamową."
+        : "Przed wysłaniem przejdź krótką weryfikację antyspamową.");
     }catch(_e){/* Fail closed; keep direct mail contact visible. */}
   }
   form.addEventListener("submit",async function(ev){
