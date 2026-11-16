@@ -25,3 +25,25 @@ test("R09 privacy information includes approved retention and actual processors"
  assert.match(section,/Azure Table Storage/);
  assert.doesNotMatch(section,/Okres retencji korespondencji .*zostanie doprecyzowany/);
 });
+
+const releasePages=[
+ "index.html","informacje/informacje-prawne/index.html",
+ "informacje/prywatnosc/index.html","informacje/cookies/index.html",
+ "uslugi/finanse-i-analiza-biznesowa/index.html","uslugi/uslugi-prawnicze/index.html",
+ "uslugi/doradztwo-i-zarzadzanie/index.html","uslugi/it-i-automatyzacja/index.html"
+];
+test("R09 footer version on eight pages",()=>{
+ for(const page of releasePages){
+   const html=fs.readFileSync(path.join(root,page),"utf8");
+   const matches=[...html.matchAll(/SB-WEB-1126-R0\d/g)];
+   assert.deepEqual(matches.map(m=>m[0]),["SB-WEB-1126-R09"],page);
+ }
+});
+test("R09 sitemap covers eight updated pages",()=>{
+ const xml=fs.readFileSync(path.join(root,"sitemap.xml"),"utf8");
+ const locs=[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)];
+ const mods=[...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)];
+ assert.equal(locs.length,8);
+ assert.equal(mods.length,8);
+ assert.ok(mods.every(m=>m[1]==="2026-11-16"));
+});
