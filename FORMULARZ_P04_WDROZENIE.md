@@ -55,3 +55,10 @@ W Work P04 był wyłącznie podglądem, który nigdy nic nie wysyłał. Nie zatw
 - CONTACT_TEST_ONLY=true, CONTACT_TEST_EMAIL=slawek@barczuk.pl, CONTACT_PREVIEW_ORIGIN=https://icy-plant-075f22e03-1.westeurope.2.azurestaticapps.net, CONTACT_TEST_UNTIL=<data UTC nie dalej niż 45 minut w przyszłość>.
 - Na czas próby środowisko 1: CONTACT_FORM_ENABLED=true, CONTACT_RATE_LIMIT_READY=true, ale CONTACT_PRIVACY_READY=false. API dopuszcza wtedy wyłącznie dokładnie wskazany adres e-mail, Origin podglądu i czasowy termin, po którym samo przestaje działać.
 - Po teście przełączniki testowe wyłączyć. Na produkcję nie przenosić CONTACT_TEST_ONLY i innych zmiennych testowych. Włączenie produkcji dopiero po zatwierdzeniu rzeczywistej retencji i informacji RODO, a następnie pełnym teście.
+
+## R09 - decyzje 16.11.2026 (wprowadzone na gałęzi PR #1)
+
+- Sekcja **O mnie**: wielki napis z imieniem i nazwiskiem zastąpiono dwuwierszowym hasłem **„Doradztwo / dla biznesu”** z zachowaniem żółtego kwadratu. Pozostawiono podpis osoby w stopce i danych formalnych. Dodano typografię responsywną, zwłaszcza na telefonach.
+- Polityka prywatności: zaakceptowano okres **do 12 miesięcy od zakończenia sprawy** dla zapytań, które nie doprowadziły do współpracy, z wyjątkiem obowiązku prawnego i roszczeń. Doprecyzowano Microsoft 365/Graph/Azure/Cloudflare oraz liczniki Storage.
+- Potwierdzony test end-to-end 16.11.2026: wiadomość o identyfikatorze **1cfca1b3-be60-40ba-9229-9ff843f452af** wysłana z wersji PR i odebrana w kontakt@barczuk.com.pl 10:15 czasu warszawskiego. Testowa aktywacja wyłączona.
+- Zadania przed produkcją: przyjąć rzeczywisty proces zamykania zapytań i usuwania korespondencji po 12 miesiącach, sprawdzić wpływ retencji/policy Microsoft 365; zweryfikować wszystkie urządzenia i dostępność; ustawić w produkcyjnym środowisku Azure wyłącznie wymagane zmienne (bez CONTACT_TEST_ONLY), sprawdzić Turnstile dla domen produkcyjnych i limity, wdrożyć R09 jednocześnie na 8 podstronach, potwierdzić rzeczywistą wysyłkę z produkcji. Do tego czasu nie scalać PR.
