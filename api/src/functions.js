@@ -8,19 +8,24 @@ const { allowSubmission } = require("./rate-limit");
 const env = (name) => String(process.env[name] || "").trim();
 const required = ["CONTACT_FORM_ENABLED", "CONTACT_PRIVACY_READY", "CONTACT_RATE_LIMIT_READY", "TURNSTILE_SITE_KEY", "TURNSTILE_SECRET", "MAIL_TENANT_ID", "MAIL_CLIENT_ID", "MAIL_CLIENT_SECRET", "MAILBOX_USER", "MAIL_TO", "RATE_LIMIT_TABLE_CONNECTION_STRING"];
 const previewMode = () => env("CONTACT_TEST_ONLY") === "true";
-const configured = () => {
-  if (!required.every(name => !!env(name)) ||
-      env("CONTACT_FORM_ENABLED") !== "true" ||
-      env("CONTACT_RATE_LIMIT_READY") !== "true") return false;
-  if (!previewMode()) return env("CONTACT_PRIVACY_READY") === "true";
-  // Preview-only test is time-boxed and restricted to one sender and origin.
+const DIAGNOSTIC_VERSION = "P04-DIAG-20261116-01";
+// Diagnostic codes describe only gate status, never secrets, token contents or user data.
+function readinessCode() {
+  if (!required.every(name => !!env(name))) return "settings_missing";
+  if (env("CONTACT_FORM_ENABLED") !== "true") return "form_disabled";
+  if (env("CONTACT_RATE_LIMIT_READY") !== "true") return "quota_disabled";
+  if (!previewMode()) return env("CONTACT_PRIVACY_READY") === "true" ? "ready" : "privacy_unapproved";
+  if (env("CONTACT_PRIVACY_READY") !== "false") return "preview_privacy_flag";
+  if (!validEmail(env("CONTACT_TEST_EMAIL"))) return "preview_email_invalid";
+  if (!/^https:\/\/[a-z0-9.-]+\.azurestaticapps\.net$/i.test(env("CONTACT_PREVIEW_ORIGIN"))) return "preview_origin_invalid";
   const expiry = Date.parse(env("CONTACT_TEST_UNTIL"));
-  const now = Date.now();
-  return env("CONTACT_PRIVACY_READY") === "false" &&
-    validEmail(env("CONTACT_TEST_EMAIL")) &&
-    /^https:\/\/[a-z0-9.-]+\.azurestaticapps\.net$/i.test(env("CONTACT_PREVIEW_ORIGIN")) &&
-    Number.isFinite(expiry) && expiry > now && expiry - now <= 45 * 60 * 1000;
-};
+  const remaining = expiry - Date.now();
+  if (!Number.isFinite(expiry)) return "preview_expiry_invalid";
+  if (remaining <= 0) return "preview_expired";
+  if (remaining > 45 * 60 * 1000) return "preview_duration_excessive";
+  return "ready";
+}
+const configured = () => readinessCode() === "ready";
 
 const json = (status, result) => ({
   status, headers: {"content-type": "application/json; charset=utf-8", "cache-control": "no-store", "x-content-type-options": "nosniff"},
@@ -29,9 +34,13 @@ const json = (status, result) => ({
 
 app.http("contact-settings", {
   methods: ["GET"], authLevel: "anonymous", route: "contact-settings",
-  handler: async () => json(200, configured()
-    ? {enabled: true, siteKey: env("TURNSTILE_SITE_KEY"), previewOnly: previewMode()}
-    : {enabled: false})
+  handler: async () => {
+    const reason = readinessCode();
+    const diagnostic = {version:DIAGNOSTIC_VERSION, code:reason, serverUtc:new Date().toISOString()};
+    return json(200, reason === "ready"
+      ? {enabled:true, siteKey:env("TURNSTILE_SITE_KEY"), previewOnly:previewMode(), diagnostic}
+      : {enabled:false, diagnostic});
+  }
 });
 
 function normal(value, limit) {
