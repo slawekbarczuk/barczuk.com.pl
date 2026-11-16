@@ -33,9 +33,9 @@
 
 WAŻNE: Przełącznik RATE_LIMIT_READY bez działającej tabeli nie jest dowodem bezpieczeństwa. Połączenie do storage jest dodatkowym wymaganiem bramki konfiguracyjnej i kod wywołuje realny licznik przed wysyłką poczty.
 
-Aktualny stan: licznik zakodowany w gałęzi roboczej; zasób Storage musi jeszcze zostać utworzony i przetestowany. Nie scalać z main.
+Stan 16.11.2026: konto stsbp04rl1dd7f6b1 i tabela ContactLimitP04 utworzone w Azure; test rzeczywistego licznika: true,true,true,true,false. Pełny test P04 z przeglądarki potwierdzony doręczeniem. Ustawienia API przeniesione do środowiska default, ale formularz pozostaje wyłączony. Nie scalać z main przed procedurą retencji i kontrolą produkcji.
 
-Microsoft Graph wymaga uprawnienia aplikacyjnego Mail.Send (zgoda administratora), możliwie ograniczonego do konkretnej skrzynki przez Exchange Online Application RBAC. Nie umieszczać haseł i kluczy w GitHub. Stan 13.11.2026: aplikacja Entra, ograniczenie Exchange Application RBAC, sekret w środowisku testowym 1 oraz Cloudflare Turnstile zostały skonfigurowane; test Graph HTTP 202 potwierdzono doręczeniem do skrzynki. Produkcja nadal wyłączona.
+Rzeczywiste uprawnienie w tej instalacji: Exchange Online Application RBAC, rola Application Mail.Send z zakresem obejmującym wyłącznie kontakt@barczuk.com.pl. W Entra nie przyznano odrębnej szerokiej zgody aplikacyjnej Mail.Send. Uwierzytelnienie client credentials i wysyłka Graph HTTP 202 zadziałały. Nie przyznawać globalnego Mail.Send w Entra: rozszerzałoby to uprawnienia poza zakres Exchange RBAC. Nie umieszczać haseł i kluczy w GitHub. Stan 13.11.2026: aplikacja Entra, ograniczenie Exchange Application RBAC, sekret w środowisku testowym 1 oraz Cloudflare Turnstile zostały skonfigurowane; test Graph HTTP 202 potwierdzono doręczeniem do skrzynki. Produkcja nadal wyłączona.
 
 ## Wymagane testy przed scaleniem
 1. Sprawdzić, że brak konfiguracji = API 503, a formularz ma nieaktywny przycisk.
