@@ -50,3 +50,8 @@ Microsoft Graph wymaga uprawnienia aplikacyjnego Mail.Send (zgoda administratora
 
 ## Dlaczego nie publikować obecnie
 W Work P04 był wyłącznie podglądem, który nigdy nic nie wysyłał. Nie zatwierdzono retencji, dostawców i transferów, nie utworzono konfiguracji Microsoft Graph i Turnstile. Publikacja przycisku „Poproś o kontakt” bez rzeczywistej, bezpiecznej wysyłki byłaby myląca.
+
+## Krótkotrwały test środowiska PR (bez zatwierdzania polityki prywatności)
+- CONTACT_TEST_ONLY=true, CONTACT_TEST_EMAIL=slawek@barczuk.pl, CONTACT_PREVIEW_ORIGIN=https://icy-plant-075f22e03-1.westeurope.2.azurestaticapps.net, CONTACT_TEST_UNTIL=<data UTC nie dalej niż 45 minut w przyszłość>.
+- Na czas próby środowisko 1: CONTACT_FORM_ENABLED=true, CONTACT_RATE_LIMIT_READY=true, ale CONTACT_PRIVACY_READY=false. API dopuszcza wtedy wyłącznie dokładnie wskazany adres e-mail, Origin podglądu i czasowy termin, po którym samo przestaje działać.
+- Po teście przełączniki testowe wyłączyć. Na produkcję nie przenosić CONTACT_TEST_ONLY i innych zmiennych testowych. Włączenie produkcji dopiero po zatwierdzeniu rzeczywistej retencji i informacji RODO, a następnie pełnym teście.
