@@ -17,7 +17,7 @@ Zgłoszenia, które nie prowadzą do współpracy, przechowuje się maksymalnie 
 6. Miesięczny przegląd można wykonywać ręcznie przy tak małej liczbie spraw; wystarczy przypomnienie pierwszego dnia miesiąca. Procedura musi działać w praktyce — samo zamieszczenie zasady na stronie tego nie zapewnia.
 
 ## Weryfikacja przed produkcją
-- [x] Użytkownik utworzył folder „P04 – Formularz WWW” i zdecydował o jednym podfolderze „Zamknięte”; brak folderów miesięcznych. Należy jedynie potwierdzić utworzenie podfolderu.
+- [x] 16.11.2026: w skrzynce współdzielonej Outlook potwierdzono rzeczywiste foldery „Inbox/P04 – Formularz WWW” i „Inbox/P04 – Formularz WWW/Zamknięte”. Brak folderów miesięcznych.
 - [ ] Potwierdzić comiesięczny krótki przegląd folderu „Zamknięte”, sposób odnotowania daty zamknięcia oraz odpowiedzialność za usuwanie danych najpóźniej po 12 miesiącach.
 - [x] Kontrola Exchange 16.11.2026: mailbox i organization InPlaceHolds=0, LitigationHold=false, RetentionHold=false, DelayHold=false, DelayReleaseHold=false, Default MRM Policy. Pozostaje sprawdzenie ewentualnych etykiet/polityk Purview przez Policy lookup.
 - [ ] Zweryfikowano sposób usuwania kopii w innych miejscach.
