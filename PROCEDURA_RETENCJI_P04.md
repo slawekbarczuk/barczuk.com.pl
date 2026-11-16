@@ -12,14 +12,14 @@ Zgłoszenia, które nie prowadzą do współpracy, przechowuje się maksymalnie 
 1. Wiadomości P04 rozpoznać po stałym początku tematu: „Nowa prośba o kontakt – barczuk.com.pl / ...”. Ten sam identyfikator widoczny jest w treści.
 2. Podczas obsługi zachować wątek i odpowiedzi, w tym załączniki, zgodnie z bieżącym celem sprawy.
 3. Po zakończeniu sprawy bez współpracy przenieść **kompletny wątek** (w tym odpowiedzi wychodzące) do folderu spraw P04 zakończonych w miesiącu zamknięcia, np. „P04/Zamkniete/2026-11”. Umożliwia to ustalenie początku 12-miesięcznego okresu bez przechowywania dodatkowych danych w rejestrze.
-4. W pierwszym tygodniu każdego miesiąca sprawdzić foldery P04 sprzed co najmniej 12 miesięcy, zweryfikować brak aktywnej sprawy i wyjątku prawnego, a następnie usunąć odpowiednie wiadomości. W rejestrze kontrolnym odnotować jedynie datę przeglądu, liczbę spraw i ewentualne podstawy wyjątku, bez kopiowania danych osób.
+4. **Pierwszego dnia każdego miesiąca** sprawdzić foldery P04 o tej samej nazwie miesiąca z poprzedniego roku (np. 1 listopada 2027 r. folder „2026-11”). Po sprawdzeniu, czy nie ma aktywnej sprawy ani wyjątku prawnego, usunąć wiadomości. Takie grupowanie powoduje, że korespondencja jest usuwana nie później niż po 12 miesiącach od zamknięcia; część spraw może zostać usunięta nieco wcześniej. W rejestrze kontrolnym odnotować jedynie datę przeglądu, liczbę spraw i ewentualne podstawy wyjątku, bez kopiowania danych osób.
 5. Zweryfikować również kopie i odpowiedzi w folderach „Wysłane”, archiwach, ewentualnych skrzynkach innych uczestników oraz ustawienia retencji/hold Exchange Online. Usunięcie z Outlooka nie musi oznaczać fizycznego usunięcia z systemów Microsoft 365, jeżeli obowiązuje odrębna polityka lub blokada prawna.
 6. Prowadzący proces odpowiada za terminowość i kontrolę wyjątków. Procedura powinna zostać rzeczywiście wprowadzona i wykonana — samo zamieszczenie polityki prywatności na stronie tego nie zapewnia.
 
 ## Weryfikacja przed produkcją
 - [ ] Foldery / oznaczanie wątków P04 w skrzynce współdzielonej są gotowe.
 - [ ] Wybrano odpowiedzialnego i kalendarz miesięcznej kontroli.
-- [ ] Zweryfikowano ustawienia M365 retention/hold dla skrzynki kontakt@barczuk.com.pl.
+- [x] Kontrola Exchange 16.11.2026: mailbox i organization InPlaceHolds=0, LitigationHold=false, RetentionHold=false, DelayHold=false, DelayReleaseHold=false, Default MRM Policy. Pozostaje sprawdzenie ewentualnych etykiet/polityk Purview przez Policy lookup.
 - [ ] Zweryfikowano sposób usuwania kopii w innych miejscach.
 - [ ] Polityka na stronie odpowiada praktyce.
 - [ ] Dane techniczne Azure Storage Table: tabelę stanowią licznik/okres, bez adresów e-mail i treści; nie stosuje się wobec nich retencji korespondencji.
