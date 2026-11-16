@@ -9,9 +9,9 @@
 - [x] Dodano testy statyczne R09 do CI.
 
 ## Niewykonane — blokery przed połączeniem gałęzi z main
-- [ ] Zweryfikować stan PRODUKCYJNYCH appsettings Azure Static Web Apps (environment=default); wartości sekretów nigdy nie wyświetlać.
-- [ ] Przekopiować do produkcji TYLKO właściwe ustawienia bez sekretów na ekranie i z formularzem wyłączonym: MAIL_*, TURNSTILE_*, RATE_LIMIT_TABLE_CONNECTION_STRING, CONTACT_ALLOWED_ORIGINS, CONTACT_ALLOWED_HOSTNAMES, CONTACT_TEST_ONLY=false.
-- [ ] Sprawdzić działanie procesu retencji: rozdzielenie zapytań P04 od innej poczty współdzielonej, sposób odnotowania zamknięcia, comiesięczny przegląd, zasady usuwania powiązanych wiadomości, ustawienia M365 retention/hold (procedura w PROCEDURA_RETENCJI_P04.md).
+- [ ] Sprawdzić po zapisie nazwy i flagi PRODUKCYJNYCH appsettings Azure Static Web Apps (environment=default), nie wyświetlając sekretów; konfiguracja została zapisana z Cloud Shell 16.11.2026 z CONTACT_FORM_ENABLED=false.
+- [x] Przekopiować do produkcji TYLKO właściwe ustawienia bez sekretów na ekranie i z formularzem wyłączonym: MAIL_*, TURNSTILE_*, RATE_LIMIT_TABLE_CONNECTION_STRING, CONTACT_ALLOWED_ORIGINS, CONTACT_ALLOWED_HOSTNAMES, CONTACT_TEST_ONLY=false.
+- [ ] Wdrożyć proces retencji: rozdzielenie zapytań P04 od innej poczty współdzielonej, sposób odnotowania zamknięcia, comiesięczny przegląd, zasady usuwania powiązanych wiadomości (procedura w PROCEDURA_RETENCJI_P04.md). KONTROLA 16.11.2026: Default MRM Policy; LitigationHold, RetentionHold, DelayHold i DelayReleaseHold=false, InPlaceHolds w skrzynce i organizacji=0. Nadal sprawdzić etykiety i reguły Purview (Policy lookup).
 - [ ] Zweryfikować warianty formularza: tylko e-mail, telefon (także międzynarodowy), odpowiedź Reply-To, błąd zdalny, duplikaty, zablokowany token.
 - [ ] Sprawdzić na telefonie, tablecie i desktopie oraz na klawiaturze i czytniku ekranu; poprawność strony prywatności.
 - [ ] Potwierdzić zatwierdzenie publikacji i dopiero wtedy scalić PR #1 do main.
