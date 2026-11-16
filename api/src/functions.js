@@ -7,8 +7,20 @@ const { allowSubmission } = require("./rate-limit");
 
 const env = (name) => String(process.env[name] || "").trim();
 const required = ["CONTACT_FORM_ENABLED", "CONTACT_PRIVACY_READY", "CONTACT_RATE_LIMIT_READY", "TURNSTILE_SITE_KEY", "TURNSTILE_SECRET", "MAIL_TENANT_ID", "MAIL_CLIENT_ID", "MAIL_CLIENT_SECRET", "MAILBOX_USER", "MAIL_TO", "RATE_LIMIT_TABLE_CONNECTION_STRING"];
-const configured = () => required.every(name => !!env(name)) &&
-  ["CONTACT_FORM_ENABLED", "CONTACT_PRIVACY_READY", "CONTACT_RATE_LIMIT_READY"].every(name => env(name) === "true");
+const previewMode = () => env("CONTACT_TEST_ONLY") === "true";
+const configured = () => {
+  if (!required.every(name => !!env(name)) ||
+      env("CONTACT_FORM_ENABLED") !== "true" ||
+      env("CONTACT_RATE_LIMIT_READY") !== "true") return false;
+  if (!previewMode()) return env("CONTACT_PRIVACY_READY") === "true";
+  // Preview-only test is time-boxed and restricted to one sender and origin.
+  const expiry = Date.parse(env("CONTACT_TEST_UNTIL"));
+  const now = Date.now();
+  return env("CONTACT_PRIVACY_READY") === "false" &&
+    validEmail(env("CONTACT_TEST_EMAIL")) &&
+    /^https:\/\/[a-z0-9.-]+\.azurestaticapps\.net$/i.test(env("CONTACT_PREVIEW_ORIGIN")) &&
+    Number.isFinite(expiry) && expiry > now && expiry - now <= 45 * 60 * 1000;
+};
 
 const json = (status, result) => ({
   status, headers: {"content-type": "application/json; charset=utf-8", "cache-control": "no-store", "x-content-type-options": "nosniff"},
@@ -18,7 +30,7 @@ const json = (status, result) => ({
 app.http("contact-settings", {
   methods: ["GET"], authLevel: "anonymous", route: "contact-settings",
   handler: async () => json(200, configured()
-    ? {enabled: true, siteKey: env("TURNSTILE_SITE_KEY")}
+    ? {enabled: true, siteKey: env("TURNSTILE_SITE_KEY"), previewOnly: previewMode()}
     : {enabled: false})
 });
 
@@ -98,6 +110,9 @@ app.http("contact", {
     if (origin && !allowedOrigins.includes(origin.toLowerCase())) {
       return json(403, {ok:false, error:"invalid_origin"});
     }
+    if (previewMode() && origin.toLowerCase() !== env("CONTACT_PREVIEW_ORIGIN").toLowerCase()) {
+      return json(403, {ok:false, error:"preview_origin_only"});
+    }
     const ct = request.headers.get("content-type") || "";
     const len = Number(request.headers.get("content-length") || "0");
     if (!ct.toLowerCase().startsWith("application/json")) return json(415,{ok:false,error:"invalid_request"});
@@ -116,6 +131,9 @@ app.http("contact", {
       if (!validEmail(fields.email) || fields.phone.length > 40 || fields.company.length > 160 ||
           fields.message.length > 3000 || /[\r\n]/.test(fields.phone)) {
         return json(400,{ok:false,error:"invalid_fields"});
+      }
+      if (previewMode() && fields.email.toLowerCase() !== env("CONTACT_TEST_EMAIL").toLowerCase()) {
+        return json(403,{ok:false,error:"preview_email_only"});
       }
       const proof = normal(data.turnstileToken,2048);
       if (!proof || proof.length > 2048 || !(await turnstileVerified(proof))) {
