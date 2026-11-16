@@ -125,3 +125,20 @@ test("time-boxed preview works without marking privacy policy final",async()=>{
  const notApproved=harness({...preview,CONTACT_TEST_ONLY:"false"});
  assert.equal((await notApproved.routes["contact-settings"]()).jsonBody.enabled,false);
 });
+
+test("configuration diagnostics identify gates without exposing secrets",async()=>{
+ const off=harness({...validEnv,CONTACT_FORM_ENABLED:"false"});
+ const result=(await off.routes["contact-settings"]()).jsonBody;
+ assert.equal(result.enabled,false);
+ assert.equal(result.diagnostic.code,"form_disabled");
+ assert.match(result.diagnostic.version,/^P04-DIAG-/);
+ assert.ok(result.diagnostic.serverUtc);
+ assert.doesNotMatch(JSON.stringify(result),/test-client-secret|test-table-connection|test-secret/);
+
+ const noSettings=harness({...validEnv,MAIL_CLIENT_SECRET:""});
+ assert.equal((await noSettings.routes["contact-settings"]()).jsonBody.diagnostic.code,"settings_missing");
+ const noQuota=harness({...validEnv,CONTACT_RATE_LIMIT_READY:"false"});
+ assert.equal((await noQuota.routes["contact-settings"]()).jsonBody.diagnostic.code,"quota_disabled");
+ const noPrivacy=harness({...validEnv,CONTACT_PRIVACY_READY:"false"});
+ assert.equal((await noPrivacy.routes["contact-settings"]()).jsonBody.diagnostic.code,"privacy_unapproved");
+});
