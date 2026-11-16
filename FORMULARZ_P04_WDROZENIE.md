@@ -1,0 +1,64 @@
+# Formularz kontaktowy P04 — gałąź robocza (bez publikacji)
+
+Źródło ustaleń: OneDrive / Family Docs / Slawek / Praca / Firma SB / Strona WWW barczuk.com.pl / 02_Projekty / FORMULARZ_KONTAKTOWY_P04.zip, 13 listopada 2026.
+
+## Uzgodniony zakres
+- Wymagane: adres e-mail.
+- Opcjonalne: telefon, nazwa firmy, „Czego dotyczy kontakt?”.
+- Bez imienia, lokalizacji, GPS ani zgody marketingowej.
+- Tekst pod formularzem wskazuje administratora i stronę prywatności.
+- Nadal działa bezpośredni e-mail i telefon.
+- Zachować dotychczasową kolorystykę i numer wersji w stopce.
+
+## W obecnym PR
+- Zintegrowana makieta formularza ze stroną główną.
+- Przycisk wysyłki domyślnie zablokowany (fail closed); nie powstają zgłoszenia.
+- API Azure Functions: /api/contact-settings, /api/contact.
+- Po pełnej konfiguracji: Cloudflare Turnstile (weryfikowane serwerowo), walidacja, Microsoft Graph /sendMail, nadawca wewnętrzny i Reply-To klienta. Nie zapisuje ani nie wysyła IP, GPS, strefy urządzenia.
+- Ten PR jest **roboczy**. Nie scalać z main przed gotowością i testami.
+
+## Co musi zostać skonfigurowane w Azure Static Web Apps — Application settings
+- CONTACT_FORM_ENABLED = true (dopiero po testach i polityce).
+- CONTACT_PRIVACY_READY = true (dopiero po publikacji prawidłowej klauzuli).
+- CONTACT_RATE_LIMIT_READY = true (dopiero po rzeczywistym wdrożeniu i teście licznika w Azure Table Storage).
+- TURNSTILE_SITE_KEY = publiczny klucz witryny z Cloudflare Turnstile.
+- TURNSTILE_SECRET = sekret; tylko po stronie serwera.
+- CONTACT_ALLOWED_HOSTNAMES = www.barczuk.com.pl,barczuk.com.pl (lub uzupełnione o nazwę środowiska testowego).
+- MAIL_TENANT_ID = identyfikator tenanta Entra.
+- MAIL_CLIENT_ID = ID aplikacji.
+- MAIL_CLIENT_SECRET = sekret OAuth aplikacji; tylko serwer.
+- MAILBOX_USER = adres uprawnionej skrzynki nadawczej.
+- MAIL_TO = kontakt@barczuk.com.pl.
+- RATE_LIMIT_TABLE_CONNECTION_STRING = poufny connection string do osobnego Azure Table Storage (tabela ContactLimitP04); tylko API. Tabela nie zawiera adresów e-mail, IP ani treści zgłoszeń: używa ograniczonych kluczy liczników modulo, dzięki czemu nie przybywają rekordy w nieskończoność.
+
+WAŻNE: Przełącznik RATE_LIMIT_READY bez działającej tabeli nie jest dowodem bezpieczeństwa. Połączenie do storage jest dodatkowym wymaganiem bramki konfiguracyjnej i kod wywołuje realny licznik przed wysyłką poczty.
+
+Stan 16.11.2026: konto stsbp04rl1dd7f6b1 i tabela ContactLimitP04 utworzone w Azure; test rzeczywistego licznika: true,true,true,true,false. Pełny test P04 z przeglądarki potwierdzony doręczeniem. Ustawienia API przeniesione do środowiska default, ale formularz pozostaje wyłączony. Nie scalać z main przed procedurą retencji i kontrolą produkcji.
+
+Rzeczywiste uprawnienie w tej instalacji: Exchange Online Application RBAC, rola Application Mail.Send z zakresem obejmującym wyłącznie kontakt@barczuk.com.pl. W Entra nie przyznano odrębnej szerokiej zgody aplikacyjnej Mail.Send. Uwierzytelnienie client credentials i wysyłka Graph HTTP 202 zadziałały. Nie przyznawać globalnego Mail.Send w Entra: rozszerzałoby to uprawnienia poza zakres Exchange RBAC. Nie umieszczać haseł i kluczy w GitHub. Stan 13.11.2026: aplikacja Entra, ograniczenie Exchange Application RBAC, sekret w środowisku testowym 1 oraz Cloudflare Turnstile zostały skonfigurowane; test Graph HTTP 202 potwierdzono doręczeniem do skrzynki. Produkcja nadal wyłączona.
+
+## Wymagane testy przed scaleniem
+1. Sprawdzić, że brak konfiguracji = API 503, a formularz ma nieaktywny przycisk.
+2. Sprawdzić hosty Turnstile, action=contact, tokeny wygasłe i boty.
+3. Wdrożyć na Azure Table Storage ograniczenia zgłoszeń: maks. 4 na godzinę na kubełek nadawcy (hash 12-bitowy, bez zapisu adresu), 12 na 10 minut globalnie, 80 dziennie globalnie. Zgodność liczników przy współbieżności przez ETag; awaria storage blokuje wysyłkę. Ustawić RATE_LIMIT_TABLE_CONNECTION_STRING jedynie w środowisku 1, utworzyć tabelę ContactLimitP04 i sprawdzić limit w integracji.
+4. Zweryfikować ograniczenie uprawnień konta wysyłkowego, tożsamość nadawcy, dostarczenie do kontakt@barczuk.com.pl i Reply-To.
+5. Test tylko e-maila; test pełnego formularza; błąd wysyłki; duplikat; telefon i międzynarodowy numer.
+6. Uzupełnić i opublikować politykę prywatności po ustaleniu retencji zakończonych zapytań i logów, dostawców i ewentualnych transferów.
+7. Sprawdzić desktop, tablet, mobile, kontrast, klawiaturę, zgłoszenie z czytnika.
+8. Po udanym teście przygotować kompletne wydanie SB-WEB-1126-R09: osiem podstron z numerem w prawym dolnym rogu, kopia źródeł i rejestr zmian OneDrive.
+9. Zweryfikować produkcyjne wdrożenie na domenie i realną odebraną wiadomość.
+
+## Dlaczego nie publikować obecnie
+W Work P04 był wyłącznie podglądem, który nigdy nic nie wysyłał. Nie zatwierdzono retencji, dostawców i transferów, nie utworzono konfiguracji Microsoft Graph i Turnstile. Publikacja przycisku „Poproś o kontakt” bez rzeczywistej, bezpiecznej wysyłki byłaby myląca.
+
+## Krótkotrwały test środowiska PR (bez zatwierdzania polityki prywatności)
+- CONTACT_TEST_ONLY=true, CONTACT_TEST_EMAIL=slawek@barczuk.pl, CONTACT_PREVIEW_ORIGIN=https://icy-plant-075f22e03-1.westeurope.2.azurestaticapps.net, CONTACT_TEST_UNTIL=<data UTC nie dalej niż 45 minut w przyszłość>.
+- Na czas próby środowisko 1: CONTACT_FORM_ENABLED=true, CONTACT_RATE_LIMIT_READY=true, ale CONTACT_PRIVACY_READY=false. API dopuszcza wtedy wyłącznie dokładnie wskazany adres e-mail, Origin podglądu i czasowy termin, po którym samo przestaje działać.
+- Po teście przełączniki testowe wyłączyć. Na produkcję nie przenosić CONTACT_TEST_ONLY i innych zmiennych testowych. Włączenie produkcji dopiero po zatwierdzeniu rzeczywistej retencji i informacji RODO, a następnie pełnym teście.
+
+## R09 - decyzje 16.11.2026 (wprowadzone na gałęzi PR #1)
+
+- Sekcja **O mnie**: wielki napis z imieniem i nazwiskiem zastąpiono dwuwierszowym hasłem **„Doradztwo / dla biznesu”** z zachowaniem żółtego kwadratu. Pozostawiono podpis osoby w stopce i danych formalnych. Dodano typografię responsywną, zwłaszcza na telefonach.
+- Polityka prywatności: zaakceptowano okres **do 12 miesięcy od zakończenia sprawy** dla zapytań, które nie doprowadziły do współpracy, z wyjątkiem obowiązku prawnego i roszczeń. Doprecyzowano Microsoft 365/Graph/Azure/Cloudflare oraz liczniki Storage.
+- Potwierdzony test end-to-end 16.11.2026: wiadomość o identyfikatorze **1cfca1b3-be60-40ba-9229-9ff843f452af** wysłana z wersji PR i odebrana w kontakt@barczuk.com.pl 10:15 czasu warszawskiego. Testowa aktywacja wyłączona.
+- Zadania przed produkcją: przyjąć rzeczywisty proces zamykania zapytań i usuwania korespondencji po 12 miesiącach, sprawdzić wpływ retencji/policy Microsoft 365; zweryfikować wszystkie urządzenia i dostępność; ustawić w produkcyjnym środowisku Azure wyłącznie wymagane zmienne (bez CONTACT_TEST_ONLY), sprawdzić Turnstile dla domen produkcyjnych i limity, wdrożyć R09 jednocześnie na 8 podstronach, potwierdzić rzeczywistą wysyłkę z produkcji. Do tego czasu nie scalać PR.
