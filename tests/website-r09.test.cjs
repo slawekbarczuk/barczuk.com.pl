@@ -47,3 +47,10 @@ test("R09 sitemap covers eight updated pages",()=>{
  assert.equal(mods.length,8);
  assert.ok(mods.every(m=>m[1]==="2026-11-16"));
 });
+
+test("P04 remains hidden unless the backend confirms it is configured",()=>{
+ const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
+ assert.match(html,/<section class="contact-form-section" id="formularz-kontaktowy" aria-labelledby="contact-form-heading" hidden>/);
+ assert.match(html,/if\(!config\.enabled\|\|typeof config\.siteKey!=="string"\)return;\s*section\.hidden=false;/);
+ assert.match(html,/const section=document\.getElementById\("formularz-kontaktowy"\)/);
+});
