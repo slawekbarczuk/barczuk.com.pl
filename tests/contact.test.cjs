@@ -94,3 +94,34 @@ test("Graph failure never reports success",async()=>{
  assert.equal(h.logs.length,1);
  assert.doesNotMatch(h.logs[0],/sender@example.test/);
 });
+
+test("time-boxed preview works without marking privacy policy final",async()=>{
+ const origin="https://icy-plant-075f22e03-1.westeurope.2.azurestaticapps.net";
+ const preview={
+   ...validEnv,CONTACT_PRIVACY_READY:"false",CONTACT_TEST_ONLY:"true",
+   CONTACT_TEST_EMAIL:"owner@example.test",CONTACT_PREVIEW_ORIGIN:origin,
+   CONTACT_ALLOWED_ORIGINS:origin,
+   CONTACT_ALLOWED_HOSTNAMES:"icy-plant-075f22e03-1.westeurope.2.azurestaticapps.net",
+   CONTACT_TEST_UNTIL:new Date(Date.now()+30*60*1000).toISOString()
+ };
+ const h=harness(preview);
+ const settings=await h.routes["contact-settings"]();
+ assert.equal(settings.jsonBody.enabled,true);
+ assert.equal(settings.jsonBody.previewOnly,true);
+ const wrongEmail=await h.routes.contact(
+   h.request({email:"outside@example.test",turnstileToken:"valid"},{Origin:origin}),h.context
+ );
+ assert.equal(wrongEmail.status,403);
+ const wrongOrigin=await h.routes.contact(
+   h.request({email:"owner@example.test",turnstileToken:"valid"},{Origin:"https://www.barczuk.com.pl"}),h.context
+ );
+ assert.equal(wrongOrigin.status,403);
+ const missingOrigin=await h.routes.contact(
+   h.request({email:"owner@example.test",turnstileToken:"valid"},{Origin:""}),h.context
+ );
+ assert.equal(missingOrigin.status,403);
+ const expired=harness({...preview,CONTACT_TEST_UNTIL:new Date(Date.now()-1000).toISOString()});
+ assert.equal((await expired.routes["contact-settings"]()).jsonBody.enabled,false);
+ const notApproved=harness({...preview,CONTACT_TEST_ONLY:"false"});
+ assert.equal((await notApproved.routes["contact-settings"]()).jsonBody.enabled,false);
+});
