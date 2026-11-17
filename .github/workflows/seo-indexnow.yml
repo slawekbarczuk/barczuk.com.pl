@@ -1,0 +1,84 @@
+name: SEO - IndexNow po publikacji
+
+on:
+  workflow_run:
+    workflows: ["Azure Static Web Apps CI/CD"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify_indexnow:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Notify Bing and IndexNow search engines about public sitemap URLs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import pathlib
+          import time
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          import xml.etree.ElementTree as ET
+
+          host = "www.barczuk.com.pl"
+          key = "95dd176e242365e9a0894d9a2d38e5eb"
+          key_path = pathlib.Path(key + ".txt")
+          if key_path.read_text(encoding="utf-8").strip() != key:
+              raise SystemExit("IndexNow key file differs from expected key")
+          key_url = f"https://{host}/{key_path.name}"
+
+          # Wait until the production site serves the key from the successful deployment.
+          for attempt in range(1, 7):
+              try:
+                  request = urllib.request.Request(key_url, headers={"User-Agent": "Barczuk-IndexNow/1.0"})
+                  with urllib.request.urlopen(request, timeout=12) as response:
+                      remote = response.read(512).decode("utf-8").strip()
+                  if remote == key:
+                      break
+              except (urllib.error.URLError, TimeoutError) as error:
+                  print(f"Key availability attempt {attempt}: {type(error).__name__}")
+              if attempt == 6:
+                  raise SystemExit("Production key missing after six checks; no URLs submitted")
+              time.sleep(8)
+
+          sitemap = ET.parse("sitemap.xml")
+          namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          urls = [node.text.strip() for node in sitemap.findall(".//sm:loc", namespace) if node.text]
+          if not urls or len(urls) > 10000:
+              raise SystemExit("Unexpected sitemap URL count")
+          for url in urls:
+              parsed = urllib.parse.urlparse(url)
+              if parsed.scheme != "https" or parsed.netloc != host:
+                  raise SystemExit("Sitemap contains URL with unexpected scheme or hostname")
+
+          data = json.dumps({
+              "host": host,
+              "key": key,
+              "keyLocation": key_url,
+              "urlList": urls,
+          }).encode("utf-8")
+          request = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=data,
+              method="POST",
+              headers={"Content-Type": "application/json; charset=utf-8", "User-Agent": "Barczuk-IndexNow/1.0"},
+          )
+          try:
+              with urllib.request.urlopen(request, timeout=20) as response:
+                  status = response.status
+          except urllib.error.HTTPError as error:
+              raise SystemExit(f"IndexNow returned HTTP {error.code}") from error
+          if status not in (200, 202):
+              raise SystemExit(f"Unexpected IndexNow status: {status}")
+          print(f"IndexNow accepted {len(urls)} public sitemap URLs (HTTP {status}).")
+          PY
