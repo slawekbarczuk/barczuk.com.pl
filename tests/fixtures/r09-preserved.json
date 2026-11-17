@@ -1,0 +1,18 @@
+{
+  "base_commit": "5c56695b857f40994d98b3643aa32cb8dd283f8a",
+  "protected_files": {
+    "api/host.json": "62d7ddf87c58ffed6dcf40dcf68caee8ee542e52cb2b15fa2fbd9a07774a3ef9",
+    "api/package.json": "089f32071e6a92b3510cf9ce62df9b6b328d023683c40ba5d0479cef9d7f20d8",
+    "api/src/functions.js": "776dcf91c6aba0fc2fc4ce084a31a1e978630a636564ba7372b3827c755b4dfc",
+    "api/src/rate-limit.js": "78889f15c8ccbe7c4614ce9b3a0b48e8cb58a8520572f166d39a0158d38198c1",
+    ".github/workflows/azure-static-web-apps-icy-plant-075f22e03.yml": "f22fa3d63c21cb454445fbdbdfe29861cfa910cdda281dba470767e362310149",
+    ".github/workflows/contact-api-tests.yml": "c30f7f677cb7526469418c76a1db9a4b5e27f016daa8505c8b50fd511afc0866"
+  },
+  "form_markup": "6cccf2e2d85dcccb964690c15b41195914f96bd1e1c25073691d8ebc8a626b17",
+  "form_script": "75cd5095c9141ce404d4df4999ddb101c4d340df843c93647d65ba2623cd0bec",
+  "legal_main": {
+    "informacje/cookies/index.html": "5bd500c1a9f87ab1b62e90ca500e86b9d3d4db7c243f51bc5946b9e743bf26f2",
+    "informacje/informacje-prawne/index.html": "423e7a09dfbf432c591d6444770b4939a9037c44171cde7f8898f671cf7df6af",
+    "informacje/prywatnosc/index.html": "9da6a4f327aaaa481cf63031c6b2c711c73f5726742677c89664872bf53a2f21"
+  }
+}
