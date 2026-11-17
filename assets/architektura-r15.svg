@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" aria-labelledby="title desc">
+<title id="title">Architektura i struktura</title>
+<desc id="desc">Autorska kompozycja architektoniczna: rytm przeszklonych fasad, światła i delikatnych łuków w odcieniach granatu oraz błękitu.</desc>
+<defs>
+<linearGradient id="sky" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#b7cbd9"/><stop offset=".55" stop-color="#829fb7"/><stop offset="1" stop-color="#e6e9e8"/></linearGradient>
+<linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1d4868"/><stop offset=".35" stop-color="#7fa2bc"/><stop offset=".62" stop-color="#274969"/><stop offset="1" stop-color="#142b48"/></linearGradient>
+<linearGradient id="front" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#849db3"/><stop offset=".34" stop-color="#d8e1e8"/><stop offset=".65" stop-color="#557895"/><stop offset="1" stop-color="#193956"/></linearGradient>
+<linearGradient id="stone" x1="0" y1=".2" x2="1" y2=".8"><stop stop-color="#e8e5de"/><stop offset=".48" stop-color="#c9c8c6"/><stop offset="1" stop-color="#e6e3dd"/></linearGradient>
+<radialGradient id="sun"><stop stop-color="#ffffff" stop-opacity=".68"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+<clipPath id="curtain"><path d="M196 1100L426 288L763 34L809 1100Z"/></clipPath>
+<clipPath id="side"><path d="M-90 1100L218 480L425 292L359 1100Z"/></clipPath>
+</defs>
+<rect width="900" height="1100" fill="url(#sky)"/>
+<circle cx="780" cy="135" r="550" fill="url(#sun)"/>
+<path d="M-90 1100L218 480L425 292L359 1100Z" fill="#567893"/>
+<g clip-path="url(#side)"><rect width="440" height="1100" fill="url(#glass)"/><path d="M-100 760L420 300M-20 1100L440 570M-100 940L440 448" stroke="#bdd3e2" stroke-opacity=".27" stroke-width="6"/><path d="M52 0L122 1100M145 0L194 1100M247 0L285 1100M350 0L377 1100" stroke="#122f4a" stroke-opacity=".6" stroke-width="5"/></g>
+<path d="M196 1100L426 288L763 34L809 1100Z" fill="url(#front)" stroke="#e5f0f5" stroke-width="4"/>
+<g clip-path="url(#curtain)"><rect width="900" height="1100" fill="url(#glass)" opacity=".54"/>
+<path d="M340 0V1100" stroke="#dfe9f0" stroke-opacity=".41" stroke-width="2"/><path d="M412 0V1100" stroke="#dfe9f0" stroke-opacity=".41" stroke-width="2"/><path d="M484 0V1100" stroke="#dfe9f0" stroke-opacity=".41" stroke-width="2"/><path d="M556 0V1100" stroke="#dfe9f0" stroke-opacity=".41" stroke-width="2"/><path d="M628 0V1100" stroke="#dfe9f0" stroke-opacity=".41" stroke-width="2"/><path d="M700 0V1100" stroke="#dfe9f0" stroke-opacity=".41" stroke-width="2"/><path d="M772 0V1100" stroke="#dfe9f0" stroke-opacity=".41" stroke-width="2"/><path d="M844 0V1100" stroke="#dfe9f0" stroke-opacity=".41" stroke-width="2"/><path d="M916 0V1100" stroke="#dfe9f0" stroke-opacity=".41" stroke-width="2"/><path d="M0 32H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/><path d="M0 127H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/><path d="M0 222H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/><path d="M0 317H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/><path d="M0 412H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/><path d="M0 507H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/><path d="M0 602H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/><path d="M0 697H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/><path d="M0 792H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/><path d="M0 887H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/><path d="M0 982H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/><path d="M0 1077H940" stroke="#dce9f2" stroke-opacity=".39" stroke-width="2"/>
+<path d="M225 1100L350 140" stroke="#0d2746" stroke-opacity="0.15" stroke-width="9"/><path d="M296 1100L421 140" stroke="#0d2746" stroke-opacity="0.16" stroke-width="9"/><path d="M367 1100L492 140" stroke="#0d2746" stroke-opacity="0.18" stroke-width="9"/><path d="M438 1100L563 140" stroke="#0d2746" stroke-opacity="0.19" stroke-width="9"/><path d="M509 1100L634 140" stroke="#0d2746" stroke-opacity="0.20" stroke-width="9"/><path d="M580 1100L705 140" stroke="#0d2746" stroke-opacity="0.21" stroke-width="9"/><path d="M651 1100L776 140" stroke="#0d2746" stroke-opacity="0.23" stroke-width="9"/><path d="M722 1100L847 140" stroke="#0d2746" stroke-opacity="0.24" stroke-width="9"/>
+<path d="M290 1100L518 216L585 165L408 1100Z" fill="#f5f9fa" fill-opacity=".13"/>
+<path d="M490 1100L647 130L700 89L664 1100Z" fill="#eef5f8" fill-opacity=".22"/>
+<path d="M280 787L750 349M235 940L780 511" stroke="#eef7fa" stroke-width="4" stroke-opacity=".12"/>
+</g>
+<path d="M762 34L900 0V1100H809Z" fill="url(#stone)"/>
+<path d="M814 23L837 1100" stroke="#8595a0" stroke-opacity=".5" stroke-width="3"/>
+<path d="M870 0L900 1100" stroke="#faf8f2" stroke-opacity=".42" stroke-width="4"/>
+<path d="M785 0L900 50M799 190L900 216M802 380L900 400M806 560L900 577M808 740L900 755M810 920L900 930" stroke="#768896" stroke-opacity=".29" stroke-width="3"/>
+<path d="M-15 970C120 597 342 256 729 128C799 107 855 101 915 97" stroke="#ffffff" stroke-opacity=".85" stroke-width="2.1" fill="none"/>
+<path d="M31 1100C150 724 390 368 673 237" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.2" fill="none"/>
+<path d="M76 1100V655M118 1100V495" stroke="#dbeaf4" stroke-opacity=".58" stroke-width="2"/>
+<rect x="0" y="0" width="900" height="1100" fill="none" stroke="#d6e0e6" stroke-width="1.5"/>
+</svg>
