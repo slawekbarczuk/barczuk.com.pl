@@ -26,3 +26,9 @@
 
 ## Weryfikacja
 Testy sprawdzają m.in. metadane, integralność P04, legal, adresy i elementy R15. W razie problemów można przywrócić commit bazowy R13.
+
+
+## Uzupełnienie R15 — 17.11.2026
+- Główny komunikat zmieniony na „Niezależne doradztwo finansowe”; gwarancje bankowe dopisane do strony głównej i zakresu doradztwa.
+- Ujednolicona kursywa i zwiększona interlinia nagłówków wielowierszowych.
+- Oznaczenie witryny pozostaje `SB-WEB-1126-R15`.
