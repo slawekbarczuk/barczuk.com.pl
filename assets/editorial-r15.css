@@ -73,8 +73,7 @@ p{overflow-wrap:break-word}
 .service:hover,.service:focus-visible{transform:none;background:#f7f8f8;box-shadow:none}
 .service:after{background:var(--gold);height:2px}
 .service-number{font-size:11px;font-weight:500;letter-spacing:.11em;color:#617184;margin-bottom:46px}
-/* Vector arrows avoid iOS emoji rendering in service headings. */
-.service-number span{display:inline-block;flex:0 0 20px;width:20px;height:20px;overflow:hidden;font-size:0;line-height:0;color:var(--navy);background-color:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 19 19 5M5 5h14v14' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 19 19 5M5 5h14v14' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.service-number span{font-size:20px;color:var(--navy)}
 .service h3{font-size:clamp(26px,2.25vw,36px);line-height:1.12;margin-bottom:18px}
 .service p{color:#506072;font-size:13px;line-height:1.76;margin-bottom:24px}
 .service-link{font-size:11px;font-weight:600;color:var(--navy);letter-spacing:0}
@@ -239,3 +238,9 @@ footer{background:var(--navy-deep);color:#fff}
 }
 /* Keep the P04 feature gate; design never changes its hidden default. */
 .contact-form-section[hidden]{display:none!important}
+
+/* R15: consistent vector arrows on desktop and mobile, independent of emoji fonts. */
+.arrow-ne{display:inline-block;width:18px;height:18px;flex:0 0 auto;vertical-align:-.18em}
+.service-number .arrow-ne,.contact-details .arrow-ne{width:20px;height:20px}
+.footer-main .arrow-ne{width:14px;height:14px}
+.situation-list li:after{content:"";width:18px;height:18px;background-color:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 19 19 5M5 5h14v14' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 19 19 5M5 5h14v14' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
