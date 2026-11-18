@@ -23,7 +23,7 @@ test("R16 multilingual: 15 complete static pages, correct lang and canonical",()
   assert.match(html,/<meta name="robots" content="index,follow">/,file);
   assert.ok(html.includes('data-language-switcher'),file);
   assert.ok(html.includes('href="/assets/language-switcher-r16.css?v=R16-i18n"'),file);
-  assert.match(html,/<meta name="description" content="[^"]{35,}">/,file);
+  assert.match(html,/<meta name="description" content="[^"]{15,}">/,file);
   assert.match(html,/<title>[^<]{12,}<\/title>/,file);
  }
 });

@@ -21,6 +21,8 @@ jobs:
           node-version: '20'
       - name: Generate Polish, English and German static pages
         run: node scripts/build-i18n-r16.cjs
+      - name: Run full regression suite including language SEO and P04
+        run: node --test tests/*.test.cjs
       - name: Commit translated pages, SEO metadata and language switchers
         run: |
           git config user.name "github-actions[bot]"
