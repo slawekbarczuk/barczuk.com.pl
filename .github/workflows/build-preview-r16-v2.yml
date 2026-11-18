@@ -1,0 +1,29 @@
+name: 'Review only - Lodz and modern logistics, 3 real videos'
+on:
+  push:
+    branches: [preview/hero-r16-natural-film-20261118]
+    paths:
+      - scripts/build-preview-r16-v2.sh
+      - .github/workflows/build-preview-r16-v2.yml
+jobs:
+  review-video:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+      - name: Assemble 3 clips, stage archive clearly labeled
+        run: bash scripts/build-preview-r16-v2.sh
+      - name: Commit preview (NOT PROD)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add previews/hero-r16-three-shots-test.mp4 previews/hero-r16-logistics-poster.jpg previews/VIDEO_R16_V2_SOURCES.md
+          git commit -m "Preview V2: three real-motion clips including archival Fabryczna"
+          git push origin HEAD:preview/hero-r16-natural-film-20261118
