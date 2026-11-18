@@ -34,22 +34,22 @@ function harness({reduced=false,saveData=false}={}){
   inView(value){observe([{isIntersecting:value}])}
  };
 }
-test("four images transition every 11 seconds with one visible at a time",()=>{
+test("four images transition every 8 seconds with one visible at a time",()=>{
  const h=harness();assert.equal(h.index(),0);assert.equal(h.count(),1);
- for(const expected of [1,2,3,0]){assert.equal(h.tick(),11000);assert.equal(h.index(),expected);assert.equal(h.count(),1);assert.equal(h.timerCount(),1)}
+ for(const expected of [1,2,3,0]){assert.equal(h.tick(),8000);assert.equal(h.index(),expected);assert.equal(h.count(),1);assert.equal(h.timerCount(),1)}
 });
 test("reduced-motion and data saving preserve first photo",()=>{
  for(const config of [{reduced:true},{saveData:true}]){const h=harness(config);assert.equal(h.index(),0);assert.equal(h.timerCount(),0)}
 });
 test("hidden browser tab and offscreen image do not rotate",()=>{
  const h=harness();h.hide(true);assert.equal(h.timerCount(),0);
- h.hide(false);assert.equal(h.tick(),11000);assert.equal(h.index(),1);
+ h.hide(false);assert.equal(h.tick(),8000);assert.equal(h.index(),1);
  h.inView(false);assert.equal(h.timerCount(),0);
- h.inView(true);assert.equal(h.tick(),11000);assert.equal(h.index(),2);
+ h.inView(true);assert.equal(h.tick(),8000);assert.equal(h.index(),2);
 });
 test("changing user motion and data settings stops slides and resets first image",()=>{
  const h=harness();h.tick();assert.equal(h.index(),1);
  h.reduce(true);assert.equal(h.index(),0);assert.equal(h.timerCount(),0);
- h.reduce(false);assert.equal(h.tick(),11000);assert.equal(h.index(),1);
+ h.reduce(false);assert.equal(h.tick(),8000);assert.equal(h.index(),1);
  h.save(true);assert.equal(h.index(),0);assert.equal(h.timerCount(),0);
 });

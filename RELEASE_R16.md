@@ -45,3 +45,10 @@ Kontrola wizualna tej wersji w przeglądarce nie została ukończona: narzędzie
 - Tryb ograniczenia ruchu i oszczędzania danych zatrzymują pokaz; niewidoczna karta i obraz poza ekranem wstrzymują zegar.
 - Powtórzone „Zacznijmy od rozmowy” zastąpiono etykietą „Kontakt” i odrębnym nagłówkiem formularza „Przedstaw swoją sprawę”.
 - Wszystkie cztery obrazy są **wizualizacjami wygenerowanymi** inspirowanymi Łodzią; nie są dokumentalnymi fotografiami. P04 i API pozostają bez zmian.
+
+## R16 XL — powiększone zdjęcia na komputerze (18.11.2026)
+- Desktop: zwiększono docelową szerokość zdjęć o 50% względem pierwotnego maksimum (560 → 840 px), poszerzając układ sekcji hero i dostosowując typografię. Układ mobilny zachowano.
+- Podniesiono jakość wszystkich czterech plików WebP z 640×360 do 1440×810 px, bez zmiany zaakceptowanych wizualizacji. Razem ok. 430 KB.
+- Zdjęcia zmieniają się co 8 s zamiast 11 s, z delikatnym przenikaniem 1,6 s zamiast 2,2 s.
+- Proste narożniki, brak przesuwania/zoomowania, zachowane ograniczenia ruchu oraz P04/API.
+- Bez zmiany wersji SB-WEB-1126-R16.
