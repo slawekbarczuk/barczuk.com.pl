@@ -1,0 +1,59 @@
+/* R16 multilingual site switcher: restrained editorial style matching Barczuk.
+   Separate language routes (PL default) with current-page counterpart links.
+   Includes mobile layout without interfering with the existing menu button. */
+.header .shell.nav{gap:clamp(9px,1.3vw,22px)}
+.language-switcher{
+  display:inline-flex;align-items:center;justify-content:center;
+  flex:0 0 auto;gap:7px;margin:0 0 0 7px;padding:4px 0 4px 15px;
+  border-left:1px solid rgba(20,36,58,.19);align-self:center;
+  font-family:"Avenir Next","Segoe UI",Arial,Helvetica,sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:.09em;line-height:1.6;
+  white-space:nowrap;color:#697587;
+}
+.language-switcher a{
+  display:inline-block;text-decoration:none;color:#697587;
+  font-size:inherit;font-weight:inherit;padding:0;
+  min-width:21px;text-align:center;line-height:25px;
+  border-bottom:2px solid transparent;transition:color .15s,border-color .15s;
+}
+.language-switcher a:hover,.language-switcher a:focus-visible{color:#14243a}
+.language-switcher a[aria-current="page"]{color:#14243a;border-bottom-color:#b6a27a}
+.language-switcher .language-divider{font-weight:300;color:#b7bfc6}
+@media(max-width:1000px){
+  .language-switcher{padding-left:11px;margin-left:0;gap:5px;font-size:10px}
+  .header .nav-links{gap:clamp(11px,1.4vw,20px)}
+}
+@media(max-width:760px){
+  .header .shell.nav{gap:9px;justify-content:space-between}
+  .header .brand{order:0}
+  .header .language-switcher{order:1;margin-left:auto}
+  .header .menu-toggle{order:2;margin-left:0;padding-left:5px}
+  .header .nav-links{order:3}
+}
+@media(max-width:400px){
+  .header .brand{font-size:clamp(22px,6.4vw,27px);letter-spacing:.12em}
+  .header .language-switcher{padding-left:7px;gap:2px;font-size:10px}
+  .header .language-switcher a{min-width:18px}
+  .header .menu-toggle{font-size:11px;padding-left:3px}
+}
+
+/* German financial terminology is longer than its Polish equivalent.
+   Keep premium editorial typography without horizontal overflow. */
+html[lang="de"] .hero .hero-copy h1{
+  font-size:clamp(40px,3.35vw,60px);
+  line-height:1.12;
+  hyphens:auto;
+  overflow-wrap:break-word;
+}
+html[lang="de"] .detail-hero h1{
+  font-size:clamp(41px,4.1vw,69px);
+  hyphens:auto;
+  overflow-wrap:break-word;
+}
+@media(max-width:1050px){
+  html[lang="de"] .hero .hero-copy h1{font-size:clamp(35px,4.25vw,48px)}
+}
+@media(max-width:760px){
+  html[lang="de"] .hero .hero-copy h1{font-size:clamp(34px,7.8vw,52px)}
+  html[lang="de"] .detail-hero h1{font-size:clamp(36px,7.9vw,55px)}
+}

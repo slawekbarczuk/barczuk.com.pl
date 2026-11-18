@@ -52,3 +52,12 @@ Kontrola wizualna tej wersji w przeglądarce nie została ukończona: narzędzie
 - Zdjęcia zmieniają się co 8 s zamiast 11 s, z delikatnym przenikaniem 1,6 s zamiast 2,2 s.
 - Proste narożniki, brak przesuwania/zoomowania, zachowane ograniczenia ruchu oraz P04/API.
 - Bez zmiany wersji SB-WEB-1126-R16.
+
+## R16 — wielojęzyczna witryna (18.11.2026)
+- Języki polski (domyślny), angielski i niemiecki, dyskretny przełącznik PL/EN/DE w nagłówku komputera i telefonu.
+- Pięć kompletnych podstron w każdym języku: start, finansowanie, informacje prawne, prywatność i cookies (łącznie 15 adresów statycznych).
+- Wersje językowe mają własne adresy, kompletne tłumaczenia oferty oraz polityk, odrębne tytuły i opisy SEO, wzajemne relacje hreflang, x-default PL i własne canonical URL.
+- Zachowano wszystkie zdjęcia Łodzi, układ R16, formularz i działający backend P04; teksty formularza i zabezpieczenia Turnstile są tłumaczone na stronach EN/DE.
+- Lokalizacje generowane z kanonicznej treści polskiej przez scripts/build-i18n-r16.cjs i pliki i18n; bez automatycznego przekierowywania na podstawie języka przeglądarki.
+- Rozszerzono sitemap.xml do 15 adresów i dodano testy SEO, dostępności przełącznika, kompletności stron i regresji funkcji.
+- Wersja widoczna w stopce bez zmian: SB-WEB-1126-R16.

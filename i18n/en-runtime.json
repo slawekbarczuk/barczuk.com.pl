@@ -1,0 +1,11 @@
+{
+  "Weryfikacja wygasła. Powtórz weryfikację antyspamową.": "Verification expired. Please complete the anti-spam check again.",
+  "Nie udało się przeprowadzić weryfikacji. Możesz napisać bezpośrednio na kontakt@barczuk.com.pl.": "Verification could not be completed. You can email us directly at kontakt@barczuk.com.pl.",
+  "Wersja testowa P04. Wpisz wyłącznie własne dane testowe, nie dane klientów. Przed wysłaniem przejdź weryfikację antyspamową.": "P04 test version. Enter only your own test data, not client data. Complete the anti-spam check before submitting.",
+  "Przed wysłaniem przejdź krótką weryfikację antyspamową.": "Please complete a short anti-spam check before submitting.",
+  "Weryfikacja antyspamowa jest wymagana.": "Anti-spam verification is required.",
+  "Trwa wysyłanie zgłoszenia…": "Sending your enquiry…",
+  "Zbyt wiele zgłoszeń w krótkim czasie. Spróbuj później albo napisz na kontakt@barczuk.com.pl.": "Too many requests in a short period. Please try again later or email kontakt@barczuk.com.pl.",
+  "Zgłoszenie zostało przyjęte do wysyłki. Do usłyszenia!": "Your enquiry has been accepted for delivery. We will be in touch.",
+  "Nie udało się wysłać formularza. Wpisane dane pozostały w formularzu. Możesz też napisać na kontakt@barczuk.com.pl.": "We could not send your enquiry. Your entries remain in the form. You can also email kontakt@barczuk.com.pl."
+}
