@@ -4,6 +4,7 @@ on:
     branches: [feature/r16-photo-slideshow-20261118]
     paths:
       - scripts/import-r16-photos.sh
+      - scripts/import-r16-photos.py
       - .github/workflows/import-r16-photos.yml
 jobs:
   import-photos:
