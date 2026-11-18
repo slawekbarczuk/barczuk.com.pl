@@ -69,6 +69,6 @@ test("R16 XL: 50 percent bigger desktop photo and faster rotation",()=>{
   assert.match(css,/transition:opacity 1\.6s ease-in-out/);
   assert.match(js,/const intervalMs = 8000/);
   for(const image of ["fabryczna","manufaktura","piotrkowska","ec1"])
-    assert.match(html,new RegExp(image+"\\.webp\\" width=\\"1440\\" height=\\"810\\""));
+    assert.ok(html.includes(image+'.webp" width="1440" height="810"'),image);
   assert.match(html,/editorial-r16\.css\?v=R16-xl/);
 });
