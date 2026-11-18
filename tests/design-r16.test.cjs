@@ -15,3 +15,14 @@ assert.match(c,/\.light-weight\{font-style:normal\}/);
 assert.match(c,/\.request-form h3#contact-form-heading\{font-size:clamp\(40px,4\.1vw,56px\)/);
 assert.match(c,/\.media-toggle\{width:36px/);
 });
+
+
+test("R16 media files exist before deployment",()=>{
+  const root=path.join(__dirname,"..");
+  for(const [p,min] of [["assets/video/lodz-r16.mp4",200000],["assets/video/lodz-r16-poster.jpg",20000],["favicon-b-32.png",400],["favicon-b-180.png",1000],["favicon.ico",1000]]){
+    const file=path.join(root,p);
+    assert.ok(fs.existsSync(file),"Missing asset: "+p);
+    assert.ok(fs.statSync(file).size>=min,"Incomplete asset: "+p);
+  }
+  assert.ok(!fs.existsSync(path.join(root,"assets/video/lodz-warszawa-r16.mp4")),"Old mixed-city video should not be published");
+});
