@@ -17,7 +17,7 @@ test("R16 production pages have current version and canonical metadata without p
   const html=read(p);
   assert.equal((html.match(/SB-WEB-1126-R\d+/g)||[]).length,1,p);
   assert.match(html,/SB-WEB-1126-R16/,p);
-  assert.match(html,/href="\/assets\/editorial-r16\.css\?v=R16-calm"/,p);
+  assert.match(html,/href="\/assets\/editorial-r16\.css\?v=R16-photos"/,p);
   assert.doesNotMatch(html,/PROPOZYCJA P0[12]|data-preview|class="proposal-bar"|class="preview-note"/,p);
   assert.match(html,/<link rel="canonical" href="https:\/\/www\.barczuk\.com\.pl\//,p);
   assert.match(html,/class="brand-square brand-dot"/,p);
@@ -116,14 +116,14 @@ test("R16 has differentiated meta descriptions without modifying the URL paths",
 
 test("R16 provides an original visual system without weakening SEO or P04",()=>{
  const home=read("index.html"), css=read("assets/editorial-r16.css");
- assert.match(home,/data-src="\/assets\/video\/lodz-r16-calm\.mp4"/);
+ assert.match(home,/data-hero-slideshow/);
  assert.doesNotMatch(home,/class="editorial-band"/);
  assert.match(home,/Doświadczenie w bankowości korporacyjnej od 1995 roku/);
  assert.match(css,/--navy:#14243a/);
  assert.match(css,/@media\(max-width:760px\)/);
  assert.match(css,/\.contact-form-section\[hidden\]\{display:none!important\}/);
  assert.doesNotMatch(css,/@import|fonts\.googleapis|https?:\/\//);
- assert.match(home,/<video[^>]* muted playsinline loop preload="none"/);
- assert.match(home,/data-media-toggle hidden/);
+ assert.doesNotMatch(home,/<video\b/);
+ assert.doesNotMatch(home,/data-media-toggle/);
  assert.match(home,/<section class="contact-form-section"[^>]* hidden>/);
 });

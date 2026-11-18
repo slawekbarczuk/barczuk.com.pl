@@ -1,0 +1,25 @@
+name: R16 download four approved illustrations
+on:
+  push:
+    branches: [feature/r16-photo-slideshow-20261118]
+    paths:
+      - scripts/import-r16-photos.sh
+      - .github/workflows/import-r16-photos.yml
+jobs:
+  import-photos:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download four user-approved AI illustrations
+        run: bash scripts/import-r16-photos.sh
+      - name: Commit optimized WebP photos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/photos-r16/*.webp
+          git commit -m "R16: four approved Lodz-inspired hero illustrations"
+          git push origin HEAD:feature/r16-photo-slideshow-20261118
