@@ -79,8 +79,12 @@ function injectShared(h,p,locale){
 }
 function localHref(value,locale){
  if(!value.startsWith("/"))return value;
+ // Root homepage links are localized, not every URL under /.
+ // In particular, icons and assets must keep their absolute original path.
+ if(value==="/" || value.startsWith("/#") || value.startsWith("/?")){
+  return "/"+locale+"/"+value.slice(1);
+ }
  const paths={
-  "/":"/"+locale+"/",
   "/finansowanie-przedsiebiorstw/":locale==="en"?"/en/corporate-financing/":"/de/unternehmensfinanzierung/",
   "/informacje/informacje-prawne/":locale==="en"?"/en/legal-information/":"/de/rechtliche-hinweise/",
   "/informacje/prywatnosc/":locale==="en"?"/en/privacy/":"/de/datenschutz/",
