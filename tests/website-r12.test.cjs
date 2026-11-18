@@ -116,7 +116,7 @@ test("R16 has differentiated meta descriptions without modifying the URL paths",
 
 test("R16 provides an original visual system without weakening SEO or P04",()=>{
  const home=read("index.html"), css=read("assets/editorial-r16.css");
- assert.match(home,/data-src="\/assets\/video\/lodz-warszawa-r16\.mp4"/);
+ assert.match(home,/data-src="\/assets\/video\/lodz-r16\.mp4"/);
  assert.doesNotMatch(home,/class="editorial-band"/);
  assert.match(home,/Doświadczenie w bankowości korporacyjnej od 1995 roku/);
  assert.match(css,/--navy:#14243a/);

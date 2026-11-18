@@ -399,3 +399,15 @@ h3{line-height:1.2}
   .hero-media.is-playing .hero-media-poster{opacity:1}
   .hero-media .hero-media-poster{transition:none}
 }
+
+/* Final R16: coherent editorial typography and the navy Łódź film. */
+.light-weight{font-style:normal}
+.hero-media video,.hero-media .hero-media-poster{filter:saturate(.83) contrast(1.04)}
+.hero-media::after{background:linear-gradient(115deg,rgba(20,36,58,.23),rgba(20,36,58,.12))}
+.media-toggle{width:36px;min-width:36px;height:36px;min-height:36px;padding:0;gap:0;border-radius:50%;font-size:0;line-height:0;opacity:.68;transition:opacity .2s,background .2s}
+.media-toggle:hover,.media-toggle:focus-visible{opacity:1}
+.media-toggle::before{content:"";display:block;width:12px;height:13px;background:linear-gradient(to right,#fff 0 4px,transparent 4px 8px,#fff 8px 12px)}
+.hero-media.is-paused .media-toggle::before{width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:9px solid #fff;background:none;margin-left:2px}
+.request-form h3#contact-form-heading{font-size:clamp(40px,4.1vw,56px);line-height:1.18;letter-spacing:-.036em;max-width:610px}
+@media(max-width:760px){.request-form h3#contact-form-heading{font-size:clamp(39px,8vw,52px);line-height:1.2}}
+@media(max-width:440px){.request-form h3#contact-form-heading{font-size:39px}}

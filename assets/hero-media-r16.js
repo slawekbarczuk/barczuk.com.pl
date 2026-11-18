@@ -19,6 +19,7 @@
     const playing = !video.paused && !video.ended && !failed;
     // A user pause retains the current city frame; failures use the still.
     media.classList.toggle('is-playing', !failed && video.readyState >= 2 && available());
+    media.classList.toggle('is-paused', !playing);
     button.hidden = !available();
     button.textContent = playing ? 'Zatrzymaj film' : 'Odtwórz film';
   }
