@@ -411,3 +411,14 @@ h3{line-height:1.2}
 .request-form h3#contact-form-heading{font-size:clamp(40px,4.1vw,56px);line-height:1.18;letter-spacing:-.036em;max-width:610px}
 @media(max-width:760px){.request-form h3#contact-form-heading{font-size:clamp(39px,8vw,52px);line-height:1.2}}
 @media(max-width:440px){.request-form h3#contact-form-heading{font-size:39px}}
+
+/* R16: wyrazny granat i brak nienaturalnego ruchu na panoramach. */
+.hero-media video,.hero-media .hero-media-poster {
+  filter:grayscale(.42) saturate(.58) brightness(.88) contrast(1.06);
+  transform:none;
+  animation:none;
+}
+.hero-media::after {
+  background:linear-gradient(118deg,rgba(20,36,58,.48),rgba(20,36,58,.38));
+  opacity:1;
+}

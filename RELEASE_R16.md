@@ -31,3 +31,10 @@ Zaproszenie do rozmowy dotyczy potrzeb firmy. Formularz ma etykietę „Zostańm
 Kod API, konfiguracja hostingu i istniejące procesy publikacji pozostają zgodne z chronionymi sumami kontrolnymi. Nie wykonywano prawdziwego wysłania formularza.
 
 Kontrola wizualna tej wersji w przeglądarce nie została ukończona: narzędzie sterowania zostało zatrzymane, ponieważ nie potrafiło wiarygodnie ustalić adresu aktywnej karty. Przygotowano wersję do podglądu; przed publikacją produkcyjną pozostaje sprawdzić rzeczywisty wygląd na komputerze i telefonie, kadry obu miast oraz przycisk pauzy. Bieżący stan wdrożenia należy potwierdzić w GitHub Actions; ten dokument sam nie potwierdza publikacji.
+
+## Uzupełnienie R16 — spokojny film, nawigacja i favicon
+- Film 34 s: industrialna Łódź, nowoczesna panorama i szeroki widok Łodzi Fabrycznej; przenikania 2,5 s i płynna pętla.
+- Usunięto zoompan ze zdjęć, wprowadzono mocniejszy granatowy filtr. Film i plakat mają nowe adresy (uniknięcie starej pamięci podręcznej).
+- Menu: „Etapy” i „Rezultaty”, bez zmiany identyfikatorów sekcji ani SEO.
+- Favicon bez tła: granatowa litera B (krój szeryfowy Palatino/P052 jako kontur wektorowy) i złoty kwadrat na wspólnej podstawie; PNG/ICO przezroczyste.
+- Zachowano SB-WEB-1126-R16, P04 i konfigurację API.
