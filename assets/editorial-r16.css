@@ -425,7 +425,7 @@ h3{line-height:1.2}
 
 /* R16: cztery zaakceptowane wizualizacje Łodzi. Obraz bez wideo i obłych narożników.
    Każde zdjęcie 11s, z miękkim przenikaniem 2.2s. */
-.hero-slideshow{overflow:hidden;border-radius:0;background:#d8dde2}
+.hero-slideshow{overflow:hidden;border-radius:0;background:#d8dde2;aspect-ratio:16/9;height:auto}
 .hero-slideshow .hero-slide{
  position:absolute;inset:0;display:block;width:100%;height:100%;
  object-fit:cover;object-position:center;
