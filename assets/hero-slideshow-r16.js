@@ -1,4 +1,4 @@
-/* R16: four static artistic images, 2.2-second crossfade every 11 seconds. */
+/* R16: four static artistic images, 1.6-second crossfade every 8 seconds. */
 (() => {
   'use strict';
   const root = document.querySelector('[data-hero-slideshow]');
@@ -7,7 +7,7 @@
   if (slides.length < 2) return;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const connection = navigator.connection;
-  const intervalMs = 11000;
+  const intervalMs = 8000;
   let active = 0;
   let timer = null;
   let inView = true;

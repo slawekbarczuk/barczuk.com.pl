@@ -431,8 +431,34 @@ h3{line-height:1.2}
  object-fit:cover;object-position:center;
  max-width:100%;min-height:0;aspect-ratio:auto;
  opacity:0;filter:none;transform:none;animation:none;
- transition:opacity 2.2s ease-in-out;pointer-events:none;
+ transition:opacity 1.6s ease-in-out;pointer-events:none;
 }
 .hero-slideshow .hero-slide.is-visible{opacity:1}
 .hero-slideshow::after{background:linear-gradient(120deg,rgba(20,36,58,.06),rgba(20,36,58,.025))}
 @media(prefers-reduced-motion:reduce){.hero-slideshow .hero-slide{transition:none}}
+
+/* R16 XL: 50% wider desktop imagery (original 560px cap -> 840px).
+   Keep heading legible and retain the responsive side-by-side design.
+   Phones/tablets below 1050px keep their existing layout and image size. */
+@media (min-width:1050px) {
+  .hero .shell.hero-grid {
+    width:auto;
+    max-width:none;
+    margin-left:max(40px,calc((100% - 1440px) / 2));
+    margin-right:clamp(30px,3vw,48px);
+    grid-template-columns:minmax(0,1fr) minmax(0,min(840px,50vw));
+    gap:clamp(35px,3vw,56px);
+    align-items:center;
+  }
+  .hero .hero-copy h1{
+    font-size:clamp(48px,4.4vw,78px);
+  }
+  .hero .hero-slideshow{
+    width:100%;
+    max-width:840px;
+    aspect-ratio:16/9;
+    height:auto;
+    justify-self:end;
+    border-radius:0;
+  }
+}

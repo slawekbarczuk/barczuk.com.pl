@@ -15,7 +15,7 @@ test("R16 contact headings and slideshow transitions are coherent",()=>{
   const h=read("index.html"),css=read("assets/editorial-r16.css");
   assert.match(css,/\.light-weight\{font-style:normal\}/);
   assert.match(css,/\.request-form h3#contact-form-heading\{font-size:clamp\(40px,4\.1vw,56px\)/);
-  assert.match(css,/transition:opacity 2\.2s ease-in-out/);
+  assert.match(css,/transition:opacity 1\.6s ease-in-out/);
   assert.match(h,/Przedstaw<br>swoją sprawę\./);
   assert.doesNotMatch(h,/Zacznijmy od rozmowy/);
 });
@@ -59,4 +59,16 @@ test("R16 uses only actual WebP image assets",()=>{
     assert.equal(b.toString("ascii",0,4),"RIFF");
     assert.equal(b.toString("ascii",8,12),"WEBP");
   }
+});
+
+test("R16 XL: 50 percent bigger desktop photo and faster rotation",()=>{
+  const html=read("index.html"), css=read("assets/editorial-r16.css"), js=read("assets/hero-slideshow-r16.js");
+  assert.match(css,/max-width:840px/);
+  assert.match(css,/min\(840px,50vw\)/);
+  assert.match(css,/@media \(min-width:1050px\)/);
+  assert.match(css,/transition:opacity 1\.6s ease-in-out/);
+  assert.match(js,/const intervalMs = 8000/);
+  for(const image of ["fabryczna","manufaktura","piotrkowska","ec1"])
+    assert.ok(html.includes(image+'.webp" width="1440" height="810"'),image);
+  assert.match(html,/editorial-r16\.css\?v=R16-xl/);
 });

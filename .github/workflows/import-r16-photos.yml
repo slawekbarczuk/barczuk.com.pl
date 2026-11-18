@@ -1,9 +1,10 @@
-name: R16 download four approved illustrations
+name: R16 download four approved HD illustrations
 on:
   push:
-    branches: [feature/r16-photo-slideshow-20261118]
+    branches: [feature/r16-desktop-images-xl]
     paths:
       - scripts/import-r16-photos.sh
+      - scripts/import-r16-photos.py
       - .github/workflows/import-r16-photos.yml
 jobs:
   import-photos:
@@ -21,5 +22,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/photos-r16/*.webp
-          git commit -m "R16: four approved Lodz-inspired hero illustrations"
-          git push origin HEAD:feature/r16-photo-slideshow-20261118
+          git commit -m "R16: sharp 1440x810 WebP photos for larger desktop hero"
+          git push origin HEAD:feature/r16-desktop-images-xl

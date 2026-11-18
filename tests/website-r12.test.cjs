@@ -17,7 +17,7 @@ test("R16 production pages have current version and canonical metadata without p
   const html=read(p);
   assert.equal((html.match(/SB-WEB-1126-R\d+/g)||[]).length,1,p);
   assert.match(html,/SB-WEB-1126-R16/,p);
-  assert.match(html,/href="\/assets\/editorial-r16\.css\?v=R16-photos"/,p);
+  assert.match(html,/href="\/assets\/editorial-r16\.css\?v=R16-(?:photos|xl)"/,p);
   assert.doesNotMatch(html,/PROPOZYCJA P0[12]|data-preview|class="proposal-bar"|class="preview-note"/,p);
   assert.match(html,/<link rel="canonical" href="https:\/\/www\.barczuk\.com\.pl\//,p);
   assert.match(html,/class="brand-square brand-dot"/,p);
