@@ -5,8 +5,8 @@ const pages=["index.html","finansowanie-przedsiebiorstw/index.html","404.html","
 test("R16 uses the B favicon on every page",()=>{for(const p of pages)assert.match(read(p),/href="\/favicon-b\.svg\?v=r16c"/,p);});
 test("R16 hero contains only Łódź media references",()=>{
 const h=read("index.html");
-assert.match(h,/data-src="\/assets\/video\/lodz-r16\.mp4"/);
-assert.match(h,/src="\/assets\/video\/lodz-r16-poster\.jpg"/);
+assert.match(h,/data-src="\/assets\/video\/lodz-r16-calm\.mp4"/);
+assert.match(h,/src="\/assets\/video\/lodz-r16-calm-poster\.jpg"/);
 assert.doesNotMatch(h,/lodz-warszawa-r16|panoramę Warszawy/i);
 });
 test("R16 styles the compact pause control and heading",()=>{
@@ -40,4 +40,12 @@ test("R16 distinguishes stages and results, with a stronger film overlay",()=>{
   assert.match(home,/Zakres i rezultaty/);
   assert.match(css,/rgba\(20,36,58,\.48\)/);
   assert.match(css,/animation:none/);
+});
+
+test("R16 favicon PNGs retain an alpha channel (no background)",()=>{
+  for(const p of ["favicon-b-32.png","favicon-b-180.png"]){
+    const b=fs.readFileSync(path.join(__dirname,"..",p));
+    assert.equal(b.subarray(1,4).toString("ascii"),"PNG",p);
+    assert.equal(b[25],6,"Expected RGBA PNG: "+p);
+  }
 });
