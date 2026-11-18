@@ -92,9 +92,11 @@ function localHref(value,locale){
 }
 function localizeRuntime(h,locale){
  const runtime=JSON.parse(fs.readFileSync(path.join(root,"i18n",locale+"-runtime.json"),"utf8"));
- for(const [pl,localized] of Object.entries(runtime)){
-  if(!h.includes(pl))throw Error("Runtime text disappeared: "+pl.slice(0,70));
-  h=h.replaceAll(pl,localized);
+ if(h.includes('const form=document.getElementById("contact-request-form")')){
+  for(const [pl,localized] of Object.entries(runtime)){
+   if(!h.includes(pl))throw Error("Runtime text disappeared: "+pl.slice(0,70));
+   h=h.replaceAll(pl,localized);
+  }
  }
  // The Polish typography fix for one-character prepositions is Polish-only.
  const polishTypo="document.querySelectorAll('p,h1,h2,h3,a,li').forEach(e=>e.childNodes.forEach(n=>{if(n.nodeType===Node.TEXT_NODE)n.textContent=n.textContent.replace(/(^|\\s)([aiouwz])\\s+/gi,'$1$2\\u00a0')}));";
