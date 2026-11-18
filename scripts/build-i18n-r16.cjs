@@ -112,7 +112,7 @@ function translateHtml(h,dict,locale,p){
      return part.replace(key,dict[key]);
    }
    const skip = /^(?:\d+|CEIDG|NIP|REGON|Barczuk|Sławomir Barczuk|\+48|kontakt@|barczuk\.com\.pl|SB-WEB|Cloudflare Web Analytics|&nbsp;|©|\*|\.|→|＋)/i.test(key);
-   if(!skip && /[A-Za-zĄąĆćĘęŁłŃńÓóŚśŹźŻż]/.test(key)) misses.add(key);
+   if(!skip && !key.endsWith(" | Barczuk") && /[A-Za-zĄąĆćĘęŁłŃńÓóŚśŹźŻż]/.test(key)) misses.add(key);
    return part;
  });
  // Attribute strings translated without changing IDs, validation or endpoints.
@@ -163,7 +163,10 @@ function writeFile(file,html){
  console.log("Built",file,Buffer.byteLength(html,"utf8"),"bytes");
 }
 function build(){
- const source=new Map(pageTypes.map(p=>[p.id,fs.readFileSync(path.join(root,p.base),"utf8")]));
+ const source=new Map(pageTypes.map(p=>[p.id,fs.readFileSync(path.join(root,p.base),"utf8")
+   .replace(/<nav class="language-switcher"[\s\S]*?<\/nav>/g,"")
+   .replace(/<link rel="alternate" hreflang="(?:pl|en|de|x-default)"[^>]*>/g,"")
+   .replace(/<link rel="stylesheet" href="\/assets\/language-switcher-r16\.css[^"]*"[^>]*>/g,"")]));
  const dict={en:loadTranslations("en"),de:loadTranslations("de")};
  for(const p of pageTypes){
   let pl=source.get(p.id);
