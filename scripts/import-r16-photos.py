@@ -14,7 +14,7 @@ for name,share in data.items():
     rel="/Shared Documents/Barczuk WWW - grafiki R16/"+name+".webp"
     download="https://barczuk.sharepoint.com/_layouts/15/download.aspx?SourceUrl="+quote(rel,safe="")
     attempts=[
-        share+"?download=1", share,
+        share+"?download=1&v=xl-20261118", share,
         original+"?download=1",
         download,
     ]
@@ -27,9 +27,13 @@ for name,share in data.items():
                 final=response.url
                 content_type=response.headers.get("Content-Type","")
             print("URL attempt",name,url.split("?")[0],"got",len(data_bytes),"bytes",content_type,"final",final[:120],flush=True)
-            if data_bytes[:4]==b"RIFF" and data_bytes[8:12]==b"WEBP" and len(data_bytes)>5000:
+            width=height=0
+            if data_bytes[:4]==b"RIFF" and data_bytes[8:12]==b"WEBP" and data_bytes[12:16]==b"VP8 " and len(data_bytes)>=30:
+                width=int.from_bytes(data_bytes[26:28],"little") & 0x3fff
+                height=int.from_bytes(data_bytes[28:30],"little") & 0x3fff
+            if data_bytes[:4]==b"RIFF" and data_bytes[8:12]==b"WEBP" and len(data_bytes)>50000 and width>=1400 and height>=800:
                 (folder/(name+".webp")).write_bytes(data_bytes)
-                print("OK",name,len(data_bytes),flush=True)
+                print("OK HD",name,len(data_bytes),"resolution",width,"x",height,flush=True)
                 success=True
                 break
             if b"<html" in data_bytes[:600].lower() or b"<!doctype" in data_bytes[:600].lower():
@@ -44,4 +48,4 @@ for name,share in data.items():
         except Exception as e:
             print("Download error",name,type(e).__name__,str(e)[:130],flush=True)
     if not success:
-        raise RuntimeError("No direct binary available from anonymous share for "+name)
+        raise RuntimeError("No valid high-resolution WebP (>=1400x800, >=50KB) available from anonymous share for "+name)
