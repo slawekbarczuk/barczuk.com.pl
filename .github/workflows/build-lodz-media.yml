@@ -15,7 +15,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: Prepare ffmpeg
-        run: command -v ffmpeg && command -v ffprobe
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version | head -n 1
       - name: Build Lodz video and favicon
         run: bash scripts/build-lodz-media.sh
       - name: Commit generated media assets
