@@ -38,3 +38,10 @@ Kontrola wizualna tej wersji w przeglądarce nie została ukończona: narzędzie
 - Menu: „Etapy” i „Rezultaty”, bez zmiany identyfikatorów sekcji ani SEO.
 - Favicon bez tła: granatowa litera B (krój szeryfowy Palatino/P052 jako kontur wektorowy) i złoty kwadrat na wspólnej podstawie; PNG/ICO przezroczyste.
 - Zachowano SB-WEB-1126-R16, P04 i konfigurację API.
+
+## R16 — zdjęcia Łodzi i spokojne przejścia (18.11.2026)
+- Film zastąpiono 4 zatwierdzonymi artystycznymi wizualizacjami architektury Łodzi (Fabryczna + Brama Miasta, Manufaktura, Piotrkowska, EC1).
+- Grafiki WebP, proste narożniki, statyczne kadry, bez sztucznego przesuwania i bez przycisku pauzy. Wymiana co 11 sekund, przenikanie 2,2 sekundy, pełny cykl 44 sekundy.
+- Tryb ograniczenia ruchu i oszczędzania danych zatrzymują pokaz; niewidoczna karta i obraz poza ekranem wstrzymują zegar.
+- Powtórzone „Zacznijmy od rozmowy” zastąpiono etykietą „Kontakt” i odrębnym nagłówkiem formularza „Przedstaw swoją sprawę”.
+- Wszystkie cztery obrazy są **wizualizacjami wygenerowanymi** inspirowanymi Łodzią; nie są dokumentalnymi fotografiami. P04 i API pozostają bez zmian.
