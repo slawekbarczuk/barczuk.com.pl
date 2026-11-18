@@ -12,6 +12,7 @@
 }
 .language-switcher a{
   display:inline-block;text-decoration:none;color:#697587;
+  font-size:inherit;font-weight:inherit;padding:0;
   min-width:21px;text-align:center;line-height:25px;
   border-bottom:2px solid transparent;transition:color .15s,border-color .15s;
 }
