@@ -1,0 +1,31 @@
+name: R16 build Lodz film and favicon
+on:
+  push:
+    branches: [feature/r16-refinement]
+    paths:
+      - scripts/build-lodz-media.sh
+      - .github/workflows/build-lodz-media.yml
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Prepare ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version | head -n 1
+      - name: Build Lodz video and favicon
+        run: bash scripts/build-lodz-media.sh
+      - name: Commit generated media assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/video/lodz-r16.mp4 assets/video/lodz-r16-poster.jpg favicon-b-180.png favicon-b-32.png favicon.ico
+          git rm -f assets/video/lodz-warszawa-r16.mp4 assets/video/lodz-warszawa-r16-poster.jpg
+          git commit -m "R16: generated Lodz footage and B favicon"
+          git push origin HEAD:feature/r16-refinement
