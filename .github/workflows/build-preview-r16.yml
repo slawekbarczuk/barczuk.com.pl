@@ -1,4 +1,4 @@
-name: Preview R16: natural footage, no website deployment
+name: 'Preview R16 - natural footage, no website deployment'
 on:
   push:
     branches: [preview/hero-r16-natural-film-20261118]
