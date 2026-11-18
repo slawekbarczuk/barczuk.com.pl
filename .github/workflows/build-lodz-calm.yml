@@ -1,0 +1,30 @@
+name: R16 calm Lodz film and transparent B favicon
+on:
+  push:
+    branches: [feature/r16-calm-lodz]
+    paths:
+      - scripts/build-lodz-calm.sh
+      - .github/workflows/build-lodz-calm.yml
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install video and SVG render tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg librsvg2-bin fonts-texgyre
+      - name: Build stabilized Lodz footage and transparent favicon
+        run: bash scripts/build-lodz-calm.sh
+      - name: Commit reviewed media outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/video/lodz-r16-calm.mp4 assets/video/lodz-r16-calm-poster.jpg favicon-b-180.png favicon-b-32.png favicon.ico
+          git rm assets/video/lodz-r16.mp4 assets/video/lodz-r16-poster.jpg
+          git commit -m "R16: 34s calm Lodz panorama and transparent B icons"
+          git push origin HEAD:feature/r16-calm-lodz
