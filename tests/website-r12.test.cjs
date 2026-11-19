@@ -61,7 +61,7 @@ test("R16 keeps business identity and the full privacy policy, including approve
 
 test("R16 exposes the consolidated offer and withdraws the former standalone services",()=>{
  const xml=read("sitemap.xml");
- assert.equal((xml.match(/<loc>/g)||[]).length,15);
+ assert.equal((xml.match(/<loc>/g)||[]).length,20);
  assert.match(xml,/https:\/\/www\.barczuk\.com\.pl\/finansowanie-przedsiebiorstw\//);
  assert.doesNotMatch(xml,/\/uslugi\//);
  const retired=["finanse-i-analiza-biznesowa","uslugi-prawnicze","doradztwo-i-zarzadzanie","it-i-automatyzacja"];

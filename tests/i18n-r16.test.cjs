@@ -84,6 +84,7 @@ test("R16 multilingual: legal, privacy and cookie texts",()=>{
 test("R16 multilingual: internal navigation resolves to actual pages",()=>{
  const all=new Set();
  for(const set of pageSets)for(const l of ["pl","en","de"])all.add(set.paths[l]);
+ for(const ua of ["/ua/","/ua/finansuvannia/","/ua/pravova-informatsiia/","/ua/konfidentsiinist/","/ua/cookies/"])all.add(ua);
  for(const set of pageSets)for(const l of ["pl","en","de"]){
   const file=routeFile(set.paths[l]),s=read(file);
   for(const [,href] of s.matchAll(/\bhref="(\/[^"]*)"/g)){
@@ -94,11 +95,11 @@ test("R16 multilingual: internal navigation resolves to actual pages",()=>{
   }
  }
 });
-test("R16 multilingual: 15 sitemap URLs, Polish default",()=>{
+test("R16 multilingual: 20 sitemap URLs, Polish default",()=>{
  const sitemap=read("sitemap.xml");
  const locs=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
  assert.equal(locs.length,20);
- assert.equal(new Set(locs).size,15);
+ assert.equal(new Set(locs).size,20);
  assert.equal(locs[0],base+"/");
  for(const set of pageSets)for(const l of ["pl","en","de"])assert.ok(locs.includes(base+set.paths[l]));
  const pl=read("index.html");
