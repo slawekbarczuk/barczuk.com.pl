@@ -28,7 +28,7 @@ Statusy: **POTWIERDZONE** = dowód w GitHub/Azure lub test użytkownika; **PLAN*
 - Oddzielne prywatne repozytorium źródeł: https://github.com/slawekbarczuk/barczuk-strefa-klienta. Widoczność **Private** potwierdzona w GitHub.
 - Wersjonowane źródła R08, cztery języki, statyczne strony, oryginalna grafika skarbca, dokumentacja, skrypty oraz testy zostały zapisane; oryginalna grafika przeszła kontrolę SHA-256.
 - Import, testy R05/R07/R08 i budowanie SPA przeszły pomyślnie w GitHub Actions: https://github.com/slawekbarczuk/barczuk-strefa-klienta/actions/runs/44576101323.
-- Repozytorium portalu ma własne testy CI **bez automatycznego wdrażania**. Wdrożenie R08 z 19.11.2026 pozostaje niezmienione, a przyszłe publikacje wymagają świadomego uruchomienia lub zatwierdzonego procesu release.
+- Repozytorium portalu ma własne testy CI **bez automatycznego wdrażania**. 19.11.2026 użytkownik ręcznie opublikował jeszcze kosmetyczną poprawkę R08 (wyrównanie złotego kwadratu logo z R16) z pakietu ZIP przez Azure Cloud Shell; SWA CLI potwierdziło `Project deployed` na dotychczasowej aplikacji. Testy prywatnego repo: https://github.com/slawekbarczuk/barczuk-strefa-klienta/actions/runs/44577961335 — sukces. Kontrola wizualna po odświeżeniu strony pozostaje do potwierdzenia. Przyszłe publikacje wymagają świadomego uruchomienia lub zatwierdzonego procesu release.
 - Dalsze ryzyko organizacyjne: formalna procedura wydań (testy, środowisko testowe, kontrola zmian i bezpieczny rollback) wciąż pozostaje do opracowania.
 - Nie ma potwierdzenia, że ekran po zalogowaniu jest już właściwym Panelem doradcy lub że wdrożono teczki, bezpieczny obieg dokumentów, analizę finansową, zapisy umów i powiadomienia.
 

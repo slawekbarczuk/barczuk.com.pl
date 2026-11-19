@@ -2,6 +2,13 @@
 
 Każdy ważny wpis powinien zawierać: datę, zakres, wersję, status, dowód wdrożenia lub testu, elementy niezmienione i kolejny krok.
 
+## 2026-11-19 — R08, korekta złotego kwadratu logo
+
+- Ujednolicono położenie znaku BARCZUK w portalu (PL/EN/DE/UA) z publiczną witryną: wspólny CSS, wyrównanie kwadratu do linii pisma.
+- Zapis kodu: https://github.com/slawekbarczuk/barczuk-strefa-klienta/commit/7c71eccf4ef3eca97ada400bf6711c640a226125; testy CI: https://github.com/slawekbarczuk/barczuk-strefa-klienta/actions/runs/44577961335 — sukces.
+- Ręczne wdrożenie użytkownika przez Azure Cloud Shell zakończone komunikatem `Project deployed`. Pozostają do potwierdzenia efekty wizualne na świeżo odświeżonym portalu.
+- Bez zmian w publicznej witrynie R16, Entra, CORS, API, zdjęciach i funkcjach biznesowych.
+
 ## 2026-11-19 — R16 + R08, fundament gotowy
 
 **Witryna publiczna R16:**
