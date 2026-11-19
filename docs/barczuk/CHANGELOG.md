@@ -14,9 +14,9 @@ Każdy ważny wpis powinien zawierać: datę, zakres, wersję, status, dowód wd
 - Dla domeny poprawiono konfigurację adresów przekierowania Microsoft Entra i CORS backendu.
 - R07, a potem R08 opublikowano przez Azure Cloud Shell / Static Web Apps CLI na dotychczasowej aplikacji, bez tworzenia kolejnego hostingu.
 - R08 ujednoliciła nagłówek z witryną i dodała UA. Użytkownik zweryfikował wygląd, logowanie i komunikat API HTTP 200 na stronie UA 19.11.2026.
-- **Niepotwierdzone źródło w GitHub:** repozytorium z kodem R08 jeszcze nie zostało utrwalone; konieczny prywatny SCM.
+- **Prywatne źródła R08 potwierdzone 19.11.2026:** https://github.com/slawekbarczuk/barczuk-strefa-klienta (Private), kompletne źródła, oryginalna grafika, testy CI; https://github.com/slawekbarczuk/barczuk-strefa-klienta/actions/runs/44576101323 — sukces. Repo nie wdraża automatycznie na produkcję.
 
-**Decyzja kolejnego etapu:** Panel doradcy i teczki klientów, ale pierwsze zadanie organizacyjne to zachować źródła portalu w bezpiecznym prywatnym repo.
+**Decyzja kolejnego etapu:** repozytorium prywatne gotowe; następne zadanie to kontrola uprawnień, proces wydań i pierwszy pionowy moduł Panelu doradcy oraz teczek klientów.
 
 ## 2026-11-18 — strona R16, obrazy i języki PL/EN/DE
 

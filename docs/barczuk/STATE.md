@@ -23,10 +23,13 @@ Statusy: **POTWIERDZONE** = dowód w GitHub/Azure lub test użytkownika; **PLAN*
 - Uwierzytelnienie przez Microsoft Entra; nowa domena została dodana do konfiguracji przekierowań, a dozwolony origin do CORS backendu.
 - Użytkownik potwierdził logowanie na nowej domenie. Zrzut ekranu z 19.11.2026 pokazuje zalogowaną sesję i komunikat **połączenie z API działa (HTTP 200)** w wersji ukraińskiej. To potwierdza dostęp do istniejącego endpointu diagnostycznego, **nie** gotowość przyszłych funkcji biznesowych.
 
-## 3. Główna luka w trwałości projektu — DO UZUPEŁNIENIA
+## 3. Trwałość źródeł portalu — POTWIERDZONE 19.11.2026
 
-- Kod R08 jest utrzymywany jako osobny pakiet wdrożeniowy ZIP / źródła w Cloud Shell, **nie został jeszcze potwierdzony jako zapisany w dedykowanym repozytorium**. To krytyczne dla odtwarzalności, zmian, przeglądów i współpracy między wątkami.
-- Należy utworzyć **osobne prywatne repozytorium Strefy klienta**, dodać wersjonowane źródła R08, instrukcję budowania, wzorce konfiguracji bez sekretów, testy i proces wdrożenia. Nie kopiować tego kodu do niniejszego publicznego repozytorium.
+- Oddzielne prywatne repozytorium źródeł: https://github.com/slawekbarczuk/barczuk-strefa-klienta. Widoczność **Private** potwierdzona w GitHub.
+- Wersjonowane źródła R08, cztery języki, statyczne strony, oryginalna grafika skarbca, dokumentacja, skrypty oraz testy zostały zapisane; oryginalna grafika przeszła kontrolę SHA-256.
+- Import, testy R05/R07/R08 i budowanie SPA przeszły pomyślnie w GitHub Actions: https://github.com/slawekbarczuk/barczuk-strefa-klienta/actions/runs/44576101323.
+- Repozytorium portalu ma własne testy CI **bez automatycznego wdrażania**. Wdrożenie R08 z 19.11.2026 pozostaje niezmienione, a przyszłe publikacje wymagają świadomego uruchomienia lub zatwierdzonego procesu release.
+- Dalsze ryzyko organizacyjne: formalna procedura wydań (testy, środowisko testowe, kontrola zmian i bezpieczny rollback) wciąż pozostaje do opracowania.
 - Nie ma potwierdzenia, że ekran po zalogowaniu jest już właściwym Panelem doradcy lub że wdrożono teczki, bezpieczny obieg dokumentów, analizę finansową, zapisy umów i powiadomienia.
 
 ## 4. Formularz kontaktowy P04 — DO WERYFIKACJI PRZED ZMIANĄ
@@ -36,4 +39,4 @@ Statusy: **POTWIERDZONE** = dowód w GitHub/Azure lub test użytkownika; **PLAN*
 
 ## 5. Następne zadanie
 
-Jutro / w kolejnej sesji: zacząć od odczytania tego pliku oraz ROADMAP.md, zabezpieczyć źródła R08 w prywatnym repozytorium i dopiero potem zaplanować pierwszy pionowy moduł Panelu doradcy i teczek przedsiębiorstw. Nie implementować bez kontroli dostępu i prawidłowego informowania o przetwarzaniu danych.
+W kolejnej sesji: odczytać ten plik, ROADMAP.md oraz prywatne repozytorium portalu; zaplanować pierwszy pionowy moduł Panelu doradcy i teczek przedsiębiorstw oraz kontrolę uprawnień. Nie implementować przetwarzania danych rzeczywistych klientów bez zabezpieczeń i informacji o przetwarzaniu.

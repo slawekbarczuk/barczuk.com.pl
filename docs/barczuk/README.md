@@ -27,4 +27,4 @@ Repozytorium `slawekbarczuk/barczuk.com.pl` jest **publiczne**. Nie jest miejsce
 
 ## Najważniejszy następny krok
 
-Przed rozwijaniem Panelu doradcy zapewnić trwałe, prywatne repozytorium źródeł R08 portalu, z procedurą bezpiecznych wdrożeń, odtwarzalnością i testami. Następnie rozpocząć moduły rejestru przedsiębiorstw i teczek klientów; szczegóły w ROADMAP.md.
+Repozytorium źródeł R08 jest już prywatne: https://github.com/slawekbarczuk/barczuk-strefa-klienta (dostęp tylko dla upoważnionych). Następnie zaprojektować kontrolę uprawnień i moduły rejestru przedsiębiorstw oraz teczek klientów; szczegóły w ROADMAP.md.

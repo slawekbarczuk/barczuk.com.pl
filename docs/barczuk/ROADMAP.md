@@ -8,7 +8,8 @@ Punkt startowy: R16 witryny publicznej i R08 Strefy klienta, zalogowanie Microso
 - [x] Osobna aplikacja portalu R08 na subdomenie, cztery języki, zgodność wizualna.
 - [x] Podłączenie domeny portal, Microsoft Entra i CORS.
 - [x] Test sesji i diagnostycznego API HTTP 200.
-- [ ] Oddzielne prywatne repozytorium z odtwarzalnym źródłem R08 — **priorytet A**.
+- [x] Oddzielne prywatne repozytorium z odtwarzalnym źródłem R08 — zweryfikowane 19.11.2026.
+- [ ] Procedura wydań/rollback i test bezpieczeństwa uprawnień przed modułami danych klientów.
 
 ## Etap 1 — Panel doradcy i rejestr przedsiębiorstw (następny)
 
@@ -48,4 +49,4 @@ Nie deklarować gotowości bankowego silnika decyzji, autonomicznych rekomendacj
 
 ## Wznowienie
 
-Pierwsza czynność w kolejnej sesji: odczytać STATE.md i ten ROADMAP; następnie uporządkować wersjonowanie prywatnego R08 i zaprojektować pierwszy moduł Panelu doradcy, bez nadpisywania R16/R08.
+Pierwsza czynność w kolejnej sesji: odczytać STATE.md, ten ROADMAP i źródła prywatnego repozytorium barczuk-strefa-klienta; następnie zaprojektować kontrolę dostępu i pierwszy moduł Panelu doradcy, bez nadpisywania R16/R08.
