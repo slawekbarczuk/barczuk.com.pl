@@ -462,3 +462,36 @@ h3{line-height:1.2}
     border-radius:0;
   }
 }
+
+
+/* R16: pelny kadr po prawej, rozmycie tylko lewej krawedzi.
+   Zachowujemy oryginalne 4 zdjecia, odcien, teksty, podstrony, 8 s / 1.6 s.
+   Na ekranach ponizej 1050 px dotychczasowy uklad pozostaje bez zmian. */
+@media (min-width:1050px) {
+  .hero {
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+  }
+  .hero .shell.hero-grid {
+    min-height:min(472.5px,28.125vw);
+  }
+  .hero .hero-copy {
+    position:relative;
+    z-index:2;
+  }
+  .hero .hero-media.hero-slideshow {
+    position:absolute;
+    inset:0 0 0 auto;
+    z-index:1;
+    width:56%;
+    height:100%;
+    max-width:none;
+    min-height:0;
+    margin:0;
+    aspect-ratio:auto;
+    background:transparent;
+    -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.16) 14%,rgba(0,0,0,.82) 30%,#000 42%);
+    mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.16) 14%,rgba(0,0,0,.82) 30%,#000 42%);
+  }
+}
