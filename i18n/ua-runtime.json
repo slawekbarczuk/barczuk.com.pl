@@ -1,0 +1,11 @@
+{
+  "Weryfikacja wygasła. Powtórz weryfikację antyspamową.": "Термін дії перевірки минув. Повторіть перевірку на захист від спаму.",
+  "Nie udało się przeprowadzić weryfikacji. Możesz napisać bezpośrednio na kontakt@barczuk.com.pl.": "Не вдалося виконати перевірку. Ви можете написати безпосередньо на kontakt@barczuk.com.pl.",
+  "Wersja testowa P04. Wpisz wyłącznie własne dane testowe, nie dane klientów. Przed wysłaniem przejdź weryfikację antyspamową.": "Тестова версія P04. Вводьте лише власні тестові дані, а не дані клієнтів. Перед надсиланням пройдіть перевірку на захист від спаму.",
+  "Przed wysłaniem przejdź krótką weryfikację antyspamową.": "Перед надсиланням пройдіть коротку перевірку на захист від спаму.",
+  "Weryfikacja antyspamowa jest wymagana.": "Потрібно пройти перевірку на захист від спаму.",
+  "Trwa wysyłanie zgłoszenia…": "Надсилання звернення…",
+  "Zbyt wiele zgłoszeń w krótkim czasie. Spróbuj później albo napisz na kontakt@barczuk.com.pl.": "Надто багато звернень за короткий час. Спробуйте пізніше або напишіть на kontakt@barczuk.com.pl.",
+  "Zgłoszenie zostało przyjęte do wysyłki. Do usłyszenia!": "Звернення прийнято до надсилання. До зв’язку!",
+  "Nie udało się wysłać formularza. Wpisane dane pozostały w formularzu. Możesz też napisać na kontakt@barczuk.com.pl.": "Не вдалося надіслати форму. Введені дані залишилися в ній. Ви також можете написати на kontakt@barczuk.com.pl."
+}

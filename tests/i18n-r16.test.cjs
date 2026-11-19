@@ -22,7 +22,7 @@ test("R16 multilingual: 15 complete static pages, correct lang and canonical",()
   assert.ok(html.includes('<link rel="canonical" href="'+base+route+'">'),file);
   assert.match(html,/<meta name="robots" content="index,follow">/,file);
   assert.ok(html.includes('data-language-switcher'),file);
-  assert.ok(html.includes('href="/assets/language-switcher-r16.css?v=R16-i18n"'),file);
+  assert.ok(html.includes('href="/assets/language-switcher-r16.css?v=R16-ua"'),file);
   assert.match(html,/<meta name="description" content="[^"]{15,}">/,file);
   assert.match(html,/<title>[^<]{12,}<\/title>/,file);
  }
@@ -97,7 +97,7 @@ test("R16 multilingual: internal navigation resolves to actual pages",()=>{
 test("R16 multilingual: 15 sitemap URLs, Polish default",()=>{
  const sitemap=read("sitemap.xml");
  const locs=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
- assert.equal(locs.length,15);
+ assert.equal(locs.length,20);
  assert.equal(new Set(locs).size,15);
  assert.equal(locs[0],base+"/");
  for(const set of pageSets)for(const l of ["pl","en","de"])assert.ok(locs.includes(base+set.paths[l]));

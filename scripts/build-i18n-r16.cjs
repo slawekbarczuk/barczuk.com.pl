@@ -187,3 +187,4 @@ function build(){
  writeFile("sitemap.xml",'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.join("")+'</urlset>\n');
 }
 build();
+require("./build-ua-r16.cjs");

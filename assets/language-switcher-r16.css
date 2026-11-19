@@ -76,3 +76,14 @@ html[lang="de"] .detail-hero h1{
   .header .nav-links a{font-size:14px;padding:14px 0}
   .header .nav-links .nav-cta{margin:12px 0 0;padding:15px 18px}
 }
+
+
+/* R16 UA tight header: navigation and language choice form one right-hand group. */
+@media(min-width:1121px){
+  .header .shell.nav>.nav-links{margin-left:auto}
+  .header .shell.nav>.language-switcher{margin-left:0;padding-left:12px}
+}
+@media(max-width:420px){
+  .header .language-switcher{gap:2px;letter-spacing:.035em}
+  .header .language-switcher a{min-width:17px}
+}
