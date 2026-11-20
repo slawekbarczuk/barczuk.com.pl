@@ -19,6 +19,8 @@
 
 - **D-014, 2026-11-20:** Po wydaniu UA użytkownik zlecił obniżenie hero do wysokości PL, dalsze stonowanie kolorów i poprawę przejścia do ukraińskiego portalu. Zachować zatwierdzone słowa nagłówka i treść AML; zmienić tylko łamanie/rozmiar nagłówka oraz prezentację zdjęć w CSS UA. Adres Strefy klienta ma wynikać z języka bieżącej strony, w tym `/ua/`, i być odtwarzany przez generator na wszystkich pięciu podstronach UA.
 
+- **D-015, 2026-11-20:** Przełączanie PL/UA/EN/DE powinno mieć wyraźnie wolniejszy, dyskretny efekt przenikania. Linki pomiędzy barczuk.com.pl i portal.barczuk.com.pl muszą być podobnie płynne; wykluczyć z animacji logowanie Microsoft, zewnętrzne linki i użytkowników korzystających z ustawienia ograniczenia ruchu. W mobilnym nagłówku logo BARCZUK wraz ze złotym kwadratem ma pozostawać w jednym wierszu, także na stronach informacji prawnych. Dopuszczony krótkotrwały techniczny znacznik przejścia, bez danych użytkownika.
+
 ## Decyzje jeszcze wymagające szczegółowego projektu
 
 - Role i dostęp: administrator/doradca/klient, udostępnianie do teczek, wieloosobowa reprezentacja firmy, MFA/Conditional Access i kontrola dostępu do API.
