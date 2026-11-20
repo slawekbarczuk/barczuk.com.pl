@@ -42,11 +42,10 @@ function switcher(p,locale){
     '<a href="'+p.url[code]+'" hreflang="'+bcp[code]+'" lang="'+bcp[code]+'" title="'+l[i+1]+'"'+(code===locale?' aria-current="page"':'')+'>'+code.toUpperCase()+'</a>').join("")+'</nav>';
 }
 function shared(h,p,locale){
- // Inject UX assets from one durable source on every language build; keep rebuilds idempotent.
- h=h.replace(/<link rel="stylesheet" href="\\/assets\\/(?:language-transition|hero-frame)\\.css[^"]*"[^>]*>/g,"")
-  .replace(/<script src="\\/assets\\/language-transition\\.js[^"]*"><\\/script>/g,"");
+ h=h.replace(/<link rel="stylesheet" href="\/assets\/(?:language-transition|hero-frame)\.css[^"]*"[^>]*>/g,"")
+  .replace(/<script src="\/assets\/language-transition\.js[^"]*"[^>]*><\/script>/g,"");
  const experience='<link rel="stylesheet" href="/assets/language-transition.css?v=20261120"><script src="/assets/language-transition.js?v=20261120"></script>'+
-  (p.id==="home"?'<link rel="stylesheet" href="/assets/hero-frame.css?v=20261120'>':"");
+  (p.id==="home"?'<link rel="stylesheet" href="/assets/hero-frame.css?v=20261120">':"");
  // The client portal has separate language routes. Normalize every generated
  // navigation consistently, including Ukrainian, instead of falling back to PL.
  const portalUrl="https://portal.barczuk.com.pl/"+(locale==="pl"?"":locale+"/");
