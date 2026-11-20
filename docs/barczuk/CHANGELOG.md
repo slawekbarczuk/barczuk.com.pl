@@ -1,5 +1,14 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-20 — nowy priorytet menu i PL / UA / EN / DE (R16)
+
+- Prośba użytkownika: zamienić miejscami „Porozmawiajmy” oraz „Strefa klienta”; obramowanie przenieść na Strefę klienta, a Porozmawiajmy pozostawić zwykłym linkiem. Dodatkowo przenieść UA bezpośrednio za PL.
+- **Wdrożone na publicznej witrynie:** menu Finansowanie / Etapy / Rezultaty / Porozmawiajmy / [Strefa klienta, przycisk z ramką]; języki PL / UA / EN / DE. Zmiana dotyczy 20 stron w PL/EN/DE/UA i strony 404.
+- Zmieniono pięć kanonicznych podstron PL, 404 i testy; generator `scripts/build-ua-r16.cjs` utrwala kolejność języków, poprawne etykiety i przy regeneracji wszystkich wersji. Zachowano adresy i bieżące oznaczenie języka.
+- Testy i generowanie: https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44702351609 — Success. Produkcyjna publikacja Azure: https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44702453417 — Success. Commit wersji: https://github.com/slawekbarczuk/barczuk.com.pl/commit/b2f78c42354a1c767ff3cd17c127ff1f29245091.
+- Portal R08 jest osobną aplikacją i nie był aktualizowany w ramach tej zmiany. Nie zmieniono zdjęć, zawartości, formularza P04, bezpieczeństwa logowania i backendu.
+- Weryfikacja wizualna nowej wersji w przeglądarce użytkownika: jeszcze do potwierdzenia.
+
 ## 2026-11-20 — naprawa mobilnego przełącznika języków na stronach prawnych (R16)
 
 - Problem zgłoszony na iPhonie: na podstronach prawnych przełącznik PL/EN/DE/UA zajmował cały wiersz i układał języki pionowo, zasłaniając treść.
@@ -8,7 +17,7 @@
 - Dodano test regresji w `tests/ua-r16.test.cjs`, sprawdzający wszystkie 12 stron. Testy i generator: https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44699634788 — sukces.
 - Zmiana kodu: https://github.com/slawekbarczuk/barczuk.com.pl/commit/45b00fcda1b50acd29e6492f324e9df4bcabbccf. Wdrożenie produkcyjne Azure Static Web Apps: https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44699740937 — sukces.
 - Bez zmian w tekstach klauzul, fotografiach, kolorystyce, logowaniu Entra, prywatnym portalu R08 i API.
-- **Do potwierdzenia:** po odświeżeniu na iPhonie wizualny układ w poziomie i działanie przycisku „Menu”.
+- **Potwierdzone przez użytkownika na iPhonie 20.11.2026:** układ po naprawie jest prawidłowy („jest już idealnie”).
 
 Każdy ważny wpis powinien zawierać: datę, zakres, wersję, status, dowód wdrożenia lub testu, elementy niezmienione i kolejny krok.
 

@@ -13,6 +13,7 @@
 - **D-009, 2026-11:** Przed przetwarzaniem informacji finansowych należy zapewnić właściwą podstawę/zgodę, przejrzyste informacje o prywatności i bezpieczny obieg dokumentów. Zawarta umowa ma być archiwizowana w teczce klienta, a istotne warunki monitorowane podczas trwania finansowania.
 - **D-010, 2026-11-19:** Priorytet po uruchomieniu logowania i API: Panel doradcy, rejestr przedsiębiorstw, teczki klientów, dokumenty i status spraw. Umowy, terminy i monitoring w kolejnych etapach.
 - **D-011, 2026-11-19:** Dokumentacja ciągłości prac jest aktualizowana po każdej większej zmianie. Publiczne repo zawiera tylko jawne informacje; prywatna implementacja portalu i dane klientów muszą być przechowywane oddzielnie.
+- **D-012, 2026-11-20:** W publicznej witrynie R16 „Porozmawiajmy” jest zwykłym przedostatnim linkiem, a obramowana „Strefa klienta” ostatnią pozycją przed językami. Kolejność języków to **PL / UA / EN / DE** na wszystkich stronach. Należy zachować tę decyzję w generatorze. Portal R08 ma odrębny cykl wydań i wymaga osobnej synchronizacji interfejsu, jeśli zostanie o nią poproszone.
 
 ## Decyzje jeszcze wymagające szczegółowego projektu
 
