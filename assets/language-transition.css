@@ -1,13 +1,15 @@
-/* Gentle cross-document language changes; ordinary navigation stays native. */
+/* Restrained navigation transitions for R16 and R08.
+   Native document transitions work within one origin; CSS fallback also joins
+   the main website and portal across their two subdomains. */
 html{scrollbar-gutter:stable}
 @view-transition{navigation:auto}
-::view-transition-group(root){animation-duration:.32s;animation-timing-function:ease-in-out}
-::view-transition-old(root){animation:language-fade-out .32s ease-in-out both}
-::view-transition-new(root){animation:language-fade-in .32s ease-in-out both}
+::view-transition-group(root){animation-duration:.56s;animation-timing-function:ease-in-out}
+::view-transition-old(root){animation:language-fade-out .56s ease-in-out both}
+::view-transition-new(root){animation:language-fade-in .56s ease-in-out both}
 @keyframes language-fade-out{to{opacity:0}}
 @keyframes language-fade-in{from{opacity:0}}
-html.language-leaving body{opacity:0;transition:opacity .14s ease-in}
-html.language-arriving body{animation:language-fade-in .28s ease-out both}
+html.language-leaving body{opacity:0;transition:opacity .26s ease-in-out}
+html.language-arriving body{animation:language-fade-in .45s ease-out both}
 @media(prefers-reduced-motion:reduce){
  @view-transition{navigation:none}
  ::view-transition-group(*){animation:none!important}
