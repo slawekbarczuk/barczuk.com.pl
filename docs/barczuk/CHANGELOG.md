@@ -1,5 +1,13 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-20 — płynne języki i równy kadr R16/R08 — ZMIANY SCALONE
+
+- [PR #16](https://github.com/slawekbarczuk/barczuk.com.pl/pull/16) — R16: zachowano aktualne SEO UA, dodano wygładzenie nawigacji między językami i wspólny styl kadru. Zmiana obejmuje 21 stron, a generator odtwarza ją trwale.
+- Kontrola PR: P04/Node [44732918925](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44732918925) i Azure preview [44732918767](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44732918767) — sukces. Produkcyjne wdrożenie Azure i kontrola wizualna są do potwierdzenia.
+- Ujednolicono wysokość na desktopie do 598,5 px i proporcje zdjęć tablet/telefon z prywatnym portalem. Nie zmieniono obrazów, treści, uwierzytelniania, formularza ani infrastruktury.
+- Portal: kod zmian scalony w prywatnym repo; bez automatycznej publikacji. Artefakt do ręcznego wdrożenia z prywatnego CI, [PR #2](https://github.com/slawekbarczuk/barczuk-strefa-klienta/pull/2).
+
+
 ## 2026-11-20 — weryfikacja rozszerzenia SEO UA — SCALONE, PRODUKCJA DO SPRAWDZENIA
 
 - [PR #15](https://github.com/slawekbarczuk/barczuk.com.pl/pull/15), commit `f737f5fd8b8322481c8b1d37caa672a5ba19a3d4` — dalsze utrwalenie dedykowanej podstrony, linku UA i testów indeksowalności.
