@@ -19,7 +19,7 @@ test("Ukrainian language uses lowercase /ua/ URLs and BCP-47 uk",()=>{
   assert.ok(html.includes('href="'+pl+'" hreflang="pl"'));
   assert.ok(html.includes('href="'+en+'" hreflang="en"'));
   assert.ok(html.includes('href="'+de+'" hreflang="de"'));
-  assert.ok(html.includes('href="/assets/language-switcher-r16.css?v=R16-ua"'));
+  assert.ok(html.includes('href="/assets/language-switcher-r16.css?v=R16-ua-nav2"'));
   assert.ok(html.includes('class="nav-cta nav-portal"'));
   assert.ok(!html.includes('<html lang="pl">'));
  }
