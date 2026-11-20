@@ -21,7 +21,7 @@ test("R16 production pages have current version and canonical metadata without p
   assert.doesNotMatch(html,/PROPOZYCJA P0[12]|data-preview|class="proposal-bar"|class="preview-note"/,p);
   assert.match(html,/<link rel="canonical" href="https:\/\/www\.barczuk\.com\.pl\//,p);
   assert.match(html,/class="brand-square brand-dot"/,p);
-  assert.match(html,/class="nav-cta nav-contact"/,p);
+  assert.match(html,/class="nav-cta nav-portal"/,p);
   if(p!=="404.html") assert.match(html,/<meta name="robots" content="index,follow">/,p);
  }
 });
