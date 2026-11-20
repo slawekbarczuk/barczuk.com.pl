@@ -1,5 +1,13 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-20 — Strefa klienta R08: niższa sekcja powitalna wdrożona
+
+- Cel: dopasować wysokość sekcji ze zdjęciem skarbca do głównej strony i odsłonić **białą przestrzeń poniżej**, zamiast zajmowania całego ekranu.
+- Zmiana CSS w prywatnym repo: `min-height:clamp(560px,calc(100svh - 180px),700px)` dla desktopu, `min-height:0` na urządzeniach mobilnych, białe tło strony poza kremową sekcją hero.
+- Potwierdzenie: użytkownik wgrał `barczuk-strefa-r08-krotszy-ekran.zip` do Cloud Shell i wykonał `deploy.ps1`; SWA CLI potwierdziło `Project deployed` w środowisku production oraz adresy PL/EN/DE/UA na istniejącym portalu. Kod: https://github.com/slawekbarczuk/barczuk-strefa-klienta/commit/6aa516ad10ef46d25d84383d79c15043305df6c4, CI: https://github.com/slawekbarczuk/barczuk-strefa-klienta/actions/runs/44703632463 — Success.
+- Publiczna witryna, uwierzytelnianie Entra, konfiguracja API i fotografia skarbca bez zmian.
+- Pozostaje potwierdzić wygląd wysokości sekcji w przeglądarce użytkownika po odświeżeniu.
+
 ## 2026-11-20 — nowy priorytet menu i PL / UA / EN / DE (R16)
 
 - Prośba użytkownika: zamienić miejscami „Porozmawiajmy” oraz „Strefa klienta”; obramowanie przenieść na Strefę klienta, a Porozmawiajmy pozostawić zwykłym linkiem. Dodatkowo przenieść UA bezpośrednio za PL.

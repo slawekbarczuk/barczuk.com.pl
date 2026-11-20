@@ -23,6 +23,7 @@ Statusy: **POTWIERDZONE** = dowód w GitHub/Azure lub test użytkownika; **PLAN*
 - Własna subdomena ma rekord CNAME w Azure DNS i status przypisania domeny `Ready`; zachowany był również techniczny adres Azure Static Web Apps.
 - Uwierzytelnienie przez Microsoft Entra; nowa domena została dodana do konfiguracji przekierowań, a dozwolony origin do CORS backendu.
 - Użytkownik potwierdził logowanie na nowej domenie. Zrzut ekranu z 19.11.2026 pokazuje zalogowaną sesję i komunikat **połączenie z API działa (HTTP 200)** w wersji ukraińskiej. To potwierdza dostęp do istniejącego endpointu diagnostycznego, **nie** gotowość przyszłych funkcji biznesowych.
+- **20.11.2026 — potwierdzone wdrożenie poprawki wysokości hero R08:** użytkownik opublikował z `barczuk-strefa-r08-krotszy-ekran.zip` przez Azure Cloud Shell. SWA CLI 2.1.0 potwierdziło produkcyjne `Project deployed` na istniejącej aplikacji (dotychczasowy hostname Azure oraz domeny PL/EN/DE/UA). Zmieniono wyłącznie CSS: krótsza sekcja ze skarbcem i białe tło poniżej; elastyczny układ mobilny. Kod: https://github.com/slawekbarczuk/barczuk-strefa-klienta/commit/6aa516ad10ef46d25d84383d79c15043305df6c4, testy: https://github.com/slawekbarczuk/barczuk-strefa-klienta/actions/runs/44703632463 — sukces. Nie zmieniano Entra ani API. **Kontrola wizualna efektu w przeglądarce oczekuje na potwierdzenie.**
 
 ## 3. Trwałość źródeł portalu — POTWIERDZONE 19.11.2026
 
