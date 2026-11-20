@@ -1,5 +1,13 @@
 # Plan rozwoju BARCZUK — stan na 2026-11-19
 
+## Wizualna spójność R16 i R08 — 20.11.2026
+
+- [x] Scalone R16: płynne przełączanie języków i wspólna wysokość/ramka fotografii; [PR #16](https://github.com/slawekbarczuk/barczuk.com.pl/pull/16).
+- [x] Scalone R08 w prywatnym repo (PR #1) i przygotowany ręczny artefakt wdrożeniowy (PR #2).
+- [ ] Zweryfikować produkcyjną publikację R16 i zachowanie animacji PL/UA/EN/DE.
+- [ ] Ręcznie wdrożyć R08 z aktualnej paczki w Azure Cloud Shell i sprawdzić wymiary oraz logowanie.
+
+
 ## Bezpłatna widoczność Google/Bing — nowy priorytet (20.11.2026)
 
 - [x] Dedykowana podstrona B2B dla ukraińskich przedsiębiorców i kanoniczny adres; kod scalony do main przez [PR #15](https://github.com/slawekbarczuk/barczuk.com.pl/pull/15).
