@@ -50,7 +50,7 @@ test("UA-only content survives complete rebuilds without changing other language
  try{
   for(const file of files)copy(path.join(root,file),path.join(temp,file));
   collect(temp);
-  const protectedFiles=generatedFiles.filter(p=>p!=="ua/index.html");
+  const protectedFiles=generatedFiles.filter(p=>p!=="ua/index.html"&&p!=="sitemap.xml"&&p!=="ua/finansuvannia-biznesu-v-polshchi/index.html");
   const digest=p=>createHash("sha256").update(fs.readFileSync(path.join(temp,p),"utf8").replace(/\r\n/g,"\n")).digest("hex");
   const before=new Map(protectedFiles.map(p=>[p,digest(p)]));
   const build=()=>{
@@ -59,15 +59,30 @@ test("UA-only content survives complete rebuilds without changing other language
   };
   build();
   for(const [file,hash] of before)assert.equal(digest(file),hash,"Changed protected page "+file);
+  generatedFiles.push("ua/finansuvannia-biznesu-v-polshchi/index.html");
   const first=new Map(generatedFiles.map(p=>[p,digest(p)]));
   build();
   for(const [file,hash] of first)assert.equal(digest(file),hash,"Non-idempotent build "+file);
   const home=fs.readFileSync(path.join(temp,"ua/index.html"),"utf8");
   assert.equal((home.match(/id="bank-support"/g)||[]).length,1);
+  assert.match(home,/href="\/ua\/finansuvannia-biznesu-v-polshchi\/"/);
+  assert.match(read("sitemap.xml"),/finansuvannia-biznesu-v-polshchi/);
   assert.equal((home.match(/ua-home-r16\.css/g)||[]).length,1);
  }finally{
   assert.equal(path.dirname(fs.realpathSync(temp)),fs.realpathSync(root));
   assert.ok(path.basename(temp).startsWith(".tmp-ua-home-"));
   fs.rmSync(temp,{recursive:true,force:true});
  }
+});
+
+test("UA business financing SEO page is discoverable and not falsely translated",()=>{
+ const page=read("ua/finansuvannia-biznesu-v-polshchi/index.html");
+ assert.match(page,/<html lang="uk">/);
+ assert.match(page,/Фінансування бізнесу з українським капіталом у Польщі/);
+ assert.match(page,/<link rel="canonical" href="https:\/\/www\.barczuk\.com\.pl\/ua\/finansuvannia-biznesu-v-polshchi\/"/);
+ assert.doesNotMatch(page,/hreflang="x-default"/);
+ assert.match(page,/name="description"/);
+ assert.match(page,/mailto:kontakt@barczuk\.com\.pl/);
+ assert.match(read("ua/index.html"),/finansuvannia-biznesu-v-polshchi/);
+ assert.match(read("sitemap.xml"),/finansuvannia-biznesu-v-polshchi/);
 });

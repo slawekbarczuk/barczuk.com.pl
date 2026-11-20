@@ -11,7 +11,7 @@ const pages=[
  {id:"cookies",pl:"informacje/cookies/index.html",en:"en/cookies/index.html",de:"de/cookies/index.html",ua:"ua/cookies/index.html",url:{pl:"/informacje/cookies/",en:"/en/cookies/",de:"/de/cookies/",ua:"/ua/cookies/"}}
 ];
 const meta={
- home:["Незалежне фінансове консультування | Barczuk","Незалежне консультування з фінансування підприємств: інвестиційні та оборотні кредити, банківські гарантії, переговори з банками й управління заборгованістю."],
+ home:["Фінансування бізнесу з України в Польщі | Barczuk","Незалежне фінансове консультування для підприємств з українським капіталом у Польщі: бізнес-кредити, банківські гарантії, переговори з банками та питання KYC/AML."],
  financing:["Фінансування підприємств і банківські гарантії | Barczuk","Консультування з фінансування підприємств та інвестицій: фінансові моделі, банківські гарантії, синдиковані кредити, переговори й рефінансування."],
  legal:["Правова інформація та захист даних | Barczuk","Дані підприємця, правова інформація, захист персональних даних і конфіденційність листування."],
  privacy:["Політика конфіденційності | Barczuk","Обробка персональних даних, права за GDPR, строки зберігання та інформація про контактну форму."],
@@ -104,5 +104,11 @@ for(const p of pages){
  write(p.ua,ua);
  for(const c of ["pl","en","de"])write(p[c],shared(read(p[c]),p,c));
 }
-const urls=pages.flatMap(p=>locales.map(c=>'<url><loc>'+base+p.url[c]+'</loc><lastmod>2026-11-19</lastmod></url>'));
+// Additional targeted UA page is generated from the current R16 UA financing template.
+require("./build-ua-business-r16.cjs");
+const urls=pages.flatMap(p=>locales.map(c=>{
+ const lastmod=(p.id==="home"&&c==="ua")?"2026-11-20":"2026-11-19";
+ return '<url><loc>'+base+p.url[c]+'</loc><lastmod>'+lastmod+'</lastmod></url>';
+}));
+urls.push('<url><loc>'+base+'/ua/finansuvannia-biznesu-v-polshchi/</loc><lastmod>2026-11-20</lastmod></url>');
 write("sitemap.xml",'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.join("")+'</urlset>\n');
