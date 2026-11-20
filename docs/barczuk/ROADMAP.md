@@ -15,6 +15,9 @@ Punkt startowy: R16 witryny publicznej i R08 Strefy klienta, zalogowanie Microso
 
 ### Witryna UA — zaakceptowane wydanie
 
+- [x] Przygotowana korekta wysokości hero, mocniej stonowane wyświetlanie obrazów i poprawne linki do portalu UA; 61 testów, lokalne widoki 1920/1280/390 px i przejście do portalu sprawdzone.
+- [ ] Publikacja i kontrola produkcji powyższej korekty.
+
 - [x] Projekt hero Kijów / Odessa / Lwów, treści bankowej i trwałej generacji UA-home; lokalne testy i widoki komputera/telefonu.
 - [x] Ocena i akceptacja treści przez użytkownika oraz wyraźne polecenie wdrożenia 20.11.2026.
 - [x] Finalne, umiarkowane dopasowanie kolorystyki trzech panoram do rzeczywistych zdjęć Łodzi; eksport 1440 × 810 WebP.

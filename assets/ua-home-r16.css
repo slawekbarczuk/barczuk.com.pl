@@ -1,4 +1,8 @@
 /* R16 Ukrainian homepage additions. Loaded only by /ua/. */
+/* Keep the approved wording, balance its longer Cyrillic heading in two lines
+   on desktop, and let the existing R16 grid determine the image height. */
+@media(min-width:1050px){html[lang="uk"] .hero .hero-copy h1{font-size:clamp(42px,3.35vw,64px);line-height:1.08}}
+html[lang="uk"] .hero-slideshow .hero-slide{filter:grayscale(.38) saturate(.62) brightness(.98)}
 @media(min-width:1050px){html[lang="uk"] .hero .hero-slideshow .hero-slide{object-position:80% center}}
 html[lang="uk"] .ua-bank-support{padding:76px 0 78px;background:#fff;border-top:1px solid var(--line)}
 html[lang="uk"] .ua-bank-grid{display:grid;grid-template-columns:1fr 1.18fr;gap:clamp(48px,6vw,110px);align-items:start}

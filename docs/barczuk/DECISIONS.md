@@ -17,6 +17,8 @@
 
 - **D-013, 2026-11-20:** Użytkownik zaakceptował treści i zlecił wdrożenie trzech panoram Ukrainy oraz wsparcia bankowego/KYC/AML wyłącznie na stronie głównej UA. Finalnie zbliżyć kolorystykę do zdjęć Łodzi, z zachowaniem delikatnego ciepła i przyjaznego nastroju. Zachować R16, pozostałe języki oraz pokaz 8 s / 1,6 s. Treści i obrazy mają być odtwarzalne z generatora; decyzje bankowe pozostają po stronie banku.
 
+- **D-014, 2026-11-20:** Po wydaniu UA użytkownik zlecił obniżenie hero do wysokości PL, dalsze stonowanie kolorów i poprawę przejścia do ukraińskiego portalu. Zachować zatwierdzone słowa nagłówka i treść AML; zmienić tylko łamanie/rozmiar nagłówka oraz prezentację zdjęć w CSS UA. Adres Strefy klienta ma wynikać z języka bieżącej strony, w tym `/ua/`, i być odtwarzany przez generator na wszystkich pięciu podstronach UA.
+
 ## Decyzje jeszcze wymagające szczegółowego projektu
 
 - Role i dostęp: administrator/doradca/klient, udostępnianie do teczek, wieloosobowa reprezentacja firmy, MFA/Conditional Access i kontrola dostępu do API.

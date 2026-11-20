@@ -42,6 +42,10 @@ function switcher(p,locale){
     '<a href="'+p.url[code]+'" hreflang="'+bcp[code]+'" lang="'+bcp[code]+'" title="'+l[i+1]+'"'+(code===locale?' aria-current="page"':'')+'>'+code.toUpperCase()+'</a>').join("")+'</nav>';
 }
 function shared(h,p,locale){
+ // The client portal has separate language routes. Normalize every generated
+ // navigation consistently, including Ukrainian, instead of falling back to PL.
+ const portalUrl="https://portal.barczuk.com.pl/"+(locale==="pl"?"":locale+"/");
+ h=h.replace(/href="https:\/\/portal\.barczuk\.com\.pl\/(?:en\/|de\/|ua\/)?"/g,()=> 'href="'+portalUrl+'"');
  h=h.replace(/<nav class="language-switcher"[\s\S]*?<\/nav>/g,"");
  h=h.replace(/<link rel="alternate" hreflang="(?:pl|en|de|uk|x-default)"[^>]*>/g,"");
  h=h.replace(/<link rel="canonical"[^>]*>/g,"");
@@ -98,7 +102,7 @@ for(const p of pages){
  const ua=shared(localized,p,"ua");
  if(!ua.includes('<html lang="uk">')||!ua.includes('hreflang="uk"'))throw Error("UA metadata "+p.id);
  write(p.ua,ua);
- for(const c of ["pl","en","de"]){let s=read(p[c]);if(c!=="pl")s=s.replace('href="https://portal.barczuk.com.pl/">','href="https://portal.barczuk.com.pl/'+c+'/">');write(p[c],shared(s,p,c));}
+ for(const c of ["pl","en","de"])write(p[c],shared(read(p[c]),p,c));
 }
 const urls=pages.flatMap(p=>locales.map(c=>'<url><loc>'+base+p.url[c]+'</loc><lastmod>2026-11-19</lastmod></url>'));
 write("sitemap.xml",'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.join("")+'</urlset>\n');
