@@ -16,7 +16,7 @@ Punkt startowy: R16 witryny publicznej i R08 Strefy klienta, zalogowanie Microso
 ### Witryna UA — zaakceptowane wydanie
 
 - [x] Przygotowana korekta wysokości hero, mocniej stonowane wyświetlanie obrazów i poprawne linki do portalu UA; 61 testów, lokalne widoki 1920/1280/390 px i przejście do portalu sprawdzone.
-- [ ] Publikacja i kontrola produkcji powyższej korekty.
+- [x] Publikacja i kontrola produkcji korekty: [PR #12](https://github.com/slawekbarczuk/barczuk.com.pl/pull/12), [44726319405](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44726319405) — success. Wysokość hero i kolorystyka sprawdzone na komputerze/telefonie, kliknięcie otwiera ukraiński portal, 15 stron PL/EN/DE bez zmian.
 
 - [x] Projekt hero Kijów / Odessa / Lwów, treści bankowej i trwałej generacji UA-home; lokalne testy i widoki komputera/telefonu.
 - [x] Ocena i akceptacja treści przez użytkownika oraz wyraźne polecenie wdrożenia 20.11.2026.
