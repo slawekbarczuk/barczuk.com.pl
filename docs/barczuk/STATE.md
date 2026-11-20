@@ -1,5 +1,12 @@
 # Stan projektu BARCZUK — 2026-11-20
 
+## Widoczność UA i finansowanie biznesu — KOD GOTOWY, PRODUKCJA DO WERYFIKACJI (20.11.2026)
+
+- W `main` scalono [PR #14](https://github.com/slawekbarczuk/barczuk.com.pl/pull/14), nowa docelowa podstrona `/ua/finansuvannia-biznesu-v-polshchi/`, link z głównej UA i 21 adresów w mapie witryny. Testy Node/P04 po poprawieniu oczekiwanego rozmiaru sitemapy: [44731417561](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44731417561) — success.
+- Repozytorium zawiera trwały generator i treści. Status dostępności produkcji oraz status indeksacji Google/Bing nie jest jeszcze potwierdzony. Zero płatnych kampanii.
+- Szczegóły: [SEO_UA_ORGANIC_R16.md](SEO_UA_ORGANIC_R16.md).
+
+
 Statusy: **POTWIERDZONE** = dowód w GitHub/Azure lub test użytkownika; **PLAN** = zatwierdzony kierunek, bez implementacji; **DO WERYFIKACJI** = brak wystarczającego dowodu.
 
 ## Wydanie UA — WDROŻONE I ZWERYFIKOWANE (20.11.2026)
