@@ -2,7 +2,7 @@
 
 **Projekt:** publiczna witryna niezależnego doradztwa finansowego B2B + odrębna, uwierzytelniona Strefa klienta i przyszłe narzędzia analizy finansowej przedsiębiorstw.
 
-**Stan odniesienia:** 2026-11-19 (czwartek), Europe/Warsaw. Dokumentacja jest wersjonowana w GitHub; po kolejnych wdrożeniach należy ją aktualizować.
+**Stan odniesienia:** 2026-11-20 (piątek), Europe/Warsaw. Dokumentacja jest wersjonowana w GitHub; po kolejnych wdrożeniach należy ją aktualizować.
 
 ## Przeczytaj w tej kolejności
 

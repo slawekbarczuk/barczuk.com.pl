@@ -1,5 +1,15 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-20 — naprawa mobilnego przełącznika języków na stronach prawnych (R16)
+
+- Problem zgłoszony na iPhonie: na podstronach prawnych przełącznik PL/EN/DE/UA zajmował cały wiersz i układał języki pionowo, zasłaniając treść.
+- Przyczyna: stary inline CSS używał ogólnego selektora `nav` w regułach mobilnego menu, przez co obejmował też niezależny `nav.language-switcher`.
+- Rozwiązanie: ograniczono osiem selektorów na każdej z 12 podstron (informacje prawne, prywatność, cookie × PL/EN/DE/UA) do `.nav-links`. Zachowano rozwijane menu, dostępność i nawigację językową. Kanoniczne źródła PL zostały poprawione, dlatego następna generacja EN/DE/UA zachowa naprawę.
+- Dodano test regresji w `tests/ua-r16.test.cjs`, sprawdzający wszystkie 12 stron. Testy i generator: https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44699634788 — sukces.
+- Zmiana kodu: https://github.com/slawekbarczuk/barczuk.com.pl/commit/45b00fcda1b50acd29e6492f324e9df4bcabbccf. Wdrożenie produkcyjne Azure Static Web Apps: https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44699740937 — sukces.
+- Bez zmian w tekstach klauzul, fotografiach, kolorystyce, logowaniu Entra, prywatnym portalu R08 i API.
+- **Do potwierdzenia:** po odświeżeniu na iPhonie wizualny układ w poziomie i działanie przycisku „Menu”.
+
 Każdy ważny wpis powinien zawierać: datę, zakres, wersję, status, dowód wdrożenia lub testu, elementy niezmienione i kolejny krok.
 
 ## 2026-11-19 — R08, korekta złotego kwadratu logo

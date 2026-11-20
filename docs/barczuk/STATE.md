@@ -1,4 +1,4 @@
-# Stan projektu BARCZUK — 2026-11-19
+# Stan projektu BARCZUK — 2026-11-20
 
 Statusy: **POTWIERDZONE** = dowód w GitHub/Azure lub test użytkownika; **PLAN** = zatwierdzony kierunek, bez implementacji; **DO WERYFIKACJI** = brak wystarczającego dowodu.
 
@@ -9,6 +9,7 @@ Statusy: **POTWIERDZONE** = dowód w GitHub/Azure lub test użytkownika; **PLAN*
 - Statyczne podstrony: główna, finansowanie przedsiębiorstw, informacje prawne, prywatność i cookies w PL, EN, DE, UA (20 stron).
 - Adresy językowe: `/`, `/en/`, `/de/`, `/ua/`; w HTML /ua/ używa poprawnego `lang="uk"` i `hreflang="uk"`. Polska jest domyślna.
 - Jednolite menu: Finansowanie / Etapy / Rezultaty / Strefa klienta / Porozmawiajmy; odpowiedniki EN/DE/UA, pozycja prowadząca do portalu i działająca nawigacja mobilna. Zmniejszono odstęp między menu i językami.
+- **20.11.2026 — poprawka iPhone dla klauzul:** na 12 stronach informacji prawnych, prywatności i cookies (PL/EN/DE/UA) ograniczono globalne reguły `nav` do `.nav-links`, aby przełącznik języków pozostawał poziomy. Testy regresji i generator czterech języków przeszły: https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44699634788. Publikacja Azure zakończona sukcesem: https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44699740937. **Wizualna kontrola na fizycznym iPhonie po wdrożeniu pozostaje do potwierdzenia.**
 - Projekt graficzny: granatowo-kremowa elegancka estetyka, szeryfowe nagłówki, mały złoty znak; po prawej cztery wizualizacje Łodzi (Fabryczna, Manufaktura, Piotrkowska, EC1), zmiana co 8 s i przenikanie 1,6 s. Na komputerze zdjęcie wypełnia prawą część hero, miękkie przejście jedynie od lewej.
 - Utrzymano zwięzłą komunikację usług B2B, gwarancje bankowe oraz doświadczenie w bankowości korporacyjnej od 1995 roku. Bez rozbudowanego CV i bez publikowania kwot.
 - Wersje językowe generowane skryptami `scripts/build-i18n-r16.cjs` i `scripts/build-ua-r16.cjs`; tłumaczenia w katalogu `i18n/`. Witryna wdrażana z GitHub Actions do Azure Static Web Apps.
