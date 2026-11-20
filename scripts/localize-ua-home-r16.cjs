@@ -38,6 +38,8 @@ module.exports = function localizeUaHome(html) {
   for (const item of content.replacements) html = replaceOnce(html, item.from, item.to, item.from.slice(0, 50));
   const nextSection = '<section class="situations" id="kiedy-warto">';
   html = replaceOnce(html, nextSection, bankingSection(content.bankingSupport) + nextSection, "bank support placement");
+  // Organic landing-page link on the UA homepage; preserved after each rebuild.
+  html = replaceOnce(html, '<a class="text-link" href="/ua/finansuvannia/">'+text(hero.secondaryAction)+' </a>', '<a class="text-link" href="/ua/finansuvannia-biznesu-v-polshchi/">'+text("Фінансування компаній з українським капіталом")+' </a>', "UA financing SEO hero link");
   html = replaceOnce(html, '</head>', '<link rel="stylesheet" href="/assets/ua-home-r16.css?v=R16-ua-20261120b"></head>', "UA-only stylesheet");
   return html;
 };
