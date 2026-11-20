@@ -1,5 +1,12 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-20 — weryfikacja rozszerzenia SEO UA — SCALONE, PRODUKCJA DO SPRAWDZENIA
+
+- [PR #15](https://github.com/slawekbarczuk/barczuk.com.pl/pull/15), commit `f737f5fd8b8322481c8b1d37caa672a5ba19a3d4` — dalsze utrwalenie dedykowanej podstrony, linku UA i testów indeksowalności.
+- [Testy 44731491498](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44731491498): 65/65 poprawnych. [Podgląd Azure 44731491535](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44731491535): błąd content distribution. Potwierdzenie publikacji produkcyjnej i indeksowania osobno.
+- Brak zmian w panoramach UA, układzie R16, PL/EN/DE, P04, portalu i bezpieczeństwie. Żadnych płatnych kampanii.
+
+
 ## 2026-11-20 — ukraińska podstrona finansowania i bezpłatne SEO — KOD SCALONY, PUBLIKACJA DO WERYFIKACJI
 
 - Użytkownik zlecił dokończenie witryny UA i poprawę bezpłatnej widoczności w Google i Bing, bez reklam.
