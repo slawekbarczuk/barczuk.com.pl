@@ -1,5 +1,14 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-20 — płynne języki i wspólny wymiar fotografii R16/R08 — PRZYGOTOWANE
+
+- Baza R16: `af0b4f0f1de6e12e2ad01df14c5de98857809e33`; osobny portal R08: `2878d4e6914f501eab80200b37e418a4aeed38cd`.
+- Dodano krótkie przenikanie przy zmianie języka (natywne dokumentowe View Transitions z bezpiecznym fallbackiem), wyłączane przy ograniczeniu ruchu. Zachowano historię, prawdziwe linki i kliknięcia z Ctrl/Cmd.
+- Ujednolicono wysokość fotografii na desktopie do 598,5 px we wszystkich czterech językach, z dopasowaniem długich nagłówków na małych laptopach. Tablet: wspólny kadr 4:3, telefon: 16:9. Zarezerwowano miejsce paska przewijania, aby jego obecność nie zmieniała szerokości zdjęcia. Poprawiono łamanie długiego niemieckiego nagłówka na telefonie.
+- Generator utrwala zasoby na 20 stronach i oznaczenie czterech hero. Logowanie R08 ma osobne, identyczne pliki prezentacji; wymagane jest osobne wdrożenie prywatnego portalu.
+- 68 testów witryny przechodzi; lokalnie zmierzono 1050/1280/1920 px, cztery języki obu aplikacji. Testy R05/R07/R08 i kompilacja portalu przechodzą. Treści, zdjęcia, P04/API i uwierzytelnianie zachowane.
+- Status: przygotowane, publikacja i kontrola produkcji w toku.
+
 ## 2026-11-20 — korekta hero UA i języka portalu — WDROŻONA
 
 - Powód: dłuższy nagłówek UA zwiększał wysokość hero; adres portalu UA odziedziczył polski `/`, a stary test również utrwalał ten błędny adres.

@@ -19,7 +19,10 @@
 
 - **D-014, 2026-11-20:** Po wydaniu UA użytkownik zlecił obniżenie hero do wysokości PL, dalsze stonowanie kolorów i poprawę przejścia do ukraińskiego portalu. Zachować zatwierdzone słowa nagłówka i treść AML; zmienić tylko łamanie/rozmiar nagłówka oraz prezentację zdjęć w CSS UA. Adres Strefy klienta ma wynikać z języka bieżącej strony, w tym `/ua/`, i być odtwarzany przez generator na wszystkich pięciu podstronach UA.
 
+- **D-015, 2026-11-20:** Użytkownik zlecił płynne zmiany języka i jednakowy wymiar fotografii witryny R16 oraz logowania R08. Wspólna wysokość desktopu to zaakceptowane 598,5 px; tablet 4:3 i telefon 16:9. Wspólny plik CSS jest wersjonowany identycznie w obu repozytoriach. Nawigacja pozostaje dokumentowa, z krótkim przenikaniem i obsługą ograniczenia ruchu. Nie zmieniać treści, fotografii, zasad logowania i API.
+
 ## Decyzje jeszcze wymagające szczegółowego projektu
+
 
 - Role i dostęp: administrator/doradca/klient, udostępnianie do teczek, wieloosobowa reprezentacja firmy, MFA/Conditional Access i kontrola dostępu do API.
 - Struktura rejestru spraw, dokumentów, umów, historii zmian i obowiązków kredytowych.

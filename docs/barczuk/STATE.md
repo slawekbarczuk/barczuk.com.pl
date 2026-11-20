@@ -2,6 +2,10 @@
 
 Statusy: **POTWIERDZONE** = dowód w GitHub/Azure lub test użytkownika; **PLAN** = zatwierdzony kierunek, bez implementacji; **DO WERYFIKACJI** = brak wystarczającego dowodu.
 
+## Płynne języki i wspólny wymiar zdjęć — PRZYGOTOWANE (20.11.2026)
+
+Na zlecenie użytkownika przygotowano delikatne przenikanie przy zmianie języka w witrynie i portalu: natywne przejście dokumentów, a w starszych przeglądarkach krótki fade-out/fade-in przy zwykłej nawigacji. Zachowano adresy, otwieranie w nowej karcie, historię i ograniczenie ruchu. Wspólny plik `assets/hero-frame.css` (identyczna kopia w prywatnym portalu) ustala wysokość fotografii 598,5 px od 1050 px szerokości, proporcje 4:3 na tablecie i 16:9 na telefonie. Przy dużym powiększeniu i dodatkowych komunikatach treść może powiększyć sekcję, bez ucinania. Źródła i testy przygotowane; publikacja i kontrola produkcji oczekują. Treści, fotografie, KYC/AML, mechanika 8 s / 1,6 s, P04/API i logowanie bez zmian.
+
 ## Wydanie UA — WDROŻONE I ZWERYFIKOWANE (20.11.2026)
 
 **Korekta zgłoszona po wydaniu — WDROŻONA I ZWERYFIKOWANA:** niższe hero UA dzięki zrównoważeniu nagłówka i typografii; na produkcji przy 1920 px: 598,5 px jak PL zamiast 661,4 px. Dalsze stonowanie istniejących zdjęć przez CSS ładowany tylko na stronie głównej UA. Naprawiono generator adresu portalu: wszystkie pięć stron UA prowadzi do `https://portal.barczuk.com.pl/ua/`; rzeczywiste kliknięcie na produkcji otwiera ukraiński ekran portalu. Kod: [PR #12](https://github.com/slawekbarczuk/barczuk.com.pl/pull/12), commit `8e8d6ac0970ed1b725a0c894c87bbe36cebd2a70`. [CI 44725933380](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44725933380) — success, 61 testów; [publikacja 44726319405](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44726319405) — success. Kontrola produkcji: 15 stron PL/EN/DE identycznych ze stanem sprzed korekty, cztery pozostałe strony UA różnią się wyłącznie adresem portalu, trzy pliki obrazów zachowane. Sprawdzono komputer i telefon 390 × 844 bez poziomego przepełnienia. Treść AML i mechanika 8 s / 1,6 s zachowane.
