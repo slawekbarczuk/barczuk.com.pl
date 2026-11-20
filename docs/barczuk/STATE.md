@@ -1,5 +1,14 @@
 # Stan projektu BARCZUK — 2026-11-20
 
+## 20.11.2026 — R16: wolniejsze przejścia, portal i mobilny znak — KOD SCALONY
+
+- Na podstawie zrzutu z iPhone'a poprawiono zawijający się złoty kwadrat BARCZUK na podstronach prawnych. CSS `assets/language-switcher-r16.css` utrzymuje logo w jednej linii i zmniejsza odstępy na bardzo wąskich ekranach (bez ruszania treści disclaimera).
+- [PR #17](https://github.com/slawekbarczuk/barczuk.com.pl/pull/17), commit `29ee72a105610a14d9bf676772cd739215f6b06a`: płynniejsze przejścia języków ok. 560 ms i obsługa przejść z witryny do `portal.barczuk.com.pl` oraz z powrotem (fade-out 260 ms, fade-in 450 ms). Wspólny mechanizm z R08, preferencja reduced-motion, bez przechwytywania Microsoft Entra.
+- Odświeżono URL cache CSS/JS na 21 stronach i w generatorze, zachowano SEO UA, dokumenty, fotografie i formularz P04. Tymczasowe ciasteczko pierwszej strony ważne maks. 8 sekund zawiera tylko techniczną trasę docelową i czas, bez danych użytkownika.
+- Kontrola PR: [P04/Node #44735927065](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44735927065) — sukces, [Azure preview #44735927248](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44735927248) — zadanie Build And Deploy zakończone sukcesem. Produkcyjny odczyt HTTP i wynik na urządzeniu użytkownika jeszcze niezweryfikowane.
+- Portal R08: analogiczny kod w osobnym prywatnym repo `main` (PR #3), paczka do ręcznego wdrożenia przetestowana; nie mylić poprzedniego wdrożenia R08 z tą nową korektą.
+
+
 ## R16: płynne języki i spójna wysokość hero — KOD SCALONY, PRODUKCJA DO POTWIERDZENIA (20.11.2026)
 
 - Na podstawie wcześniejszego projektu z wątku „Dostosuj Ukraińskie hero” przeniesiono gotowe pliki do aktualnej gałęzi z nową podstroną SEO UA. [PR #16](https://github.com/slawekbarczuk/barczuk.com.pl/pull/16), commit `7c98439104195d4fbad386f4b02112ebafe71ac5`.
