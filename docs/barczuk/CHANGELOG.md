@@ -1,5 +1,15 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-20 — ukraińska podstrona finansowania i bezpłatne SEO — KOD SCALONY, PUBLIKACJA DO WERYFIKACJI
+
+- Użytkownik zlecił dokończenie witryny UA i poprawę bezpłatnej widoczności w Google i Bing, bez reklam.
+- PR [#14](https://github.com/slawekbarczuk/barczuk.com.pl/pull/14) scalony do main, commit `048a74b3e1ef7a49884ad2c98e155ba9137bc7eb`.
+- Dodano `/ua/finansuvannia-biznesu-v-polshchi/`, nowy generator `scripts/build-ua-business-r16.cjs`, link na stronie głównej UA, metadane i 21. URL w sitemapie, testy SEO.
+- Po dostosowaniu istniejących testów sitemap wynik workflow P04/Node [44731417561](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44731417561): **success**.
+- Nie zmieniono fotografii, R16, ofert PL/EN/DE, portalu ani backendu P04. Wyszukiwarki mogą nadal wyświetlać starsze wersje (indeksowanie nie jest natychmiastowe).
+- Publikacja Azure po merge, kod HTTP na domenie, wygląd mobilny, stan Google Search Console i Bing Webmaster Tools wymagają odrębnej weryfikacji; zgłoszeń do indeksowania jeszcze nie potwierdzono. Plan: [SEO_UA_ORGANIC_R16.md](SEO_UA_ORGANIC_R16.md).
+
+
 ## 2026-11-20 — korekta hero UA i języka portalu — WDROŻONA
 
 - Powód: dłuższy nagłówek UA zwiększał wysokość hero; adres portalu UA odziedziczył polski `/`, a stary test również utrwalał ten błędny adres.
