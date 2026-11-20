@@ -1,0 +1,33 @@
+/* R16 / R08 shared photo frame. Keep this file identical in both repositories.
+   598.5px is the accepted PL/UA homepage height at 1920px, independent of svh.
+   Text stays in normal flow so zoom and session messages are never clipped. */
+@media(min-width:1050px){
+ [data-photo-hero]{min-height:598.5px}
+ [data-photo-hero]>.shell.hero-grid{min-height:472.5px}
+ [data-photo-hero] .hero-copy{padding-block:0}
+ [data-photo-hero]>.hero-inner{padding-block:62px 64px}
+ [data-photo-hero]>.hero-photo{inset:0 0 0 auto;width:56%}
+}
+/* Longer words and wrapped actions must fit the same frame on small laptops. */
+@media(min-width:1050px) and (max-width:1200px){
+ html:root[lang] [data-photo-hero] .hero-copy h1{font-size:40px;line-height:1.08}
+ [data-photo-hero] .lead{font-size:16px;line-height:1.7;margin:24px 0}
+}
+/* Below the desktop layout, photographs share one aspect ratio and column. */
+@media(min-width:761px) and (max-width:1049px){
+ [data-photo-hero]>.shell.hero-grid{width:calc(100% - 64px);grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px}
+ [data-photo-hero] .hero-media{width:100%;aspect-ratio:4/3}
+ [data-photo-hero]:has(>.hero-inner){min-height:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;padding:62px 32px 64px}
+ [data-photo-hero]>.hero-inner{grid-column:1;grid-row:1;width:100%;padding:0}
+ [data-photo-hero]>.hero-photo{position:relative;inset:auto;z-index:0;grid-column:2;grid-row:1;width:100%;aspect-ratio:4/3;-webkit-mask-image:none;mask-image:none;background-position:center}
+ [data-photo-hero]>.hero-inner .hero-copy{width:100%}
+}
+@media(max-width:760px){
+ [data-photo-hero] .hero-media{width:100%;height:auto;aspect-ratio:16/9}
+ [data-photo-hero]:has(>.hero-inner){min-height:0;display:grid;grid-template-columns:minmax(0,1fr);gap:30px;padding:42px 22px 48px}
+ [data-photo-hero]>.hero-inner{grid-row:1;width:100%;padding:0}
+ [data-photo-hero]>.hero-inner .hero-copy{width:100%}
+ [data-photo-hero]>.hero-photo{position:relative;inset:auto;z-index:0;grid-row:2;width:100%;height:auto;aspect-ratio:16/9;-webkit-mask-image:none;mask-image:none;background-position:center}
+ html[lang="de"] .specialties h2{hyphens:auto;overflow-wrap:anywhere}
+}
+@media(max-width:440px){[data-photo-hero]:has(>.hero-inner){padding-inline:20px}}
