@@ -17,6 +17,8 @@
 
 ## Decyzje jeszcze wymagające szczegółowego projektu
 
+- **Projekt UA, 2026-11-20 — do oceny przed publikacją:** na wyraźne zlecenie użytkownika przygotowano trzy kadry Ukrainy oraz wsparcie bankowe/KYC/AML tylko dla strony głównej UA. Zachować R16, pozostałe języki i wspólny mechanizm pokazu 8 s / 1,6 s. Publikacja oczekuje na ocenę projektu; nie jest to jeszcze zmiana produkcyjna. Treści i obrazy muszą być odtwarzalne z generatora, nie ręcznie poprawiane w wynikowym HTML.
+
 - Role i dostęp: administrator/doradca/klient, udostępnianie do teczek, wieloosobowa reprezentacja firmy, MFA/Conditional Access i kontrola dostępu do API.
 - Struktura rejestru spraw, dokumentów, umów, historii zmian i obowiązków kredytowych.
 - Dokładny proces dokumentowania zgody i podstawy prawnej, retencji, usuwania danych oraz obsługi żądań podmiotu danych.

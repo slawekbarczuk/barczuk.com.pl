@@ -29,6 +29,7 @@ const write=(p,s)=>{const dest=path.join(root,p);fs.mkdirSync(path.dirname(dest)
 const dict=Object.assign({},...["main","financing","legal-cookies","privacy"].map(x=>JSON.parse(read("i18n/ua-"+x+".json"))));
 const runtime=JSON.parse(read("i18n/ua-runtime.json"));
 const escape=s=>s.replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+const localizeUaHome=require("./localize-ua-home-r16.cjs");
 function localHref(h){
  if(h==="/"||h.startsWith("/#")||h.startsWith("/?"))return "/ua/"+h.slice(1);
  for(const p of pages)if(p.url.pl!=="/"&&h.startsWith(p.url.pl))return p.url.ua+h.slice(p.url.pl.length);
@@ -92,7 +93,9 @@ function translated(h,p){
  return h;
 }
 for(const p of pages){
- const ua=shared(translated(read(p.pl),p),p,"ua");
+ let localized=translated(read(p.pl),p);
+ if(p.id==="home")localized=localizeUaHome(localized);
+ const ua=shared(localized,p,"ua");
  if(!ua.includes('<html lang="uk">')||!ua.includes('hreflang="uk"'))throw Error("UA metadata "+p.id);
  write(p.ua,ua);
  for(const c of ["pl","en","de"]){let s=read(p[c]);if(c!=="pl")s=s.replace('href="https://portal.barczuk.com.pl/">','href="https://portal.barczuk.com.pl/'+c+'/">');write(p[c],shared(s,p,c));}
