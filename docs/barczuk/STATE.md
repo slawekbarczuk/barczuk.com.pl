@@ -2,6 +2,10 @@
 
 Statusy: **POTWIERDZONE** = dowód w GitHub/Azure lub test użytkownika; **PLAN** = zatwierdzony kierunek, bez implementacji; **DO WERYFIKACJI** = brak wystarczającego dowodu.
 
+## Wydanie UA — ZAAKCEPTOWANE, PUBLIKACJA W TOKU (20.11.2026)
+
+Użytkownik zaakceptował treści i wyraźnie zlecił wdrożenie 20.11.2026, prosząc o dodatkowe, umiarkowane zbliżenie panoram do kolorystyki Łodzi. Przygotowano finalne kadry Kijowa, Odessy i Lwowa oraz trwałe źródło UA-home z treścią dla firm z Ukrainy i wsparciem KYC/AML. 61 testów przechodzi; pozostałe języki i podstrony UA zachowane. Oczekuje na potwierdzenie publikacji GitHub Actions i kontrolę produkcji. Szczegóły: [UA_PREVIEW_R16.md](UA_PREVIEW_R16.md). Nie traktować tej sekcji jako dowodu zakończonego wdrożenia.
+
 ## 1. Publiczna witryna — POTWIERDZONE
 
 - Domena: https://barczuk.com.pl/ (kanoniczna wersja z www ustawiana przez repozytorium; nie zmieniać DNS bez sprawdzenia).

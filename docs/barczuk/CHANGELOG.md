@@ -1,5 +1,21 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-20 — zaakceptowane wydanie UA: finalna kolorystyka i wsparcie bankowe — PUBLIKACJA W TOKU
+
+- Użytkownik zaakceptował treść projektu i wyraźnie zlecił wdrożenie. Zastrzeżenie dotyczyło dalszego umiarkowanego zbliżenia kolorów do rzeczywistych fotografii Łodzi.
+- Finalnie dopasowano Kijów, Odessę i Lwów: chłodniejsze neutralne odcienie, spokojniejsza zieleń i refleksy, z zachowaniem delikatnego ciepła. Pliki 1440 × 810 WebP, około 550 KB łącznie.
+- 61 testów przechodzi; pełne generowanie jest stabilne. PL/EN/DE, pozostałe podstrony UA, wspólne style/slideshow, P04/API i hosting bez zmian.
+- Status: przygotowano wydanie na `feature/r16-ua-ukraine-hero-aml`; wynik publikacji i kontrola produkcji zostaną dopisane po potwierdzeniu.
+
+## 2026-11-20 — lokalny projekt UA: panoramy Ukrainy i wsparcie bankowe — DO OCENY
+
+- Baza: `e4f51d0781c53fb28a2e50602c77abd33a38f181`; lokalna gałąź `preview/r16-ua-ukraine-hero-aml`.
+- Przygotowano trzy dopasowane wizualizacje 1440 × 810 WebP (Kijów, Odessa, Lwów), kierunkową treść dla przedsiębiorców z Ukrainy, blok rachunków i wymagań KYC/AML oraz dwa krótkie wyjaśnienia.
+- Zmiany UA-home są odtwarzalne z `i18n/ua-home-r16.json` i lokalizatora wywoływanego przez generator. Wspólny pokaz slajdów bez zmian: 8 s / 1,6 s.
+- Dowód lokalny: 61 testów przechodzi, dwukrotna pełna regeneracja stabilna, pozostałe strony zachowane, sprawdzony widok komputera i telefonu 390 × 844, zapisane zrzuty i samodzielny HTML projektu.
+- Nie zmieniono PL/EN/DE, pozostałych podstron UA, P04/API, wspólnych stylów i skryptu slajdów, portalu oraz hostingu. Źródłowe PNG i prompty zachowano lokalnie.
+- **Nie opublikowano, nie wykonano push do GitHub.** Nowy etap pozostaje projektem do oceny treści i wyglądu. Szczegóły: [UA_PREVIEW_R16.md](UA_PREVIEW_R16.md).
+
 ## 2026-11-20 — Strefa klienta R08: niższa sekcja powitalna wdrożona
 
 - Cel: dopasować wysokość sekcji ze zdjęciem skarbca do głównej strony i odsłonić **białą przestrzeń poniżej**, zamiast zajmowania całego ekranu.

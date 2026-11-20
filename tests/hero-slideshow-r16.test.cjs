@@ -8,9 +8,9 @@ function emitter(x={}){
   emit(name){for(const fn of handlers[name]??[])fn()}
  });
 }
-function harness({reduced=false,saveData=false}={}){
+function harness({reduced=false,saveData=false,slideCount=4}={}){
  const motion=emitter({matches:reduced}),connection=emitter({saveData});
- const slides=Array.from({length:4},()=>({visible:false,classList:null}));
+ const slides=Array.from({length:slideCount},()=>({visible:false,classList:null}));
  for(const s of slides)s.classList={toggle(name,val){if(name==="is-visible")s.visible=val}};
  const root={querySelectorAll(){return slides}};
  const document=emitter({hidden:false,querySelector(q){return q==="[data-hero-slideshow]"?root:null}});
@@ -37,6 +37,11 @@ function harness({reduced=false,saveData=false}={}){
 test("four images transition every 8 seconds with one visible at a time",()=>{
  const h=harness();assert.equal(h.index(),0);assert.equal(h.count(),1);
  for(const expected of [1,2,3,0]){assert.equal(h.tick(),8000);assert.equal(h.index(),expected);assert.equal(h.count(),1);assert.equal(h.timerCount(),1)}
+});
+
+test("three Ukrainian images share the same eight-second rotation and loop",()=>{
+ const h=harness({slideCount:3});assert.equal(h.index(),0);
+ for(const expected of [1,2,0,1]){assert.equal(h.tick(),8000);assert.equal(h.index(),expected);assert.equal(h.count(),1);assert.equal(h.timerCount(),1)}
 });
 test("reduced-motion and data saving preserve first photo",()=>{
  for(const config of [{reduced:true},{saveData:true}]){const h=harness(config);assert.equal(h.index(),0);assert.equal(h.timerCount(),0)}

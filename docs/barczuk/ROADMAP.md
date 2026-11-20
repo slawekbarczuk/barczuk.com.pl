@@ -13,6 +13,13 @@ Punkt startowy: R16 witryny publicznej i R08 Strefy klienta, zalogowanie Microso
 
 ## Etap 1 — Panel doradcy i rejestr przedsiębiorstw (następny)
 
+### Witryna UA — zaakceptowane wydanie
+
+- [x] Projekt hero Kijów / Odessa / Lwów, treści bankowej i trwałej generacji UA-home; lokalne testy i widoki komputera/telefonu.
+- [x] Ocena i akceptacja treści przez użytkownika oraz wyraźne polecenie wdrożenia 20.11.2026.
+- [x] Finalne, umiarkowane dopasowanie kolorystyki trzech panoram do rzeczywistych zdjęć Łodzi; eksport 1440 × 810 WebP.
+- [ ] Publikacja i potwierdzenie produkcyjnego wdrożenia. Szczegóły: [UA_PREVIEW_R16.md](UA_PREVIEW_R16.md).
+
 - [ ] Ustalić schemat kont użytkowników i minimalne uprawnienia doradca/administrator/klient oraz granice dostępu.
 - [ ] Bezpieczny rejestr przedsiębiorstw B2B z identyfikatorem wewnętrznym i statusem relacji, bez fikcyjnych danych produkcyjnych.
 - [ ] Indywidualna teczka klienta: podstawowe dane przedsiębiorstwa, sprawy, zadania, terminy, historia zdarzeń.
