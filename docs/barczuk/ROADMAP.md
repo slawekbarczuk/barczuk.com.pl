@@ -13,6 +13,9 @@ Punkt startowy: R16 witryny publicznej i R08 Strefy klienta, zalogowanie Microso
 
 ## Etap 1 — Panel doradcy i rejestr przedsiębiorstw (następny)
 
+- [x] Przygotować płynne zmiany języka i wspólny wymiar fotografii R16/R08 w czterech językach; testy i lokalny pomiar wykonane.
+- [ ] Opublikować i zweryfikować obie aplikacje po powyższej korekcie.
+
 ### Witryna UA — zaakceptowane wydanie
 
 - [x] Przygotowana korekta wysokości hero, mocniej stonowane wyświetlanie obrazów i poprawne linki do portalu UA; 61 testów, lokalne widoki 1920/1280/390 px i przejście do portalu sprawdzone.

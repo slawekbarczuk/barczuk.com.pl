@@ -11,6 +11,8 @@
 
 ## Podstawowe zasady projektu
 
+Prezentacja hero i zmiany języka: `assets/hero-frame.css`, `assets/language-transition.css` oraz `assets/language-transition.js` mają identyczne odpowiedniki w `dist/` prywatnego portalu. Synchronizować je świadomie przy zmianach interfejsu. Publiczny generator `shared()` w `scripts/build-ua-r16.cjs` dołącza animację na wszystkich 20 stronach, a reguły fotografii tylko na czterech stronach głównych. Portal nie wymaga zmian kodu autoryzacji ani API przy publikacji tych zasobów.
+
 - Wszystkie funkcje doradcze i analizy finansowania dotyczą **wyłącznie przedsiębiorstw (B2B)**; nie projektować produktów kredytowych dla osób fizycznych.
 - Izolacja danych klientów, uprawnienia oparte na rolach, minimalne uprawnienia, historia operacji i poufność są wymaganiami projektowymi, nie funkcjami już zweryfikowanymi.
 - Zgoda/podstawa prawna i informacja o przetwarzaniu **przed przyjęciem dokumentów finansowych**. Treści wymagają kontroli prawnej i zgodności z wdrożonym procesem.
