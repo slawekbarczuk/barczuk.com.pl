@@ -17,12 +17,12 @@ const meta={
  privacy:["Політика конфіденційності | Barczuk","Обробка персональних даних, права за GDPR, строки зберігання та інформація про контактну форму."],
  cookies:["Файли cookie та вебаналітика | Barczuk","Інформація про файли cookie, Cloudflare Web Analytics та технічне функціонування barczuk.com.pl."]
 };
-const locales=["pl","en","de","ua"],bcp={pl:"pl",en:"en",de:"de",ua:"uk"};
+const locales=["pl","ua","en","de"],bcp={pl:"pl",en:"en",de:"de",ua:"uk"};
 const labels={
- pl:["Wybór języka","Polski","Angielski","Niemiecki","Ukraiński"],
- en:["Choose language","Polish","English","German","Ukrainian"],
- de:["Sprache auswählen","Polnisch","Englisch","Deutsch","Ukrainisch"],
- ua:["Вибір мови","Польська","Англійська","Німецька","Українська"]
+ pl:["Wybór języka","Polski","Ukraiński","Angielski","Niemiecki"],
+ en:["Choose language","Polish","Ukrainian","English","German"],
+ de:["Sprache auswählen","Polnisch","Ukrainisch","Englisch","Deutsch"],
+ ua:["Вибір мови","Польська","Українська","Англійська","Німецька"]
 };
 const read=p=>fs.readFileSync(path.join(root,p),"utf8");
 const write=(p,s)=>{const dest=path.join(root,p);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,s,"utf8");console.log("Built",p,Buffer.byteLength(s,"utf8"),"bytes");};

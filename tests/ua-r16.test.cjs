@@ -67,3 +67,26 @@ test("Mobile legal clauses isolate menu selectors from the language switcher (iP
  const shared=fs.readFileSync(path.join(root,"assets/language-switcher-r16.css"),"utf8");
  assert.match(shared,/\.language-switcher\{\s*display:inline-flex;align-items:center/);
 });
+
+
+test("Language chooser places UA directly after PL on all 20 pages",()=>{
+ const allPages=[
+  "index.html","finansowanie-przedsiebiorstw/index.html",
+  "informacje/informacje-prawne/index.html","informacje/prywatnosc/index.html","informacje/cookies/index.html",
+  "en/index.html","en/corporate-financing/index.html",
+  "en/legal-information/index.html","en/privacy/index.html","en/cookies/index.html",
+  "de/index.html","de/unternehmensfinanzierung/index.html",
+  "de/rechtliche-hinweise/index.html","de/datenschutz/index.html","de/cookies/index.html",
+  "ua/index.html","ua/finansuvannia/index.html",
+  "ua/pravova-informatsiia/index.html","ua/konfidentsiinist/index.html","ua/cookies/index.html"
+ ];
+ for(const p of allPages){
+  const html=fs.readFileSync(path.join(root,p),"utf8");
+  const nav=html.match(/<nav class="language-switcher"[\s\S]*?<\/nav>/)?.[0];
+  assert.ok(nav,p+" missing language switcher");
+  const codes=[...nav.matchAll(/<a\b[^>]*\bhreflang="([^"]+)"[^>]*>([^<]*)<\/a>/g)]
+   .map(m=>[m[1],m[2]]);
+  assert.deepEqual(codes,[["pl","PL"],["uk","UA"],["en","EN"],["de","DE"]],p);
+  assert.equal((nav.match(/aria-current="page"/g)||[]).length,1,p+" active language marker");
+ }
+});
