@@ -1,5 +1,13 @@
 # Stan projektu BARCZUK — 2026-11-20
 
+## R16: płynne języki i spójna wysokość hero — KOD SCALONY, PRODUKCJA DO POTWIERDZENIA (20.11.2026)
+
+- Na podstawie wcześniejszego projektu z wątku „Dostosuj Ukraińskie hero” przeniesiono gotowe pliki do aktualnej gałęzi z nową podstroną SEO UA. [PR #16](https://github.com/slawekbarczuk/barczuk.com.pl/pull/16), commit `7c98439104195d4fbad386f4b02112ebafe71ac5`.
+- Działać ma delikatne przejście PL/UA/EN/DE na 21 podstronach; ten sam arkusz kadru co w portalu R08: desktop 598,5 px, tablet 4:3, telefon 16:9, z zachowaniem swobodnego wzrostu wysokości przy dużej treści. Zdjęcia, teksty, P04/API, Strefa klienta i SEO niezmienione.
+- Testy PR: formularz P04 [44732918925](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44732918925) i Azure preview [44732918767](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44732918767) — success. Nie potwierdzono jeszcze osobno końcowej publikacji produkcyjnej ani porównania wizualnego w aktualnym browserze.
+- Portal R08: kod analogicznej zmiany jest w osobnym prywatnym repo; wdrożenie produkcyjne portalu wymaga ręcznego uruchomienia i weryfikacji.
+
+
 ## Aktualizacja kodu SEO UA — 20.11.2026
 
 - Dodatkowe ulepszenia podstrony UA i jej odtwarzalnego generatora zostały scalone w [PR #15](https://github.com/slawekbarczuk/barczuk.com.pl/pull/15), commit `f737f5fd8b8322481c8b1d37caa672a5ba19a3d4`.
