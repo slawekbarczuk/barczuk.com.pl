@@ -1,5 +1,15 @@
 # Plan rozwoju BARCZUK — stan na 2026-11-19
 
+## Bezpłatna widoczność Google/Bing — nowy priorytet (20.11.2026)
+
+- [x] Dedykowana podstrona B2B dla ukraińskich przedsiębiorców i kanoniczny adres; kod scalony do main przez [PR #15](https://github.com/slawekbarczuk/barczuk.com.pl/pull/15).
+- [x] Link wewnętrzny z UA, metadane i wpis do sitemapy (21 URL), generator i 65 pomyślnych testów.
+- [ ] Potwierdzić udane wdrożenie produkcyjne i dostępność nowej strony (HTTP 200), także na telefonie.
+- [ ] Sprawdzić dane indeksacji w istniejących kontach Google Search Console i Bing Webmaster Tools; ponowić zgłoszenie sitemapy, jeśli potrzebne.
+- [ ] Po potwierdzonej publikacji zgłosić nowy adres, monitorować zapytania ukraińskie, organiczne wyświetlenia i kliknięcia.
+- [ ] Rozważyć bezpłatne IndexNow zgodnie z zasadami bezpieczeństwa, bez udostępniania sekretów i bez kosztów reklamy.
+
+
 Punkt startowy: R16 witryny publicznej i R08 Strefy klienta, zalogowanie Microsoft Entra oraz diagnostyka API HTTP 200 potwierdzone. **Właściwe moduły Panelu doradcy nie zostały jeszcze wdrożone.**
 
 ## Etap 0 — zamknięty: fundament techniczny
