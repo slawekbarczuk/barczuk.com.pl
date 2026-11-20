@@ -40,3 +40,30 @@ test("Navigation spacing compacts only desktop",()=>{
  assert.match(css,/\.header \.shell\.nav>\.nav-links\{margin-left:auto\}/);
  assert.match(css,/\.header \.language-switcher\{gap:2px/);
 });
+
+
+test("Mobile legal clauses isolate menu selectors from the language switcher (iPhone regression)",()=>{
+ const legalPages=[
+  "informacje/informacje-prawne/index.html","informacje/prywatnosc/index.html","informacje/cookies/index.html",
+  "en/legal-information/index.html","en/privacy/index.html","en/cookies/index.html",
+  "de/rechtliche-hinweise/index.html","de/datenschutz/index.html","de/cookies/index.html",
+  "ua/pravova-informatsiia/index.html","ua/konfidentsiinist/index.html","ua/cookies/index.html"
+ ];
+ for(const file of legalPages){
+  const html=fs.readFileSync(path.join(root,file),"utf8");
+  const style=html.match(/<style>([\s\S]*?)<\/style>/)?.[1];
+  assert.ok(style,file+": inline legal CSS missing");
+  assert.match(style,/\.nav-links\{display:flex;align-items:center;gap:35px\}/,file+": primary nav scoped");
+  assert.match(style,/\.nav-links\{display:none;position:absolute;/,file+": mobile menu hidden by default");
+  assert.match(style,/\.nav-links\.is-open\{display:flex\}/,file+": mobile menu toggle");
+  assert.doesNotMatch(style,/(^|[};])nav(?:\s+a|\s+\.nav-contact|\.is-open|\{)/,
+   file+": generic nav CSS could turn switcher into mobile overlay");
+  const switcher=html.match(/<nav class="language-switcher"[\s\S]*?<\/nav>/)?.[0];
+  assert.ok(switcher,file+": language selector missing");
+  for(const lang of ["pl","en","de","uk"]){
+   assert.ok(switcher.includes('hreflang="'+lang+'"'),file+": "+lang+" missing");
+  }
+ }
+ const shared=fs.readFileSync(path.join(root,"assets/language-switcher-r16.css"),"utf8");
+ assert.match(shared,/\.language-switcher\{\s*display:inline-flex;align-items:center/);
+});
