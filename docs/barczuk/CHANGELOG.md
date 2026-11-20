@@ -1,5 +1,14 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-20 — korekta hero UA i języka portalu — PRZYGOTOWANA
+
+- Powód: dłuższy nagłówek UA zwiększał wysokość hero; adres portalu UA odziedziczył polski `/`, a stary test również utrwalał ten błędny adres.
+- Zmieniono wyłącznie prezentację strony głównej UA i link portalu na pięciu stronach UA. Słowa nagłówka zachowano, zmieniono łamanie i rozmiar na desktopie. W pomiarze 1920 px wysokość spadła z 661,4 px do 598,5 px, zgodnie z PL.
+- Dalsze stonowanie kolorów to korekta prezentacji w osobnym CSS UA (`grayscale(.38) saturate(.62) brightness(.98)`), bez zmiany plików obrazów ani ich kompozycji. Zmieniono adres wersji CSS, aby przeglądarki pobrały poprawkę.
+- Generator centralnie ustala adres portalu według języka; pięć stron UA kieruje do `https://portal.barczuk.com.pl/ua/`. Poprawiono oczekiwanie w teście nawigacji. Sprawdzono rzeczywiste lokalne kliknięcie: portal otwiera się po ukraińsku.
+- 61 testów lokalnych przechodzi, pełna regeneracja stabilna. Widoki 1920/1280/390 px bez poziomego przepełnienia. PL/EN/DE, treść AML, wspólne style/slideshow, P04/API i prywatny portal bez zmian.
+- Status: przygotowano na `fix/r16-ua-hero-height-and-portal`; publikacja i kontrola produkcji oczekują na potwierdzenie.
+
 ## 2026-11-20 — R16 UA: finalna kolorystyka i wsparcie bankowe — WDROŻONE
 
 - Użytkownik zaakceptował treść projektu i wyraźnie zlecił wdrożenie. Zastrzeżenie dotyczyło dalszego umiarkowanego zbliżenia kolorów do rzeczywistych fotografii Łodzi.

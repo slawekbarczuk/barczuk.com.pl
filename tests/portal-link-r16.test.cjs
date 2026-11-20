@@ -14,7 +14,7 @@ const expected={
  pl:["https://portal.barczuk.com.pl/","Strefa klienta","Porozmawiajmy"],
  en:["https://portal.barczuk.com.pl/en/","Client portal","Let's talk"],
  de:["https://portal.barczuk.com.pl/de/","Kundenportal","Kontakt aufnehmen"],
- ua:["https://portal.barczuk.com.pl/","Клієнтський портал","Обговорімо"]
+ ua:["https://portal.barczuk.com.pl/ua/","Клієнтський портал","Обговорімо"]
 };
 test("R16 navigation: contact plain, portal framed last, across 20 pages and 404",()=>{
  for(const [locale,files] of Object.entries(paths)){

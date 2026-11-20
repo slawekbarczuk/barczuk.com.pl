@@ -24,6 +24,7 @@ function bankingSection(c) {
 module.exports = function localizeUaHome(html) {
   const hero = content.hero;
   html = replaceOnce(html, '<p class="eyebrow">Консультування для підприємств</p>', '<p class="eyebrow">' + text(hero.eyebrow) + '</p>', "hero audience");
+  html = replaceOnce(html, '<h1>Незалежне<br>фінансове консультування</h1>', '<h1>' + hero.heading.map(text).join('<br>') + '</h1>', "balanced UA heading");
   html = replaceOnce(html, '<p class="lead">Підтримка компаній у підготовці фінансування, отриманні банківських гарантій, погодженні умов із банками, реалізації інвестицій та обслуговуванні заборгованості.</p>', '<p class="lead">' + text(hero.lead) + '</p>', "hero lead");
   html = replaceOnce(html, '>Обговорімо потреби компанії </a>', '>' + text(hero.primaryAction) + ' </a>', "hero contact action");
   html = replaceOnce(html, '>Ознайомитися з послугами </a>', '>' + text(hero.secondaryAction) + ' </a>', "hero scope action");
@@ -37,6 +38,6 @@ module.exports = function localizeUaHome(html) {
   for (const item of content.replacements) html = replaceOnce(html, item.from, item.to, item.from.slice(0, 50));
   const nextSection = '<section class="situations" id="kiedy-warto">';
   html = replaceOnce(html, nextSection, bankingSection(content.bankingSupport) + nextSection, "bank support placement");
-  html = replaceOnce(html, '</head>', '<link rel="stylesheet" href="/assets/ua-home-r16.css?v=R16-ua-20261120"></head>', "UA-only stylesheet");
+  html = replaceOnce(html, '</head>', '<link rel="stylesheet" href="/assets/ua-home-r16.css?v=R16-ua-20261120b"></head>', "UA-only stylesheet");
   return html;
 };
