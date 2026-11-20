@@ -64,7 +64,7 @@ Kontrola wizualna tej wersji w przeglądarce nie została ukończona: narzędzie
 
 ## R16 UA — panoramy Ukrainy i wsparcie bankowe (20.11.2026)
 
-- Użytkownik zaakceptował treści i zlecił publikację. Status procesu i dowody wdrożenia: `docs/barczuk/STATE.md` oraz `CHANGELOG.md`.
+- Użytkownik zaakceptował treści i zlecił publikację. **Wdrożono i zweryfikowano**: https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44723055515 — success, commit `79176f13266a3654a2f96f2bfbde6a4e5ac6205f`. Pełne dowody w `docs/barczuk/STATE.md` oraz `CHANGELOG.md`.
 - Tylko strona główna UA: Kijów / Odessa / Lwów, 1440 × 810 WebP; wspólny mechanizm 8 s / 1,6 s. Kolorystykę finalnie dopasowano do zdjęć Łodzi, zachowując delikatne ciepło.
 - Treść kierowana do firm z Ukrainy i przedsiębiorstw z ukraińskim kapitałem, sekcja rachunków/rozliczeń/KYC/AML, krótkie rozwijane wyjaśnienia i kontakt. Decyzje o rachunku pozostają po stronie banku.
 - Trwałe źródło: `i18n/ua-home-r16.json` i `scripts/localize-ua-home-r16.cjs` wywoływany z generatora UA wyłącznie dla strony głównej. Osobny CSS wczytywany tylko przez `/ua/`.

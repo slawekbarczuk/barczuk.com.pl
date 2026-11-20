@@ -1,6 +1,6 @@
 # R16 UA — projekt panoram Ukrainy i wsparcia bankowego
 
-Data: 20.11.2026. Status: **TREŚCI ZAAKCEPTOWANE, WDROŻENIE ZLECONE — PUBLIKACJA W TOKU**. Dokument zachowuje historię projektu przed wydaniem; dowód publikacji będzie dodany po zakończeniu procesu.
+Data: 20.11.2026. Status: **WDROŻONE I ZWERYFIKOWANE**. Dokument zachowuje historię projektu przed wydaniem oraz końcowe dowody publikacji.
 
 ## Baza i cel
 
@@ -45,4 +45,10 @@ Podstawa informacyjna: https://www.gov.pl/web/finanse/komunikat-nr-73-w-sprawie-
 
 ## Publikacja
 
-Polecenie publikacji zostało udzielone 20.11.2026. Potwierdzono bazę `main` = `e4f51d0`, finalnie dopasowano obrazy do `fabryczna.webp` i `piotrkowska.webp`, zachowując miękkie światło. Eksport trzech grafik: 1440 × 810 WebP, łącznie około 550 KB. Wszystkie 61 testów przechodzi. Publikacja i weryfikacja produkcji oczekują na potwierdzenie — nie oznaczać jako wdrożonego bez wyniku GitHub Actions.
+Polecenie publikacji zostało udzielone 20.11.2026. Potwierdzono bazę `main` = `e4f51d0`, finalnie dopasowano obrazy do `fabryczna.webp` i `piotrkowska.webp`, zachowując miękkie światło. Eksport trzech grafik: 1440 × 810 WebP, łącznie około 550 KB. Wszystkie 61 testów przechodzi.
+
+- Kod: [PR #11](https://github.com/slawekbarczuk/barczuk.com.pl/pull/11), commit `79176f13266a3654a2f96f2bfbde6a4e5ac6205f`.
+- [Testy CI 44722798603](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44722798603) — success; próba publikacji 44722798878 — success.
+- [Produkcja 44723055515](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44723055515) — success.
+- Kontrola https://www.barczuk.com.pl/ua/: właściwe nowe teksty, trzy slajdy i dokładna zgodność SHA-256 plików WebP. Pozostałe 19 podstron identyczne bajtowo ze stanem sprzed publikacji.
+- Przeglądarka: komputer i 390 × 844 px, wszystkie obrazy wczytane, przejście 1,6 s, działające rozwijane wyjaśnienie KYC/AML, brak poziomego przepełnienia. Zachowane zrzuty produkcyjne.

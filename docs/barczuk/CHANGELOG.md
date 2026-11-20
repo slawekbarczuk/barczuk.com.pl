@@ -1,11 +1,14 @@
 # Dziennik kamieni milowych BARCZUK
 
-## 2026-11-20 — zaakceptowane wydanie UA: finalna kolorystyka i wsparcie bankowe — PUBLIKACJA W TOKU
+## 2026-11-20 — R16 UA: finalna kolorystyka i wsparcie bankowe — WDROŻONE
 
 - Użytkownik zaakceptował treść projektu i wyraźnie zlecił wdrożenie. Zastrzeżenie dotyczyło dalszego umiarkowanego zbliżenia kolorów do rzeczywistych fotografii Łodzi.
 - Finalnie dopasowano Kijów, Odessę i Lwów: chłodniejsze neutralne odcienie, spokojniejsza zieleń i refleksy, z zachowaniem delikatnego ciepła. Pliki 1440 × 810 WebP, około 550 KB łącznie.
 - 61 testów przechodzi; pełne generowanie jest stabilne. PL/EN/DE, pozostałe podstrony UA, wspólne style/slideshow, P04/API i hosting bez zmian.
-- Status: przygotowano wydanie na `feature/r16-ua-ukraine-hero-aml`; wynik publikacji i kontrola produkcji zostaną dopisane po potwierdzeniu.
+- Kod scalono w [PR #11](https://github.com/slawekbarczuk/barczuk.com.pl/pull/11), commit `79176f13266a3654a2f96f2bfbde6a4e5ac6205f`. [Testy CI 44722798603](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44722798603) oraz próbne wdrożenie 44722798878 — success.
+- **Publikacja produkcyjna:** [44723055515](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44723055515) — success. Strona https://www.barczuk.com.pl/ua/ zweryfikowana po publikacji.
+- Kontrola HTTP/SHA-256: pozostałe 19 podstron HTML identyczne ze stanem sprzed wdrożenia; trzy obrazy produkcyjne identyczne z finalnymi plikami. Sprawdzono widok komputera i telefonu 390 × 844, brak poziomego przepełnienia, kompletność obrazów oraz rozwijanie wyjaśnienia KYC/AML.
+- Stan: wdrożone i zweryfikowane. Zaktualizowano STATE.md, DECISIONS.md, ROADMAP.md, RELEASE_R16.md i dokument przebiegu projektu. Nie zmieniono portalu, P04/API, PL/EN/DE ani pozostałych podstron UA.
 
 ## 2026-11-20 — lokalny projekt UA: panoramy Ukrainy i wsparcie bankowe — DO OCENY
 
