@@ -22,7 +22,7 @@ test("R16 multilingual: 15 complete static pages, correct lang and canonical",()
   assert.ok(html.includes('<link rel="canonical" href="'+base+route+'">'),file);
   assert.match(html,/<meta name="robots" content="index,follow">/,file);
   assert.ok(html.includes('data-language-switcher'),file);
-  assert.ok(html.includes('href="/assets/language-switcher-r16.css?v=R16-ua"'),file);
+  assert.ok(html.includes('href="/assets/language-switcher-r16.css?v=R16-ua-nav2"'),file);
   assert.match(html,/<meta name="description" content="[^"]{15,}">/,file);
   assert.match(html,/<title>[^<]{12,}<\/title>/,file);
  }
