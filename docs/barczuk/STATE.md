@@ -2,9 +2,9 @@
 
 Statusy: **POTWIERDZONE** = dowód w GitHub/Azure lub test użytkownika; **PLAN** = zatwierdzony kierunek, bez implementacji; **DO WERYFIKACJI** = brak wystarczającego dowodu.
 
-## Lokalny projekt UA — DO OCENY, BEZ PUBLIKACJI (20.11.2026)
+## Wydanie UA — ZAAKCEPTOWANE, PUBLIKACJA W TOKU (20.11.2026)
 
-Przygotowano na bazie `e4f51d0` trzy panoramy Ukrainy (Kijów, Odessa, Lwów) i treść dotyczącą firm z Ukrainy, finansowania w Polsce oraz wsparcia w procedurach KYC/AML. Trwałe źródło UA-home i kontrola regeneracji są gotowe lokalnie; 61 testów przechodzi, sprawdzono komputer i telefon. Nie wysłano zmian do GitHub i nie wdrożono na produkcję. Szczegóły: [UA_PREVIEW_R16.md](UA_PREVIEW_R16.md). Potwierdzony stan produkcji opisany poniżej pozostaje bez zmian.
+Użytkownik zaakceptował treści i wyraźnie zlecił wdrożenie 20.11.2026, prosząc o dodatkowe, umiarkowane zbliżenie panoram do kolorystyki Łodzi. Przygotowano finalne kadry Kijowa, Odessy i Lwowa oraz trwałe źródło UA-home z treścią dla firm z Ukrainy i wsparciem KYC/AML. 61 testów przechodzi; pozostałe języki i podstrony UA zachowane. Oczekuje na potwierdzenie publikacji GitHub Actions i kontrolę produkcji. Szczegóły: [UA_PREVIEW_R16.md](UA_PREVIEW_R16.md). Nie traktować tej sekcji jako dowodu zakończonego wdrożenia.
 
 ## 1. Publiczna witryna — POTWIERDZONE
 

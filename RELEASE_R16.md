@@ -61,3 +61,11 @@ Kontrola wizualna tej wersji w przeglądarce nie została ukończona: narzędzie
 - Lokalizacje generowane z kanonicznej treści polskiej przez scripts/build-i18n-r16.cjs i pliki i18n; bez automatycznego przekierowywania na podstawie języka przeglądarki.
 - Rozszerzono sitemap.xml do 15 adresów i dodano testy SEO, dostępności przełącznika, kompletności stron i regresji funkcji.
 - Wersja widoczna w stopce bez zmian: SB-WEB-1126-R16.
+
+## R16 UA — panoramy Ukrainy i wsparcie bankowe (20.11.2026)
+
+- Użytkownik zaakceptował treści i zlecił publikację. Status procesu i dowody wdrożenia: `docs/barczuk/STATE.md` oraz `CHANGELOG.md`.
+- Tylko strona główna UA: Kijów / Odessa / Lwów, 1440 × 810 WebP; wspólny mechanizm 8 s / 1,6 s. Kolorystykę finalnie dopasowano do zdjęć Łodzi, zachowując delikatne ciepło.
+- Treść kierowana do firm z Ukrainy i przedsiębiorstw z ukraińskim kapitałem, sekcja rachunków/rozliczeń/KYC/AML, krótkie rozwijane wyjaśnienia i kontakt. Decyzje o rachunku pozostają po stronie banku.
+- Trwałe źródło: `i18n/ua-home-r16.json` i `scripts/localize-ua-home-r16.cjs` wywoływany z generatora UA wyłącznie dla strony głównej. Osobny CSS wczytywany tylko przez `/ua/`.
+- 61 testów przechodzi, w tym dwukrotna regeneracja i brak zmian pozostałych wersji. Zachowano PL/EN/DE, pozostałe podstrony UA, P04/API, wspólne style, skrypt pokazu i wydanie SB-WEB-1126-R16.

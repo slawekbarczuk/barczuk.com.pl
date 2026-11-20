@@ -15,9 +15,9 @@
 - **D-011, 2026-11-19:** Dokumentacja ciągłości prac jest aktualizowana po każdej większej zmianie. Publiczne repo zawiera tylko jawne informacje; prywatna implementacja portalu i dane klientów muszą być przechowywane oddzielnie.
 - **D-012, 2026-11-20:** W publicznej witrynie R16 „Porozmawiajmy” jest zwykłym przedostatnim linkiem, a obramowana „Strefa klienta” ostatnią pozycją przed językami. Kolejność języków to **PL / UA / EN / DE** na wszystkich stronach. Należy zachować tę decyzję w generatorze. Portal R08 ma odrębny cykl wydań i wymaga osobnej synchronizacji interfejsu, jeśli zostanie o nią poproszone.
 
-## Decyzje jeszcze wymagające szczegółowego projektu
+- **D-013, 2026-11-20:** Użytkownik zaakceptował treści i zlecił wdrożenie trzech panoram Ukrainy oraz wsparcia bankowego/KYC/AML wyłącznie na stronie głównej UA. Finalnie zbliżyć kolorystykę do zdjęć Łodzi, z zachowaniem delikatnego ciepła i przyjaznego nastroju. Zachować R16, pozostałe języki oraz pokaz 8 s / 1,6 s. Treści i obrazy mają być odtwarzalne z generatora; decyzje bankowe pozostają po stronie banku.
 
-- **Projekt UA, 2026-11-20 — do oceny przed publikacją:** na wyraźne zlecenie użytkownika przygotowano trzy kadry Ukrainy oraz wsparcie bankowe/KYC/AML tylko dla strony głównej UA. Zachować R16, pozostałe języki i wspólny mechanizm pokazu 8 s / 1,6 s. Publikacja oczekuje na ocenę projektu; nie jest to jeszcze zmiana produkcyjna. Treści i obrazy muszą być odtwarzalne z generatora, nie ręcznie poprawiane w wynikowym HTML.
+## Decyzje jeszcze wymagające szczegółowego projektu
 
 - Role i dostęp: administrator/doradca/klient, udostępnianie do teczek, wieloosobowa reprezentacja firmy, MFA/Conditional Access i kontrola dostępu do API.
 - Struktura rejestru spraw, dokumentów, umów, historii zmian i obowiązków kredytowych.
