@@ -1,5 +1,14 @@
 # Plan rozwoju BARCZUK — stan na 2026-11-19
 
+## 20.11.2026 — dopracowanie nawigacji R16/R08
+
+- [x] R16: zwolniono animację języków i dodano płynne przejście przez domeny głównej witryny i portalu, commit `29ee72a`, PR #17.
+- [x] Poprawiono mobilne logo na podstronach prawnych; przyklejony do napisu złoty kwadrat i węższe odstępy. 21 stron odświeżonych wraz z generatorem.
+- [x] W prywatnym R08 gotowy jest identyczny skrypt, PR #3, z przetestowaną paczką do manualnego deploy.
+- [ ] Potwierdzić produkcyjną publikację R16, przejścia i układ na iPhonie.
+- [ ] Uruchomić nowe wdrożenie R08 ręcznie w istniejącym Azure Static Web Apps; następnie sprawdzić języki, przejścia oraz sesję Entra i API.
+
+
 ## Wizualna spójność R16 i R08 — 20.11.2026
 
 - [x] Scalone R16: płynne przełączanie języków i wspólna wysokość/ramka fotografii; [PR #16](https://github.com/slawekbarczuk/barczuk.com.pl/pull/16).
