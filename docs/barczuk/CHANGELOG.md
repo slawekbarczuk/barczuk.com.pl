@@ -1,5 +1,14 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-20 — korekta wolniejszych animacji i znaku BARCZUK na iPhone — SCALONE
+
+- Użytkownik potwierdził działanie przycisku i zgłosił trzy szczegóły: nieco wolniejsze języki, równie płynne przejście między stroną a portalem, prawidłowe położenie złotego kwadratu na mobilnych stronach prawnych.
+- R16: [PR #17](https://github.com/slawekbarczuk/barczuk.com.pl/pull/17), commit `29ee72a105610a14d9bf676772cd739215f6b06a`. We wszystkich 21 HTML i w generatorze zaktualizowano cache, uspokojono animację i dołożono mechanizm między domenami. Responsywne logo nie łamie się pomiędzy napisem a kwadratem. Obrazy i teksty bez zmian.
+- 10 testów nawigacji w obu repo w tym logowanie Microsoft jako wykluczony przypadek, pamięć wstecz, preferencja ograniczenia ruchu, cookies i reset stanu. Publiczny CI [44735927065](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44735927065) — success; Azure preview [44735927248](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44735927248) — Build And Deploy: success.
+- Prywatny portal: [PR #3](https://github.com/slawekbarczuk/barczuk-strefa-klienta/pull/3), testy [44735964453](https://github.com/slawekbarczuk/barczuk-strefa-klienta/actions/runs/44735964453) — success. Bez automatycznego deploy do portalu.
+- Status: kod w main; produkcyjny stan domen i test wizualny na iPhonie do potwierdzenia. Nie zmieniano Entra/API/P04 ani środowisk.
+
+
 ## 2026-11-20 — płynne języki i równy kadr R16/R08 — ZMIANY SCALONE
 
 - [PR #16](https://github.com/slawekbarczuk/barczuk.com.pl/pull/16) — R16: zachowano aktualne SEO UA, dodano wygładzenie nawigacji między językami i wspólny styl kadru. Zmiana obejmuje 21 stron, a generator odtwarza ją trwale.
