@@ -44,7 +44,7 @@ function switcher(p,locale){
 function shared(h,p,locale){
  h=h.replace(/<link rel="stylesheet" href="\/assets\/(?:language-transition|hero-frame)\.css[^"]*"[^>]*>/g,"")
   .replace(/<script src="\/assets\/language-transition\.js[^"]*"[^>]*><\/script>/g,"");
- const experience='<link rel="stylesheet" href="/assets/language-transition.css?v=20261120"><script src="/assets/language-transition.js?v=20261120"></script>'+
+ const experience='<link rel="stylesheet" href="/assets/language-transition.css?v=20261120b"><script src="/assets/language-transition.js?v=20261120b"></script>'+
   (p.id==="home"?'<link rel="stylesheet" href="/assets/hero-frame.css?v=20261120">':"");
  // The client portal has separate language routes. Normalize every generated
  // navigation consistently, including Ukrainian, instead of falling back to PL.
@@ -57,7 +57,7 @@ function shared(h,p,locale){
  const seo='<link rel="canonical" href="'+base+p.url[locale]+'">'+
   locales.map(c=>'<link rel="alternate" hreflang="'+bcp[c]+'" href="'+base+p.url[c]+'">').join("")+
   '<link rel="alternate" hreflang="x-default" href="'+base+p.url.pl+'">';
- h=h.replace("</head>",seo+'<link rel="stylesheet" href="/assets/language-switcher-r16.css?v=R16-ua">'+experience+"</head>");
+ h=h.replace("</head>",seo+'<link rel="stylesheet" href="/assets/language-switcher-r16.css?v=R16-ua-nav2">'+experience+"</head>");
  if(p.id==="home")h=h.replace('<section class="hero">','<section class="hero" data-photo-hero>');
  h=h.replace(/(<nav class="nav-links"[\s\S]*?<\/nav>)(<\/div><\/header>)/,(_,n,end)=>n+switcher(p,locale)+end);
  if(!h.includes('data-language-switcher'))throw Error("No language switcher: "+p.id+" "+locale);
