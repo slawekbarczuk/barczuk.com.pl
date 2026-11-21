@@ -26,7 +26,7 @@ html = html.replace(/<meta property="og:url" content="[^"]*">/, '<meta property=
 html = html.replace(/<link rel="alternate" hreflang="(?:pl|en|de|uk|x-default)"[^>]*>/g, "");
 html = html.replace(/<link rel="canonical"[^>]*>/g, "");
 const structured = {"@context":"https://schema.org","@type":"WebPage","@id":canonical+"#webpage","url":canonical,"name":title,"description":desc,"inLanguage":"uk","isPartOf":{"@id":"https://www.barczuk.com.pl/#organization"}};
-const analyticsTag = '<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-draft">';
+const analyticsTag = '<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-bar-v2">';
 const hasAnalytics = html.includes('/assets/analytics-r17.js');
 html = html.replaceAll(analyticsTag, '');
 html = html.replace("</head>", '<link rel="canonical" href="'+canonical+'"><script type="application/ld+json">'+JSON.stringify(structured)+'</script>'+(hasAnalytics?analyticsTag:'')+'</head>');

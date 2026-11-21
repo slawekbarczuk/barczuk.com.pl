@@ -31,10 +31,10 @@
   if (!["pl","en","de","uk"].includes(language)) language = "pl";
 
   var words = {
-    pl: {title:"Ustawienia prywatności",intro:"Możesz zgodzić się na dobrowolne statystyki odwiedzin publicznej strony. Odmowa nie ogranicza dostępu. Nigdy nie nagrywamy Strefy klienta.",ga:"Google Analytics 4 — statystyki i kliknięcia kontaktu",replay:"Microsoft Clarity — nagrania wybranych publicznych stron",reject:"Odrzuć opcjonalne",save:"Zapisz wybór",policy:"Informacja o cookies",settings:"Ustawienia prywatności"},
-    en: {title:"Privacy preferences",intro:"You may opt in to statistics about visits to this public website. Refusing does not restrict access. We never record the client portal.",ga:"Google Analytics 4 — visits and contact clicks",replay:"Microsoft Clarity — recordings of selected public pages",reject:"Reject optional",save:"Save preferences",policy:"Cookie notice",settings:"Privacy preferences"},
-    de: {title:"Datenschutzeinstellungen",intro:"Sie können freiwilligen Statistiken über Besuche der öffentlichen Website zustimmen. Eine Ablehnung beschränkt den Zugang nicht. Das Kundenportal wird nie aufgezeichnet.",ga:"Google Analytics 4 — Besuche und Kontaktklicks",replay:"Microsoft Clarity — Aufzeichnungen ausgewählter öffentlicher Seiten",reject:"Optionale ablehnen",save:"Auswahl speichern",policy:"Cookie-Hinweise",settings:"Datenschutzeinstellungen"},
-    uk: {title:"Налаштування приватності",intro:"Ви можете погодитися на необов'язкову статистику відвідувань відкритого сайту. Відмова не обмежує доступ. Кабінет клієнта ніколи не записується.",ga:"Google Analytics 4 — відвідування та натискання контактів",replay:"Microsoft Clarity — записи окремих відкритих сторінок",reject:"Відхилити необов'язкове",save:"Зберегти вибір",policy:"Інформація про cookie",settings:"Налаштування приватності"}
+    pl: {intro:"Korzystamy z niezbędnych plików cookie oraz — za Twoją zgodą — z plików analitycznych, które pomagają nam ulepszać witrynę. Swój wybór możesz zmienić w każdej chwili.",settings:"USTAWIENIA COOKIES",reject:"ODRZUĆ OPCJONALNE",accept:"AKCEPTUJĘ",title:"Ustawienia cookies",details:"Wybierz, czy zgadzasz się na opcjonalny pomiar odwiedzin. Swoją decyzję możesz później zmienić.",essential:"Niezbędne",always:"Zawsze aktywne",essentialDesc:"Służą do działania strony, bezpieczeństwa i zapamiętania Twojego wyboru.",ga:"Analityczne — Google Analytics 4",gaDesc:"Pomagają analizować odwiedziny i wybrane kliknięcia na publicznej stronie. Bez treści formularzy i danych Strefy klienta.",back:"WRÓĆ",save:"ZAPISZ WYBÓR",policy:"Informacja o cookies"},
+    en: {intro:"We use essential cookies and, with your consent, analytics cookies to help us improve our website. You can change your preferences at any time.",settings:"COOKIE SETTINGS",reject:"REJECT OPTIONAL",accept:"ACCEPT",title:"Cookie settings",details:"Choose whether to allow optional website analytics. You can change your decision later.",essential:"Essential",always:"Always active",essentialDesc:"Used for website operation, security and remembering your choice.",ga:"Analytics — Google Analytics 4",gaDesc:"Help us understand public-page visits and selected clicks. No form contents or client portal data.",back:"BACK",save:"SAVE CHOICE",policy:"Cookie notice"},
+    de: {intro:"Wir verwenden notwendige Cookies und – mit Ihrer Einwilligung – Analyse-Cookies, um unsere Website zu verbessern. Sie können Ihre Auswahl jederzeit ändern.",settings:"COOKIE-EINSTELLUNGEN",reject:"OPTIONALE ABLEHNEN",accept:"AKZEPTIEREN",title:"Cookie-Einstellungen",details:"Wählen Sie, ob eine freiwillige Analyse zulässig ist. Sie können Ihre Entscheidung später ändern.",essential:"Notwendig",always:"Immer aktiv",essentialDesc:"Für den Betrieb und die Sicherheit der Website sowie das Speichern Ihrer Auswahl.",ga:"Analyse — Google Analytics 4",gaDesc:"Erfasst Besuche öffentlicher Seiten und ausgewählte Klicks. Keine Formulardaten oder Aktivitäten im Kundenportal.",back:"ZURÜCK",save:"AUSWAHL SPEICHERN",policy:"Cookie-Hinweise"},
+    uk: {intro:"Ми використовуємо необхідні файли cookie, а за вашою згодою — аналітичні файли cookie, які допомагають нам покращувати сайт. Ви можете змінити свій вибір у будь-який момент.",settings:"НАЛАШТУВАННЯ COOKIE",reject:"ВІДХИЛИТИ НЕОБОВ’ЯЗКОВІ",accept:"ПРИЙНЯТИ",title:"Налаштування cookie",details:"Оберіть, чи дозволяєте ви необов'язкову аналітику. Пізніше вибір можна змінити.",essential:"Необхідні",always:"Завжди активні",essentialDesc:"Для роботи й безпеки сайту та збереження вашого вибору.",ga:"Аналітичні — Google Analytics 4",gaDesc:"Допомагають аналізувати відвідування публічних сторінок і вибрані натискання. Без даних форм і кабінету клієнта.",back:"НАЗАД",save:"ЗБЕРЕГТИ ВИБІР",policy:"Інформація про cookie"}
   };
   var urls = {pl:"/informacje/cookies/",en:"/en/cookies/",de:"/de/cookies/",uk:"/ua/cookies/"};
   var t = words[language];
@@ -169,53 +169,80 @@
     }
     startGA(); startReplay();
   }
+
   function button(title,cls,fn) {
     var el = document.createElement("button");
-    el.type = "button"; el.className = cls; el.textContent = title; el.addEventListener("click",fn);
+    el.type = "button";el.className=cls;el.textContent=title;el.addEventListener("click",fn);
     return el;
   }
   function line(label,selected) {
-    var wrapper = document.createElement("label");
-    wrapper.className = "barczuk-consent__option";
-    var input = document.createElement("input");
-    input.type = "checkbox"; input.checked = !!selected;
-    var text = document.createElement("span");
-    text.textContent = label; wrapper.append(input,text);
+    var wrapper=document.createElement("label");wrapper.className="barczuk-consent__option";
+    var input=document.createElement("input");input.type="checkbox";input.checked=!!selected;
+    var text=document.createElement("span");text.textContent=label;wrapper.append(input,text);
     return {wrapper:wrapper,input:input};
   }
-  function showBanner() {
-    if (banner) return;
-    banner = document.createElement("section");
-    banner.className = "barczuk-consent";
-    banner.setAttribute("role","region");
-    banner.setAttribute("aria-label",t.title);
-    var body = document.createElement("div");
-    body.className = "barczuk-consent__body";
-    var title = document.createElement("strong"); title.textContent = t.title;
-    var desc = document.createElement("p"); desc.textContent = t.intro;
-    var link = document.createElement("a");link.href = urls[language];link.textContent = t.policy;
-    body.append(title,desc);
-    var current = readConsent();
-    var analyticsOption = ga4 ? line(t.ga,current && current.analytics) : null;
-    var replayOption = clarity ? line(t.replay,current && current.replay) : null;
-    if (analyticsOption) body.appendChild(analyticsOption.wrapper);
-    if (replayOption) body.appendChild(replayOption.wrapper);
-    body.appendChild(link);
-    var actions = document.createElement("div");
-    actions.className = "barczuk-consent__choices";
+  function removeBanner(){if(banner){banner.remove();banner=null;}}
+  function consentRoot(detailed){
+    var root=document.createElement("section");
+    root.className="barczuk-consent"+(detailed?" barczuk-consent--settings":"");
+    root.setAttribute("role","region");root.setAttribute("aria-label",t.title);
+    return root;
+  }
+  function showBanner(){
+    if(banner)return;
+    banner=consentRoot(false);
+    var wrap=document.createElement("div");wrap.className="barczuk-consent__wrap";
+    var copy=document.createElement("p");copy.className="barczuk-consent__intro";copy.textContent=t.intro;
+    var actions=document.createElement("div");actions.className="barczuk-consent__choices";
     actions.append(
-      button(t.reject,"barczuk-consent__button barczuk-consent__button--reject",function () { choose(false,false); }),
-      button(t.save,"barczuk-consent__button barczuk-consent__button--accept",function () {
-        choose(analyticsOption && analyticsOption.input.checked,replayOption && replayOption.input.checked);
+      button(t.settings,"barczuk-consent__button barczuk-consent__button--settings",showSettings),
+      button(t.reject,"barczuk-consent__button barczuk-consent__button--reject",function(){choose(false,false);}),
+      button(t.accept,"barczuk-consent__button barczuk-consent__button--accept",function(){choose(true,false);})
+    );
+    wrap.append(copy,actions);banner.appendChild(wrap);document.body.appendChild(banner);
+  }
+  function showSettings(){
+    removeBanner();
+    banner=consentRoot(true);
+    var wrap=document.createElement("div");wrap.className="barczuk-consent__wrap";
+    var h=document.createElement("h2");h.className="barczuk-consent__heading";h.textContent=t.title;
+    var intro=document.createElement("p");intro.className="barczuk-consent__details";intro.textContent=t.details;
+    var groups=document.createElement("div");groups.className="barczuk-consent__categories";
+    var essential=document.createElement("div");essential.className="barczuk-consent__category";
+    var essentialTop=document.createElement("div");essentialTop.className="barczuk-consent__category-top";
+    var essentialName=document.createElement("strong");essentialName.textContent=t.essential;
+    var essentialStatus=document.createElement("span");essentialStatus.className="barczuk-consent__always";essentialStatus.textContent=t.always;
+    essentialTop.append(essentialName,essentialStatus);
+    var essentialInfo=document.createElement("p");essentialInfo.textContent=t.essentialDesc;
+    essential.append(essentialTop,essentialInfo);groups.appendChild(essential);
+    var current=readConsent();
+    var analyticsOption=ga4?line(t.ga,!!(current&&current.analytics)):null;
+    var replayOption=clarity?line("Microsoft Clarity — session recordings",!!(current&&current.replay)):null;
+    if(analyticsOption){
+      var gaBox=document.createElement("div");gaBox.className="barczuk-consent__category";
+      var gaInfo=document.createElement("p");gaInfo.textContent=t.gaDesc;
+      gaBox.append(analyticsOption.wrapper,gaInfo);groups.appendChild(gaBox);
+    }
+    if(replayOption){
+      var replayBox=document.createElement("div");replayBox.className="barczuk-consent__category";
+      replayBox.appendChild(replayOption.wrapper);groups.appendChild(replayBox);
+    }
+    var link=document.createElement("a");link.href=urls[language];link.className="barczuk-consent__policy";link.textContent=t.policy;
+    var actions=document.createElement("div");actions.className="barczuk-consent__choices";
+    actions.append(
+      button(t.back,"barczuk-consent__button barczuk-consent__button--settings",function(){removeBanner();showBanner();}),
+      button(t.reject,"barczuk-consent__button barczuk-consent__button--reject",function(){choose(false,false);}),
+      button(t.save,"barczuk-consent__button barczuk-consent__button--accept",function(){
+        choose(analyticsOption&&analyticsOption.input.checked,replayOption&&replayOption.input.checked);
       })
     );
-    banner.append(body,actions);
-    document.body.appendChild(banner);
+    wrap.append(h,intro,groups,link,actions);banner.appendChild(wrap);document.body.appendChild(banner);
+    if(typeof h.focus==="function"){h.setAttribute("tabindex","-1");h.focus();}
   }
   function start() {
     var footer = document.querySelector("footer .footer-bottom") || document.querySelector("footer");
     if (footer && !document.getElementById("barczuk-analytics-settings")) {
-      var settings = button(t.settings,"barczuk-analytics-settings",showBanner);
+      var settings = button(t.settings,"barczuk-analytics-settings",showSettings);
       settings.id = "barczuk-analytics-settings";
       footer.appendChild(settings);
     }

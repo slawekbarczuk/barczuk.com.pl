@@ -1,5 +1,12 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-21 — baner cookies R17 — KOD PRZYGOTOWANY DO TESTOW
+
+- Trzy przyciski w jednej, waskiej poziomej belce, bez checkboxow w warstwie glownej; panel szczegolowy po kliknieciu ustawien. Jezyki PL/UA/EN/DE, dostepne odrzucenie i cofniecie zgody, kolory biel/czern/zolty.
+- Logika GA4 po zgodzie pozostaje zachowana. Clarity nadal wylaczone. Zmieniono wersje URL statycznych zasobow banera z `r17-draft` na `r17-bar-v2` dla unikniecia nieaktualnych plikow w przegladarkach.
+- Kod w galezi `r17-cookie-bar-rothschild-20261121`; do potwierdzenia CI, merge do main, Azure i test uzytkownika. Nie zmieniano portalu i tekstow oferty.
+
+
 ## 2026-11-20 — korekta wolniejszych animacji i znaku BARCZUK na iPhone — SCALONE
 
 - Użytkownik potwierdził działanie przycisku i zgłosił trzy szczegóły: nieco wolniejsze języki, równie płynne przejście między stroną a portalem, prawidłowe położenie złotego kwadratu na mobilnych stronach prawnych.

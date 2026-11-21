@@ -1,4 +1,11 @@
-# Stan projektu BARCZUK — 2026-11-20
+# Stan projektu BARCZUK — 2026-11-21
+
+## 21.11.2026 — uproszczony baner R17 — PRZYGOTOWANIE, NIE PUBLIKACJA
+
+- Uzytkownik zaakceptowal pelnoszerokosciowy, dyskretny baner cookies z trzema przyciskami (USTAWIENIA COOKIES / ODRZUC OPCJONALNE / AKCEPTUJE) w stylistyce czern-biel-zolty. Osobny panel szczegolow: niezbedne zawsze aktywne i opcjonalny GA4 domyslnie odznaczony.
+- Kod JS/CSS i testy przygotowano w galezi `r17-cookie-bar-rothschild-20261121`; zmiany obejmuja jedynie wyglad i sterowanie zgoda, nie algorytm pomiaru i nie teksty oferty. Zaplanowano odswiezenie parametrow cache we wszystkich publicznych stronach i generatorach.
+- Microsoft Clarity pozostaje wylaczony (pusty identyfikator, `enableClarityReplay:false`). Portal klienta bez zmian. Status testow i produkcji zostanie uzupelniony po CI i publikacji.
+
 
 ## 20.11.2026 — R16: wolniejsze przejścia, portal i mobilny znak — KOD SCALONY
 
