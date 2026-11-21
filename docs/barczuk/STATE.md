@@ -1,5 +1,11 @@
 # Stan projektu BARCZUK — 2026-11-21
 
+## 21.11.2026 — DE: Frankfurt/Berlin/Monachium — PRZYGOTOWANE, NIE OPUBLIKOWANE
+
+- Do niemieckiej strony glownej przygotowano trzy wizualizacje architektury miast w chlodnej kolorystyce Lodzi. WebP 1280x720 (ok. 69-71 kB) zapisane lokalnie w `assets/photos-de-r18/`. Slajdy i generator jezykowy DE zaktualizowano. Bez zmian PL/EN/UA, innych podstron, P04, GA4 i portalu.
+- Pliki obrazu to wizualizacje kreatywne, nie dokumentacja fotograficzna. Testy CI, Azure Preview i produkcja wymagaja osobnego potwierdzenia.
+
+
 ## 21.11.2026 — stopka BARCZUK jako marka — WDROZONA W AZURE
 
 - Ujednolicono pod logo BARCZUK stopke we wszystkich 22 publicznych plikach: PL `Niezależne doradztwo finansowe`, EN `Independent financial advisory`, DE `Unabhängige Finanzberatung`, UA `Незалежне фінансове консультування`. Usunieto marketingowy podpis wlasciciela i stary opis finansowania tylko z czesci pod logo. Dolna linia `© 2026 Sławomir Barczuk` i informacje prawne pozostaja bez zmian.
