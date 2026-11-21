@@ -20,9 +20,12 @@ test("BARCZUK footer shows a single brand tagline instead of a personal marketin
  let count=0;
  for(const [lang,files] of Object.entries(localized))for(const file of files){
    const html=fs.readFileSync(path.join(root,file),"utf8");
-   const footer=html.match(/<footer>[\\s\\S]*?<\\/footer>/)?.[0];
+   const open=html.indexOf("<footer>"),close=html.indexOf("</footer>",open);
+   const footer=open>=0&&close>=0?html.slice(open,close+"</footer>".length):null;
    assert.ok(footer,file+" lacks footer");
-   const identity=footer.match(/<div class="footer-identity">([\\s\\S]*?)<\\/div>/)?.[1];
+   const marker='<div class="footer-identity">';
+   const start=footer.indexOf(marker),end=footer.indexOf("</div>",start);
+   const identity=start>=0&&end>=0?footer.slice(start+marker.length,end):null;
    assert.ok(identity,file+" lacks identity");
    assert.ok(identity.includes('<span>Barczuk</span>'),file);
    assert.ok(identity.includes('<p>'+taglines[lang]+'</p>'),file);
