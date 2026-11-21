@@ -1,0 +1,15 @@
+/* R17 consent banner: matching neutral/black/yellow BARCZUK palette. */
+.barczuk-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:1200;max-width:1050px;margin:auto;padding:22px 26px;background:#fff;color:#080808;border:1px solid #bcbcb6;border-top:4px solid #ffd400;box-shadow:0 9px 38px rgba(0,0,0,.18);display:flex;gap:26px;align-items:center;justify-content:space-between;font-family:Arial,Helvetica,sans-serif}
+.barczuk-consent__body{flex:1;min-width:0}
+.barczuk-consent__body strong{font-size:16px;line-height:1.3}
+.barczuk-consent__body p{font-size:12px;line-height:1.65;margin:8px 0 7px;color:#333;max-width:700px}
+.barczuk-consent__body a{font-size:12px;color:#333;text-decoration:underline}
+.barczuk-consent__choices{display:flex;align-items:stretch;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.barczuk-consent__button{min-width:144px;border:1px solid #080808;padding:13px 14px;font-size:12px;font-weight:700;line-height:1.35;cursor:pointer;white-space:normal}
+.barczuk-consent__button--reject{background:#fff;color:#080808}
+.barczuk-consent__button--accept{background:#080808;color:#fff}
+.barczuk-consent__button:hover{outline:2px solid #ffd400;outline-offset:2px}
+.barczuk-consent button:focus-visible,.barczuk-consent a:focus-visible,.barczuk-analytics-settings:focus-visible{outline:3px solid #b89400;outline-offset:3px}
+.barczuk-analytics-settings{border:0;background:transparent;color:inherit;text-decoration:underline;text-underline-offset:3px;font-size:10px;padding:5px;cursor:pointer;white-space:normal}
+@media(max-width:720px){.barczuk-consent{left:8px;right:8px;bottom:8px;display:block;max-height:calc(100vh - 16px);overflow:auto;padding:18px}.barczuk-consent__choices{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.barczuk-consent__button{min-width:0;padding:13px 7px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.barczuk-consent *{transition:none!important}}
