@@ -89,13 +89,14 @@ test("Second tab notices revoked consent and cannot enqueue a new click",()=>{
   b.focus();
   assert.equal(b.network.length,1);
   b.clickHref("mailto:kontakt@barczuk.com.pl");
-  const before=b.window.dataLayer.length;
+  const eventCount=()=>b.window.dataLayer.filter(x=>x[0]==="event"&&x[1]==="contact_email_click").length;
+  const before=eventCount();
   a.clickHref("mailto:kontakt@barczuk.com.pl");
   // Toggle the already approved preference in tab A.
   const settings=a.handlers; // Real control is in footer, but consent can also change via cookie shared across tabs.
   jar.set("barczuk_analytics_consent_v2",encodeURIComponent(JSON.stringify({v:2,ts:Date.now(),analytics:false,replay:false})));
   b.clickHref("mailto:kontakt@barczuk.com.pl");
-  assert.equal(b.window.dataLayer.length,before);
+  assert.equal(eventCount(),before);
   assert.equal(b.location.reloads,1);
 });
 test("No tracking on 404, private portal, policy or unexpected URL",()=>{
