@@ -39,5 +39,6 @@ test("R17 free analytics: vendors wait for affirmative consent",()=>{
 test("R17 free analytics: client portal protected and forms masked",()=>{
  assert.match(source,/location\.hostname === "portal\.barczuk\.com\.pl"/);
  assert.match(source,/data-clarity-mask/);
+ assert.match(source,/removeAnalyticsCookies\\(\\)/);
  assert.doesNotMatch(source,/document\.querySelector\([^)]*input\[value/);
 });

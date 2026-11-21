@@ -12,7 +12,7 @@ Stan: 21.11.2026 — przygotowanie techniczne; nie jest to potwierdzenie publika
 
 - GA4 i Clarity **nie są ładowane ani nie wysyłają danych przed zgodą** (Google Basic Consent Mode).
 - Cookies i analityka są opcjonalne; „Odrzuć” i „Zgadzam się” mają równorzędny dostęp.
-- Dostępne są PL/EN/DE/UA, a preferencję można zmienić w stopce. Cofnięcie zgody zatrzymuje skrypty przez przeładowanie strony.
+- Dostępne są PL/EN/DE/UA, a preferencję można zmienić w stopce. Cofnięcie zgody zatrzymuje skrypty przez przeładowanie strony i usuwa znane dostępne z JS ciasteczka analityczne z domeny publicznej.
 - GA4 bez Google Signals oraz personalizacji reklam; nie wysyłać PII i danych formularza.
 - Clarity ładowany wyłącznie na publicznych stronach; wyłączony na stronach polityk prawnych i prywatności. Formularze otrzymują `data-clarity-mask="true"`.
 - **Nie dodawać GA4 ani Clarity do oddzielnej Strefy klienta** https://portal.barczuk.com.pl/ lub stron i dokumentów prywatnych.
