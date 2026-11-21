@@ -119,7 +119,7 @@ test("R16 provides an original visual system without weakening SEO or P04",()=>{
  const home=read("index.html"), css=read("assets/editorial-r16.css");
  assert.match(home,/data-hero-slideshow/);
  assert.doesNotMatch(home,/class="editorial-band"/);
- assert.match(home,/Praktyka bankowości korporacyjnej sięgająca 1995 roku/);
+ assert.match(home,/Doświadczenie w bankowości korporacyjnej od 1995 roku/);
  assert.match(css,/--navy:#14243a/);
  assert.match(css,/@media\(max-width:760px\)/);
  assert.match(css,/\.contact-form-section\[hidden\]\{display:none!important\}/);

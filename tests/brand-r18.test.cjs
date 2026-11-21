@@ -26,7 +26,7 @@ test("R18: four pillars, organizational voice, experience anchored in practice, 
 test("R18: Polish home expresses strategy without personal biography",()=>{
  const s=read("index.html");
  assert.match(s,/Doradztwo finansowe w istotnych momentach rozwoju przedsiębiorstwa/);
- assert.match(s,/Podstawą podejścia BARCZUK jest praktyka bankowości korporacyjnej/);
+ assert.match(s,/Podstawą doradztwa BARCZUK jest doświadczenie w bankowości korporacyjnej/);
  assert.match(s,/spółkami giełdowymi/);
  assert.match(s,/finansowe aspekty sukcesji/);
  const main=s.slice(s.indexOf('<main id="tresc">'),s.indexOf('<section class="contact-form-section"'));
