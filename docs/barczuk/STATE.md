@@ -1,5 +1,13 @@
 # Stan projektu BARCZUK — 2026-11-20
 
+## 21.11.2026 — odczyt produkcyjny R16
+
+Na obu adresach HTTPS, z www i bez www, wszystkie 21 stron mapy witryny odpowiedziało 200. Treść każdego HTML po rozpakowaniu odpowiedzi była identyczna bajtowo z tym samym plikiem w `main` na `41da4218`. Na każdym z tych dokumentów znajduje się skrypt Cloudflare Web Analytics. Nie odczytywano statystyk konta. Kanoniczne adresy wskazują www. Cztery publiczne ekrany wejścia do portalu R08 były dostępne.
+
+P04 na obu hostach zwrócił HTTP 200, `enabled=true`, `previewOnly=false` i kod gotowości `ready`. W jednym zewnętrznym widoku formularz pozostał ukryty. Lokalna kontrola bieżącego HTML z gotową konfiguracją pokazała formularz. Dzisiejsze pomiary nie obejmują nowej wiadomości od formularza do skrzynki.
+
+[PR #18](https://github.com/slawekbarczuk/barczuk.com.pl/pull/18) pozostaje projektem. Na `a412e8b0` lokalna pełna seria dała 79/79, na `main` 75/75. Kliknięcia i wyniki sprzedażowe z R17 są dopiero przedmiotem prac.
+
 ## 20.11.2026 — R16: wolniejsze przejścia, portal i mobilny znak — KOD SCALONY
 
 - Na podstawie zrzutu z iPhone'a poprawiono zawijający się złoty kwadrat BARCZUK na podstronach prawnych. CSS `assets/language-switcher-r16.css` utrzymuje logo w jednej linii i zmniejsza odstępy na bardzo wąskich ekranach (bez ruszania treści disclaimera).

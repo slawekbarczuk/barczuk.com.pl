@@ -1,5 +1,9 @@
 # Rejestr decyzji BARCZUK
 
+## 21.11.2026 — zakres właścicielski R17
+
+Właściciel zaakceptował kierunek obejmujący bezpłatne Cloudflare Web Analytics, GA4 Standard i Microsoft Clarity na publicznej witrynie. Aktywacja tagów, zakres rejestracji, finalne informacje o prywatności i publikacja wymagają uprzedniej weryfikacji. Ruch uwierzytelnionego portalu oraz dokumenty i treści formularza są wyłączone z analityki marketingowej. Nowe hasło jest preferowanym kierunkiem do oceny. Nie zostało zatwierdzone do publikacji.
+
 **Format:** [ID] data — decyzja; uzasadnienie / konsekwencja. Zmiana decyzji wymaga nowego wpisu i aktualizacji dokumentacji, zamiast jej cichego nadpisywania.
 
 - **D-001, 2026-11:** Główna oferta to niezależne doradztwo finansowe dla firm i inwestycji, w tym bankowe gwarancje i obsługa finansowania. Bez CV i bez publikowania kwot. Utrzymywać zwięzły, rzeczowy język; doświadczenie w bankowości korporacyjnej od 1995 r.

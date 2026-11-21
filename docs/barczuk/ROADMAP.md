@@ -1,5 +1,13 @@
 # Plan rozwoju BARCZUK — stan na 2026-11-19
 
+## 21.11.2026 — następna partia proponowana po audycie
+
+- [x] Porównano produkcyjny HTML 21 stron na obu hostach z wersją R16 w GitHub.
+- [ ] Potwierdzić pełną obsługę P04 w zwykłej przeglądarce i uprawnionej skrzynce w kontrolowanym teście.
+- [ ] Ujednolicić generator i stan przyjętych stron UA oraz sprawdzić pełny cykl odbudowy z czystej gałęzi.
+- [ ] Przed aktywacją R17 przetestować zgody w wielu kartach i na obu hostach, ograniczyć parametry i strony objęte pomiarem oraz uzupełnić informacje w czterech językach.
+- [ ] Przedstawić podgląd treści R17 właścicielowi. Wykonać odbiór osobno od decyzji o analityce.
+
 ## 20.11.2026 — dopracowanie nawigacji R16/R08
 
 - [x] R16: zwolniono animację języków i dodano płynne przejście przez domeny głównej witryny i portalu, commit `29ee72a`, PR #17.

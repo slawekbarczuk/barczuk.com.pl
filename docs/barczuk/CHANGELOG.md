@@ -1,5 +1,9 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 21.11.2026 — audyt R16 i roboczego R17
+
+Potwierdzono aktualny HTML R16, mapę i dostępność wejścia do portalu. Status i kryteria kolejnej pracy zapisano w STATE oraz ROADMAP. Źródło R16 `41da4218`, [PR analityki #18](https://github.com/slawekbarczuk/barczuk.com.pl/pull/18) `a412e8b0`, [CI analityki](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44886334821). Etap wyłącznie dokumentacyjny.
+
 ## 2026-11-20 — korekta wolniejszych animacji i znaku BARCZUK na iPhone — SCALONE
 
 - Użytkownik potwierdził działanie przycisku i zgłosił trzy szczegóły: nieco wolniejsze języki, równie płynne przejście między stroną a portalem, prawidłowe położenie złotego kwadratu na mobilnych stronach prawnych.
