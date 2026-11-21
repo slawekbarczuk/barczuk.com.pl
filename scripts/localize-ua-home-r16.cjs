@@ -25,7 +25,7 @@ module.exports = function localizeUaHome(html) {
   const hero = content.hero;
   html = replaceOnce(html, '<p class="eyebrow">Консультування для підприємств</p>', '<p class="eyebrow">' + text(hero.eyebrow) + '</p>', "hero audience");
   html = replaceOnce(html, '<h1>Незалежне<br>фінансове консультування</h1>', '<h1>' + hero.heading.map(text).join('<br>') + '</h1>', "balanced UA heading");
-  html = replaceOnce(html, '<p class="lead">Підтримка компаній у підготовці фінансування, отриманні банківських гарантій, погодженні умов із банками, реалізації інвестицій та обслуговуванні заборгованості.</p>', '<p class="lead">' + text(hero.lead) + '</p>', "hero lead");
+  html = replaceOnce(html, '<p class="lead">Фінансове консультування на важливих етапах розвитку підприємства. Підтримуємо власників і керівництво у залученні фінансування, реалізації інвестицій та ухваленні важливих фінансових рішень.</p>', '<p class="lead">' + text(hero.lead) + '</p>', "hero lead");
   html = replaceOnce(html, '>Обговорімо потреби компанії </a>', '>' + text(hero.primaryAction) + ' </a>', "hero contact action");
   html = replaceOnce(html, '>Ознайомитися з послугами </a>', '>' + text(hero.secondaryAction) + ' </a>', "hero scope action");
   const media = /<div class="hero-visual hero-media hero-slideshow"[^>]*>[\s\S]*?<\/div>/g;
