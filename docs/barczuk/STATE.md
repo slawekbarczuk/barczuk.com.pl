@@ -1,9 +1,9 @@
 # Stan projektu BARCZUK — 2026-11-21
 
-## 21.11.2026 — DE: Frankfurt/Berlin/Monachium — PRZYGOTOWANE, NIE OPUBLIKOWANE
+## 21.11.2026 — DE: Frankfurt/Berlin/Monachium — WDROŻONE W AZURE
 
 - Do niemieckiej strony glownej przygotowano trzy wizualizacje architektury miast w chlodnej kolorystyce Lodzi. WebP 1280x720 (ok. 69-71 kB) zapisane lokalnie w `assets/photos-de-r18/`. Slajdy i generator jezykowy DE zaktualizowano. Bez zmian PL/EN/UA, innych podstron, P04, GA4 i portalu.
-- Pliki obrazu to wizualizacje kreatywne, nie dokumentacja fotograficzna. Testy CI, Azure Preview i produkcja wymagaja osobnego potwierdzenia.
+- Pliki obrazu to wizualizacje kreatywne, nie dokumentacja fotograficzna. [PR #23](https://github.com/slawekbarczuk/barczuk.com.pl/pull/23), commit produkcyjny `66ddb844a503c609665db033a2bfef96ec270e05`. [R17 testy](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44944958272), [P04](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44944958242), [Azure Preview](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44944958230), [Azure produkcja](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44945076572) — sukces. Zweryfikowano na `main` trzy slajdy DE, brak zmian PL/EN/UA, GA4 i wyłączone Clarity. Pozostaje niezależny test wizualny desktop/iPhone w rzeczywistej przeglądarce.
 
 
 ## 21.11.2026 — stopka BARCZUK jako marka — WDROZONA W AZURE
