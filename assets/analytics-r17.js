@@ -90,7 +90,7 @@
   function removeAnalyticsCookies() {
     // Withdrawn consent: expire only known first-party GA4/Clarity cookies.
     // Third-party or HttpOnly cookies cannot be deleted from client-side JavaScript.
-    var domain = location.hostname.replace(/^www\\./, "");
+    var domain = location.hostname.replace(/^www\./, "");
     document.cookie.split(";").forEach(function (entry) {
       var name = entry.trim().split("=")[0];
       if (!/^(_ga(?:_|$)|_gid$|_gat(?:_|$)|_clck$|_clsk$)/.test(name)) return;
