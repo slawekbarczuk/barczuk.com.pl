@@ -57,7 +57,7 @@ function shared(h,p,locale){
  const seo='<link rel="canonical" href="'+base+p.url[locale]+'">'+
   locales.map(c=>'<link rel="alternate" hreflang="'+bcp[c]+'" href="'+base+p.url[c]+'">').join("")+
   '<link rel="alternate" hreflang="x-default" href="'+base+p.url.pl+'">';
- const analyticsTag='<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-draft">';
+ const analyticsTag='<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-bar-v2">';
  const hasAnalytics=h.includes('/assets/analytics-r17.js');
  h=h.replaceAll(analyticsTag,'');
  h=h.replace("</head>",seo+'<link rel="stylesheet" href="/assets/language-switcher-r16.css?v=R16-ua-nav2">'+experience+(hasAnalytics?analyticsTag:"")+"</head>");
