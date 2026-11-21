@@ -20,14 +20,14 @@ const pageTypes=[
 ];
 const meta={
   en:{
-    home:{title:"Independent Financial Advisory | Barczuk",description:"Independent corporate finance advisory: investment and working-capital financing, bank guarantees, lender negotiations and debt management."},
+    home:{title:"Independent Financial Advisory | Barczuk",description:"BARCZUK — independent financial advisory for businesses: financing, investments, capital structure, strategic decisions and continuity of financing."},
     financing:{title:"Corporate Financing and Bank Guarantees | Barczuk",description:"Corporate financing advisory: investment and working capital, financial models, bank guarantees, syndicated loans, negotiations and refinancing."},
     legal:{title:"Legal Information and Data Protection | Barczuk",description:"Business registration details, legal information, data protection and confidentiality of correspondence."},
     privacy:{title:"Privacy Policy | Barczuk",description:"Personal data processing, GDPR rights, retention and information about the contact form."},
     cookies:{title:"Cookies and Analytics | Barczuk",description:"Information about cookies, Cloudflare Web Analytics and the technical operation of barczuk.com.pl."}
   },
   de:{
-    home:{title:"Unabhängige Finanzierungsberatung | Barczuk",description:"Unabhängige Unternehmensberatung zu Investitions- und Betriebsmittelfinanzierung, Bankgarantien, Bankenverhandlungen und Finanzierungsbetreuung."},
+    home:{title:"Unabhängige Finanzberatung für Unternehmen | Barczuk",description:"BARCZUK – unabhängige Finanzberatung für Unternehmen: Finanzierung, Investitionen, Kapitalstruktur, strategische Entscheidungen und Finanzierungsbetreuung."},
     financing:{title:"Unternehmensfinanzierung und Bankgarantien | Barczuk",description:"Beratung zu Unternehmens- und Investitionsfinanzierung, Finanzmodellen, Bankgarantien, Konsortialkrediten, Verhandlungen und Refinanzierung."},
     legal:{title:"Rechtliche Hinweise und Datenschutz | Barczuk",description:"Angaben zum Unternehmen, rechtliche Hinweise, Datenschutz und Vertraulichkeit der Korrespondenz."},
     privacy:{title:"Datenschutzerklärung | Barczuk",description:"Informationen zur Verarbeitung personenbezogener Daten, DSGVO-Rechten, Aufbewahrung und Kontaktformular."},

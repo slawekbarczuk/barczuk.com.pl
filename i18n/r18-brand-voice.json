@@ -1,0 +1,217 @@
+{
+  "scope": "Public website B2B. Keep legal identity and form as-is; preserve special UA audience and photos; no false staffing claims.",
+  "home": [
+    {
+      "old": "<p class=\"lead\">Wsparcie firm w przygotowaniu finansowania, pozyskaniu gwarancji bankowych, uzgadnianiu warunków z bankami, realizacji inwestycji i obsłudze zadłużenia.</p>",
+      "pl": "<p class=\"lead\">Doradztwo finansowe w istotnych momentach rozwoju przedsiębiorstwa. Wspieramy właścicieli i zarządy w pozyskiwaniu finansowania, realizacji inwestycji oraz podejmowaniu ważnych decyzji finansowych.</p>",
+      "en": "<p class=\"lead\">Financial advisory at important stages in a company's development. We support owners and management teams in arranging finance, delivering investments and making significant financial decisions.</p>",
+      "de": "<p class=\"lead\">Finanzberatung in wichtigen Phasen der Unternehmensentwicklung. Wir unterstützen Eigentümer und Geschäftsleitungen bei Finanzierungen, Investitionen und wesentlichen finanziellen Entscheidungen.</p>",
+      "ua": "<p class=\"lead\">Фінансове консультування на важливих етапах розвитку підприємства. Підтримуємо власників і керівництво у залученні фінансування, реалізації інвестицій та ухваленні важливих фінансових рішень.</p>"
+    },
+    {
+      "old": "<p class=\"experience-tag\">Doświadczenie w bankowości korporacyjnej od 1995 roku</p>",
+      "pl": "<p class=\"experience-tag\">Praktyka bankowości korporacyjnej sięgająca 1995 roku</p>",
+      "en": "<p class=\"experience-tag\">Corporate banking practice dating back to 1995</p>",
+      "de": "<p class=\"experience-tag\">Praxis im Firmenkundengeschäft seit 1995</p>",
+      "ua": "<p class=\"experience-tag\">Практика корпоративного банкінгу з 1995 року</p>"
+    },
+    {
+      "old": "<p class=\"section-note\">Wybrany etap lub wsparcie<br>w całym procesie finansowania.</p>",
+      "pl": "<p class=\"section-note\">Od pojedynczego opracowania<br>po długoterminową współpracę.</p>",
+      "en": "<p class=\"section-note\">From a single assignment<br>to a long-term engagement.</p>",
+      "de": "<p class=\"section-note\">Von einzelnen Analysen<br>bis zur langfristigen Begleitung.</p>",
+      "ua": "<p class=\"section-note\">Від окремого завдання<br>до довгострокової співпраці.</p>"
+    },
+    {
+      "old": "<h2>Od analizy potrzeb<br><span class=\"light-weight\">po obsługę finansowania.</span></h2>",
+      "pl": "<h2>Od finansowania<br><span class=\"light-weight\">po decyzje strategiczne.</span></h2>",
+      "en": "<h2>From financing<br><span class=\"light-weight\">to strategic decisions.</span></h2>",
+      "de": "<h2>Von Finanzierungen<br><span class=\"light-weight\">bis zu strategischen Entscheidungen.</span></h2>",
+      "ua": "<h2>Від фінансування<br><span class=\"light-weight\">до стратегічних рішень.</span></h2>"
+    },
+    {
+      "old": "<h3>Analiza<br>i struktura</h3>",
+      "pl": "<h3>Finansowanie<br>przedsiębiorstw</h3>",
+      "en": "<h3>Financing<br>for businesses</h3>",
+      "de": "<h3>Finanzierung<br>für Unternehmen</h3>",
+      "ua": "<h3>Фінансування<br>підприємств</h3>"
+    },
+    {
+      "old": "<p>Potrzeby inwestycyjne i obrotowe, modele finansowe oraz dobór źródeł i struktury finansowania.</p>",
+      "pl": "<p>Przygotowujemy finansowanie działalności i inwestycji, analizujemy oferty oraz wspieramy negocjacje z bankami, również w zakresie gwarancji.</p>",
+      "en": "<p>We prepare financing for operations and investments, review offers and support negotiations with banks, including bank guarantees.</p>",
+      "de": "<p>Wir bereiten Betriebs- und Investitionsfinanzierungen vor, prüfen Angebote und begleiten Bankverhandlungen, auch zu Bankgarantien.</p>",
+      "ua": "<p>Готуємо фінансування діяльності та інвестицій, аналізуємо пропозиції й підтримуємо переговори з банками, зокрема щодо гарантій.</p>"
+    },
+    {
+      "old": "<h3>Proces<br>i negocjacje</h3>",
+      "pl": "<h3>Inwestycje<br>i rozwój</h3>",
+      "en": "<h3>Investments<br>and growth</h3>",
+      "de": "<h3>Investitionen<br>und Wachstum</h3>",
+      "ua": "<h3>Інвестиції<br>та розвиток</h3>"
+    },
+    {
+      "old": "<p>Przygotowanie procesu bankowego oraz uzgadnianie warunków i zabezpieczeń, także w finansowaniu konsorcjalnym.</p>",
+      "pl": "<p>Wspieramy finansowe przygotowanie inwestycji, dobór struktury kapitału i analizę wpływu przedsięwzięcia na płynność oraz rozwój firmy.</p>",
+      "en": "<p>We support investment planning, capital structure decisions and assessment of a project's impact on liquidity and business growth.</p>",
+      "de": "<p>Wir begleiten die finanzielle Vorbereitung von Investitionen, die Kapitalstruktur und die Bewertung der Auswirkungen auf Liquidität und Wachstum.</p>",
+      "ua": "<p>Підтримуємо фінансову підготовку інвестицій, вибір структури капіталу та оцінку впливу на ліквідність і розвиток компанії.</p>"
+    },
+    {
+      "old": "<h3>Uruchomienie<br>i realizacja</h3>",
+      "pl": "<h3>Kapitał<br>i decyzje strategiczne</h3>",
+      "en": "<h3>Capital<br>and strategy</h3>",
+      "de": "<h3>Kapital<br>und Strategie</h3>",
+      "ua": "<h3>Капітал<br>і стратегічні рішення</h3>"
+    },
+    {
+      "old": "<p>Koordynacja warunków uruchomienia, kolejnych transz i rozliczania finansowania w toku inwestycji.</p>",
+      "pl": "<p>Analizujemy konsekwencje zmian struktury kapitału i istotnych decyzji właścicielskich, w tym finansowe aspekty sukcesji.</p>",
+      "en": "<p>We assess the financial effects of capital structure changes and major ownership decisions, including the financial aspects of succession.</p>",
+      "de": "<p>Wir prüfen die finanziellen Folgen von Kapitalstrukturänderungen und wesentlichen Eigentümerentscheidungen, auch bei der Nachfolge.</p>",
+      "ua": "<p>Аналізуємо фінансові наслідки змін структури капіталу та важливих рішень власників, зокрема фінансові аспекти наступництва.</p>"
+    },
+    {
+      "old": "<h3>Obsługa<br>i refinansowanie</h3>",
+      "pl": "<h3>Ciągłość<br>finansowania</h3>",
+      "en": "<h3>Financing<br>continuity</h3>",
+      "de": "<h3>Finanzierungs-<br>kontinuität</h3>",
+      "ua": "<h3>Безперервність<br>фінансування</h3>"
+    },
+    {
+      "old": "<p>Monitorowanie kowenantów, raportowania i spłat. Wsparcie przy zmianach warunków oraz refinansowaniu zadłużenia.</p>",
+      "pl": "<p>Monitorujemy warunki umów, kowenanty i obowiązki wobec banków. Wspieramy renegocjacje, odnowienia limitów i refinansowanie.</p>",
+      "en": "<p>We monitor financing terms, covenants and bank obligations, and support renegotiations, facility renewals and refinancing.</p>",
+      "de": "<p>Wir überwachen Finanzierungsbedingungen, Covenants und Bankpflichten und begleiten Neuverhandlungen, Verlängerungen und Refinanzierungen.</p>",
+      "ua": "<p>Контролюємо умови договорів, ковенанти й зобов’язання перед банками. Підтримуємо перегляд умов, продовження лімітів і рефінансування.</p>"
+    },
+    {
+      "old": "<p>Finansowanie przedsiębiorstwa wymaga spójnych ustaleń na każdym etapie — również po podpisaniu umowy.</p>",
+      "pl": "<p>Łączymy przygotowanie finansowania i inwestycji z oceną ich dalszych konsekwencji dla przedsiębiorstwa.</p>",
+      "en": "<p>We link financing and investment preparation with an assessment of their longer-term consequences for the business.</p>",
+      "de": "<p>Wir verbinden die Vorbereitung von Finanzierungen und Investitionen mit der Bewertung ihrer langfristigen Folgen für das Unternehmen.</p>",
+      "ua": "<p>Поєднуємо підготовку фінансування та інвестицій з оцінкою їхніх подальших наслідків для підприємства.</p>"
+    },
+    {
+      "old": "<p class=\"intro\">Proces rozpoczyna się od celu finansowania i sytuacji przedsiębiorstwa. Analiza planów, przepływów pieniężnych i istniejących zobowiązań pozwala ocenić możliwości obsługi finansowania także po uruchomieniu środków.</p>",
+      "pl": "<p class=\"intro\">Współpracę rozpoczynamy od zrozumienia sytuacji przedsiębiorstwa i celu planowanej decyzji. Analizujemy przepływy pieniężne, zobowiązania oraz możliwe warianty, wskazując ich dalsze konsekwencje.</p>",
+      "en": "<p class=\"intro\">We start by understanding the company and the decision ahead. We review cash flows, commitments and available options, including their longer-term consequences.</p>",
+      "de": "<p class=\"intro\">Am Anfang stehen die Unternehmenssituation und die anstehende Entscheidung. Wir prüfen Cashflows, Verpflichtungen und Handlungsoptionen sowie deren langfristige Folgen.</p>",
+      "ua": "<p class=\"intro\">Починаємо зі стану підприємства й мети майбутнього рішення. Аналізуємо грошові потоки, зобов’язання та можливі варіанти з урахуванням подальших наслідків.</p>"
+    },
+    {
+      "old": "<p>Przed rozpoczęciem współpracy ustalane są cel, zakres prac, oczekiwane opracowania, terminy i podział odpowiedzialności. Podstawą jest bezpośredni kontakt z zarządem oraz osobami odpowiedzialnymi za finanse i inwestycję.</p>",
+      "pl": "<p>Przed rozpoczęciem współpracy uzgadniamy cele, zakres, oczekiwane rezultaty, terminy i odpowiedzialność. Pracujemy w bezpośrednim kontakcie z właścicielami, zarządami i osobami odpowiedzialnymi za finanse oraz inwestycje.</p>",
+      "en": "<p>Before an engagement, we agree on objectives, scope, deliverables, deadlines and responsibilities. We work directly with owners, management and those responsible for finance and investments.</p>",
+      "de": "<p>Vor Beginn der Zusammenarbeit vereinbaren wir Ziele, Umfang, Ergebnisse, Termine und Verantwortlichkeiten. Wir stimmen uns direkt mit Eigentümern, Geschäftsleitungen und Verantwortlichen für Finanzen und Investitionen ab.</p>",
+      "ua": "<p>До початку співпраці узгоджуємо цілі, обсяг, результати, строки й відповідальність. Працюємо безпосередньо з власниками, керівництвом та відповідальними за фінанси й інвестиції.</p>"
+    },
+    {
+      "old": "<p>Zlecenie może obejmować pojedyncze opracowanie, wybrany etap procesu finansowania albo stałe wsparcie w relacjach z bankami i obsłudze zadłużenia. Zagadnienia wymagające obsługi prawnej są uzgadniane z właściwymi doradcami przedsiębiorstwa.</p>",
+      "pl": "<p>Realizujemy pojedyncze opracowania, wybrane etapy procesu lub długoterminowe wsparcie przedsiębiorstwa. Sprawy prawne i podatkowe pozostają we właściwości uprawnionych specjalistów.</p><p>Podstawą podejścia BARCZUK jest praktyka bankowości korporacyjnej sięgająca 1995 roku. Obejmuje współpracę z przedsiębiorstwami prywatnymi i spółkami giełdowymi, finansowanie inwestycji przemysłowych oraz współpracę z obszarem bankowości inwestycyjnej.</p>",
+      "en": "<p>We deliver individual analyses, support for specific stages or longer-term advisory engagements. Legal and tax matters remain the responsibility of qualified professionals.</p><p>BARCZUK draws on corporate banking practice dating back to 1995, including work with privately held and listed companies, financing industrial investments and cooperation with investment banking teams.</p>",
+      "de": "<p>Wir übernehmen einzelne Analysen, ausgewählte Projektphasen oder längerfristige Mandate. Rechts- und Steuerfragen bleiben qualifizierten Fachleuten vorbehalten.</p><p>Der Beratungsansatz von BARCZUK beruht auf Firmenkundenbanking-Praxis seit 1995, einschließlich der Zusammenarbeit mit privaten und börsennotierten Unternehmen, der Finanzierung industrieller Investitionen und der Kooperation mit dem Investmentbanking.</p>",
+      "ua": "<p>Виконуємо окремі аналітичні завдання, супроводжуємо певні етапи процесу або забезпечуємо тривалішу підтримку. Правові й податкові питання належать до компетенції відповідних фахівців.</p><p>Підхід BARCZUK спирається на практику корпоративного банкінгу з 1995 року, зокрема співпрацю з приватними та біржовими компаніями, фінансування промислових інвестицій і взаємодію з інвестиційно-банківськими підрозділами.</p>"
+    }
+  ],
+  "financing": [
+    {
+      "old": "<p class=\"lead\">Wsparcie przedsiębiorstw w przygotowaniu i prowadzeniu procesów finansowania inwestycyjnego i obrotowego oraz w dalszej współpracy z bankami i innymi instytucjami finansującymi.</p>",
+      "pl": "<p class=\"lead\">Wspieramy przedsiębiorstwa w pozyskiwaniu finansowania obrotowego i inwestycyjnego, negocjowaniu warunków oraz zarządzaniu finansowaniem po zawarciu umowy.</p>",
+      "en": "<p class=\"lead\">We support businesses in arranging working-capital and investment finance, negotiating terms and managing financing after agreements are signed.</p>",
+      "de": "<p class=\"lead\">Wir unterstützen Unternehmen bei Betriebs- und Investitionsfinanzierungen, bei Verhandlungen über Konditionen und bei der Betreuung nach Vertragsabschluss.</p>",
+      "ua": "<p class=\"lead\">Допомагаємо підприємствам залучати оборотне й інвестиційне фінансування, погоджувати умови та супроводжувати фінансування після укладення договору.</p>"
+    },
+    {
+      "old": "<p>Analiza obejmuje zapotrzebowanie na kapitał związane z inwestycjami, bieżącą działalnością i cyklem obrotowym. Możliwe źródła, okresy finansowania i harmonogramy spłat są oceniane w powiązaniu z przepływami pieniężnymi przedsiębiorstwa.</p>",
+      "pl": "<p>Analizujemy zapotrzebowanie na kapitał wynikające z inwestycji, działalności bieżącej i cyklu obrotowego. Porównujemy źródła, okresy finansowania oraz harmonogramy spłat w powiązaniu z przepływami pieniężnymi przedsiębiorstwa.</p>",
+      "en": "<p>We assess capital needs arising from investments, day-to-day operations and the working-capital cycle. We compare funding sources, maturities and repayment profiles against the company's cash flows.</p>",
+      "de": "<p>Wir analysieren den Kapitalbedarf aus Investitionen, laufender Geschäftstätigkeit und Working Capital. Finanzierungsquellen, Laufzeiten und Tilgungspläne prüfen wir anhand der Cashflows des Unternehmens.</p>",
+      "ua": "<p>Аналізуємо потребу в капіталі для інвестицій, поточної діяльності та оборотного циклу. Порівнюємо джерела, строки й графіки погашення з урахуванням грошових потоків підприємства.</p>"
+    },
+    {
+      "old": "<p>Wsparcie w doborze relacji kapitału własnego i zadłużenia oraz przygotowaniu wariantów finansowania.</p>",
+      "pl": "<p>Przygotowujemy warianty finansowania i oceniamy relację kapitału własnego do zadłużenia. Analizujemy także finansowe skutki planowanych zmian struktury kapitału i decyzji właścicielskich.</p>",
+      "en": "<p>We develop financing options and assess the balance between equity and debt. We also review the financial effects of planned capital structure and ownership decisions.</p>",
+      "de": "<p>Wir erarbeiten Finanzierungsvarianten und beurteilen das Verhältnis von Eigen- zu Fremdkapital. Zudem prüfen wir finanzielle Folgen geplanter Kapitalstruktur- und Eigentümerentscheidungen.</p>",
+      "ua": "<p>Готуємо варіанти фінансування та оцінюємо співвідношення власного й позикового капіталу. Також аналізуємо фінансові наслідки запланованих рішень щодо структури капіталу та власності.</p>"
+    },
+    {
+      "old": "<p>Modele obejmują projekcje wyników, bilansu i przepływów pieniężnych, analizę zdolności do obsługi zadłużenia oraz wpływu zmian założeń na płynność i wskaźniki finansowe.</p>",
+      "pl": "<p>Opracowujemy modele obejmujące prognozy wyników, bilansu i przepływów pieniężnych. Oceniamy zdolność obsługi zadłużenia oraz wpływ różnych scenariuszy na płynność i wskaźniki finansowe.</p>",
+      "en": "<p>We build financial models covering income, balance-sheet and cash-flow forecasts. We assess debt-service capacity and the impact of different scenarios on liquidity and financial ratios.</p>",
+      "de": "<p>Wir entwickeln Finanzmodelle mit Ergebnis-, Bilanz- und Cashflow-Prognosen. Dabei prüfen wir die Schuldendienstfähigkeit und Auswirkungen unterschiedlicher Szenarien auf Liquidität und Kennzahlen.</p>",
+      "ua": "<p>Створюємо фінансові моделі з прогнозами результатів, балансу та грошових потоків. Оцінюємо здатність обслуговувати борг і вплив різних сценаріїв на ліквідність та показники.</p>"
+    },
+    {
+      "old": "<p>Przygotowanie obejmuje informacje i opracowania potrzebne do przedstawienia przedsiębiorstwa lub inwestycji instytucjom finansującym.</p>",
+      "pl": "<p>Przygotowujemy informacje i opracowania potrzebne do przedstawienia przedsiębiorstwa oraz planowanej inwestycji instytucjom finansującym.</p>",
+      "en": "<p>We prepare the information and analyses needed to present the company and its investment project to potential lenders.</p>",
+      "de": "<p>Wir erstellen Informationen und Analysen, um das Unternehmen und sein Investitionsvorhaben potenziellen Finanzierungspartnern vorzustellen.</p>",
+      "ua": "<p>Готуємо інформацію й аналітичні матеріали для представлення підприємства та інвестиційного проєкту установам, що надають фінансування.</p>"
+    },
+    {
+      "old": "<p>Wsparcie obejmuje przygotowanie i koordynację procesu finansowania: od określenia jego zakresu i harmonogramu, przez kontakt z wybranymi instytucjami, po analizę ofert i uzgodnienie warunków.</p>",
+      "pl": "<p>Przygotowujemy i koordynujemy proces finansowania: ustalamy jego zakres i harmonogram, organizujemy kontakt z wybranymi instytucjami, analizujemy oferty oraz wspieramy uzgadnianie warunków.</p>",
+      "en": "<p>We prepare and coordinate financing processes: defining the scope and timeline, arranging contact with selected lenders, comparing offers and supporting negotiations.</p>",
+      "de": "<p>Wir bereiten Finanzierungsprozesse vor und koordinieren sie: Umfang und Zeitplan, Kontakt zu ausgewählten Banken, Angebotsvergleich und Begleitung der Verhandlungen.</p>",
+      "ua": "<p>Готуємо й координуємо процес фінансування: визначаємо обсяг і графік, організовуємо контакт з установами, аналізуємо пропозиції та підтримуємо погодження умов.</p>"
+    },
+    {
+      "old": "<p>Uzupełnieniem jest pomoc w odpowiedziach na pytania banków oraz uporządkowaniu wymaganych danych i dokumentów.</p>",
+      "pl": "<p>Pomagamy przygotować odpowiedzi na pytania banków oraz uporządkować wymagane dane i dokumenty.</p>",
+      "en": "<p>We help prepare responses to lenders and organize the required information and documents.</p>",
+      "de": "<p>Wir helfen bei der Beantwortung von Bankfragen und der Strukturierung erforderlicher Daten und Unterlagen.</p>",
+      "ua": "<p>Допомагаємо підготувати відповіді на запитання банків і впорядкувати потрібні дані та документи.</p>"
+    },
+    {
+      "old": "<p>Analiza i wsparcie negocjacji z bankami obejmują koszty, okresy i zasady spłaty, warunki uruchomienia oraz kowenanty.</p>",
+      "pl": "<p>Analizujemy koszty, okresy i zasady spłaty, warunki uruchomienia oraz kowenanty. Wspieramy negocjacje z bankami, uwzględniając ryzyko i potrzeby przedsiębiorstwa.</p>",
+      "en": "<p>We review costs, maturities, repayments, drawdown conditions and covenants. We support negotiations with banks, taking account of the company's risks and needs.</p>",
+      "de": "<p>Wir prüfen Kosten, Laufzeiten, Tilgung, Auszahlungsvoraussetzungen und Covenants. Wir begleiten Bankverhandlungen unter Berücksichtigung der Risiken und Bedürfnisse des Unternehmens.</p>",
+      "ua": "<p>Аналізуємо вартість, строки, погашення, умови надання коштів і ковенанти. Підтримуємо переговори з банками з урахуванням ризиків і потреб підприємства.</p>"
+    },
+    {
+      "old": "<p>Wsparcie w finansowaniu budowy, rozbudowy i uruchamiania działalności, w tym zakładów produkcyjnych.</p>",
+      "pl": "<p>Wspieramy finansowanie budowy, rozbudowy i uruchamiania działalności, w tym przedsięwzięć przemysłowych i zakładów produkcyjnych.</p>",
+      "en": "<p>We support financing for construction, expansion and the start of operations, including industrial projects and production facilities.</p>",
+      "de": "<p>Wir begleiten Finanzierungen für Bau, Erweiterung und Betriebsaufnahme, auch bei Industrieprojekten und Produktionsanlagen.</p>",
+      "ua": "<p>Підтримуємо фінансування будівництва, розширення та запуску діяльності, зокрема промислових проєктів і виробничих підприємств.</p>"
+    },
+    {
+      "old": "<p>Koordynacja obejmuje przygotowanie dokumentów oraz realizację obowiązków związanych z kolejnymi transzami i rozliczaniem finansowania.</p>",
+      "pl": "<p>Koordynujemy przygotowanie dokumentów, spełnianie warunków kolejnych transz oraz rozliczanie wykorzystanego finansowania.</p>",
+      "en": "<p>We coordinate documentation, conditions for successive drawdowns and the settlement of funds used.</p>",
+      "de": "<p>Wir koordinieren Dokumente, Voraussetzungen für weitere Auszahlungen und die Abrechnung der verwendeten Mittel.</p>",
+      "ua": "<p>Координуємо підготовку документів, виконання умов наступних траншів і звітування про використане фінансування.</p>"
+    },
+    {
+      "old": "<p>Bieżąca obsługa obejmuje monitorowanie kowenantów kredytowych, obowiązków raportowych, terminów spłat i pozostałych zobowiązań wobec instytucji finansujących.</p>",
+      "pl": "<p>Monitorujemy kowenanty kredytowe, obowiązki raportowe, terminy spłat oraz inne zobowiązania wobec instytucji finansujących.</p>",
+      "en": "<p>We monitor loan covenants, reporting requirements, repayment dates and other commitments to lenders.</p>",
+      "de": "<p>Wir überwachen Kredit-Covenants, Berichtspflichten, Rückzahlungstermine und weitere Verpflichtungen gegenüber Finanzierungspartnern.</p>",
+      "ua": "<p>Контролюємо кредитні ковенанти, звітні зобов’язання, строки погашення та інші вимоги установ, що фінансують підприємство.</p>"
+    },
+    {
+      "old": "<p>Wsparcie obejmuje przygotowanie raportów, aktualizację prognoz i ocenę odchyleń. Gdy sytuacja firmy lub inwestycji wymaga zmiany uzgodnień, przygotowywane są rozmowy dotyczące warunków kredytu, zabezpieczeń, terminów lub refinansowania.</p>",
+      "pl": "<p>Przygotowujemy raporty, aktualizujemy prognozy i oceniamy odchylenia. Gdy zmienia się sytuacja przedsiębiorstwa lub inwestycji, wspieramy rozmowy o warunkach kredytu, zabezpieczeniach, terminach oraz refinansowaniu.</p>",
+      "en": "<p>We prepare reports, update forecasts and assess variances. When the business or project changes, we support discussions on loan terms, collateral, maturity dates and refinancing.</p>",
+      "de": "<p>Wir erstellen Berichte, aktualisieren Prognosen und bewerten Abweichungen. Bei Änderungen der Unternehmens- oder Investitionssituation begleiten wir Gespräche über Konditionen, Sicherheiten, Termine und Refinanzierung.</p>",
+      "ua": "<p>Готуємо звіти, оновлюємо прогнози та оцінюємо відхилення. Коли змінюються обставини підприємства чи інвестиції, підтримуємо переговори щодо умов кредиту, забезпечення, строків і рефінансування.</p>"
+    },
+    {
+      "old": "<p>Początek współpracy to określenie celu, sytuacji przedsiębiorstwa i zakresu potrzebnych informacji. Kolejny krok obejmuje ustalenie zadań, harmonogramu i podziału odpowiedzialności.</p>",
+      "pl": "<p>Współpracę rozpoczynamy od określenia celu, sytuacji przedsiębiorstwa i niezbędnych informacji. Następnie uzgadniamy zadania, harmonogram oraz podział odpowiedzialności.</p>",
+      "en": "<p>We begin by clarifying the objective, the company's position and the necessary information. We then agree on tasks, timing and responsibilities.</p>",
+      "de": "<p>Wir beginnen mit der Klärung des Ziels, der Unternehmenssituation und der erforderlichen Informationen. Anschließend vereinbaren wir Aufgaben, Zeitplan und Zuständigkeiten.</p>",
+      "ua": "<p>Співпрацю починаємо з визначення мети, стану підприємства та необхідної інформації. Далі узгоджуємо завдання, строки й відповідальність.</p>"
+    },
+    {
+      "old": "<p>Współpraca może dotyczyć konkretnego opracowania, wybranego etapu procesu albo stałego wsparcia w obsłudze finansowania i relacjach z bankami.</p>",
+      "pl": "<p>Realizujemy zarówno pojedyncze opracowania i wybrane etapy procesu, jak i stałe wsparcie w obsłudze finansowania oraz relacjach z bankami.</p>",
+      "en": "<p>We deliver one-off analyses, support specific stages of a process and provide ongoing assistance with financing and bank relationships.</p>",
+      "de": "<p>Wir übernehmen einzelne Analysen und ausgewählte Prozessphasen oder begleiten Unternehmen dauerhaft bei Finanzierungen und Bankbeziehungen.</p>",
+      "ua": "<p>Виконуємо окремі аналітичні завдання, супроводжуємо етапи процесу або надаємо постійну підтримку з фінансування та співпраці з банками.</p>"
+    }
+  ]
+}
