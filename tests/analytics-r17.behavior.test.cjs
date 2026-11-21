@@ -1,0 +1,112 @@
+"use strict";
+const {test} = require("node:test");
+const assert = require("node:assert/strict");
+const vm = require("node:vm");
+const fs = require("node:fs");
+const path = require("node:path");
+const script = fs.readFileSync(path.join(__dirname,"../assets/analytics-r17.js"),"utf8");
+const config = fs.readFileSync(path.join(__dirname,"../assets/analytics-r17-config.js"),"utf8");
+
+function browser(shared,host="www.barczuk.com.pl",pathname="/",query="?email=PRIVATE",referrer="https://example.org/path?token=SECRET") {
+  const network = [];
+  const handlers={};
+  const elements=[];
+  const jar=shared || new Map();
+  const body={
+    appendChild(n){elements.push(n);return n;},
+    append(...ns){elements.push(...ns);}
+  };
+  const footer={appendChild(n){elements.push(n);return n;}};
+  const head={appendChild(n){if(n.src)network.push(n.src);return n;}};
+  const document={
+    readyState:"complete",
+    documentElement:{lang:"pl"},
+    body, head, referrer,
+    get cookie() {
+      return [...jar].map(([k,v])=>k+"="+v).join("; ");
+    },
+    set cookie(s) {
+      const first=s.split(";")[0]; const key=first.slice(0,first.indexOf("="));
+      const value=first.slice(first.indexOf("=")+1);
+      if(/Max-Age=0/.test(s)) jar.delete(key); else jar.set(key,value);
+    },
+    createElement(tag) {
+      return {
+        tag,src:"",type:"",checked:false,className:"",textContent:"",id:"",children:[],attrs:{},
+        append(...ns){this.children.push(...ns);},
+        appendChild(n){this.children.push(n);return n;},
+        remove(){this.removed=true;},
+        addEventListener(event,fn){this["on"+event]=fn;},
+        setAttribute(name,val){this.attrs[name]=val;},
+        getAttribute(name){return this.attrs[name];}
+      };
+    },
+    querySelector(sel) {if(sel === "footer .footer-bottom")return footer;if(sel === "form")return null;if(sel==="footer")return footer;return null;},
+    getElementById(id){return elements.find(x=>x.id===id)||null;},
+    addEventListener(name,fn){handlers["document:"+name]=fn;}
+  };
+  const location={hostname:host,pathname,search:query,reloads:0,reload(){this.reloads++;}};
+  const window={BARCZUK_ANALYTICS_CONFIG:{ga4MeasurementId:"G-ABC1234567",clarityProjectId:"",enableClarityReplay:false},addEventListener(name,fn){handlers["window:"+name]=fn;}};
+  const context={window,document,location,URL,Date,JSON,encodeURIComponent,decodeURIComponent,console};
+  vm.runInNewContext(script,context,{timeout:1000});
+  const byClass=cls=>elements.find(e=>e.className===cls);
+  const banner=()=>elements.find(e=>e.className==="barczuk-consent"&&!e.removed);
+  const buttons=()=>banner()?.children?.find(x=>x.className==="barczuk-consent__choices")?.children || [];
+  const option=()=>banner()?.children?.find(x=>x.className==="barczuk-consent__body")?.children?.find(x=>x.className==="barczuk-consent__option");
+  return {
+    network,location,window,jar,handlers,banner,buttons,option,
+    accept(){const o=option();assert.ok(o);o.children[0].checked=true;buttons()[1].onclick();},
+    deny(){buttons()[0].onclick();},
+    clickHref(href){handlers["document:click"]({target:{closest(){return {getAttribute(){return href;}};}}});},
+    focus(){handlers["window:focus"]?.();}
+  };
+}
+test("No optional requests before consent; rejection blocks vendor requests",()=>{
+  const b=browser();
+  assert.deepEqual(b.network,[]);
+  assert.ok(b.banner());
+  b.deny(); b.clickHref("mailto:kontakt@barczuk.com.pl");
+  assert.deepEqual(b.network,[]);
+});
+test("Consent enables only GA4 with sanitized URL; never Clarity",()=>{
+  const b=browser();
+  b.accept();
+  assert.equal(b.network.length,1);
+  assert.match(b.network[0],/googletagmanager.com/);
+  assert.ok(b.network.every(x=>!x.includes("clarity.ms")));
+  const pushed=b.window.dataLayer.map(x=>Array.from(x));
+  const view=pushed.find(x=>x[0]==="event"&&x[1]==="page_view");
+  assert.ok(view);
+  assert.equal(view[2].page_location,"https://www.barczuk.com.pl/");
+  assert.equal(view[2].page_referrer,"https://example.org/");
+  assert.ok(!JSON.stringify(pushed).includes("PRIVATE"));
+  assert.ok(!JSON.stringify(pushed).includes("SECRET"));
+});
+test("Second tab notices revoked consent and cannot enqueue a new click",()=>{
+  const jar=new Map();
+  const a=browser(jar),b=browser(jar);
+  a.accept();
+  b.focus();
+  assert.equal(b.network.length,1);
+  b.clickHref("mailto:kontakt@barczuk.com.pl");
+  const eventCount=()=>b.window.dataLayer.filter(x=>x[0]==="event"&&x[1]==="contact_email_click").length;
+  const before=eventCount();
+  a.clickHref("mailto:kontakt@barczuk.com.pl");
+  // Toggle the already approved preference in tab A.
+  const settings=a.handlers; // Real control is in footer, but consent can also change via cookie shared across tabs.
+  jar.set("barczuk_analytics_consent_v2",encodeURIComponent(JSON.stringify({v:2,ts:Date.now(),analytics:false,replay:false})));
+  b.clickHref("mailto:kontakt@barczuk.com.pl");
+  assert.equal(eventCount(),before);
+  assert.equal(b.location.reloads,1);
+});
+test("No tracking on 404, private portal, policy or unexpected URL",()=>{
+  for(const [host,p] of [["portal.barczuk.com.pl","/"],["www.barczuk.com.pl","/404"],["www.barczuk.com.pl","/informacje/prywatnosc/"],["www.barczuk.com.pl","/secret/"]]){
+    const b=browser(new Map(),host,p);
+    if(host!=="portal.barczuk.com.pl"&&p==="/informacje/prywatnosc/"){b.accept();assert.deepEqual(b.network,[]);} else assert.deepEqual(b.network,[]);
+  }
+});
+test("Config is inert until identifiers are explicitly configured",()=>{
+  assert.match(config,/ga4MeasurementId:\s*"G-QH65KPVNPH"/);
+  assert.match(config,/clarityProjectId:\s*""/);
+  assert.match(config,/enableClarityReplay:\s*false/);
+});

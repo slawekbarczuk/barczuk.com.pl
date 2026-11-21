@@ -1,0 +1,24 @@
+name: R17 free analytics checks
+on:
+  push:
+    branches:
+      - r17-free-analytics-consent-20261121
+  pull_request:
+    branches:
+      - main
+jobs:
+  analytics-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax and safeguards
+        run: |
+          node --check assets/analytics-r17.js
+          node --check assets/analytics-r17-config.js
+          node --check scripts/inject-analytics-r17.cjs
+          node --test tests/analytics-r17.test.cjs
+      - name: Existing regression suite
+        run: node --test tests/*.test.cjs
