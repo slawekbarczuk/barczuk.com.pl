@@ -72,8 +72,8 @@ test("R16 multilingual: legal, privacy and cookie texts",()=>{
   ["de/rechtliche-hinweise/index.html",["Rechtliche Hinweise","Vertraulichkeit der Korrespondenz","polnischen Zivilgesetzbuchs"]],
   ["en/privacy/index.html",["Article 6(1)(b) GDPR","12 months","Microsoft Graph","Azure Table Storage"]],
   ["de/datenschutz/index.html",["Art. 6 Abs. 1","zwölf Monate","Microsoft Graph","Azure Table Storage"]],
-  ["en/cookies/index.html",["Cloudflare Web Analytics","does not use optional cookies"]],
-  ["de/cookies/index.html",["Cloudflare Web Analytics","verwendet keine optionalen Cookies"]]
+  ["en/cookies/index.html",["Cloudflare Web Analytics","Google Analytics 4 — after consent","barczuk_analytics_consent_v2"]],
+  ["de/cookies/index.html",["Cloudflare Web Analytics","Google Analytics 4 — nach Einwilligung","barczuk_analytics_consent_v2"]]
  ];
  for(const [p,parts] of pair){
   const s=read(p);
