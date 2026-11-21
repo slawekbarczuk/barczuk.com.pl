@@ -1,5 +1,11 @@
 # Stan projektu BARCZUK — 2026-11-21
 
+## 21.11.2026 — stopka BARCZUK jako marka — ZMIANA PRZYGOTOWANA, WERYFIKACJA PRZED PRODUKCJA
+
+- Zatwierdzono usuniecie podpisu osobistego i starej specjalizacji bezposrednio pod logo w stopce. Wprowadzono jedna linie: „Niezależne doradztwo finansowe”, z tlumaczeniami EN/DE/UA, na wszystkich 22 publicznych plikach HTML. Dolny copyright © 2026 Sławomir Barczuk i obowiazkowe dane identyfikujace pozostaly nienaruszone.
+- Zmiana w galezi `r18-footer-brand-20261121`, wprowadzona rowniez do slownikow generatora i zabezpieczona osobnym testem. Publikacja wymaga pozytywnych testow CI i Azure Preview.
+
+
 ## 21.11.2026 — korekta zwrotu o doswiadczeniu — WDROZONA
 
 - Zatwierdzony tekst etykiety: **„Doświadczenie w bankowości korporacyjnej od 1995 roku”**. Ujednolicono akapit podsumowujacy podstawe kompetencji oraz tlumaczenia PL/EN/DE/UA. Bez zmian designu, portalu, P04 i analityki. [PR #21](https://github.com/slawekbarczuk/barczuk.com.pl/pull/21), commit `336b7e18b3a017d885f7962b6288fac652a046e1` — [testy Node/GA4](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935793920) i [P04](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935793922) sukces, [Azure Preview](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935793917) sukces, [Azure produkcja](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935948390) sukces.
