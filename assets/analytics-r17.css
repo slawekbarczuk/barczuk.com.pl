@@ -13,3 +13,6 @@
 .barczuk-analytics-settings{border:0;background:transparent;color:inherit;text-decoration:underline;text-underline-offset:3px;font-size:10px;padding:5px;cursor:pointer;white-space:normal}
 @media(max-width:720px){.barczuk-consent{left:8px;right:8px;bottom:8px;display:block;max-height:calc(100vh - 16px);overflow:auto;padding:18px}.barczuk-consent__choices{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.barczuk-consent__button{min-width:0;padding:13px 7px;font-size:11px}}
 @media(prefers-reduced-motion:reduce){.barczuk-consent *{transition:none!important}}
+
+.barczuk-consent__option{display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.5;margin:9px 0;color:#111;cursor:pointer}
+.barczuk-consent__option input{width:17px;height:17px;flex:0 0 17px;margin-top:1px;accent-color:#131313}

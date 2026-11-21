@@ -1,6 +1,8 @@
-// R17: Public identifiers only. Leave blank until GA4 and Clarity accounts are configured.
-// This is NOT a secrets file. Do not place API keys or credentials here.
+// R17 public configuration. No API secrets here.
+// GA4 and Clarity are OFF until their public project identifiers are provided.
+// Replay additionally requires the explicit switch and separate user opt-in.
 window.BARCZUK_ANALYTICS_CONFIG = Object.freeze({
   ga4MeasurementId: "",
-  clarityProjectId: ""
+  clarityProjectId: "",
+  enableClarityReplay: false
 });
