@@ -106,7 +106,7 @@ test("No tracking on 404, private portal, policy or unexpected URL",()=>{
   }
 });
 test("Config is inert until identifiers are explicitly configured",()=>{
-  assert.match(config,/ga4MeasurementId:\s*""/);
+  assert.match(config,/ga4MeasurementId:\s*"G-QH65KPVNPH"/);
   assert.match(config,/clarityProjectId:\s*""/);
   assert.match(config,/enableClarityReplay:\s*false/);
 });

@@ -24,7 +24,7 @@ test("R17 modules are on each public page, only once, in correct order",()=>{
   }
 });
 test("No vendors active before account setup, replay opt-in is separately disabled",()=>{
-  assert.match(cfg,/ga4MeasurementId:\s*""/);
+  assert.match(cfg,/ga4MeasurementId:\s*"G-QH65KPVNPH"/);
   assert.match(cfg,/clarityProjectId:\s*""/);
   assert.match(cfg,/enableClarityReplay:\s*false/);
   assert.match(js,/cfg\.enableClarityReplay === true/);

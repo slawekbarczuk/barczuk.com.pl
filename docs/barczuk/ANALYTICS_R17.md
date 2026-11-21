@@ -33,7 +33,11 @@ Stan: 21.11.2026. Gałąź: \`r17-free-analytics-consent-20261121\`, PR #18.
 1. W https://analytics.google.com utworzyć bezpłatną usługę GA4 \`BARCZUK – strona publiczna\`, strumień Web \`https://www.barczuk.com.pl\`; strefa czasu Europe/Warsaw, waluta PLN. Podać wyłącznie Measurement ID w formie \`G-XXXXXXXXXX\`.
 2. W panelu GA4 sprawdzić ustawienia udostępniania danych, przechowywania, enhanced measurement i automatycznego wykrywania formularzy. Nigdy nie wysyłać PII.
 3. Ocenić i zaakceptować aktualizację dokumentów prywatności, umowę powierzenia oraz odpowiedni instrument transferowy, jeżeli dotyczy.
-4. Wprowadzić ID, uruchomić GA4 w Azure preview i wykonać test czystej sesji, odmowy, zgody, cofnięcia w 2 kartach, powrotu z historii, obu hostów, 4 języków oraz braku wysyłki query string. Skontrolować GA4 Realtime.
+4. Uruchomić GA4 w kontrolowanym środowisku testowym z dozwolonym hostname (obecny skrypt blokuje tymczasowe domeny Azure preview), a następnie wykonać test czystej sesji, odmowy, zgody, cofnięcia w 2 kartach, powrotu z historii, obu hostów, 4 języków oraz braku wysyłki query string. Skontrolować GA4 Realtime.
 5. Po sukcesie i zgodzie na produkcję opublikować zmiany, zweryfikować produkcję i dopiero wtedy udokumentować wydanie R17.
 
 Nie instalować gotowego tagu Google obok skryptu R17 — prowadziłoby to do uruchomienia pomiaru przed zgodą albo podwójnych zdarzeń.
+
+## Aktualizacja 21.11.2026 — gotowość GA4
+
+Measurement ID: `G-QH65KPVNPH` (publiczny, nie sekret). Polityki cookies/prywatności przygotowano w PL/EN/DE/UA dla wariantu z GA4 po zgodzie. Microsoft Clarity pozostaje wyłączone. Nie instalować osobnego kontenera GTM `GTM-MJLK6VTH` i nie scalać do produkcji przed testem rzeczywistych tagów, ustawień Google i odbiorem informacji prawnych. W Google Analytics sprawdzić retencję danych (zalecane 2 miesiące), rozszerzone pomiary (wyłączone), udostępnianie danych i właściwe warunki przetwarzania/transferów.
