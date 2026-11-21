@@ -4,9 +4,9 @@
 
 Na obu adresach HTTPS, z www i bez www, wszystkie 21 stron mapy witryny odpowiedziało 200. Treść każdego HTML po rozpakowaniu odpowiedzi była identyczna bajtowo z tym samym plikiem w `main` na `41da4218`. Na każdym z tych dokumentów znajduje się skrypt Cloudflare Web Analytics. Nie odczytywano statystyk konta. Kanoniczne adresy wskazują www. Cztery publiczne ekrany wejścia do portalu R08 były dostępne.
 
-P04 na obu hostach zwrócił HTTP 200, `enabled=true`, `previewOnly=false` i kod gotowości `ready`. W jednym zewnętrznym widoku formularz pozostał ukryty. Lokalna kontrola bieżącego HTML z gotową konfiguracją pokazała formularz. Dzisiejsze pomiary nie obejmują nowej wiadomości od formularza do skrzynki.
+P04 na obu hostach zwrócił HTTP 200, `enabled=true`, `previewOnly=false` i kod gotowości `ready`. W pierwszym zewnętrznym widoku formularz pozostał ukryty. Osobna kontrola w Chromium potwierdziła następnie na obu adresach produkcyjnych rzeczywisty odczyt konfiguracji HTTP 200, widoczny formularz i komunikat o weryfikacji antyspamowej. Lokalna próba z testową konfiguracją potwierdziła również cztery języki. Dzisiejsze pomiary nie obejmują nowej wiadomości od formularza do skrzynki.
 
-[PR #18](https://github.com/slawekbarczuk/barczuk.com.pl/pull/18) pozostaje projektem. Na `a412e8b0` lokalna pełna seria dała 79/79, na `main` 75/75. Kliknięcia i wyniki sprzedażowe z R17 są dopiero przedmiotem prac.
+[PR #18](https://github.com/slawekbarczuk/barczuk.com.pl/pull/18) pozostaje projektem. Na `a412e8b0` lokalna pełna seria dała 79/79, na `main` 75/75. W podglądzie Azure PR porównano z wersją a412e8b0 wszystkie 21 stron z mapy, plik 404 i oba skrypty analityki. Wszystkie 24 odpowiedzi były zgodne bajtowo. Kliknięcia i wyniki sprzedażowe z R17 są dopiero przedmiotem prac.
 
 ## 20.11.2026 — R16: wolniejsze przejścia, portal i mobilny znak — KOD SCALONY
 
