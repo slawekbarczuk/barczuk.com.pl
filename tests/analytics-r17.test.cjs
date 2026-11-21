@@ -6,6 +6,7 @@ const path = require("node:path");
 const root = path.resolve(__dirname,"..");
 const js = fs.readFileSync(path.join(root,"assets/analytics-r17.js"),"utf8");
 const cfg = fs.readFileSync(path.join(root,"assets/analytics-r17-config.js"),"utf8");
+const css = fs.readFileSync(path.join(root,"assets/analytics-r17.css"),"utf8");
 const roots = ["index.html","404.html","finansowanie-przedsiebiorstw","informacje","en","de","ua"];
 function walk(entry) {
   const full=path.join(root,entry);
@@ -58,4 +59,17 @@ test("No privacy / legal / 404 tracking or private portal",()=>{
   assert.ok(!js.includes('location.search'));
   assert.ok(!js.includes('document.title'));
   assert.ok(!js.includes('form_submit'));
+});
+
+test("Minimal corporate cookie bar stays in four languages with mobile layout",()=>{
+  assert.match(js,/function showBanner\(\)/);
+  assert.match(js,/function showSettings\(\)/);
+  assert.match(js,/button\(t\.accept/);
+  assert.match(js,/We use essential cookies/);
+  assert.match(js,/Wir verwenden notwendige Cookies/);
+  assert.match(js,/Ми використовуємо необхідні файли cookie/);
+  assert.match(css,/left:0;right:0;bottom:0/);
+  assert.match(css,/border-bottom:2px solid #ffd400/);
+  assert.match(css,/grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+  assert.match(cfg,/enableClarityReplay:\s*false/);
 });

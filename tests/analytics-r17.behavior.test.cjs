@@ -49,14 +49,23 @@ function browser(shared,host="www.barczuk.com.pl",pathname="/",query="?email=PRI
   const window={BARCZUK_ANALYTICS_CONFIG:{ga4MeasurementId:"G-ABC1234567",clarityProjectId:"",enableClarityReplay:false},addEventListener(name,fn){handlers["window:"+name]=fn;}};
   const context={window,document,location,URL,Date,JSON,encodeURIComponent,decodeURIComponent,console};
   vm.runInNewContext(script,context,{timeout:1000});
-  const byClass=cls=>elements.find(e=>e.className===cls);
-  const banner=()=>elements.find(e=>e.className==="barczuk-consent"&&!e.removed);
-  const buttons=()=>banner()?.children?.find(x=>x.className==="barczuk-consent__choices")?.children || [];
-  const option=()=>banner()?.children?.find(x=>x.className==="barczuk-consent__body")?.children?.find(x=>x.className==="barczuk-consent__option");
+  const find=(e,name)=>{
+    if(!e)return null;
+    if((e.className||"").split(/\s+/).includes(name))return e;
+    for(const child of e.children||[]){const r=find(child,name);if(r)return r;}
+    return null;
+  };
+  const banner=()=>elements.find(e=>(e.className||"").split(/\s+/).includes("barczuk-consent")&&!e.removed);
+  const buttons=()=>find(banner(),"barczuk-consent__choices")?.children || [];
+  const option=()=>find(banner(),"barczuk-consent__option");
+  const footerSettings=()=>elements.find(x=>x.id==="barczuk-analytics-settings");
   return {
-    network,location,window,jar,handlers,banner,buttons,option,
-    accept(){const o=option();assert.ok(o);o.children[0].checked=true;buttons()[1].onclick();},
-    deny(){buttons()[0].onclick();},
+    network,location,window,jar,handlers,banner,buttons,option,footerSettings,
+    accept(){assert.equal(buttons().length,3);buttons()[2].onclick();},
+    deny(){assert.equal(buttons().length,3);buttons()[1].onclick();},
+    openSettings(){assert.equal(buttons().length,3);buttons()[0].onclick();},
+    saveSettings(analytics){const row=option();assert.ok(row);row.children[0].checked=!!analytics;buttons()[2].onclick();},
+    openFromFooter(){const b=footerSettings();assert.ok(b);b.onclick();},
     clickHref(href){handlers["document:click"]({target:{closest(){return {getAttribute(){return href;}};}}});},
     focus(){handlers["window:focus"]?.();}
   };
@@ -109,4 +118,29 @@ test("Config is inert until identifiers are explicitly configured",()=>{
   assert.match(config,/ga4MeasurementId:\s*"G-QH65KPVNPH"/);
   assert.match(config,/clarityProjectId:\s*""/);
   assert.match(config,/enableClarityReplay:\s*false/);
+});
+
+test("Compact consent layer has three actions and no checkbox",()=>{
+  const b=browser();
+  assert.equal(b.buttons().length,3);
+  assert.equal(b.option(),null);
+  assert.equal(b.buttons()[0].textContent,"USTAWIENIA COOKIES");
+  assert.equal(b.buttons()[1].textContent,"ODRZUĆ OPCJONALNE");
+  assert.equal(b.buttons()[2].textContent,"AKCEPTUJĘ");
+  assert.deepEqual(b.network,[]);
+});
+test("Detailed settings keep analytics off by default and allow later opt-in",()=>{
+  const b=browser();b.openSettings();
+  assert.match(b.banner().className,/barczuk-consent--settings/);
+  assert.equal(b.option().children[0].checked,false);
+  b.saveSettings(false);assert.deepEqual(b.network,[]);
+  const c=browser(b.jar);c.openFromFooter();
+  assert.equal(c.option().children[0].checked,false);
+  c.saveSettings(true);assert.equal(c.network.length,1);
+  assert.match(c.network[0],/googletagmanager.com/);
+});
+test("Approved analytics can be withdrawn through footer settings",()=>{
+  const b=browser();b.accept();assert.equal(b.network.length,1);
+  b.openFromFooter();assert.equal(b.option().children[0].checked,true);
+  b.saveSettings(false);assert.equal(b.location.reloads,1);
 });
