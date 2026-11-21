@@ -36,3 +36,5 @@
 - **D-018, 2026-11-21:** W marketingowej komunikacji BARCZUK stosowac dokladne brzmienie: „Doświadczenie w bankowości korporacyjnej od 1995 roku” zamiast „Praktyka bankowości korporacyjnej sięgająca 1995 roku”. Ujednolicic akapit o podstawie doradztwa i wersje PL/EN/DE/UA; nie sugerowac, ze marka dziala od 1995 r. ani ze lata praktyki odnosza sie do calego przyszlego zespolu.
 
 - **D-019, 2026-11-21:** W wizytowkowej czesci stopki wszystkich publicznych stron zamienic „Sławomir Barczuk / Doradztwo w finansowaniu przedsiębiorstw” na jedno haslo „Niezależne doradztwo finansowe” (odpowiedniki EN/DE/UA). Logo BARCZUK bez zmian. W stopce dolnej pozostawic © 2026 Sławomir Barczuk oraz pelne dane w informacjach prawnych i prywatnosci. Bez zmian grafiki, P04, analityki i portalu.
+
+- **D-020, 2026-11-21:** W niemieckiej stronie glownej pokaz trzech wizualizacji w kolejnosci Frankfurt, Berlin, Monachium, zamiast czterech obrazow Lodzi. Styl chlodnych tonow jak w polskiej witrynie. Grafiki lokalne WebP, bez zewnetrznych dostawcow. Inne jezyki i podstrony bez zmian. Generator ma zachowac ustawienia DE.
