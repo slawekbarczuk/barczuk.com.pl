@@ -1,5 +1,9 @@
 # Stan projektu BARCZUK — 2026-11-21
 
+## 21.11.2026 — korekta zwrotu o doswiadczeniu — PRZYGOTOWANA DO WDROZENIA
+
+- Zatwierdzony tekst etykiety: **„Doświadczenie w bankowości korporacyjnej od 1995 roku”**. Ujednolicono akapit podsumowujacy podstawe kompetencji oraz tlumaczenia PL/EN/DE/UA. Bez zmian designu, portalu, P04 i analityki.
+
 ## 21.11.2026 — R18: BARCZUK jako marka doradcza — WDROŻONE W AZURE, QA WIZUALNA DO POTWIERDZENIA
 
 - Zatwierdzona korekta: bez eksponowania właściciela w marketingu, bez fikcyjnej deklaracji liczebności zespołu. Cztery filary: finansowanie przedsiębiorstw, inwestycje i rozwój, kapitał i decyzje strategiczne, ciągłość finansowania. Sukcesja pozostaje finansowym aspektem zmian właścicielskich, a praktyka bankowa od 1995 r. podstawą podejścia BARCZUK, nie biografią całego zespołu.
