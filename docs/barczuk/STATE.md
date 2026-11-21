@@ -1,8 +1,8 @@
 # Stan projektu BARCZUK — 2026-11-21
 
-## 21.11.2026 — korekta zwrotu o doswiadczeniu — PRZYGOTOWANA DO WDROZENIA
+## 21.11.2026 — korekta zwrotu o doswiadczeniu — WDROZONA
 
-- Zatwierdzony tekst etykiety: **„Doświadczenie w bankowości korporacyjnej od 1995 roku”**. Ujednolicono akapit podsumowujacy podstawe kompetencji oraz tlumaczenia PL/EN/DE/UA. Bez zmian designu, portalu, P04 i analityki.
+- Zatwierdzony tekst etykiety: **„Doświadczenie w bankowości korporacyjnej od 1995 roku”**. Ujednolicono akapit podsumowujacy podstawe kompetencji oraz tlumaczenia PL/EN/DE/UA. Bez zmian designu, portalu, P04 i analityki. [PR #21](https://github.com/slawekbarczuk/barczuk.com.pl/pull/21), commit `336b7e18b3a017d885f7962b6288fac652a046e1` — [testy Node/GA4](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935793920) i [P04](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935793922) sukces, [Azure Preview](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935793917) sukces, [Azure produkcja](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935948390) sukces.
 
 ## 21.11.2026 — R18: BARCZUK jako marka doradcza — WDROŻONE W AZURE, QA WIZUALNA DO POTWIERDZENIA
 
