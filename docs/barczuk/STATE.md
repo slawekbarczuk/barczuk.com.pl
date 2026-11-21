@@ -1,9 +1,12 @@
 # Stan projektu BARCZUK — 2026-11-21
 
-## 21.11.2026 — stopka BARCZUK jako marka — ZMIANA PRZYGOTOWANA, WERYFIKACJA PRZED PRODUKCJA
+## 21.11.2026 — stopka BARCZUK jako marka — WDROZONA W AZURE
 
-- Zatwierdzono usuniecie podpisu osobistego i starej specjalizacji bezposrednio pod logo w stopce. Wprowadzono jedna linie: „Niezależne doradztwo finansowe”, z tlumaczeniami EN/DE/UA, na wszystkich 22 publicznych plikach HTML. Dolny copyright © 2026 Sławomir Barczuk i obowiazkowe dane identyfikujace pozostaly nienaruszone.
-- Zmiana w galezi `r18-footer-brand-20261121`, wprowadzona rowniez do slownikow generatora i zabezpieczona osobnym testem. Publikacja wymaga pozytywnych testow CI i Azure Preview.
+- Ujednolicono pod logo BARCZUK stopke we wszystkich 22 publicznych plikach: PL `Niezależne doradztwo finansowe`, EN `Independent financial advisory`, DE `Unabhängige Finanzberatung`, UA `Незалежне фінансове консультування`. Usunieto marketingowy podpis wlasciciela i stary opis finansowania tylko z czesci pod logo. Dolna linia `© 2026 Sławomir Barczuk` i informacje prawne pozostaja bez zmian.
+- [PR #22](https://github.com/slawekbarczuk/barczuk.com.pl/pull/22) scalony w commit `d34f078751a1a507f9d8bcf9ebeddb399de5f9b8`. [R17 testy](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44936705072), [P04](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44936705128), [Azure Preview](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44936705089), [Azure produkcja](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44936827523) — sukces.
+- Potwierdzono stan repozytorium na `main` (haslo stopki, copyright, GA4, wylaczony Clarity). Test w rzeczywistej przegladarce do potwierdzenia przez uzytkownika; dane z historycznego cache wyszukiwarki nie sa miarodajne.
+
+
 
 
 ## 21.11.2026 — korekta zwrotu o doswiadczeniu — WDROZONA
