@@ -1,11 +1,11 @@
 # Stan projektu BARCZUK — 2026-11-21
 
-## 21.11.2026 — uproszczony baner R17 — PRZYGOTOWANIE, NIE PUBLIKACJA
+## 21.11.2026 — baner cookies R17 — WDROŻONY W AZURE, TEST WIZUALNY DO POTWIERDZENIA
 
-- Uzytkownik zaakceptowal pelnoszerokosciowy, dyskretny baner cookies z trzema przyciskami (USTAWIENIA COOKIES / ODRZUC OPCJONALNE / AKCEPTUJE) w stylistyce czern-biel-zolty. Osobny panel szczegolow: niezbedne zawsze aktywne i opcjonalny GA4 domyslnie odznaczony.
-- Kod JS/CSS i testy przygotowano w galezi `r17-cookie-bar-rothschild-20261121`; zmiany obejmuja jedynie wyglad i sterowanie zgoda, nie algorytm pomiaru i nie teksty oferty. Zaplanowano odswiezenie parametrow cache we wszystkich publicznych stronach i generatorach.
-- Microsoft Clarity pozostaje wylaczony (pusty identyfikator, `enableClarityReplay:false`). Portal klienta bez zmian. Status testow i produkcji zostanie uzupelniony po CI i publikacji.
-
+- Zatwierdzono i opublikowano prosty, pełnoszerokościowy baner zgody, wzorowany układem na dyskretnych witrynach doradczych: trzy przyciski (ustawienia cookies / odrzuć opcjonalne / akceptuję), bez checkboxów na pierwszej warstwie. Osobny panel ustawień GA4, cztery języki PL/UA/EN/DE oraz responsywny wygląd czerni, bieli i żółtego akcentu.
+- Zmiana kodu: [PR #19](https://github.com/slawekbarczuk/barczuk.com.pl/pull/19), scalony jako `dd83af700ff9e7bccfd482b8d79b2e43a5d37232`. [Testy analityki](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44933155243) i [P04](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44933155186) — sukces. [Azure Preview](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44933155214) — sukces. [Wdrożenie Azure produkcja](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44933278571) — sukces.
+- Odświeżono wersje URL assetów na 22 publicznych stronach i w generatorach (klucz `r17-bar-v2`), żeby ograniczyć ryzyko wyświetlania starego banera z cache. Bez zmian w treści oferty, P04, API i prywatnym portalu. Microsoft Clarity pozostaje wyłączony, GA4 korzysta z dotychczasowego mechanizmu zgody.
+- **Do dalszej weryfikacji:** wygląd i działanie nowego banera w rzeczywistej przeglądarce (desktop/Safari/iPhone) oraz odbiór zdarzeń GA4 w panelu usługi. Zielony workflow potwierdza publikację Azure, ale nie zastępuje testu wizualnego użytkownika. Stopka zachowuje dotychczasowy numer wersji strony.
 
 ## 20.11.2026 — R16: wolniejsze przejścia, portal i mobilny znak — KOD SCALONY
 

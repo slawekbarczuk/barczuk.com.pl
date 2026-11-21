@@ -1,12 +1,12 @@
 # Plan rozwoju BARCZUK — stan na 2026-11-21
 
-## R17 — ergonomiczny baner zgody GA4
+## R17 — minimalistyczny baner zgody GA4
 
-- [x] Zatwierdzono minimalistyczny trzyprzyciskowy uklad PL/UA/EN/DE z oddzielnymi ustawieniami i kolorem BARCZUK.
-- [x] Przygotowano kod banera, responsywny CSS, testy i wersjonowanie zasobow.
-- [ ] Zakonczyc CI, porownac podglad mobilny i desktopowy oraz bezpiecznie opublikowac w main.
-- [ ] Po publikacji zweryfikowac produkcyjny baner, odmowe, akceptacje, cofniecie zgody i brak Clarity.
-
+- [x] Zatwierdzono pełnoszerokościowy trzyprzyciskowy układ PL/UA/EN/DE z osobnymi ustawieniami oraz kolorami BARCZUK.
+- [x] Przygotowano i scalono kod/wersjonowanie assetów w [PR #19](https://github.com/slawekbarczuk/barczuk.com.pl/pull/19).
+- [x] Testy analityki i P04 oraz Azure Preview — sukces. Produkcyjny Azure [44933278571](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44933278571) — sukces.
+- [ ] Potwierdzić w rzeczywistej przeglądarce układ desktopowy i mobilny (w tym Safari/iPhone) i test zgody, odmowy, cofnięcia.
+- [ ] Potwierdzić odbiór zdarzeń w Google Analytics 4 (Realtime). Clarity zostaje wyłączony.
 
 ## 20.11.2026 — dopracowanie nawigacji R16/R08
 

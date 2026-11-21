@@ -1,11 +1,10 @@
 # Dziennik kamieni milowych BARCZUK
 
-## 2026-11-21 — baner cookies R17 — KOD PRZYGOTOWANY DO TESTOW
+## 2026-11-21 — R17: minimalistyczny baner cookies — WDROŻONY
 
-- Trzy przyciski w jednej, waskiej poziomej belce, bez checkboxow w warstwie glownej; panel szczegolowy po kliknieciu ustawien. Jezyki PL/UA/EN/DE, dostepne odrzucenie i cofniecie zgody, kolory biel/czern/zolty.
-- Logika GA4 po zgodzie pozostaje zachowana. Clarity nadal wylaczone. Zmieniono wersje URL statycznych zasobow banera z `r17-draft` na `r17-bar-v2` dla unikniecia nieaktualnych plikow w przegladarkach.
-- Kod w galezi `r17-cookie-bar-rothschild-20261121`; do potwierdzenia CI, merge do main, Azure i test uzytkownika. Nie zmieniano portalu i tekstow oferty.
-
+- [PR #19](https://github.com/slawekbarczuk/barczuk.com.pl/pull/19) scalony przez `dd83af7`: zatwierdzone teksty PL/UA/EN/DE, trzy przyciski na pierwszym ekranie, osobny panel ustawień i wygląd czarny/biały/żółty. Obsługa odmowy, zgody i wycofania; Clarity wyłączony. Wersje zasobów `r17-bar-v2` na 22 publicznych stronach i w generatorach.
+- Dowody: [CI R17](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44933155243), [CI P04](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44933155186), [Azure Preview](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44933155214), [Azure produkcja](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44933278571) — sukces.
+- Bez zmian oferty i portalu. Test użytkownika w przeglądarce i GA4 Realtime do potwierdzenia; nie oznaczono ich jako ukończonych.
 
 ## 2026-11-20 — korekta wolniejszych animacji i znaku BARCZUK na iPhone — SCALONE
 
