@@ -1,5 +1,12 @@
 # Stan projektu BARCZUK — 2026-11-21
 
+## R18 — komunikacja BARCZUK jako marki doradczej — KOD ROBOCZY, NIE PRODUKCJA
+
+- Zatwierdzono język marki, bez rozbudowanego CV, bez wskazywania nieistniejącego zespołu. Główna perspektywa: doradztwo finansowe w istotnych momentach rozwoju przedsiębiorstwa.
+- W gałęzi `r18-brand-voice-20261121` przygotowano zmianę strony głównej i finansowania w PL/EN/DE/UA, słowniki tłumaczeń oraz podtrzymanie odrębnego hero dla odbiorców ukraińskich. Finansowanie i inwestycje pozostają głównymi usługami; sukcesja jedynie jako finansowy aspekt decyzji właścicielskich.
+- Rozdzielono komunikację marketingową od obowiązkowych danych identyfikujących administratora i przedsiębiorcę. Kod portalu, formularz P04, prywatność i analityka bez zmian. Przed wdrożeniem wymagane testy generatorów, wersji językowych i Azure Preview.
+
+
 ## 21.11.2026 — baner cookies R17 — WDROŻONY W AZURE, TEST WIZUALNY DO POTWIERDZENIA
 
 - Zatwierdzono i opublikowano prosty, pełnoszerokościowy baner zgody, wzorowany układem na dyskretnych witrynach doradczych: trzy przyciski (ustawienia cookies / odrzuć opcjonalne / akceptuję), bez checkboxów na pierwszej warstwie. Osobny panel ustawień GA4, cztery języki PL/UA/EN/DE oraz responsywny wygląd czerni, bieli i żółtego akcentu.

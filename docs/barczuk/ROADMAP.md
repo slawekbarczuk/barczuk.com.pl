@@ -1,5 +1,13 @@
 # Plan rozwoju BARCZUK — stan na 2026-11-21
 
+## R18 — niezależna marka doradcza i nowa narracja usług
+
+- [x] Ustalono hasło i cztery filary usług z głosem marki w liczbie mnogiej.
+- [x] Przygotowano redakcję PL/UA/EN/DE, aktualizację opisów SEO oraz słowniki generatorów.
+- [ ] Potwierdzić testy, zgodność generatorów i podgląd Azure, następnie opublikować.
+- [ ] Zweryfikować rzeczywisty wygląd treści i zawijanie nagłówków na telefonie; nie zmieniać P04 ani portalu.
+
+
 ## R17 — minimalistyczny baner zgody GA4
 
 - [x] Zatwierdzono pełnoszerokościowy trzyprzyciskowy układ PL/UA/EN/DE z osobnymi ustawieniami oraz kolorami BARCZUK.

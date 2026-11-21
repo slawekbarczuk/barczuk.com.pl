@@ -87,7 +87,8 @@ test("R16 home has three recognizable financing situations and a concise coopera
  assert.ok(cooperation);
  assert.match(cooperation,/Jasne zadania/);
  assert.match(cooperation,/Przykładowe rezultaty/);
- assert.match(html,/także w finansowaniu konsorcjalnym/);
+ assert.match(html,/Wspieramy finansowe przygotowanie inwestycji/);
+ assert.match(read("finansowanie-przedsiebiorstw/index.html"),/Finansowanie konsorcjalne/);
 });
 
 test("R16 detail page highlights bank collateral and syndicated financing",()=>{
@@ -118,7 +119,7 @@ test("R16 provides an original visual system without weakening SEO or P04",()=>{
  const home=read("index.html"), css=read("assets/editorial-r16.css");
  assert.match(home,/data-hero-slideshow/);
  assert.doesNotMatch(home,/class="editorial-band"/);
- assert.match(home,/Doświadczenie w bankowości korporacyjnej od 1995 roku/);
+ assert.match(home,/Praktyka bankowości korporacyjnej sięgająca 1995 roku/);
  assert.match(css,/--navy:#14243a/);
  assert.match(css,/@media\(max-width:760px\)/);
  assert.match(css,/\.contact-form-section\[hidden\]\{display:none!important\}/);

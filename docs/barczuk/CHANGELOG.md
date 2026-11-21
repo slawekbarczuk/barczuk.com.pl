@@ -1,5 +1,12 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-21 — R18: BARCZUK jako marka doradcza — PRZYGOTOWANIE
+
+- Zaakceptowano komunikację organizacyjną, bez życiorysu i sugerowania składu zespołu; cztery filary: finansowanie, inwestycje, kapitał/decyzje strategiczne, ciągłość finansowania. Historia bankowości od 1995 r. ujęta bezosobowo, bez nazw klientów.
+- Przygotowano PL/UA/EN/DE na stronie głównej i podstronie finansowania, poprawiono kierunki kart, utrzymano ukraińskie dedykowane treści i fotografie; uzupełniono SEO i testy.
+- Wersja robocza `r18-brand-voice-20261121`: do potwierdzenia CI, Azure Preview i produkcja. Nie zmieniono autoryzacji, P04 ani Strefy klienta.
+
+
 ## 2026-11-21 — R17: minimalistyczny baner cookies — WDROŻONY
 
 - [PR #19](https://github.com/slawekbarczuk/barczuk.com.pl/pull/19) scalony przez `dd83af7`: zatwierdzone teksty PL/UA/EN/DE, trzy przyciski na pierwszym ekranie, osobny panel ustawień i wygląd czarny/biały/żółty. Obsługa odmowy, zgody i wycofania; Clarity wyłączony. Wersje zasobów `r17-bar-v2` na 22 publicznych stronach i w generatorach.
