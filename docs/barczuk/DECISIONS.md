@@ -28,3 +28,5 @@
 - Dokładny proces dokumentowania zgody i podstawy prawnej, retencji, usuwania danych oraz obsługi żądań podmiotu danych.
 - Architektura weryfikacji jakości AI, zestawu testów finansowych i aktualizacji bankowych źródeł wiedzy.
 - Docelowa procedura publikacji portalu z prywatnego repozytorium i jej środowiska testowe.
+
+- **D-016, 2026-11-21:** Zatwierdzono dla publicznej witryny R17 prosty, pelnoszerokosciowy baner zgody wzorowany kompozycja na profesjonalnych stronach doradczych: krotki tekst i trzy rownorzedne dzialania (ustawienia / odrzuc opcjonalne / akceptuj), a celowy wybor GA4 na drugiej warstwie. Kolory BARCZUK: czern, biel i dyskretny zolty. Cztery jezyki PL/UA/EN/DE. Bez aktywacji Microsoft Clarity. Kolejne wdrozenie wymaga testow i weryfikacji produkcyjnej.

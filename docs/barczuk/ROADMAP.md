@@ -1,4 +1,12 @@
-# Plan rozwoju BARCZUK — stan na 2026-11-19
+# Plan rozwoju BARCZUK — stan na 2026-11-21
+
+## R17 — ergonomiczny baner zgody GA4
+
+- [x] Zatwierdzono minimalistyczny trzyprzyciskowy uklad PL/UA/EN/DE z oddzielnymi ustawieniami i kolorem BARCZUK.
+- [x] Przygotowano kod banera, responsywny CSS, testy i wersjonowanie zasobow.
+- [ ] Zakonczyc CI, porownac podglad mobilny i desktopowy oraz bezpiecznie opublikowac w main.
+- [ ] Po publikacji zweryfikowac produkcyjny baner, odmowe, akceptacje, cofniecie zgody i brak Clarity.
+
 
 ## 20.11.2026 — dopracowanie nawigacji R16/R08
 
