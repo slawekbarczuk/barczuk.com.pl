@@ -2,7 +2,7 @@
 
 **Projekt:** publiczna witryna niezależnego doradztwa finansowego B2B + odrębna, uwierzytelniona Strefa klienta i przyszłe narzędzia analizy finansowej przedsiębiorstw.
 
-**Stan odniesienia:** 2026-11-20 (piątek), Europe/Warsaw. Dokumentacja jest wersjonowana w GitHub; po kolejnych wdrożeniach należy ją aktualizować.
+**Stan odniesienia:** 2026-11-21 (sobota), Europe/Warsaw. Dokumentacja jest wersjonowana w GitHub; po kolejnych wdrożeniach należy ją aktualizować.
 
 ## Przeczytaj w tej kolejności
 
@@ -12,6 +12,8 @@
 4. [ROADMAP.md](ROADMAP.md) — plan od obecnego punktu.
 5. [CHANGELOG.md](CHANGELOG.md) — historia ważnych kroków i dowody.
 6. [WORKFLOW.md](WORKFLOW.md) — jak dokumentujemy każdą większą zmianę.
+
+**Bieżący etap:** publiczna treść BARCZUK R18 jako marka doradcza, wdrożona w Azure 21.11.2026 (PR #20), z zachowaniem dotychczasowej numeracji graficznej w stopce. Kontrola wizualna w przeglądarkach do potwierdzenia.
 
 ## Zasoby
 

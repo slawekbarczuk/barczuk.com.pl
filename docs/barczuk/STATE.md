@@ -1,11 +1,12 @@
 # Stan projektu BARCZUK — 2026-11-21
 
-## R18 — komunikacja BARCZUK jako marki doradczej — KOD ROBOCZY, NIE PRODUKCJA
+## 21.11.2026 — R18: BARCZUK jako marka doradcza — WDROŻONE W AZURE, QA WIZUALNA DO POTWIERDZENIA
 
-- Zatwierdzono język marki, bez rozbudowanego CV, bez wskazywania nieistniejącego zespołu. Główna perspektywa: doradztwo finansowe w istotnych momentach rozwoju przedsiębiorstwa.
-- W gałęzi `r18-brand-voice-20261121` przygotowano zmianę strony głównej i finansowania w PL/EN/DE/UA, słowniki tłumaczeń oraz podtrzymanie odrębnego hero dla odbiorców ukraińskich. Finansowanie i inwestycje pozostają głównymi usługami; sukcesja jedynie jako finansowy aspekt decyzji właścicielskich.
-- Rozdzielono komunikację marketingową od obowiązkowych danych identyfikujących administratora i przedsiębiorcę. Kod portalu, formularz P04, prywatność i analityka bez zmian. Przed wdrożeniem wymagane testy generatorów, wersji językowych i Azure Preview.
-
+- Zatwierdzona korekta: bez eksponowania właściciela w marketingu, bez fikcyjnej deklaracji liczebności zespołu. Cztery filary: finansowanie przedsiębiorstw, inwestycje i rozwój, kapitał i decyzje strategiczne, ciągłość finansowania. Sukcesja pozostaje finansowym aspektem zmian właścicielskich, a praktyka bankowa od 1995 r. podstawą podejścia BARCZUK, nie biografią całego zespołu.
+- Wdrożono korektę strony głównej i podstrony finansowania w PL/EN/DE/UA oraz opisy SEO i trwałe słowniki generatorów. Zachowano dedykowaną ukraińską stronę z tematyką bankową KYC/AML i fotografie. Bez zmian danych prawnych, P04/API, portalu R08 i analityki R17. Nazwisko przedsiębiorcy pozostaje w wymaganych dokumentach i klauzulach.
+- Kod: [PR #20](https://github.com/slawekbarczuk/barczuk.com.pl/pull/20), commit scalający `4b2bccea2a327d00bf061c83ced55fb997992254`.
+- Testy: [R17 i pełna regresja Node 44935130729](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935130729) — sukces, [P04 44935130785](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935130785) — sukces, [Azure Preview 44935130719](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935130719) — sukces, [Azure produkcja 44935256509](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/44935256509) — sukces.
+- Pozostaje test wyglądu i zawijania tekstów w rzeczywistej przeglądarce (desktop/Safari/iPhone) oraz weryfikacja publicznego HTTP. Nie utożsamiać sukcesu Azure z niezależnym testem wizualnym. Stopka zachowuje historyczną etykietę R16 — bez zmiany w tym wydaniu.
 
 ## 21.11.2026 — baner cookies R17 — WDROŻONY W AZURE, TEST WIZUALNY DO POTWIERDZENIA
 

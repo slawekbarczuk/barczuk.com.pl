@@ -4,8 +4,8 @@
 
 - [x] Ustalono hasło i cztery filary usług z głosem marki w liczbie mnogiej.
 - [x] Przygotowano redakcję PL/UA/EN/DE, aktualizację opisów SEO oraz słowniki generatorów.
-- [ ] Potwierdzić testy, zgodność generatorów i podgląd Azure, następnie opublikować.
-- [ ] Zweryfikować rzeczywisty wygląd treści i zawijanie nagłówków na telefonie; nie zmieniać P04 ani portalu.
+- [x] CI i odtwarzalny generator potwierdzone; Azure Preview i produkcja zakończone sukcesem (PR #20, commit `4b2bccea`).
+- [ ] Zweryfikować rzeczywisty wygląd treści i zawijanie nagłówków na telefonie oraz komputerze; P04 i portal pozostają niezmienione.
 
 
 ## R17 — minimalistyczny baner zgody GA4
