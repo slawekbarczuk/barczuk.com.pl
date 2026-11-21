@@ -71,7 +71,10 @@ function injectShared(h,p,locale){
  const canonical=domain+p.url[locale];
  const seo='<link rel="canonical" href="'+canonical+'">'+alternates(p);
  const css='<link rel="stylesheet" href="/assets/language-switcher-r16.css?v=R16-i18n">';
- h=h.replace("</head>",seo+css+"</head>");
+ const analyticsTag='<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-draft">';
+ const hasAnalytics=h.includes('/assets/analytics-r17.js');
+ h=h.replaceAll(analyticsTag,'');
+ h=h.replace("</head>",seo+css+(hasAnalytics?analyticsTag:"")+"</head>");
  h=h.replace(/(<nav class="nav-links"[\s\S]*?<\/nav>)(<\/div><\/header>)/,
    (_,nav,ending)=>nav+switcher(p,locale)+ending);
  if(!h.includes('data-language-switcher'))throw Error("Language navigation not injected: "+p.id+" "+locale);

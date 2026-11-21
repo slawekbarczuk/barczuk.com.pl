@@ -57,7 +57,10 @@ function shared(h,p,locale){
  const seo='<link rel="canonical" href="'+base+p.url[locale]+'">'+
   locales.map(c=>'<link rel="alternate" hreflang="'+bcp[c]+'" href="'+base+p.url[c]+'">').join("")+
   '<link rel="alternate" hreflang="x-default" href="'+base+p.url.pl+'">';
- h=h.replace("</head>",seo+'<link rel="stylesheet" href="/assets/language-switcher-r16.css?v=R16-ua-nav2">'+experience+"</head>");
+ const analyticsTag='<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-draft">';
+ const hasAnalytics=h.includes('/assets/analytics-r17.js');
+ h=h.replaceAll(analyticsTag,'');
+ h=h.replace("</head>",seo+'<link rel="stylesheet" href="/assets/language-switcher-r16.css?v=R16-ua-nav2">'+experience+(hasAnalytics?analyticsTag:"")+"</head>");
  if(p.id==="home")h=h.replace('<section class="hero">','<section class="hero" data-photo-hero>');
  h=h.replace(/(<nav class="nav-links"[\s\S]*?<\/nav>)(<\/div><\/header>)/,(_,n,end)=>n+switcher(p,locale)+end);
  if(!h.includes('data-language-switcher'))throw Error("No language switcher: "+p.id+" "+locale);
