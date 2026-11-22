@@ -73,3 +73,21 @@ test("Minimal corporate cookie bar stays in four languages with mobile layout",(
   assert.match(css,/grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
   assert.match(cfg,/enableClarityReplay:\s*false/);
 });
+
+test("Cookie settings precede footer version on a shared responsive baseline",()=>{
+  assert.ok(js.includes('footer.querySelector(".site-version")'));
+  assert.ok(js.includes('footer.insertBefore(tools, version)'));
+  assert.ok(js.includes('tools.append(settings, version)'));
+  assert.ok(css.includes('.footer-bottom .barczuk-footer-tools{display:flex;align-items:baseline'));
+  assert.ok(css.includes('.footer-bottom .barczuk-footer-tools .site-version{margin:0'));
+  assert.ok(css.includes('@media(max-width:620px){.footer-bottom .barczuk-footer-tools'));
+  for(const file of roots.flatMap(walk)){
+    const html=fs.readFileSync(file,"utf8");
+    assert.equal(html.split('/assets/analytics-r17.css?v=r17-footer-v3').length-1,1,file+" CSS cache version");
+    assert.equal(html.split('/assets/analytics-r17.js?v=r17-footer-v3').length-1,1,file+" JS cache version");
+  }
+  for(const file of ["scripts/build-i18n-r16.cjs","scripts/build-ua-r16.cjs","scripts/build-ua-business-r16.cjs","scripts/inject-analytics-r17.cjs"]){
+    const source=fs.readFileSync(path.join(root,file),"utf8");
+    assert.ok(source.includes("r17-footer-v3"),file+" regeneration must preserve footer asset version");
+  }
+});

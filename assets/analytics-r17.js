@@ -244,7 +244,16 @@
     if (footer && !document.getElementById("barczuk-analytics-settings")) {
       var settings = button(t.settings,"barczuk-analytics-settings",showSettings);
       settings.id = "barczuk-analytics-settings";
-      footer.appendChild(settings);
+      var version = typeof footer.querySelector === "function" ? footer.querySelector(".site-version") : null;
+      if (version && version.parentNode === footer) {
+        // One row: cookie settings, followed by the current version.
+        var tools = document.createElement("div");
+        tools.className = "barczuk-footer-tools";
+        footer.insertBefore(tools, version);
+        tools.append(settings, version);
+      } else {
+        footer.appendChild(settings);
+      }
     }
     document.addEventListener("click",function (event) {
       if (!refreshConsent()) return;
