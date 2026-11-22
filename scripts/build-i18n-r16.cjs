@@ -171,16 +171,6 @@ function writeFile(file,html){
  fs.writeFileSync(dest,html,'utf8');
  console.log("Built",file,Buffer.byteLength(html,"utf8"),"bytes");
 }
-function applyGermanCityPhotos(html) {
- const originalSlides="<img class=\"hero-slide is-visible\" src=\"/assets/photos-r16/fabryczna.webp\" width=\"1440\" height=\"810\" alt=\"\" aria-hidden=\"true\" fetchpriority=\"high\" decoding=\"async\">\n<img class=\"hero-slide\" src=\"/assets/photos-r16/manufaktura.webp\" width=\"1440\" height=\"810\" alt=\"\" aria-hidden=\"true\" decoding=\"async\">\n<img class=\"hero-slide\" src=\"/assets/photos-r16/piotrkowska.webp\" width=\"1440\" height=\"810\" alt=\"\" aria-hidden=\"true\" decoding=\"async\">\n<img class=\"hero-slide\" src=\"/assets/photos-r16/ec1.webp\" width=\"1440\" height=\"810\" alt=\"\" aria-hidden=\"true\" decoding=\"async\">";
- const germanSlides="<img class=\"hero-slide is-visible\" src=\"/assets/photos-de-r18/frankfurt.webp\" width=\"1280\" height=\"720\" alt=\"\" aria-hidden=\"true\" fetchpriority=\"high\" decoding=\"async\">\n<img class=\"hero-slide\" src=\"/assets/photos-de-r18/berlin.webp\" width=\"1280\" height=\"720\" alt=\"\" aria-hidden=\"true\" decoding=\"async\">\n<img class=\"hero-slide\" src=\"/assets/photos-de-r18/munich.webp\" width=\"1280\" height=\"720\" alt=\"\" aria-hidden=\"true\" decoding=\"async\">";
- const originalLabel="Künstlerische Visualisierungen der Architektur von Łódź: Łódź Fabryczna, Brama Miasta, Manufaktura, Piotrkowska-Straße und EC1";
- const germanLabel="Künstlerische Stadtansichten von Frankfurt am Main, Berlin und München";
- if(html.split(originalSlides).length!==2 || html.split(originalLabel).length!==2)
-   throw Error("German city imagery: source slideshow or description not found exactly once");
- return html.replace(originalSlides,germanSlides).replace(originalLabel,germanLabel);
-}
-
 function build(){
  const source=new Map(pageTypes.map(p=>[p.id,fs.readFileSync(path.join(root,p.base),"utf8")
    .replace(/<nav class="language-switcher"[\s\S]*?<\/nav>/g,"")
@@ -196,7 +186,6 @@ function build(){
   writeFile(p.base,injectShared(pl,p,"pl"));
   for(const locale of ["en","de"]){
    let localized=translateHtml(source.get(p.id),dict[locale],locale,p);
-   if(locale==="de" && p.id==="home")localized=applyGermanCityPhotos(localized);
    writeFile(p.output[locale],localized);
   }
  }
