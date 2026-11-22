@@ -1,4 +1,13 @@
-# Plan rozwoju BARCZUK — stan na 2026-11-21
+# Plan rozwoju BARCZUK — stan na 2026-11-22
+
+## 22.11.2026 — DE powrót do Łodzi (PL/EN/DE)
+
+- [x] Przywrócono cztery kadry Łodzi w niemieckiej stronie głównej i usunięto nadpisywanie w generatorze językowym.
+- [x] Zachowano osobne fotografie Ukrainy; test regresji porównuje kolejność slajdów PL, EN, DE i UA.
+- [x] Scalono [PR #24](https://github.com/slawekbarczuk/barczuk.com.pl/pull/24); testy regresyjne, Azure Preview i wdrożenie produkcyjne [45003332975](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45003332975) zakończyły się pomyślnie.
+- [ ] Kontrola wizualna na desktopie i iPhonie/Safari oraz niezależne potwierdzenie strony w publicznym HTTP; nie zmieniać UA.
+
+
 
 ## R18 — niezależna marka doradcza i nowa narracja usług
 
