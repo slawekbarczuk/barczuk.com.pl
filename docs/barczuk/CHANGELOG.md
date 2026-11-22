@@ -1,5 +1,12 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-22 — stopka: ustawienia cookies i numer wersji na jednej linii — kod scalony
+
+- Zgodnie ze zrzutem użytkownika przycisk ustawień zgód jest teraz po lewej stronie numeru wersji, w jednym kontenerze flex, z wyrównaniem do bazowej linii tekstu; reguła mobilna zapewnia wspólny wiersz. Zakres obejmuje wszystkie 22 publiczne strony, skrypt R17, CSS i generatory z odświeżonymi zasobami `r17-footer-v3`.
+- [PR #26](https://github.com/slawekbarczuk/barczuk.com.pl/pull/26), commit `609b8f03ac7833e6620054fdfa8da804c8683fcb`. Testy R17, P04 i Azure Preview zakończone pomyślnie. Publikacja produkcyjna [45019353669](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45019353669) — sukces; test wizualny desktop/iPhone nadal do wykonania.
+- Bez zmian w polityce cookies, identyfikatorach GA4, treściach oferty, obrazach UA i pozostałych językach oraz prywatnym portalu.
+
+
 ## 2026-11-22 — DE: przywrócenie wyłącznie łódzkich fotografii — WDROŻONE
 
 - Decyzją użytkownika wycofano trzy niemieckie wizualizacje (Frankfurt/Berlin/Monachium) i przywrócono wspólne z PL/EN cztery kadry Łodzi (Fabryczna, Manufaktura, Piotrkowska, EC1). UA zachowuje Kijów/Odessę/Lwów, bez modyfikacji HTML, treści ani obrazów.

@@ -1,5 +1,13 @@
 # Plan rozwoju BARCZUK — stan na 2026-11-22
 
+## 22.11.2026 — wyrównanie elementów stopki
+
+- [x] Przeniesiono `Ustawienia cookies` przed numer wersji i wyrównano oba w jednym kontenerze, także na telefonie.
+- [x] Wykonano testy regresyjne i Azure Preview ([PR #26](https://github.com/slawekbarczuk/barczuk.com.pl/pull/26)).
+- [ ] Publikacja Azure [45019353669](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45019353669) — sukces; nadal niezależna kontrola desktop/Safari/iPhone, bez zmian analityki GA4.
+
+
+
 ## 22.11.2026 — DE powrót do Łodzi (PL/EN/DE)
 
 - [x] Przywrócono cztery kadry Łodzi w niemieckiej stronie głównej i usunięto nadpisywanie w generatorze językowym.
