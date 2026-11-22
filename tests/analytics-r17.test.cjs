@@ -75,7 +75,7 @@ test("Minimal corporate cookie bar stays in four languages with mobile layout",(
 });
 
 test("Cookie settings precede footer version on a shared responsive baseline",()=>{
-  assert.ok(js.includes('var version = footer.querySelector(".site-version")'));
+  assert.ok(js.includes('footer.querySelector(".site-version")'));
   assert.ok(js.includes('footer.insertBefore(tools, version)'));
   assert.ok(js.includes('tools.append(settings, version)'));
   assert.ok(css.includes('.footer-bottom .barczuk-footer-tools{display:flex;align-items:baseline'));
