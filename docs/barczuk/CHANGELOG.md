@@ -1,5 +1,9 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 22.11.2026 — powtórny audyt publicznej witryny po publikacji stopki
+
+Przeprowadzono dwie kontrolowane próby GA4, sprawdzono 42 odpowiedzi publicznych stron oraz 63 kombinacje adresu i szerokości ekranu. Uruchomiono 95 testów i kontrolę odtwarzalności. Aktualne ustalenia zapisano w STATE i zalecenia w ROADMAP. Baza audytu `3d6d586`. Zapis dotyczy dokumentacji.
+
 ## 2026-11-22 — stopka: ustawienia cookies i numer wersji na jednej linii — kod scalony
 
 - Zgodnie ze zrzutem użytkownika przycisk ustawień zgód jest teraz po lewej stronie numeru wersji, w jednym kontenerze flex, z wyrównaniem do bazowej linii tekstu; reguła mobilna zapewnia wspólny wiersz. Zakres obejmuje wszystkie 22 publiczne strony, skrypt R17, CSS i generatory z odświeżonymi zasobami `r17-footer-v3`.

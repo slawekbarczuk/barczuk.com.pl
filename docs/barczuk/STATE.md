@@ -1,5 +1,13 @@
 # Stan projektu BARCZUK — 2026-11-22
 
+## 22.11.2026 — powtórny audyt publicznej witryny po publikacji zmian w stopce
+
+Sprawdzono wszystkie 21 adresów mapy osobno na obu publicznych hostach. Wszystkie 42 odpowiedzi zwróciły HTTP 200, a treść odpowiadała wersji `3d6d586` z opublikowaną zmianą `609b8f0` ([Azure](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45019353669)). Polskie, angielskie i niemieckie strony główne zawierają cztery kadry Łodzi, ukraińska trzy kadry Ukrainy. Konfiguracja P04 zgłaszała gotowość na obu hostach. Formularz sprawdzono do etapu wysłania, bez doręczania wiadomości.
+
+W dwóch nowych sesjach na produkcji (10:42 i 17:04 czasu polskiego) jedno wejście po zgodzie wysłało dwie odsłony do Google. Obie odpowiedzi każdorazowo miały status HTTP 204. Na odizolowanej kopii po zmianie konfiguracji uzyskano jedną oczyszczoną odsłonę w ośmiu kombinacjach języka i hosta. Prywatny raport GA4 pozostaje do potwierdzenia po wdrożeniu.
+
+Karty finansowania i kapitału kierują do tej samej sekcji, a wszystkie cztery karty są mierzone jako finansowanie. Na pięciu stronach DE układ 320 px rozciąga dokument do 341 px. Przy 390 i 1440 px 21 stron mieściło się w oknie. Bieżąca seria testów przeszła 95/95, lecz pierwsza odbudowa czystej wersji nadal zmienia dwa pliki UA.
+
 ## 22.11.2026 — stopka cookies + wersja: WDROŻONE W AZURE, QA WIZUALNA DO POTWIERDZENIA
 
 - Przywrócono prawidłową kolejność po prawej stronie stopki we wszystkich czterech językach: `Ustawienia cookies` przed `SB-WEB-1126-R16`. Wspólne wyrównanie do linii tekstu i responsywne odstępy; skrypt JS przesuwa istniejący numer do wspólnego kontenera.

@@ -1,5 +1,12 @@
 # Plan rozwoju BARCZUK — stan na 2026-11-22
 
+## 22.11.2026 — zalecenia z powtórnego audytu, do decyzji właściciela
+
+- [x] Kontrola publikacji stopki na dwóch hostach, czterech języków, ustawień formularza i dwóch kontrolowanych wizyt GA4.
+- [ ] Usunąć podwójne odsłony i potwierdzić jedną odsłonę po zgodzie oraz brak odsłon po odmowie; sprawdzić nową wizytę w czasie rzeczywistym w usłudze GA4.
+- [ ] Nadać karcie kapitału własny opis docelowy. Rozróżnić cztery kliknięcia w pomiarze, zdefiniować zdarzenie przyjęcia P04 bez danych osobowych i uporządkować tytuł podstrony finansowania.
+- [ ] Usunąć przepełnienie listy elementów w niemieckiej stopce przy 320 px i potwierdzić układ na iPhonie. Dodać oba pliki UA do kontroli pierwszej odbudowy. Uzgodnić końcowy test doręczenia P04.
+
 ## 22.11.2026 — wyrównanie elementów stopki
 
 - [x] Przeniesiono `Ustawienia cookies` przed numer wersji i wyrównano oba w jednym kontenerze, także na telefonie.
