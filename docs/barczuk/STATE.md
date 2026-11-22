@@ -1,5 +1,12 @@
 # Stan projektu BARCZUK — 2026-11-22
 
+## 22.11.2026 — stopka cookies + wersja: kod scalony, produkcja do potwierdzenia
+
+- Przywrócono prawidłową kolejność po prawej stronie stopki we wszystkich czterech językach: `Ustawienia cookies` przed `SB-WEB-1126-R16`. Wspólne wyrównanie do linii tekstu i responsywne odstępy; skrypt JS przesuwa istniejący numer do wspólnego kontenera.
+- Zmiany [PR #26](https://github.com/slawekbarczuk/barczuk.com.pl/pull/26), commit `609b8f03ac7833e6620054fdfa8da804c8683fcb`. Testy P04/R17, Azure Preview — sukces. Ostateczny status wdrożenia produkcyjnego i weryfikacja wizualna pozostają do potwierdzenia.
+- Konfiguracja zgód/GA4, oferta, obrazy i portal pozostają bez zmian.
+
+
 ## 22.11.2026 — DE: powrót do czterech kadrów Łodzi — WDROŻONE W AZURE
 
 - Na decyzję użytkownika cofnięto tylko zmianę fotografii niemieckiej strony głównej z 21.11 (Frankfurt/Berlin/Monachium), przywracając dokładnie cztery kadry Łodzi R16 jak w PL/EN: Fabryczna, Manufaktura, Piotrkowska, EC1. Wersja UA (Kijów, Odessa, Lwów) pozostaje **bez zmian**.
