@@ -26,3 +26,9 @@
 @media(max-width:1150px){.barczuk-consent__wrap{gap:16px;flex-wrap:wrap}.barczuk-consent__intro{flex-basis:100%;max-width:none}.barczuk-consent__choices{width:100%;justify-content:flex-end}}
 @media(max-width:620px){.barczuk-consent{max-height:calc(100vh - 8px);overflow:auto}.barczuk-consent__wrap{padding:15px 14px;gap:12px}.barczuk-consent__intro{font-size:12px;line-height:1.5}.barczuk-consent__choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.barczuk-consent__choices>.barczuk-consent__button:first-child{grid-column:1/-1}.barczuk-consent__button{min-width:0;min-height:44px;font-size:11px;padding:10px 8px}.barczuk-consent--settings .barczuk-consent__wrap{padding:18px 14px}.barczuk-consent__categories{grid-template-columns:1fr}.barczuk-consent--settings .barczuk-consent__choices{margin-top:12px}}
 @media(prefers-reduced-motion:reduce){.barczuk-consent *{transition:none!important}}
+
+/* Footer utilities: cookie settings before version, aligned on one baseline. */
+.footer-bottom .barczuk-footer-tools{display:flex;align-items:baseline;justify-content:flex-end;gap:30px;margin-left:auto;white-space:nowrap}
+.footer-bottom .barczuk-footer-tools .barczuk-analytics-settings{display:inline-block;margin:0;padding:0;font-size:10px;line-height:1.7;white-space:nowrap}
+.footer-bottom .barczuk-footer-tools .site-version{margin:0;font-size:10px;line-height:1.7;white-space:nowrap}
+@media(max-width:620px){.footer-bottom .barczuk-footer-tools{flex:1 1 100%;width:100%;margin-left:0;justify-content:space-between;gap:10px}}
