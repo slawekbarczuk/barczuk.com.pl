@@ -1,4 +1,13 @@
-# Stan projektu BARCZUK — 2026-11-21
+# Stan projektu BARCZUK — 2026-11-22
+
+## 22.11.2026 — DE: powrót do czterech kadrów Łodzi — WDROŻONE W AZURE
+
+- Na decyzję użytkownika cofnięto tylko zmianę fotografii niemieckiej strony głównej z 21.11 (Frankfurt/Berlin/Monachium), przywracając dokładnie cztery kadry Łodzi R16 jak w PL/EN: Fabryczna, Manufaktura, Piotrkowska, EC1. Wersja UA (Kijów, Odessa, Lwów) pozostaje **bez zmian**.
+- Zmieniono `de/index.html`, generator `scripts/build-i18n-r16.cjs` i test `tests/i18n-r16.test.cjs`. Pozostałe treści R17/R18, P04, GA4 i portal bez zmian. Zachowano animację 8 s / 1,6 s.
+- [PR #24](https://github.com/slawekbarczuk/barczuk.com.pl/pull/24) scalony do `main` jako `c1af6b5bd41e52ab9765c170afdb03ff35c6e840`. [Testy R17](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45003250811), [P04](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45003250795), [Azure Preview](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45003250774) i [Azure produkcja](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45003332975) — sukces.
+- Pozostaje niezależna kontrola widoku na komputerze i iPhonie oraz publicznego odczytu HTTP. Nie utożsamiać pomyślnego wdrożenia CI z pełną weryfikacją wizualną. Starsza decyzja D-020 jest zastąpiona przez D-021.
+
+
 
 ## 21.11.2026 — DE: Frankfurt/Berlin/Monachium — WDROŻONE W AZURE
 
