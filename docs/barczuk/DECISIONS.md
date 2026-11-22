@@ -21,6 +21,9 @@
 
 - **D-015, 2026-11-20:** Przełączanie PL/UA/EN/DE powinno mieć wyraźnie wolniejszy, dyskretny efekt przenikania. Linki pomiędzy barczuk.com.pl i portal.barczuk.com.pl muszą być podobnie płynne; wykluczyć z animacji logowanie Microsoft, zewnętrzne linki i użytkowników korzystających z ustawienia ograniczenia ruchu. W mobilnym nagłówku logo BARCZUK wraz ze złotym kwadratem ma pozostawać w jednym wierszu, także na stronach informacji prawnych. Dopuszczony krótkotrwały techniczny znacznik przejścia, bez danych użytkownika.
 
+
+- **D-021, 2026-11-22:** Na wyraźną decyzję użytkownika wycofano D-020 (Frankfurt, Berlin, Monachium). Strony główne PL, EN i DE mają prezentować wyłącznie te same cztery kadry Łodzi R16: Fabryczna, Manufaktura, Piotrkowska, EC1. Wersja UA zachowuje odrębne fotografie Kijowa, Odessy i Lwowa, bez zmian. Zachować zgodność generatora języków i testów; nie cofać pozostałych zmian R17/R18.
+
 ## Decyzje jeszcze wymagające szczegółowego projektu
 
 - Role i dostęp: administrator/doradca/klient, udostępnianie do teczek, wieloosobowa reprezentacja firmy, MFA/Conditional Access i kontrola dostępu do API.
