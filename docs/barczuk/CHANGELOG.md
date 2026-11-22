@@ -1,5 +1,13 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 2026-11-22 — DE: przywrócenie wyłącznie łódzkich fotografii — WDROŻONE
+
+- Decyzją użytkownika wycofano trzy niemieckie wizualizacje (Frankfurt/Berlin/Monachium) i przywrócono wspólne z PL/EN cztery kadry Łodzi (Fabryczna, Manufaktura, Piotrkowska, EC1). UA zachowuje Kijów/Odessę/Lwów, bez modyfikacji HTML, treści ani obrazów.
+- Poprawiono `de/index.html`, generator językowy i testy zabezpieczające przed ponowną zmianą. R17/R18, P04, GA4 i Strefa klienta nietknięte.
+- Kod: [PR #24](https://github.com/slawekbarczuk/barczuk.com.pl/pull/24), commit `c1af6b5bd41e52ab9765c170afdb03ff35c6e840`. [R17 testy](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45003250811), [P04](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45003250795), [Azure Preview](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45003250774), [Azure produkcja](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45003332975) — success. Niezależne QA wyglądu w Safari/desktop oraz live HTTP pozostało do wykonania.
+
+
+
 ## 2026-11-21 — R18: BARCZUK jako marka doradcza — WDROŻONE
 
 - Zaakceptowano komunikację organizacyjną, bez życiorysu i sugerowania składu zespołu; cztery filary: finansowanie, inwestycje, kapitał/decyzje strategiczne, ciągłość finansowania. Historia bankowości od 1995 r. ujęta bezosobowo, bez nazw klientów.
