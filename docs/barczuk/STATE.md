@@ -1,9 +1,9 @@
 # Stan projektu BARCZUK — 2026-11-22
 
-## 22.11.2026 — stopka cookies + wersja: kod scalony, produkcja do potwierdzenia
+## 22.11.2026 — stopka cookies + wersja: WDROŻONE W AZURE, QA WIZUALNA DO POTWIERDZENIA
 
 - Przywrócono prawidłową kolejność po prawej stronie stopki we wszystkich czterech językach: `Ustawienia cookies` przed `SB-WEB-1126-R16`. Wspólne wyrównanie do linii tekstu i responsywne odstępy; skrypt JS przesuwa istniejący numer do wspólnego kontenera.
-- Zmiany [PR #26](https://github.com/slawekbarczuk/barczuk.com.pl/pull/26), commit `609b8f03ac7833e6620054fdfa8da804c8683fcb`. Testy P04/R17, Azure Preview — sukces. Ostateczny status wdrożenia produkcyjnego i weryfikacja wizualna pozostają do potwierdzenia.
+- Zmiany [PR #26](https://github.com/slawekbarczuk/barczuk.com.pl/pull/26), commit `609b8f03ac7833e6620054fdfa8da804c8683fcb`. Testy P04/R17, Azure Preview — sukces. Wdrożenie produkcyjne Azure [45019353669](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45019353669) — sukces. Weryfikacja wizualna pozostaje do potwierdzenia.
 - Konfiguracja zgód/GA4, oferta, obrazy i portal pozostają bez zmian.
 
 
