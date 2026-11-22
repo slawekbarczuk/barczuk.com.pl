@@ -244,7 +244,7 @@
     if (footer && !document.getElementById("barczuk-analytics-settings")) {
       var settings = button(t.settings,"barczuk-analytics-settings",showSettings);
       settings.id = "barczuk-analytics-settings";
-      var version = footer.querySelector(".site-version");
+      var version = typeof footer.querySelector === "function" ? footer.querySelector(".site-version") : null;
       if (version && version.parentNode === footer) {
         // One row: cookie settings, followed by the current version.
         var tools = document.createElement("div");
