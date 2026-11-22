@@ -51,19 +51,23 @@ test("R16 multilingual: translated financing, guarantees and imagery",()=>{
  const en=read("en/index.html"),de=read("de/index.html");
  assert.match(en,/Independent<br>financial advisory/);
  assert.match(de,/Unabhängige<br>Finanzierungsberatung/);
- for(const name of ["fabryczna","manufaktura","piotrkowska","ec1"]){
-  assert.ok(en.includes("/assets/photos-r16/"+name+".webp"));
-  assert.ok(!de.includes("/assets/photos-r16/"+name+".webp"));
- }
- for(const name of ["frankfurt","berlin","munich"]){
-  assert.ok(de.includes("/assets/photos-de-r18/"+name+".webp"),"Missing DE image "+name);
-  const asset=fs.readFileSync(path.join(root,"assets/photos-de-r18",name+".webp"));
-  assert.ok(asset.length>35000 && asset.length<250000,"Unexpected DE WebP size "+name);
-  assert.equal(asset.subarray(0,4).toString(),"RIFF",name);
-  assert.equal(asset.subarray(8,12).toString(),"WEBP",name);
- }
- assert.equal((de.match(/class="hero-slide(?: is-visible)?"/g)||[]).length,3);
- assert.match(de,/Künstlerische Stadtansichten von Frankfurt am Main, Berlin und München/);
+ const heroSlides=html=>{
+  const region=html.match(/<div class="hero-visual hero-media hero-slideshow"[^>]*>([\s\S]*?)<\/div>/)?.[1];
+  assert.ok(region,"Homepage hero slideshow missing");
+  return [...region.matchAll(/<img class="hero-slide(?: is-visible)?" src="([^"]+)"/g)].map(m=>m[1]);
+ };
+ const lodz=["fabryczna","manufaktura","piotrkowska","ec1"].map(n=>"/assets/photos-r16/"+n+".webp");
+ for(const file of ["index.html","en/index.html","de/index.html"])
+  assert.deepEqual(heroSlides(read(file)),lodz,file+" must show only Łódź");
+ assert.match(de,/Künstlerische Visualisierungen der Architektur von Łódź/);
+ assert.doesNotMatch(de,/photos-de-r18|Frankfurt am Main, Berlin und München/);
+ assert.doesNotMatch(read("scripts/build-i18n-r16.cjs"),/applyGermanCityPhotos|photos-de-r18/,
+  "Localization rebuild must not reintroduce German city slides");
+ assert.deepEqual(heroSlides(read("ua/index.html")),[
+  "/assets/photos-r16/ua/kyiv-dnipro.webp",
+  "/assets/photos-r16/ua/odesa.webp",
+  "/assets/photos-r16/ua/lviv.webp"
+ ],"Ukrainian slides must remain unchanged");
  const enFin=read("en/corporate-financing/index.html"),deFin=read("de/unternehmensfinanzierung/index.html");
  for(const [source,label] of [[enFin,"Bank guarantees"],[deFin,"Bankgarantien"]]){
   assert.ok(source.includes(label),"Missing guarantee expertise "+label);
