@@ -24,6 +24,8 @@
 
 - **D-021, 2026-11-22:** Na wyraźną decyzję użytkownika wycofano D-020 (Frankfurt, Berlin, Monachium). Strony główne PL, EN i DE mają prezentować wyłącznie te same cztery kadry Łodzi R16: Fabryczna, Manufaktura, Piotrkowska, EC1. Wersja UA zachowuje odrębne fotografie Kijowa, Odessy i Lwowa, bez zmian. Zachować zgodność generatora języków i testów; nie cofać pozostałych zmian R17/R18.
 
+- **D-022, 2026-11-22:** W stopce wszystkich publicznych wersji językowych przycisk `Ustawienia cookies` ma poprzedzać numer wersji i znajdować się na tej samej linii. Zachować spójność mobilną, wersjonowanie zasobów i działające ustawienia zgód.
+
 ## Decyzje jeszcze wymagające szczegółowego projektu
 
 - Role i dostęp: administrator/doradca/klient, udostępnianie do teczek, wieloosobowa reprezentacja firmy, MFA/Conditional Access i kontrola dostępu do API.
