@@ -57,7 +57,7 @@ function shared(h,p,locale){
  const seo='<link rel="canonical" href="'+base+p.url[locale]+'">'+
   locales.map(c=>'<link rel="alternate" hreflang="'+bcp[c]+'" href="'+base+p.url[c]+'">').join("")+
   '<link rel="alternate" hreflang="x-default" href="'+base+p.url.pl+'">';
- const analyticsTag='<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-footer-v3">';
+ const analyticsTag='<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-audit-v4">';
  const hasAnalytics=h.includes('/assets/analytics-r17.js');
  h=h.replaceAll(analyticsTag,'');
  h=h.replace("</head>",seo+'<link rel="stylesheet" href="/assets/language-switcher-r16.css?v=R16-ua-nav2">'+experience+(hasAnalytics?analyticsTag:"")+"</head>");
@@ -115,7 +115,7 @@ for(const p of pages){
 // Additional targeted UA page is generated from the current R16 UA financing template.
 require("./build-ua-business-r16.cjs");
 const urls=pages.flatMap(p=>locales.map(c=>{
- const lastmod=(p.id==="home"&&c==="ua")?"2026-11-20":"2026-11-19";
+ const lastmod=p.id==="legal"?"2026-11-19":"2026-11-22";
  return '<url><loc>'+base+p.url[c]+'</loc><lastmod>'+lastmod+'</lastmod></url>';
 }));
 urls.push('<url><loc>'+base+'/ua/finansuvannia-biznesu-v-polshchi/</loc><lastmod>2026-11-20</lastmod></url>');

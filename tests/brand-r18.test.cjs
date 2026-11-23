@@ -44,3 +44,21 @@ test("R18: four financing pages and approved contact safeguards",()=>{
    assert.ok(html.includes('portal.barczuk.com.pl'),pages[i]);
  }
 });
+
+test("Each service card links to its own translated section, with the UA hero retaining the focused offer",()=>{
+ const sections={financing:"struktura",investment:"inwestycje",capital:"kapital",continuity:"monitorowanie"};
+ for(const [file] of homes){
+   const home=read(file);
+   const cards=[...home.matchAll(/<a class="service" href="([^"#]+)#([^"]+)" data-offer="([^"]+)"/g)];
+   assert.deepEqual(cards.map(card=>card[3]),Object.keys(sections),file);
+   for(const [,route,anchor,area] of cards){
+     assert.equal(anchor,sections[area],file);
+     const target=read(route.slice(1)+"index.html");
+     assert.ok(target.includes('<section class="scope-item" id="'+anchor+'">'),route);
+     assert.ok(target.includes('<a href="#'+anchor+'"><span>'),route);
+   }
+ }
+ assert.ok(read("index.html").includes('href="#zakres">Poznaj zakres doradztwa'));
+ assert.ok(read("ua/index.html").includes('class="text-link" href="/ua/finansuvannia-biznesu-v-polshchi/"'));
+ assert.match(read("finansowanie-przedsiebiorstw/index.html"),/<title>Finansowanie przedsiębiorstw i gwarancje bankowe \| Barczuk<\/title>/);
+});

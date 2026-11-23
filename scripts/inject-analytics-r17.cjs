@@ -4,8 +4,8 @@ const fs = require("node:fs");
 const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 const roots = ["index.html","404.html","finansowanie-przedsiebiorstw","informacje","en","de","ua"];
-const head = '<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-footer-v3">';
-const tail = '<script defer src="/assets/analytics-r17-config.js?v=r17-footer-v3"></script><script defer src="/assets/analytics-r17.js?v=r17-footer-v3"></script>';
+const head = '<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-audit-v4">';
+const tail = '<script defer src="/assets/analytics-r17-config.js?v=r17-audit-v4"></script><script defer src="/assets/analytics-r17.js?v=r17-audit-v4"></script>';
 function processFile(name) {
   let html = fs.readFileSync(name, "utf8");
   // Rebuilds run more than once; do not duplicate tags.

@@ -1,5 +1,12 @@
 # Plan rozwoju BARCZUK — stan na 2026-11-22
 
+## 22.11.2026 — realizacja powtórnego audytu
+
+- [x] Jeden ręczny pomiar odsłony, cztery wartości obszaru doradztwa oraz odrębne zdarzenie przyjęcia przez P04. Starsze domenowe cookies GA są wygaszane przy wizycie na publicznej witrynie.
+- [x] Sekcja kapitału i decyzji strategicznych w czterech językach, polski tytuł finansowania i bezpośrednie przejście do przeglądu usług. UA zachowuje odnośnik do odrębnej oferty dla firm z ukraińskim kapitałem.
+- [x] Korekta wąskiego układu DE i kontrola pierwszej oraz drugiej odbudowy wszystkich 22 publicznych dokumentów HTML i mapy.
+- [ ] Odbiór produkcyjny po zakończeniu wdrożenia Azure.
+
 ## 22.11.2026 — wyrównanie elementów stopki
 
 - [x] Przeniesiono `Ustawienia cookies` przed numer wersji i wyrównano oba w jednym kontenerze, także na telefonie.

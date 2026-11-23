@@ -1,5 +1,11 @@
 # Stan projektu BARCZUK — 2026-11-22
 
+## 22.11.2026 — wdrożenie zaleceń z audytu publicznej witryny
+
+Poprzednia wersja (baza `3d6d586`) wysyłała w dwóch próbach po dwie odsłony na jedno otwarcie. Zmiana obejmuje jedną odsłonę po zgodzie, cookies GA ograniczone do odwiedzanego hosta, cztery rozróżnialne karty i pomiar przyjętych zgłoszeń P04. Dodano sekcję kapitałową oraz wyniki opracowań w PL, EN, DE i UA. Formularz wysyła wyłącznie techniczne zdarzenie po potwierdzeniu operacji przez API. Informacje o cookies i prywatności zaktualizowano w czterech językach.
+
+Do odbioru po publikacji: sprawdzenie odpowiedzi publicznej strony, rzeczywistego pomiaru i jednego uzgodnionego zgłoszenia testowego. Weryfikacja raportu na prywatnym koncie GA4 i urządzenia fizycznego wymaga dostępu do tych zasobów.
+
 ## 22.11.2026 — stopka cookies + wersja: WDROŻONE W AZURE, QA WIZUALNA DO POTWIERDZENIA
 
 - Przywrócono prawidłową kolejność po prawej stronie stopki we wszystkich czterech językach: `Ustawienia cookies` przed `SB-WEB-1126-R16`. Wspólne wyrównanie do linii tekstu i responsywne odstępy; skrypt JS przesuwa istniejący numer do wspólnego kontenera.

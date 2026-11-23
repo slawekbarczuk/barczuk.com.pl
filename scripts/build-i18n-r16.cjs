@@ -71,7 +71,7 @@ function injectShared(h,p,locale){
  const canonical=domain+p.url[locale];
  const seo='<link rel="canonical" href="'+canonical+'">'+alternates(p);
  const css='<link rel="stylesheet" href="/assets/language-switcher-r16.css?v=R16-i18n">';
- const analyticsTag='<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-footer-v3">';
+ const analyticsTag='<link rel="stylesheet" href="/assets/analytics-r17.css?v=r17-audit-v4">';
  const hasAnalytics=h.includes('/assets/analytics-r17.js');
  h=h.replaceAll(analyticsTag,'');
  h=h.replace("</head>",seo+css+(hasAnalytics?analyticsTag:"")+"</head>");

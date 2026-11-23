@@ -94,10 +94,13 @@
       ad_user_data:"denied", ad_personalization:"denied"
     });
     window.gtag("consent","update",{analytics_storage:"granted"});
-    window.gtag("set",{page_location:safeLocation,page_referrer:safeSource});
+    window.gtag("set",{
+      send_page_view:false,cookie_domain:"none",cookie_prefix:"barczuk",cookie_flags:"SameSite=Lax;Secure",
+      page_location:safeLocation,page_referrer:safeSource
+    });
     window.gtag("js",new Date());
     window.gtag("config",ga4,{
-      send_page_view:false,
+      send_page_view:false,cookie_domain:"none",cookie_prefix:"barczuk",cookie_flags:"SameSite=Lax;Secure",
       page_location:safeLocation,page_referrer:safeSource,
       allow_google_signals:false,allow_ad_personalization_signals:false
     });
@@ -125,7 +128,7 @@
   }
   function clearKnownCookies() {
     var names = document.cookie.split(";").map(function (x) {return x.trim().split("=")[0];});
-    names.filter(function (x) {return /^(_ga(?:_|$)|_gid$|_gat(?:_|$)|_clck$|_clsk$)/.test(x);})
+    names.filter(function (x) {return /^(barczuk_ga(?:_|$)|_ga(?:_|$)|_gid$|_gat(?:_|$)|_clck$|_clsk$)/.test(x);})
       .forEach(function (name) {
         ["", "; Domain=barczuk.com.pl", "; Domain=.barczuk.com.pl"].forEach(function (suffix) {
           document.cookie = name + "=; Path=/; Max-Age=0; SameSite=Lax; Secure" + suffix;
@@ -240,6 +243,13 @@
     if(typeof h.focus==="function"){h.setAttribute("tabindex","-1");h.focus();}
   }
   function start() {
+    // Retire the former GA cookies shared with subdomains. New host-only cookies use a distinct name.
+    if (ga4) {
+      ["_ga","_ga_" + ga4.slice(2)].forEach(function (name) {
+        document.cookie = name + "=; Path=/; Max-Age=0; Domain=barczuk.com.pl; SameSite=Lax; Secure";
+      });
+    }
+    if (!choices || (!choices.analytics && !choices.replay)) clearKnownCookies();
     var footer = document.querySelector("footer .footer-bottom") || document.querySelector("footer");
     if (footer && !document.getElementById("barczuk-analytics-settings")) {
       var settings = button(t.settings,"barczuk-analytics-settings",showSettings);
@@ -260,12 +270,17 @@
       var link = event.target.closest && event.target.closest("a[href]");
       if (!link) return;
       var href = link.getAttribute("href") || "";
-      if (/^mailto:/i.test(href)) track("contact_email_click","email");
+      var area = link.getAttribute("data-offer");
+      if (["financing","investment","capital","continuity"].includes(area)) track("offer_select",area);
+      else if (/^mailto:/i.test(href)) track("contact_email_click","email");
       else if (/^tel:/i.test(href)) track("contact_phone_click","telephone");
       else if (/^https:\/\/portal\.barczuk\.com\.pl\//.test(href)) track("portal_entry_click","client_portal");
       else if (/^\/(?:finansowanie-przedsiebiorstw|en\/corporate-financing|de\/unternehmensfinanzierung|ua\/finansuvannia)/.test(href))
-        track("offer_select","financing");
+        track("offer_open","financing");
     },{capture:true});
+    document.addEventListener("barczuk:contact-accepted",function (event) {
+      if (event.target.id === "contact-request-form") track("contact_request_accepted","form");
+    });
     if (choices) {startGA();startReplay();}
     else showBanner();
     window.addEventListener("focus",refreshConsent);
