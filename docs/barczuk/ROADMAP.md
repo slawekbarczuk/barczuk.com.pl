@@ -1,5 +1,15 @@
 # Plan rozwoju BARCZUK — stan na 2026-11-22
 
+## 23.11.2026 — SEO R19 i historyczne URL
+- [x] Odczyt danych Google Search Console oraz historii indeksacji; potwierdzone zgłoszenie nowej mapy (21 URL).
+- [x] Przygotowano dwa polskie landing pages B2B oraz kontekstowe linki, aktualizację sitemapy do 23 URL i testy regresji na gałęzi SEO R19.
+- [ ] Testy Node i Azure Preview na PR, kontrola generacji dwukrotnej, układu na telefonie i polityki zgody; poprawić ewentualne uwagi.
+- [ ] Scalić i wdrożyć produkcyjnie dopiero po pozytywnych testach, następnie potwierdzić HTTP 200 i sitemapę 23 URL.
+- [ ] Zweryfikować HTTP 301 dla starego finansowania i 404/410 dla starych usług prawnych/IT/zarządzania, bez przekierowania niepowiązanych stron na ofertę kredytową.
+- [ ] Zgłosić nowe adresy do Search Console i monitorować indeksację oraz zapytania B2B po 2–4 tygodniach.
+- [ ] Sprawdzić historyczne wizytówki i katalogi kojarzące domenę z zamkniętym biurem rachunkowym; korekty tylko po weryfikacji praw do profili.
+
+
 ## 22.11.2026 — realizacja powtórnego audytu
 
 - [x] Jeden ręczny pomiar odsłony, cztery wartości obszaru doradztwa oraz odrębne zdarzenie przyjęcia przez P04. Starsze domenowe cookies GA są wygaszane przy wizycie na publicznej witrynie.

@@ -1,5 +1,12 @@
 # Stan projektu BARCZUK — 2026-11-22
 
+## 23.11.2026 — SEO R19: przygotowany pakiet B2B (jeszcze bez wdrożenia)
+- Zgoda właściciela na odejście od historycznych skojarzeń z zamkniętym biurem rachunkowym. Dane Google Search Console za trzy miesiące: 11 kliknięć, 109 wyświetleń, CTR 10,1%, średnia pozycja 9,6. Indeksację strony finansowania zgłoszono; aktualna mapa 21 URL przetworzona poprawnie 23.11.2026.
+- W gałęzi `seo/b2b-financing-landing-20261123` przygotowano dwa polskie landing pages: modele finansowe dla banków i gwarancje bankowe dla przedsiębiorstw, powiązane z istniejącą podstroną finansowania. Dodano do generatora i sitemapy (plan 23 URL), listy dopuszczonych publicznych stron GA4 po zgodzie oraz testów SEO.
+- Nie zmieniano grafiki R16/R18, strony UA, konfiguracji P04, Strefy klienta, ani nie przywrócono historycznej oferty księgowej/prawnej/IT. W `staticwebapp.config.json` istniejące 301 finansowania zachowano; dawne niepowiązane usługi pozostają do weryfikacji HTTP 404/410 i katalogów zewnętrznych.
+- **Status: kod na gałęzi roboczej; testy CI, merge, publikacja Azure i indeksacja Google jeszcze NIEPOTWIERDZONE**. Nie twierdzić, że nowe podstrony są już publicznie dostępne.
+
+
 ## 23.11.2026 — zalecenia audytu wdrożone i zweryfikowane
 
 Zmiany [PR #28](https://github.com/slawekbarczuk/barczuk.com.pl/pull/28) scalono do `2c7fe1a`. [Produkcja Azure](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45123755224) zakończyła się sukcesem. Wszystkie 42 odpowiedzi dla 21 adresów z mapy na obu hostach miały status 200 i były zgodne z plikami wdrożonej wersji. Na produkcji sprawdzono przejście z kart „Kapitał” we wszystkich językach i pięć podstron DE przy 320 px.

@@ -1,5 +1,11 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 23.11.2026 — SEO R19: opracowanie bez publikacji
+- Przygotowano nowe, unikalne polskie podstrony „Modele finansowe dla banków” i „Gwarancje bankowe dla przedsiębiorstw”, z treścią B2B, canonical, WebPage JSON-LD, kontekstowymi linkami i podstawami ochrony prywatności.
+- Rozszerzono trwały generator sitemapy (21 → 23 adresy) i linków PL, listę publicznych tras GA4 po dobrowolnej zgodzie oraz testy. Nie dodano sztucznych tłumaczeń, przekierowań starych niepowiązanych usług, danych klientów ani twierdzeń o gwarantowanym finansowaniu.
+- **Status:** commit-y w gałęzi `seo/b2b-financing-landing-20261123`, PR/testy/publikacja do potwierdzenia. Bazowa produkcja bez zmian.
+
+
 ## 23.11.2026 — wdrożenie i odbiór poprawek audytu
 
 [PR #28](https://github.com/slawekbarczuk/barczuk.com.pl/pull/28), commit `2c7fe1a`, [publikacja produkcyjna](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45123755224) — sukces. Jedna odsłona na wizytę po zgodzie, rozróżnialne karty i zdarzenie przyjęcia formularza. Sprawdzono komplet 42 odpowiedzi, mobilny układ DE, sekcję kapitałową oraz doręczenie P04.
