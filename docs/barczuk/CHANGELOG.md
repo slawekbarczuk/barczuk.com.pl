@@ -1,5 +1,11 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 23.11.2026 — SEO R19 wdrożone w Azure
+- PR [#29](https://github.com/slawekbarczuk/barczuk.com.pl/pull/29) scalony jako `13174a3a54eee710d076e6a54728b59e20184ca4`. Produkcyjne Azure Static Web Apps: [workflow #45141056320](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45141056320), status **success**.
+- CI testów formularza P04 oraz analityki R17 wraz z SEO R19: **success**. Nowe podstrony, linkowanie i sitemap 23 URL są w kodzie `main`.
+- Pozostają do niezależnego odbioru: HTTP na własnej domenie, wygląd mobilny, indeksowanie Google, prawidłowe statusy historycznych URL. Nie zmieniano zasad prywatności ani portalu.
+
+
 ## 23.11.2026 — SEO R19: opracowanie bez publikacji
 - Przygotowano nowe, unikalne polskie podstrony „Modele finansowe dla banków” i „Gwarancje bankowe dla przedsiębiorstw”, z treścią B2B, canonical, WebPage JSON-LD, kontekstowymi linkami i podstawami ochrony prywatności.
 - Rozszerzono trwały generator sitemapy (21 → 23 adresy) i linków PL, listę publicznych tras GA4 po dobrowolnej zgodzie oraz testy. Nie dodano sztucznych tłumaczeń, przekierowań starych niepowiązanych usług, danych klientów ani twierdzeń o gwarantowanym finansowaniu.
