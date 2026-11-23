@@ -13,6 +13,8 @@
   var pages = {
     "/":"home", "/en/":"home", "/de/":"home", "/ua/":"home",
     "/finansowanie-przedsiebiorstw/":"financing",
+    "/modele-finansowe-dla-bankow/":"financial_models",
+    "/gwarancje-bankowe-dla-firm/":"bank_guarantees",
     "/en/corporate-financing/":"financing", "/de/unternehmensfinanzierung/":"financing",
     "/ua/finansuvannia/":"financing", "/ua/finansuvannia-biznesu-v-polshchi/":"financing_ua",
     "/informacje/prywatnosc/":"privacy", "/en/privacy/":"privacy",
