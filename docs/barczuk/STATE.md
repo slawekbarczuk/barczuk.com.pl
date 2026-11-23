@@ -1,5 +1,11 @@
 # Stan projektu BARCZUK — 2026-11-22
 
+## 23.11.2026 — zalecenia audytu wdrożone i zweryfikowane
+
+Zmiany [PR #28](https://github.com/slawekbarczuk/barczuk.com.pl/pull/28) scalono do `2c7fe1a`. [Produkcja Azure](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45123755224) zakończyła się sukcesem. Wszystkie 42 odpowiedzi dla 21 adresów z mapy na obu hostach miały status 200 i były zgodne z plikami wdrożonej wersji. Na produkcji sprawdzono przejście z kart „Kapitał” we wszystkich językach i pięć podstron DE przy 320 px.
+
+Na produkcyjnej stronie głównej w dwóch wizytach po zgodzie wysłano po jednej odsłonie. W powtórnej próbie Google zwrócił HTTP 204. Po odmowie nie wystąpiło żądanie GA4. O 07:25 czasu polskiego potwierdzono doręczenie jednego uzgodnionego zgłoszenia P04 do firmowej skrzynki. 99 testów repozytorium oraz kontrola dwóch przebiegów generatora zakończyły się sukcesem. Prywatny raport GA4 i fizyczny iPhone pozostają do odrębnej weryfikacji.
+
 ## 22.11.2026 — wdrożenie zaleceń z audytu publicznej witryny
 
 Poprzednia wersja (baza `3d6d586`) wysyłała w dwóch próbach po dwie odsłony na jedno otwarcie. Zmiana obejmuje jedną odsłonę po zgodzie, cookies GA ograniczone do odwiedzanego hosta, cztery rozróżnialne karty i pomiar przyjętych zgłoszeń P04. Dodano sekcję kapitałową oraz wyniki opracowań w PL, EN, DE i UA. Formularz wysyła wyłącznie techniczne zdarzenie po potwierdzeniu operacji przez API. Informacje o cookies i prywatności zaktualizowano w czterech językach.

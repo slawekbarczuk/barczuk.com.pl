@@ -1,5 +1,9 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 23.11.2026 — wdrożenie i odbiór poprawek audytu
+
+[PR #28](https://github.com/slawekbarczuk/barczuk.com.pl/pull/28), commit `2c7fe1a`, [publikacja produkcyjna](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45123755224) — sukces. Jedna odsłona na wizytę po zgodzie, rozróżnialne karty i zdarzenie przyjęcia formularza. Sprawdzono komplet 42 odpowiedzi, mobilny układ DE, sekcję kapitałową oraz doręczenie P04.
+
 ## 22.11.2026 — poprawki z powtórnego audytu strony
 
 Zakres publikacji obejmuje pomiar GA4 na stronie publicznej, pomiar przyjęcia zapytania P04 bez treści i identyfikatora, nawigację i treść czterech usług, informację o pomiarze, niemiecki widok mobilny i odtwarzalność publikacji UA. Zatwierdzony układ R16 i wariant zdjęć pozostają bazą projektu. Audyt wyjściowy zapisano w [ewidencji projektu](https://github.com/slawekbarczuk/barczuk.com.pl/commit/e03118fad9b5d44008d6630544428d197e153899).
