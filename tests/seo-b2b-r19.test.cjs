@@ -6,7 +6,7 @@ const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 const read = p => fs.readFileSync(path.join(root,p), "utf8");
 const services=[
- {slug:"modele-finansowe-dla-bankow",phrase:"Modele finansowe i prognozy dla banków",marker:"modelu finansowego"},
+ {slug:"modele-finansowe-dla-bankow",phrase:"Modele finansowe i prognozy dla banków",marker:"zintegrowana prognoza"},
  {slug:"gwarancje-bankowe-dla-firm",phrase:"Gwarancje bankowe dla przedsiębiorstw",marker:"beneficjentem gwarancji"}
 ];
 test("R19 SEO: focused B2B pages have unique titles, self canonicals and safe links",()=>{
