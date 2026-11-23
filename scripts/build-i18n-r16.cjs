@@ -174,6 +174,7 @@ function writeFile(file,html){
 }
 function build(){
  const source=new Map(pageTypes.map(p=>[p.id,fs.readFileSync(path.join(root,p.base),"utf8")
+   .replace(/<!-- BARCZUK SEO R19 START -->[\s\S]*?<!-- BARCZUK SEO R19 END -->/g,"")
    .replace(/<nav class="language-switcher"[\s\S]*?<\/nav>/g,"")
    .replace(/<link rel="alternate" hreflang="(?:pl|en|de|x-default)"[^>]*>/g,"")
    .replace(/<link rel="stylesheet" href="\/assets\/language-switcher-r16\.css[^"]*"[^>]*>/g,"")]));
