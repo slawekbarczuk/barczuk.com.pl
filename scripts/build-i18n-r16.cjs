@@ -64,7 +64,8 @@ function switcher(p,current){
 }
 function injectShared(h,p,locale){
  // Idempotence: do not accumulate metadata or switchers on subsequent builds.
- h=h.replace(/<nav class="language-switcher"[\s\S]*?<\/nav>/g,"");
+ h=h.replace(/<!-- BARCZUK SEO R19 START -->[\s\S]*?<!-- BARCZUK SEO R19 END -->/g,"")
+   .replace(/<nav class="language-switcher"[\s\S]*?<\/nav>/g,"");
  h=h.replace(/<link rel="alternate" hreflang="(?:pl|en|de|x-default)"[^>]*>/g,"");
  h=h.replace(/<link rel="canonical"[^>]*>/g,"");
  h=h.replace(/<link rel="stylesheet" href="\/assets\/language-switcher-r16\.css[^"]*"[^>]*>/g,"");
