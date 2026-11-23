@@ -1,5 +1,11 @@
 # Stan projektu BARCZUK — 2026-11-22
 
+## 23.11.2026 — SEO R19: scalone i wdrożone w Azure (kontrola HTTP/Google do wykonania)
+- [PR #29](https://github.com/slawekbarczuk/barczuk.com.pl/pull/29) scalono do `main` jako squash commit `13174a3a54eee710d076e6a54728b59e20184ca4`. Automatyczne [wdrożenie Azure](https://github.com/slawekbarczuk/barczuk.com.pl/actions/runs/45141056320) zakończyło się **success**.
+- Dwa nowe publiczne polskie adresy w repo: `/modele-finansowe-dla-bankow/`, `/gwarancje-bankowe-dla-firm/`; linkowanie z `/finansowanie-przedsiebiorstw/` i sitemap 23 URL. Testy P04 i R17 (wraz z SEO R19) na PR zakończone sukcesem. Historia starego biura rachunkowego nie została przywrócona.
+- Status **wdrożenia CI potwierdzony**; niezależny publiczny HTTP dla nowych i starych URL, wizualny odbiór na telefonie oraz rzeczywista indeksacja w Google **niepotwierdzone**. Nie zgłaszano automatycznie adresów do Google Search Console.
+
+
 ## 23.11.2026 — SEO R19: przygotowany pakiet B2B (jeszcze bez wdrożenia)
 - Zgoda właściciela na odejście od historycznych skojarzeń z zamkniętym biurem rachunkowym. Dane Google Search Console za trzy miesiące: 11 kliknięć, 109 wyświetleń, CTR 10,1%, średnia pozycja 9,6. Indeksację strony finansowania zgłoszono; aktualna mapa 21 URL przetworzona poprawnie 23.11.2026.
 - W gałęzi `seo/b2b-financing-landing-20261123` przygotowano dwa polskie landing pages: modele finansowe dla banków i gwarancje bankowe dla przedsiębiorstw, powiązane z istniejącą podstroną finansowania. Dodano do generatora i sitemapy (plan 23 URL), listy dopuszczonych publicznych stron GA4 po zgodzie oraz testów SEO.
