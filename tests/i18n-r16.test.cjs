@@ -108,10 +108,10 @@ test("R16 multilingual: internal navigation resolves to actual pages",()=>{
   }
  }
 });
-test("R16 multilingual: 21 sitemap URLs after focused UA addition, Polish default",()=>{
+test("R16 multilingual: 23 sitemap URLs after focused B2B services, Polish default",()=>{
  const sitemap=read("sitemap.xml");
  const locs=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
- assert.equal(locs.length,21);
+ assert.equal(locs.length,23);
  assert.equal(new Set(locs).size,21);
  assert.equal(locs[0],base+"/");
  for(const set of pageSets)for(const l of ["pl","en","de"])assert.ok(locs.includes(base+set.paths[l]));
