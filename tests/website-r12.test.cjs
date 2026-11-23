@@ -17,7 +17,7 @@ test("R16 production pages have current version and canonical metadata without p
   const html=read(p);
   assert.equal((html.match(/SB-WEB-1126-R\d+/g)||[]).length,1,p);
   assert.match(html,/SB-WEB-1126-R16/,p);
-  assert.match(html,/href="\/assets\/editorial-r16\.css\?v=R16-(?:photos|xl)"/,p);
+  assert.match(html,/href="\/assets\/editorial-r16\.css\?v=R16-(?:photos|xl)(?:-2)?"/,p);
   assert.doesNotMatch(html,/PROPOZYCJA P0[12]|data-preview|class="proposal-bar"|class="preview-note"/,p);
   assert.match(html,/<link rel="canonical" href="https:\/\/www\.barczuk\.com\.pl\//,p);
   assert.match(html,/class="brand-square brand-dot"/,p);
@@ -33,8 +33,7 @@ test("R16 preserves the working P04 markup, client logic and hidden-until-ready 
   assert.ok(form,p);
   assert.equal(hash(formShape(form)),r16Baseline.form_structure,p);
   const js=[...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]).find(s=>s.includes('const form=document.getElementById("contact-request-form")'));
-  const unchangedLogic=js.replace("Trwa wysyłanie zgłoszenia…","Przekazuję prośbę o kontakt…").replace("Zgłoszenie zostało przyjęte do wysyłki. Do usłyszenia!","Prośba została przyjęta do wysyłki. Dziękuję za kontakt.");
-  assert.equal(hash(unchangedLogic),baseline.form_script,p);
+  assert.equal(hash(js),r16Baseline.form_script,p);
   assert.match(html,/<section class="contact-form-section" id="formularz-kontaktowy" aria-labelledby="contact-form-heading" hidden>/);
   assert.match(html,/\.contact-form-section\[hidden\]\{display:none!important\}/);
   assert.match(js,/if\(!config\.enabled\|\|typeof config\.siteKey!=="string"\)return;\s*section\.hidden=false;/);

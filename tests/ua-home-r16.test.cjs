@@ -50,16 +50,16 @@ test("UA-only content survives complete rebuilds without changing other language
  try{
   for(const file of files)copy(path.join(root,file),path.join(temp,file));
   collect(temp);
-  const protectedFiles=generatedFiles.filter(p=>p!=="ua/index.html"&&p!=="sitemap.xml"&&p!=="ua/finansuvannia-biznesu-v-polshchi/index.html");
+  assert.equal(generatedFiles.length,23); // 22 public HTML files and the sitemap.
   const digest=p=>createHash("sha256").update(fs.readFileSync(path.join(temp,p),"utf8").replace(/\r\n/g,"\n")).digest("hex");
-  const before=new Map(protectedFiles.map(p=>[p,digest(p)]));
+  const before=new Map(generatedFiles.map(p=>[p,digest(p)]));
   const build=()=>{
    for(const file of Object.keys(require.cache))if(file.startsWith(temp+path.sep))delete require.cache[file];
    require(path.join(temp,"scripts/build-i18n-r16.cjs"));
+   require(path.join(temp,"scripts/inject-analytics-r17.cjs"));
   };
   build();
   for(const [file,hash] of before)assert.equal(digest(file),hash,"Changed protected page "+file);
-  generatedFiles.push("ua/finansuvannia-biznesu-v-polshchi/index.html");
   const first=new Map(generatedFiles.map(p=>[p,digest(p)]));
   build();
   for(const [file,hash] of first)assert.equal(digest(file),hash,"Non-idempotent build "+file);

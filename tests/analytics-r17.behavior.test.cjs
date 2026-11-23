@@ -144,3 +144,41 @@ test("Approved analytics can be withdrawn through footer settings",()=>{
   b.openFromFooter();assert.equal(b.option().children[0].checked,true);
   b.saveSettings(false);assert.equal(b.location.reloads,1);
 });
+
+test("Manual view and host-only cookies are configured before the vendor starts",()=>{
+  const b=browser();
+  b.accept();
+  const calls=b.window.dataLayer;
+  const set=calls.findIndex(call=>call[0]==="set");
+  assert.ok(set>=0 && set<calls.findIndex(call=>call[0]==="js"));
+  for(const options of [calls[set][1],calls.find(call=>call[0]==="config")[2]]){
+    assert.equal(options.send_page_view,false);
+    assert.equal(options.cookie_domain,"none");
+    assert.equal(options.cookie_prefix,"barczuk");
+    assert.equal(options.cookie_flags,"SameSite=Lax;Secure");
+  }
+  assert.equal(calls.filter(call=>call[0]==="event" && call[1]==="page_view").length,1);
+});
+
+test("Only the four service cards select service areas; accepted requests carry no form data",()=>{
+  const b=browser();
+  const click=area=>b.handlers["document:click"]({target:{closest:()=>({
+    getAttribute:key=>key==="data-offer"?area:"/finansowanie-przedsiebiorstw/"
+  })}});
+  const accepted=()=>b.handlers["document:barczuk:contact-accepted"]({target:{id:"contact-request-form"}});
+  accepted();
+  assert.equal(b.window.dataLayer,undefined);
+  b.accept();
+  const areas=["financing","investment","capital","continuity"];
+  for(const area of areas)click(area);
+  click(null);click("free-text");
+  const selections=Array.from(b.window.dataLayer).filter(x=>x[1]==="offer_select");
+  assert.deepEqual(selections.map(x=>x[2].interaction),areas);
+  accepted();
+  let receipts=b.window.dataLayer.filter(x=>x[1]==="contact_request_accepted");
+  assert.equal(receipts.length,1);
+  assert.deepEqual(Object.keys(receipts[0][2]).sort(),["interaction","language","page_id"]);
+  b.openFromFooter();b.saveSettings(false);
+  accepted();
+  assert.equal(b.window.dataLayer.filter(x=>x[1]==="contact_request_accepted").length,1);
+});

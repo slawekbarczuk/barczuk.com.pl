@@ -1,5 +1,7 @@
 # Rejestr decyzji BARCZUK
 
+- **D-023, 2026-11-22.** Właściciel zatwierdził realizację ponownego audytu. Pomiar dotyczy publicznej witryny po zgodzie. Statystykę przyjęć P04 opieramy na potwierdzeniu serwera bez identyfikatora i danych kontaktowych. Cztery obszary oferty prowadzą do odpowiadających im sekcji.
+
 **Format:** [ID] data — decyzja; uzasadnienie / konsekwencja. Zmiana decyzji wymaga nowego wpisu i aktualizacji dokumentacji, zamiast jej cichego nadpisywania.
 
 - **D-001, 2026-11:** Główna oferta to niezależne doradztwo finansowe dla firm i inwestycji, w tym bankowe gwarancje i obsługa finansowania. Bez CV i bez publikowania kwot. Utrzymywać zwięzły, rzeczowy język; doświadczenie w bankowości korporacyjnej od 1995 r.

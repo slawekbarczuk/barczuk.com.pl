@@ -1,5 +1,9 @@
 # Dziennik kamieni milowych BARCZUK
 
+## 22.11.2026 — poprawki z powtórnego audytu strony
+
+Zakres publikacji obejmuje pomiar GA4 na stronie publicznej, pomiar przyjęcia zapytania P04 bez treści i identyfikatora, nawigację i treść czterech usług, informację o pomiarze, niemiecki widok mobilny i odtwarzalność publikacji UA. Zatwierdzony układ R16 i wariant zdjęć pozostają bazą projektu. Audyt wyjściowy zapisano w [ewidencji projektu](https://github.com/slawekbarczuk/barczuk.com.pl/commit/e03118fad9b5d44008d6630544428d197e153899).
+
 ## 2026-11-22 — stopka: ustawienia cookies i numer wersji na jednej linii — kod scalony
 
 - Zgodnie ze zrzutem użytkownika przycisk ustawień zgód jest teraz po lewej stronie numeru wersji, w jednym kontenerze flex, z wyrównaniem do bazowej linii tekstu; reguła mobilna zapewnia wspólny wiersz. Zakres obejmuje wszystkie 22 publiczne strony, skrypt R17, CSS i generatory z odświeżonymi zasobami `r17-footer-v3`.

@@ -83,11 +83,11 @@ test("Cookie settings precede footer version on a shared responsive baseline",()
   assert.ok(css.includes('@media(max-width:620px){.footer-bottom .barczuk-footer-tools'));
   for(const file of roots.flatMap(walk)){
     const html=fs.readFileSync(file,"utf8");
-    assert.equal(html.split('/assets/analytics-r17.css?v=r17-footer-v3').length-1,1,file+" CSS cache version");
-    assert.equal(html.split('/assets/analytics-r17.js?v=r17-footer-v3').length-1,1,file+" JS cache version");
+    assert.equal(html.split('/assets/analytics-r17.css?v=r17-audit-v4').length-1,1,file+" CSS cache version");
+    assert.equal(html.split('/assets/analytics-r17.js?v=r17-audit-v4').length-1,1,file+" JS cache version");
   }
   for(const file of ["scripts/build-i18n-r16.cjs","scripts/build-ua-r16.cjs","scripts/build-ua-business-r16.cjs","scripts/inject-analytics-r17.cjs"]){
     const source=fs.readFileSync(path.join(root,file),"utf8");
-    assert.ok(source.includes("r17-footer-v3"),file+" regeneration must preserve footer asset version");
+    assert.ok(source.includes("r17-audit-v4"),file+" regeneration must preserve footer asset version");
   }
 });

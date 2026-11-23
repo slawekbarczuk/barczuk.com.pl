@@ -394,6 +394,13 @@ h3{line-height:1.2}
   .footer-main{gap:30px 18px}
   .footer-main>div>a:not(.brand){font-size:12px}
 }
+@media(max-width:360px){
+  html[lang="de"] .footer-main{grid-template-columns:minmax(0,1fr)}
+  html[lang="de"] .footer-main>div,
+  html[lang="de"] .scope-item>div{min-width:0;overflow-wrap:anywhere}
+  html[lang="de"] .scope-item{grid-template-columns:24px minmax(0,1fr)}
+  html[lang="de"] .scope-item h2{hyphens:auto;overflow-wrap:anywhere}
+}
 @media(prefers-reduced-motion:reduce){
   .hero-media video{display:none}
   .hero-media.is-playing .hero-media-poster{opacity:1}

@@ -37,10 +37,9 @@ module.exports = function localizeUaHome(html) {
   html = html.replace(media, () => '<div class="hero-visual hero-media hero-slideshow" data-hero-slideshow role="img" aria-label="' + text(hero.ariaLabel) + '">\n' + slides + '\n</div>');
   for (const item of content.replacements) html = replaceOnce(html, item.from, item.to, item.from.slice(0, 50));
   const nextSection = '<section class="situations" id="kiedy-warto">';
-  const discovery = '<div class="shell" style="padding:25px 0 38px"><p class="eyebrow" style="margin-bottom:10px">Фінансування бізнесу в Польщі</p><p style="max-width:850px;color:var(--muted)">Маєте польську компанію з українським капіталом? Дізнайтеся, як підготувати фінансові документи, кредитну заявку та переговори з банком.</p><a class="text-link" href="/ua/finansuvannia-biznesu-v-polshchi/">Фінансування бізнесу з українським капіталом у Польщі →</a></div>';
-  html = replaceOnce(html, nextSection, bankingSection(content.bankingSupport) + discovery + nextSection, "bank support placement");
+  html = replaceOnce(html, nextSection, bankingSection(content.bankingSupport) + nextSection, "bank support placement");
   // Organic landing-page link on the UA homepage; preserved after each rebuild.
-  html = replaceOnce(html, '<a class="text-link" href="/ua/finansuvannia/">'+text(hero.secondaryAction)+' </a>', '<a class="text-link" href="/ua/finansuvannia-biznesu-v-polshchi/">'+text("Фінансування компаній з українським капіталом")+' </a>', "UA financing SEO hero link");
+  html = replaceOnce(html, '<a class="text-link" href="#zakres">'+text(hero.secondaryAction)+' </a>', '<a class="text-link" href="/ua/finansuvannia-biznesu-v-polshchi/">'+text("Фінансування компаній з українським капіталом")+' </a>', "UA financing SEO hero link");
   html = replaceOnce(html, '</head>', '<link rel="stylesheet" href="/assets/ua-home-r16.css?v=R16-ua-20261120b"></head>', "UA-only stylesheet");
   return html;
 };
