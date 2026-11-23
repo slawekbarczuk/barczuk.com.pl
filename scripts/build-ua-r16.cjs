@@ -119,4 +119,21 @@ const urls=pages.flatMap(p=>locales.map(c=>{
  return '<url><loc>'+base+p.url[c]+'</loc><lastmod>'+lastmod+'</lastmod></url>';
 }));
 urls.push('<url><loc>'+base+'/ua/finansuvannia-biznesu-v-polshchi/</loc><lastmod>2026-11-20</lastmod></url>');
+
+urls.push('<url><loc>'+base+'/modele-finansowe-dla-bankow/</loc><lastmod>2026-11-23</lastmod></url>');
+urls.push('<url><loc>'+base+'/gwarancje-bankowe-dla-firm/</loc><lastmod>2026-11-23</lastmod></url>');
 write("sitemap.xml",'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.join("")+'</urlset>\n');
+// PL-only SEO links are injected after all locale builds so the EN/DE/UA versions
+// remain intact. build-i18n-r16.cjs strips these blocks from its source before
+// translating, which makes two consecutive builds reproducible.
+const polishFinancing="finansowanie-przedsiebiorstw/index.html";
+let seoPl=read(polishFinancing).replace(/<!-- BARCZUK SEO R19 START -->[\\s\\S]*?<!-- BARCZUK SEO R19 END -->/g,"");
+const injectSeo=(id,html)=>{
+  const matcher=new RegExp('(<section class="scope-item" id="'+id+'">[\\s\\S]*?)(<\\/div><\\/section>)');
+  if(!matcher.test(seoPl))throw Error("SEO section missing "+id);
+  seoPl=seoPl.replace(matcher,(_,body,end)=>body+html+end);
+};
+injectSeo("modele","<!-- BARCZUK SEO R19 START --><p class=\"seo-related-link\"><a class=\"text-link\" href=\"/modele-finansowe-dla-bankow/\">Dowiedz się więcej o modelach finansowych dla banków</a></p><!-- BARCZUK SEO R19 END -->");
+injectSeo("warunki","<!-- BARCZUK SEO R19 START --><p class=\"seo-related-link\"><a class=\"text-link\" href=\"/gwarancje-bankowe-dla-firm/\">Dowiedz się więcej o gwarancjach bankowych dla firm</a></p><!-- BARCZUK SEO R19 END -->");
+write(polishFinancing,seoPl);
+
