@@ -1,5 +1,13 @@
 # Plan rozwoju BARCZUK — stan na 2026-11-22
 
+## 23.11.2026 — R19 wydanie i odbiór
+- [x] PR #29 scalony, testy P04 i R17 przeszły; Azure Preview i produkcyjny run #45141056320 zakończone sukcesem.
+- [x] Dwie nowe polskie podstrony oraz sitemap 23 adresy znalazły się w wydaniu.
+- [ ] Zweryfikować z produkcji publiczne HTTP 200 dla nowych stron oraz 301/404 dla dawnych URL i kontrolę mobilną.
+- [ ] Sprawdzić sitemapę po wydaniu i zgłosić nowe strony do indeksowania w Google Search Console.
+- [ ] Ocenić zmiany wyświetleń i zapytań B2B po 2–4 tygodniach bez twierdzeń o gwarantowanych pozycjach.
+
+
 ## 23.11.2026 — SEO R19 i historyczne URL
 - [x] Odczyt danych Google Search Console oraz historii indeksacji; potwierdzone zgłoszenie nowej mapy (21 URL).
 - [x] Przygotowano dwa polskie landing pages B2B oraz kontekstowe linki, aktualizację sitemapy do 23 URL i testy regresji na gałęzi SEO R19.
