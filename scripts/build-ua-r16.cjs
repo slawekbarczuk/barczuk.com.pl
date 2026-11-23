@@ -127,7 +127,7 @@ write("sitemap.xml",'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http
 // remain intact. build-i18n-r16.cjs strips these blocks from its source before
 // translating, which makes two consecutive builds reproducible.
 const polishFinancing="finansowanie-przedsiebiorstw/index.html";
-let seoPl=read(polishFinancing).replace(/<!-- BARCZUK SEO R19 START -->[\\s\\S]*?<!-- BARCZUK SEO R19 END -->/g,"");
+let seoPl=read(polishFinancing).replace(/<!-- BARCZUK SEO R19 START -->[\s\S]*?<!-- BARCZUK SEO R19 END -->/g,"");
 const injectSeo=(id,html)=>{
   const matcher=new RegExp('(<section class="scope-item" id="'+id+'">[\\s\\S]*?)(<\\/div><\\/section>)');
   if(!matcher.test(seoPl))throw Error("SEO section missing "+id);
