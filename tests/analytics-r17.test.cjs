@@ -7,7 +7,7 @@ const root = path.resolve(__dirname,"..");
 const js = fs.readFileSync(path.join(root,"assets/analytics-r17.js"),"utf8");
 const cfg = fs.readFileSync(path.join(root,"assets/analytics-r17-config.js"),"utf8");
 const css = fs.readFileSync(path.join(root,"assets/analytics-r17.css"),"utf8");
-const roots = ["index.html","404.html","finansowanie-przedsiebiorstw","informacje","en","de","ua"];
+const roots = ["index.html","404.html","finansowanie-przedsiebiorstw","modele-finansowe-dla-bankow","gwarancje-bankowe-dla-firm","informacje","en","de","ua"];
 function walk(entry) {
   const full=path.join(root,entry);
   if(fs.statSync(full).isFile()) return full.endsWith(".html")?[full]:[];
@@ -15,7 +15,7 @@ function walk(entry) {
 }
 test("R17 modules are on each public page, only once, in correct order",()=>{
   const pages=roots.flatMap(walk);
-  assert.equal(pages.length,22);
+  assert.equal(pages.length,24);
   for(const file of pages){
     const html=fs.readFileSync(file,"utf8");
     for(const asset of ["analytics-r17-config.js","analytics-r17.js","analytics-r17.css"]){
